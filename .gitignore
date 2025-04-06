@@ -1,0 +1,9 @@
+logs/
+__pycache__/
+*.pyc
+plugins/
+*.db
+.env
+.dockerignore
+example_*.py
+config.conf

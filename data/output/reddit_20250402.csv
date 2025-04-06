@@ -1,0 +1,233 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1joo4tt,Anyone else feel like data engineering is way more stressful than expected?,"I used to work as a Tableau developer and honestly, life felt simpler. I still had deadlines, but the work was more visual, less complex, and didn’t bleed into my personal time as much.
+
+Now that I'm in data engineering, I feel like I’m constantly thinking about pipelines, bugs, unexpected data issues, or some tool update I haven’t kept up with. Even on vacation, I catch myself checking Slack or thinking about the next sprint. I turned 30 recently and started wondering… is this normal career pressure, imposter syndrome, or am I chasing too much of management approval?
+
+Is anyone else feeling this way? Is the stress worth it long term?",154,49,Big-Dwarf,2025-04-01 05:25:58,https://www.reddit.com/r/dataengineering/comments/1joo4tt/anyone_else_feel_like_data_engineering_is_way/,0,False,False,False,False
+1jowmzi,Found the perfect Data Dictionary tool!,"Just launched the [Urban Data Dictionary](https://www.urbandatadictionary.com/) and to celebrate what what we actually do in data engineering. Hope you find it fun and like it too. 
+
+Check it out and add your own definitions. What terms would you contribute?
+
+Happy April Fools!",131,11,secodaHQ,2025-04-01 14:15:10,https://www.reddit.com/r/dataengineering/comments/1jowmzi/found_the_perfect_data_dictionary_tool/,0,False,False,False,False
+1jowkjn,"What Python libraries, functions, methods, etc. do data engineers frequently use during the extraction and transformation steps of their ETL work?","I am currently learning and applying data engineering into my job. I am a data analyst with three years of experience. I am trying to learn ETL to construct automated data pipelines for my reports.
+
+Using Python programming language, I am trying to extract data from Excel file and API data sources. I am then trying to manipulate that data. In essence, I am basically trying to use a more efficient and powerful form of Microsoft's Power Query.
+
+What are the most common Python libraries, functions, methods, etc. that data engineers frequently use during the extraction and transformation steps of their ETL work?
+
+P.S.
+
+Please let me know if you recommend any books or YouTube channels so that I can further improve my skillset within the ETL portion of data engineering.
+
+Thank you all for your help. I sincerely appreciate all your expertise. I am new to data engineering, so apologies if some of my terminology is wrong.
+
+
+
+Edit:
+
+Thank you all for the detailed responses. I highly appreciate all of this information.",89,60,Original_Chipmunk941,2025-04-01 14:12:13,https://www.reddit.com/r/dataengineering/comments/1jowkjn/what_python_libraries_functions_methods_etc_do/,0,False,2025-04-01 15:26:11,False,False
+1jowboo,"Quack-To-SQL model : stop coding, start quacking",,26,5,TransportationOk2403,2025-04-01 14:01:45,https://motherduck.com/blog/quacktosql,0,False,False,False,False
+1jp7anp,What is the best free BI dashboarding tool?,We have 5 developers and none of them are data scientists. We need to be able to create interactive dashboards for management.,19,25,Professional_Eye8757,2025-04-01 21:23:16,https://www.reddit.com/r/dataengineering/comments/1jp7anp/what_is_the_best_free_bi_dashboarding_tool/,0,False,False,False,False
+1jp2zld,"A Modern Benchmark for the
+Timeless Power of the Intel Pentium Pro",,14,6,ikeben,2025-04-01 18:30:47,https://www.bodo.ai/bodobench95,0,False,False,False,False
+1joqbrl,Time-series analysis pipeline architecture,"Hi, I'm a bit outdated when it comes to all new cloud based solutions and request navigation on what architecture might be useful to start with (should be rather simple and not too much overhead to set up) while still be prepared for more data sources and more analysis requirements.
+
+I'm using Azure
+
+My use-case:
+I have a time-series dataset coming from an API on which we perform a Python analysis. We would like to perform the Python analysis on a weekly basis, store the data and provide the output as a power bi dashboard. The dataset consists of like 500 000 rows each week, the analysis scripts processes a many to many calculation and I might be interested in adding more data sources as well as perform more KPI calculations pre-processed in data storage (i.e. not in power bi).",10,3,qiicken,2025-04-01 08:03:41,https://www.reddit.com/r/dataengineering/comments/1joqbrl/timeseries_analysis_pipeline_architecture/,1,False,False,False,False
+1jpf97l,How the Apache Doris Compute-Storage Decoupled Mode Cuts 70% of Storage Costs—in 60 Seconds,,3,0,Any_Opportunity1234,2025-04-02 03:28:07,https://v.redd.it/fuk670n3ccse1,0,False,False,False,False
+1joz9bo,Cloud platform for dbt,"I recently started learning dbt and was using Snowflake as my database. However, my 30-day trial has ended. Are there any free cloud databases I can use to continue learning dbt and later work on projects that I can showcase on GitHub?
+
+Which cloud database would you recommend? Most options seem quite expensive for a learning setup.
+
+Additionally, do you have any recommendations for dbt projects that would be valuable for hands-on practice and portfolio building?
+
+Looking forward to your suggestions!",5,13,Pro_Panda_Puppy,2025-04-01 16:02:14,https://www.reddit.com/r/dataengineering/comments/1joz9bo/cloud_platform_for_dbt/,0,False,False,False,False
+1joz80e,Monthly General Discussion - Apr 2025,"This thread is a place where you can share things that might not warrant their own thread. It is automatically posted each month and you can find previous threads in the collection.
+
+Examples:
+
+* What are you working on this month?
+* What was something you accomplished?
+* What was something you learned recently?
+* What is something frustrating you currently?
+
+As always, sub rules apply. Please be respectful and stay curious.
+
+**Community Links:**
+
+* [Monthly newsletter](https://dataengineeringcommunity.substack.com/)
+* [Data Engineering Events](https://dataengineering.wiki/Community/Events)
+* [Data Engineering Meetups](https://dataengineering.wiki/Community/Meetups)
+* [Get involved in the community](https://dataengineering.wiki/Community/Get+Involved)",5,0,AutoModerator,2025-04-01 16:00:57,https://www.reddit.com/r/dataengineering/comments/1joz80e/monthly_general_discussion_apr_2025/,0,False,False,False,True
+1joyxbm,Opinions on Vertex AI,"From a more technical perspective what's your opinion about Vertex AI.  
+I am trying to deploy a machine learning pipeline and my data science colleges are real data scientists and I do not trust them to bring everything into production.  
+What's your experience with vertex ai?",6,2,NectarineNo7098,2025-04-01 15:49:03,https://www.reddit.com/r/dataengineering/comments/1joyxbm/opinions_on_vertex_ai/,0,False,False,False,False
+1jp25jk,"DeepSeek 3FS: non-RDMA install, faster ecosystem app dev/testing.",,3,0,HardCore_Dev,2025-04-01 17:58:27,https://blog.open3fs.com/2025/04/01/deepseek-3fs-non-rdma-install-faster-ecosystem-app-dev-testing.html,0,False,False,False,False
+1jovty4,Making your data valuable with Data Products,https://medium.com/@smayya/decoding-data-products-more-than-just-data-89024281a781?sk=3fc692fcc8c5e356d10f4b3077a17c89,2,0,frazered,2025-04-01 13:40:02,https://www.reddit.com/r/dataengineering/comments/1jovty4/making_your_data_valuable_with_data_products/,0,False,False,False,False
+1joxxbz,any alternatives to alteryx?,"most of our data is on prem sql server. we also have some data sources in snowflake as well (10-15% of the data). we also connect to some api's as well using the python tool. our reporting db is sql server on prem. currently we are using alteryx, and we are researching what our options are before we have to renew our contract. any suggestions that we can explore or if someone has been through a similar scenario, what did you end up with and why? please let me know if I can add more information to the context.
+
+also,I forgot to mention that not all of my team members are familiar with python. Looking for GUI options.
+
+Edit: thank you all. I’ll look into the mentioned options.",1,10,r0oki3r0kk,2025-04-01 15:08:23,https://www.reddit.com/r/dataengineering/comments/1joxxbz/any_alternatives_to_alteryx/,0,False,2025-04-02 00:14:33,False,False
+1joxi3z,Databricks Compute. Thoughts and more.,,2,0,averageflatlanders,2025-04-01 14:51:20,https://dataengineeringcentral.substack.com/p/databricks-compute-thoughts-and-more,0,False,False,False,False
+1jot1bz,Getting data from SAP HANA to snowflake,"So i have this project that will need to ingest data from SAP HANA into snowflake, it can be considered as any on-premise DB using JBDC, the big issue is, I cannot use any external ETL services as per project requirements. What is the best path to follow?  
+
+
+I need to fetch the data in bulk for some tables with truncate / copy into, and some tables need to be incremental with little (10 min) delay. The tables do not contain any watermark, modified time or anything...  
+
+
+There isnt much data, 20M rows tops.
+
+If you guys can give me a hand, i'm new to snowflake and strugling to find any sources on this.",2,6,Ra-mega-bbit,2025-04-01 11:15:13,https://www.reddit.com/r/dataengineering/comments/1jot1bz/getting_data_from_sap_hana_to_snowflake/,0,False,False,False,False
+1josncc,"Career improves, but projects don't? [discussion]","I started 6 years ago and my career has been on a growing trajectory since.
+
+While this is very nice for me, I can’t say the same about the projects I encounter. What I mean is that I was expecting the engineering soundness of the projects I encounter to grow alongside my seniority in this field.
+
+Instead, I’ve found that regardless of where I end up (the last two companies were data consulting shops), the projects I am assigned to tend to have questionable engineering decisions (often involving an unnecessary use of Spark to move 7 rows of data).
+
+The latest one involves ETL out of MSSQL and into object storage, using a combination of Azure synapse spark notebooks, drag and drop GUI pipelines, absolutely no tests or CICD whatsoever, and debatable modeling once data lands in the lake.
+
+This whole thing scares me quite a lot due to the lack of guardrails, while testing and deployments are done manually. While I'd love to rewrite everything from scratch, my eng lead said since that part it's complete and there isn't a plan to change it in the future, that it's not a priority at all, and I agree with this.
+
+What's your experience in situations like this? How do you juggle the competing priorities (client wanting new things vs. optimizing old stuff etc...)?
+",1,18,wtfzambo,2025-04-01 10:51:01,https://www.reddit.com/r/dataengineering/comments/1josncc/career_improves_but_projects_dont_discussion/,0,False,False,False,False
+1jopqvd,What is the best approach for a Bronze layer?,"Hello,
+
+We are starting a new Big Data project in my company with Cloudera, Hive, Hadoop HDFS, and a medallion architecture, but I have some questions about ""Bronze"" layer.
+
+Our source is a FTP and in this FTP are allocated the daily/monthly files (.txt, .csv, .xlsx...).  
+We bring those files to our HDFS in separated in folders by date (E.G: xxxx/2025/4)
+
+Here start my doubts:  
+\- Our bronze layer are those files in the HDFS?  
+\- For build our bronze layer, we need to load those files incrementally into a ""bronze table"" partitioned by date
+
+Reading on internet I saw that we have to do the second option, but I saw that option like a rubbish table
+
+Which will be the best approach?
+
+  
+For the other layers, I don't have any doubts.",2,11,Elkemao,2025-04-01 07:20:04,https://www.reddit.com/r/dataengineering/comments/1jopqvd/what_is_the_best_approach_for_a_bronze_layer/,0,False,False,False,False
+1jpdwy1,Knime on Anaconda Nacigator,Is it possible to install Knime on Anaconda Navigator? ,1,0,Puzzleheaded_Serve39,2025-04-02 02:25:22,https://www.reddit.com/r/dataengineering/comments/1jpdwy1/knime_on_anaconda_nacigator/,0,False,False,False,False
+1jpdpyh,Facebook Marketing API - Anyone have a successful ETL experience?,"We have a python integration set up where we pull data from Google Ads and Facebook Marketing into our data warehouse. We're pulling data about all 3 hierarchy tiers and some daily metrics:
+
+1. Campaigns (id, name, start time, stop time)
+2. Ad Groups/Ad Sets (id, name)
+3. Ads (id, name, URL)
+4. Metrics (clicks, impressions, spend) for the previous day
+
+For the Google Ads API, you basically send a SQL query and the return time is like a tenth of a second.
+
+For Facebook, we see returns times in the minutes, especially on the Ads piece. Was hoping to get an idea of how others might have successfully set up a process to get this data from Facebook in a more timely fashion, and possibly without hitting the rate limiting threshold.
+
+Not the exact code we're using - I can get it off my work system tomorrow - but the gist:
+
+    from facebook_business.adobjects.adaccount import AdAccount
+    from facebook_business.adobjects.campaign import Campaign
+    from facebook_business.adobjects.ad import AdSet
+    from facebook_business.adobjects.ad import Ad
+    from facebook_business.adobjects.adcreative import AdCreative
+    campaigns = AdAccount('act_123456789').get_campaigns(
+        params={},
+        fields=[Campaign.Field.id,Campaign.Field.name,Campaign.Field.start_time,Campaign.Field.stop_time]
+    )
+    adsets= AdAccount('act_123456789').get_ad_sets(
+        params={},
+        fields=[AdSet.Field.id,AdSet.Field.name]
+    )
+    ads = AdAccount('act_123456789').get_ads(
+        params={},
+        fields=[Ad.Field.id,Ad.Field.name,Ad.Field.creative]
+    )
+    object_urls = AdAccount('act_123456789').get_ad_creatives(
+        params={},
+        fields=[AdCreative.Field.object_story_spec]
+    )
+    asset_urls = AdAccount('act_123456789').get_ad_creatives(
+        params={},
+        fields=[AdCreative.Field.asset_feed_spec]
+    )
+
+We then have to do some joining between ads/object\_urls/asset\_urls to match the Ad with the destination URL if the ad is clicked on.
+
+The performance is so slow, that I hope we are doing it wrong. I was never able to get the batch call to work and I'm not sure how to improve things.
+
+Sincerely a data analyst who crosses over into data engineering because our data engineers don't know python.",1,3,farm3rb0b,2025-04-02 02:17:27,https://www.reddit.com/r/dataengineering/comments/1jpdpyh/facebook_marketing_api_anyone_have_a_successful/,0,False,False,False,False
+1jpdpnz,Resources for learning AbInitio Tool,"I tried to search the entire internet to find AbInito related tutorials/tranings. Hard luck finding anything. I came to know it's a closed source tool and everything is behind a login wall only for partner companies. 
+
+Can anyone share me stuff they found useful?
+
+Thanks in advance.",1,1,IdealBusiness6499,2025-04-02 02:17:07,https://www.reddit.com/r/dataengineering/comments/1jpdpnz/resources_for_learning_abinitio_tool/,0,False,False,False,False
+1jp0vmd,Not in the field and I need help understanding how data migrations work and how they're done,"I'm an engineer in an unrelated field and want to understand how data migrations work for work (I might be put in charge of it at my job even though we're not data engineers).  Any good sources, preferably a video that would a mock walkthrough of one (maybe using an ETL too)?",1,2,BlackendLight,2025-04-01 17:07:19,https://www.reddit.com/r/dataengineering/comments/1jp0vmd/not_in_the_field_and_i_need_help_understanding/,0,False,False,False,False
+1jp0ntu,ELI5 - High-Level Diagram of a Data Strategy,"Hello everyone! 
+
+I am not a data engineer, but I am trying to help other people within my organization (as well as myself) get a better understanding of what an overall data strategy looks like.  So, I figured I would ask the experts.    
+
+**Do you have a go-to high-level diagram you use that simplifies the complexities of an overall data solution and helps you communicate what that should look like to non-technical people like myself?** 
+
+I’m a very visual learner so seeing something that shows what the journey of data should look like from beginning to end would be extremely helpful.  I’ve searched online but almost everything I see is created by a vendor trying to show why their product is better.  I’d much rather see an unbiased explanation of what the overall process should be and then layer in vendor choices later.
+
+I apologize if the question is phrased incorrectly or too vague.  If clarifying questions/answers are needed, please let me know and I’ll do my best to answer them.  Thanks in advance for your help.",1,0,qwopzxnm79,2025-04-01 16:58:49,https://www.reddit.com/r/dataengineering/comments/1jp0ntu/eli5_highlevel_diagram_of_a_data_strategy/,0,False,False,False,False
+1joy98n,Dimensional modelling -> Datetime column,"Hi All,
+
+Im learning Dimensional modelling. Im working on the NYC taxi dataset ( [here is the data dictionary](https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf) ).
+
+Im struggling to model Datetime columns: tpep\_pickup\_datetime, tpep\_dropoff\_datetime.  
+Does these columns should be in Dimensions table or in Fact table? 
+
+What I understand from the Kimball datawarehouse toolkit book is to have a DateDim table populated with dates from start\_date to end\_date with details like month, year, quarter, day of week etc. but what about timestamp?
+
+Lets say if I want to see the data for certain time of the day like nights? In this case, do I need to split the columns: tpep\_pickup\_datetime, tpep\_dropoff\_datetime into date, hour, mins in fact table and join to a dim table with the timestamp details like hour, mins etc? ( so two dim tables - date and timestamp )
+
+It would be great someone can help me here?",1,2,Delicious_Attempt_99,2025-04-01 15:21:53,https://www.reddit.com/r/dataengineering/comments/1joy98n/dimensional_modelling_datetime_column/,0,False,False,False,False
+1jozvao,SQL Templating (without DBT?),"I’d like to implement jinja templated SQL for a project. But I don’t want or need DBT’s extra bells and whistles. I just need/want to write macros, templated .sql files, then on execution (from python application), render the SQL at runtime.
+
+What’s the solution here? Pure jinja? (What’re some resources for that?) Are there OSS libraries I can use? Or, do I just use DBT, but only use it from a python driver?",0,3,boss_yaakov,2025-04-01 16:26:46,https://www.reddit.com/r/dataengineering/comments/1jozvao/sql_templating_without_dbt/,0,False,False,False,False
+1jowcet,Lessons from operating big ClickHouse clusters for several years,"My coworker Javi Santana wrote a lengthy post about what it takes to operate large ClickHouse clusters based on his experience starting Tinybird. If you're managing any kind of OSS CH cluster, you might find this interesting.
+
+[https://www.tinybird.co/blog-posts/what-i-learned-operating-clickhouse](https://www.tinybird.co/blog-posts/what-i-learned-operating-clickhouse)",0,1,itty-bitty-birdy-tb,2025-04-01 14:02:37,https://www.reddit.com/r/dataengineering/comments/1jowcet/lessons_from_operating_big_clickhouse_clusters/,0,False,False,False,False
+1jossd0,Newbie to DE needs help with the approach to the architecture of a project,"So I was hired as a data analyst a few months ago and I have a background in software development. A few months ago I was moved to a smallish project with the objective of streamlining some administrative tasks that were all calculated ""manually"" with Excel.  By the time, all I had worked with were very basic, low code tools from the Microsoft enviroment: PBI for dashboards, Power Automate, Power Apps for data entry, Sharepoint lists, etc, so that's what I used to set it up. 
+
+The cost for the client is basically nonexistent right now, apart from a couple of PBI licenses. The closest I've done to ETL work has been with power query, if you can even call it that. 
+
+  
+Now I'm at a point where it feels like that's not gonna cut it anymore. I'm going to be working with larger volumes of data, with more complex relationships between tables and transformations that need to be done earlier in the process. I could technically keep going with what I have but I want to actually build something durable and move towards actual data engineering, but I don't know where to start with a solution that's cost efficient and well structured. For example, I wanted to move the data from Sharepoint lists to a proper database but then we'd have to pay for multiple premium licenses to be able to connect to them in powerapps. Where do I even start?
+
+I know the very basics of data engineering and I've done a couple of tutorial projects with Snowflake and Databricks as my team seems to want to focus on cloud based solutions. So I'm not starting from absolute scratch, but I feel pretty lost as I'm sure you can tell. I'd appreciate any kind of advice or input as to where to head from here, as I'm on my own right now.",0,4,Wild_Complaint_4688,2025-04-01 11:00:15,https://www.reddit.com/r/dataengineering/comments/1jossd0/newbie_to_de_needs_help_with_the_approach_to_the/,0,False,False,False,False
+1jorny7,How do you build tests for processing data with variations,"How do you test a data pipeline which parses data having a lot of variation
+
+I'm working on a project to parse pdfs (earnings calls), they have a common general structure, but sometimes I'll get variations in the data (very common, half of docs have some kind of variation). It's a pain to debug when things go wrong, I have to run tests on a lot of files which takes up time.
+
+I want to build good tests, and learn to do this better in the future, then refactor the code (it's garbage right now)",0,7,Sure-Government-8423,2025-04-01 09:44:04,https://www.reddit.com/r/dataengineering/comments/1jorny7/how_do_you_build_tests_for_processing_data_with/,0,False,False,False,False
+1jp4f74,Built a visual tool on top of Pandas that runs Python transformations row-by-row - What do you guys think?,"Hey data engineers,
+
+For client implementations I thought it was a pain to write python scripts over and over, so I built a tool on top of Pandas to solve my own frustration and as a personal hobby. The goal was to make it so I didn't have to start from the ground up and rewrite and keep track of each script for each data source I had.
+
+**What I Built:**  
+A visual transformation tool with some features I thought might interest this community:
+
+1. **Python execution on a row-by-row basis** \- Write Python once per field, save the mapping, and process. It applies each field's mapping logic to each row and returns the result without loops
+2. **Visual logic builder** that generates Python from the drag and drop interface. It can re-parse the python so you can go back and edit form the UI again
+3. **AI Co-Pilot** that can write Python logic based on your requirements
+4. **No environment setup** \- just upload your data and start transforming
+5. **Handles nested JSON** with a simple dot notation for complex structures
+
+Here's a screenshot of the logic builder in action:
+
+https://preview.redd.it/znh4fom8y9se1.png?width=2690&format=png&auto=webp&s=2daf229aab2f5de272c4f5668a782d8011ff3207
+
+I'd love some feedback from people who deal with data transformations regularly. If anyone wants to give it a try feel free to shoot me a message or comment, and I can give you lifetime access if the app is of use. Not trying to sell here, just looking for some feedback and thoughts since I just built it.
+
+**Technical Details:**
+
+* Supports CSV, Excel, and JSON inputs/outputs, concatenating files, header & delimiter selection
+* Transformations are saved as editable mapping files
+* Handles large datasets by processing chunks in parallel
+* Built on Pandas. Supports Pandas and re libraries
+
+[DataFlowMapper.com](http://DataFlowMapper.com)",0,7,skrufters,2025-04-01 19:28:00,https://www.reddit.com/r/dataengineering/comments/1jp4f74/built_a_visual_tool_on_top_of_pandas_that_runs/,0,False,2025-04-01 19:56:02,False,False
+1jpaq8v,Data Developer vs Data Engineer,"I know it varies by company blah blah blah, but also aside from a Google search, what have you guys in the field noticed to be core differences between these positions? ",0,3,diabeticspecimen,2025-04-01 23:53:39,https://www.reddit.com/r/dataengineering/comments/1jpaq8v/data_developer_vs_data_engineer/,0,False,False,False,False
+1jp0s33,"Introducing the Knowledge Graph: things, not strings","""Fully Managed Graph Database Service | Neo4j AuraDB"" https://neo4j.com/product/auradb/?utm_source=GSearch&utm_medium=PaidSearch&utm_campaign=Evergreen&utm_content=AMS-Search-SEMCE-DSA-None-SEM-SEM-NonABM&utm_term=&utm_adgroup=DSA&gad_source=1&gclid=Cj0KCQjwna6_BhCbARIsALId2Z27LAb-nD-42tRRF5viybJfBVull8EeBvj46w_V7OCs1RdtbR7hqBQaAuObEALw_wcB",0,0,Ok_Efficiency1311,2025-04-01 17:03:16,https://blog.google/products/search/introducing-knowledge-graph-things-not/,0,False,False,False,False
+1jp0ci2,We cut Databricks costs without sacrificing performance—here’s how,"About 6 months ago, I led a Databricks cost optimization project where we cut down costs, improved workload speed, and made life easier for engineers. I finally had time to write it all up a few days ago—cluster family selection, autoscaling, serverless, EBS tweaks, and more. I also included a real example with numbers. If you’re using Databricks, this might help: [https://medium.com/datadarvish/databricks-cost-optimization-practical-tips-for-performance-and-savings-7665be665f52](https://medium.com/datadarvish/databricks-cost-optimization-practical-tips-for-performance-and-savings-7665be665f52)",0,3,DataDarvesh,2025-04-01 16:45:48,https://www.reddit.com/r/dataengineering/comments/1jp0ci2/we_cut_databricks_costs_without_sacrificing/,0,False,False,False,False

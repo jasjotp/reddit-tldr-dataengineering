@@ -1,0 +1,241 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1jo8l7i,Happy Monday,,368,24,Vautlo,2025-03-31 17:19:45,https://i.redd.it/l7ql2ezx62se1.png,0,False,False,False,False
+1jnrpd7,Does your company use both Databricks & Snowflake? How does the architecture look like?,I'm just curious about this because these 2 companies have been very popular over the last few years.,78,38,NefariousnessSea5101,2025-03-31 01:12:17,https://www.reddit.com/r/dataengineering/comments/1jnrpd7/does_your_company_use_both_databricks_snowflake/,0,False,False,False,False
+1jnuhdm,"Now, I know why am I struggling...","And why my coleagues were able to present outputs more eagerly than I do:
+
+I am trying to deliver a 'perfect data set', which is too much to expect from a fully on-prem DW/DS filled with couple of thousands of tables with zero data documentation and governance in all 30 years of operation...
+
+I am not even a perfectionist myself so IDK what lead me to this point. Probably I trusted myself way too much? Probably I am trying to prove I am ""one of the best data engineers they had""? (I am still on probation and this is my 4th month here)
+
+The company is fine and has continued to prosper over the decades without much data engineering. They just looked at the big numbers and made decisions based of it intuitively. 
+
+Then here I am, just spent hours today looking for the excess 0.4$ from a total revenue of 40Million$ from a report I broke down to a FactTable. Mathematically, this is just peanuts. I should have let it go and used my time effectively on other things.
+
+I am letting go of this perfectionism. 
+
+I want to get regularized in this company. I really, really want to.",42,11,noSugar-lessSalt,2025-03-31 03:47:38,https://www.reddit.com/r/dataengineering/comments/1jnuhdm/now_i_know_why_am_i_struggling/,0,False,False,False,False
+1jo0001,Prefect - too expensive?,"Hey guys,
+we’re currently using self-hosted Airflow for our internal ETL and data workflows. It gets the job done, but I never really liked it. Feels too far away from actual Python, gets overly complex at times, and local development and testing is honestly a nightmare.
+
+I recently stumbled upon Prefect and gave the self-hosted version a try. Really liked what I saw. Super Pythonic, easy to set up locally, modern UI - just felt right from the start.
+
+But the problem is: the open-source version doesn’t offer user management or logging, so we’d need the Cloud version. Pricing would be around 30k USD per year, which is way above what we pay for Airflow. Even with a discount, it would still be too much for us.
+
+Is there any way to make the community version work for a small team? Usermanagement and Audit-Logs is definitely a must for us. Or is Prefect just not realistic without going Cloud?
+
+Would be a shame, because I really liked their approach.
+
+If not Prefect, any tips on making Airflow easier for local dev and testing?",41,47,thsde,2025-03-31 10:26:08,https://www.reddit.com/r/dataengineering/comments/1jo0001/prefect_too_expensive/,0,False,False,False,False
+1jo7tps,what's your opinion?,"i’m designing functions to clean data for two separate pipelines: one has small string inputs, the other has medium-size pandas inputs. both pipelines require the same manipulations.
+
+for example, which is a better design: clean\_v0 or clean\_v1?
+
+that is, should i standardize object types inside or outside the cleaning function?
+
+thanks all! this community has been a life saver :)
+
+",26,36,BigCountry1227,2025-03-31 16:48:55,https://i.redd.it/woy8nd4412se1.png,0,False,False,False,False
+1jo564b,Is using Snowflake for near real time or hourly events an overkill ?,"I've been using Snowflake for a while for just data warehousing projects (analytics) where I update the data twice per day.
+
+  
+I have now a Use Case where I need to do some reads and writes to sql tables every hour (every 10 min would be even better but not necessary). **The purpose is not only analytics but also operational.**
+
+  
+I estimate every request **costs me 0.01$,** which is quite high.
+
+I was thinking of using **Postgresql** instead of Snowflake but I will need to invest time and resources to build it and maintain it. 
+
+  
+I was wondering if you can give me **your opinion** about building **near real time or hourly projects** in Snowflake. Does it make sense ? or is it a clear no-go ?
+
+  
+Thanks!
+
+  
+",14,12,finerius,2025-03-31 14:57:29,https://www.reddit.com/r/dataengineering/comments/1jo564b/is_using_snowflake_for_near_real_time_or_hourly/,0,False,False,False,False
+1jnzyop,AWS Data Engineering from Azure,"Hi Folks,
+
+  
+14+ years into data engineering with Onprem for 10 and 4 years into Azure DE with mainly expertise on python and Azure databricks.
+
+Now trying to shift job but 4 out of 5 jobs i see are asking for  AWS (i am targeting only product companies or  GCC) . Is self learning AWS for DE possible.
+
+Has anyone shifted from Azure stack DE to AWS ?
+
+What services to focus .
+
+any paid courses that you have taken like udemy etc
+
+Thanks",11,9,nifty60,2025-03-31 10:23:27,https://www.reddit.com/r/dataengineering/comments/1jnzyop/aws_data_engineering_from_azure/,0,False,False,False,False
+1jo8u27,Asking for different tools for SQL Server + SSIS project.,"Hello guys. I work in a consultancy company and we recently got a job to set-up SQL Server as DWH and SSIS. Whole system is going to be build up from the scratch. The whole operation of the company was running on Excel spreadsheets with 20+ Excel Slave that copies and pastes some data from a source, CSV or email then presses the fancy refresh button. Company newly bought and they want to get rid of this stupid shit so SQL Server and SSIS combo is a huge improvement for them (lol).
+
+But I want to integrate as much as fancy stuff in this project. Both of these tool will work on a Remote Desktop with no internet connection.  I want to integrate some DevOps tools into this project. I will be one of the 3 data engineers that is going to work on this project. So Git will be definitely on my list, as well as GitTea or a repo that works offline since there won't be a lot of people. But do you have any more free tools that I can use? Planning to integrate Jenkins in offline mode somehow, tsqlt for unit testing seems like a decent choice as well. dbt-core and airflow was on my list as well but my colleagues don't know any python so they are not gonna be on this list.
+
+Do you have any other suggestions? Have you ever used a set-up like mine? I would love to hear your previous experiences as well. Thanks",7,9,Brilliant_Breath9703,2025-03-31 17:29:30,https://www.reddit.com/r/dataengineering/comments/1jo8u27/asking_for_different_tools_for_sql_server_ssis/,1,False,False,False,False
+1jo2vxq,Date warehouse essentials guide,Check out my latest blog on data warehouses! Discover powerful insights and strategies that can transform your data management. Read it here: https://medium.com/@adityasharmah27/data-warehouse-essentials-guide-706d81eada07!,5,1,Super_Act_5816,2025-03-31 13:13:37,https://www.reddit.com/r/dataengineering/comments/1jo2vxq/date_warehouse_essentials_guide/,0,False,False,False,False
+1jo9b0k,Operating systems and hardware available for employees in your company,"Hey guys,
+
+I'm working as a DE in a German IT company that has about 500 employees. The company's policy regarding operating systems the employees are allowed to use is strange and unfair (IMO). All software engineers get access to Macbooks and thus, to MacOS while all other employees that have a differnt job title ""only"" get HP elite books (that are not elite at all) that run on Windows. WSL is allowed but a native Linux is not accepted because of security reasons (I don't know which security reasons).
+
+As far as I know the company does not want other job positions to get Macbooks because the whole updating stuff for those Macbooks  is done by an external company which is quite expensive. The Windows laptops instead are maintained by an internal team.
+
+A lot of people are very unhappy with this situation because many of them (including me) would prefer to use Linux or MacOS. Especially all DevOps are pissed because half a year ago they also got access to MacBooks but a change in the policy means that they will have to change back to Windows laptops once their MacBooks break or become too old.
+
+My question(s): Can you choose the OS and/or hardware in your company? Do you have a clue why Linux may not be accepted? Is it really not that safe (which I cannot think of because the company has it's own data center where a lot of Linux servers run that are actually updated by an internal team)?",2,11,VeryHardToFindAName,2025-03-31 17:48:33,https://www.reddit.com/r/dataengineering/comments/1jo9b0k/operating_systems_and_hardware_available_for/,0,False,False,False,False
+1jo4hld,How do I manage dev/test/prod when using Unity Catalog for Medallion Architecture with dbt?,"Hi everyone,
+
+I'm in the process of setting up a dbt project on Databricks and planning to leverage Unity Catalog to implement a medallion architecture. I am not sure the correct approach.  I am considering a dev/test/prod catalog, with a bronze/silver/gold schema:
+
+* dev.bronze
+* test.bronze
+* prod.bronze
+
+However, this takes 2 of the namespaces so all of the other information has to live in a single namespace such as table type (dim/fact), department (hr/finance), and data source and table description.  It seems like a lot to cram in there.
+
+I have used the medallion architecture as a guide, but never used it in the naming, but the current team I am on really wants it to be in the name.  Just wondering what approaches people have taken.
+
+Thanks",5,2,jfftilton,2025-03-31 14:27:44,https://www.reddit.com/r/dataengineering/comments/1jo4hld/how_do_i_manage_devtestprod_when_using_unity/,0,False,False,False,False
+1joeg88,My company adopted a stateful REST API solution I built that's run locally on every machine. I would like to deploy it to the cloud but I am not sure that's smart. Thoughts?,"**Context:** I joined a finance consultancy a few years ago and noticed that most people in my department are frustrated with the current ""software"" our engineering team has built over decades (yes - not years, decades). The issue is that the software consists of a bundle of Python scripts that repeatedly read large CSV files whenever a user interacts with it. The master CSV file ranges in size from 20MB to 1GB.
+
+For example, if a user wants to select an option from a dropdown menu, clicking the dropdown triggers the reading and aggregation of a 1GB file, after which the frontend is ""returned"" 20 strings (the dropdown options). By ""returned,"" I mean that a new CSV file is created somewhere on the user's local file system, and the ""frontend"" picks it up. I tested a similar functionality using a Flask REST API, and once the CSV file is loaded into virtual memory, the process takes only 100ms—compared to the current design, which takes a full minute (some of it is due to scripts needing to sort out dependencies, validation, etc.). However, our engineering team refuses to adopt web-based communication, arguing that it's not worth the effort. The idea of using a cloud-based relational database is essentially taboo; it has to be either CSV files or Python’s pickle dumps on each user's local system.
+
+I have some experience in software engineering, so I made it my mission to redesign this legacy monster—with the blessing of a senior manager. So far, the transition has gone incredibly well. Last year, I did a soft launch of a small subset of features, and within days, every person in my department was using it.
+
+**Question:** My current design requires users to set up a virtual environment and run an installation script that sorts out any environment variables, dependencies, etc. Each time they want to start the software, they must run a local Flask API, which interacts with a React TypeScript frontend. When the Flask API starts, it loads all necessary files into memory, does validation and other things (takes around a minute). After that, every subsequent request is easy and takes on average 100 to 200 ms. However, I dislike that each user needs a fully configured environment. Version control is also a headache since every user must manually run an update script.
+
+I’d like to move my Flask API to the cloud so that either:
+
+1. **A single server serves all colleagues**, or
+2. **Each colleague gets a dedicated node/pod.**
+
+The problem with a single server is that it would quickly run out of virtual memory if 100+ colleagues loaded large datasets simultaneously. The problem with one node per colleague is the complexity—it would require Kubernetes (K8s) or AWS Fargate, along with an orchestrator to manage node creation and termination, which is a significant engineering effort.
+
+I then considered making my Flask API stateless: storing large datasets in S3, using DynamoDB for file mapping, and loading data into virtual memory on every request. I converted some sample datasets to Parquet, reducing their size significantly (down to \~10MB), but I worry about added latency. Repeatedly reading the same data (given that each user makes 1–10 requests per minute) seems highly inefficient.
+
+Am I missing any alternatives? Based on this, a local Flask API still seems like the best option—unless I want to pay for an expensive 64GB vRAM EC2 instance or invest significant time in building a node-per-user architecture.
+
+Thanks!",2,6,Double_Cost4865,2025-03-31 21:17:37,https://www.reddit.com/r/dataengineering/comments/1joeg88/my_company_adopted_a_stateful_rest_api_solution_i/,1,False,False,False,False
+1jnymqg,Need Feedback on data sharing module,"
+Subject: Seeking Feedback: CrossLink - Faster Data Sharing Between Python/R/C++/Julia via Arrow & Shared Memory
+
+Hey r/dataengineering
+
+
+I've been working on a project called CrossLink aimed at tackling a common bottleneck: efficiently sharing large datasets (think multi-million row Arrow tables / Pandas DataFrames / R data.frames) between processes written in different languages (Python, R, C++, Julia) when they're running on the same machine/node.
+Mainly given workflows where teams have different language expertise.
+
+The Problem:
+We often end up saving data to intermediate files (CSVs are slow, Parquet is better but still involves disk I/O and serialization/deserialization overhead) just to pass data from, say, a Python preprocessing script to an R analysis script, or a C++ simulation output to Python for plotting. This can dominate runtime for data-heavy pipelines.
+
+CrossLink's Approach:
+The idea is to create a high-performance IPC (Inter-Process Communication) layer specifically for this, leveraging:
+Apache Arrow: As the common, efficient in-memory columnar format.
+Shared Memory / Memory-Mapped Files: Using Arrow IPC format over these mechanisms for potential minimal-copy data transfer between processes on the same host.
+
+
+DuckDB: To manage persistent metadata about the shared datasets (unique IDs, names, schemas, source language, location - shmem key or mmap path) and allow optional SQL queries across them.
+
+
+Essentially, it tries to create a shared data pool where different language processes can push and pull Arrow tables with minimal overhead.
+
+
+Performance:
+Early benchmarks on a 100M row Python -> R pipeline are encouraging, showing CrossLink is:
+Roughly 16x faster than passing data via CSV files.
+Roughly 2x faster than passing data via disk-based Arrow/Parquet files.
+
+It also now includes a streaming API with backpressure and disk-spilling capabilities for handling >RAM datasets.
+
+
+Architecture:
+It's built around a C++ core library (libcrosslink) handling the Arrow serialization, IPC (shmem/mmap via helper classes), and DuckDB metadata interactions. Language bindings (currently Python & R functional, Julia building) expose this functionality idiomatically.
+
+
+Seeking Feedback:
+I'd love to get your thoughts, especially on:
+Architecture: Does using Arrow + DuckDB + (Shared Mem / MMap) seem like a reasonable approach for this problem? 
+
+Any obvious pitfalls or complexities I might be underestimating (beyond the usual fun of shared memory management and cross-platform IPC)?
+
+
+Usefulness: Is this data transfer bottleneck a significant pain point you actually encounter in your work? Would a library like CrossLink potentially fit into your workflows (e.g., local data science pipelines, multi-language services running on a single server, HPC node-local tasks)?
+
+
+Alternatives: What are you currently using to handle this? (Just sticking with Parquet on shared disk? Using something like Ray's object store if you're in that ecosystem? Redis? Other IPC methods?)
+
+
+Appreciate any constructive criticism or insights you might have! Happy to elaborate on any part of the design.
+
+I built this to ease the pain of moving across different scripts and languages for a single file. Wanted to know if it useful for any of you here and would be a sensible open source project to maintain.
+
+It is currently built only for local nodes, but looking to add support with arrow flight across nodes as well. ",2,5,pirana04,2025-03-31 08:43:18,https://www.reddit.com/r/dataengineering/comments/1jnymqg/need_feedback_on_data_sharing_module/,0,False,False,False,False
+1joiqcm,Anyone try Semaphore?,I’ve been looking for something to unify our data and found Semaphore. Anyone have this in their company and how are they using it? Like it? Is there an alternative? Want to get some data before I engage the sales vultures ,1,0,drdacl,2025-04-01 00:29:49,https://www.progress.com/semaphore,1,False,False,False,False
+1jnt6ir,Question about preprocessing two time-series datasets from different measurement devices,"I have a question regarding the preprocessing step in a project I'm working on. I have two different measurement devices that both collect time-series data. My goal is to analyze the similarity between these two signals.
+
+Although both devices measure the same phenomenon and I've converted the units to be consistent, I'm unsure whether this is sufficient for meaningful comparison, given that the devices themselves are different and may have distinct ranges or variances.
+
+From the literature, I’ve found that z-score normalization is commonly used to address such issues. However, I’m concerned that applying z-score normalization to each dataset individually might make it impossible to compare across datasets, especially when I want to analyze multiple sessions or subjects later.
+
+Is z-score normalization the right approach in this case? Or would it be better to normalize using a common reference (e.g., using statistics from a larger dataset)? Any guidance or references would be greatly appreciated.Thank you :)",1,1,UsedExcitement5306,2025-03-31 02:33:18,https://www.reddit.com/r/dataengineering/comments/1jnt6ir/question_about_preprocessing_two_timeseries/,0,False,False,False,False
+1jo2s2c,Cloud Pandit Azure Data Engineering course feedback or can we take !!,Had anyone taken Cloud Pandit Azure Data Engg course. just wanted to know !!,0,3,Pi_Pisces,2025-03-31 13:08:18,https://www.reddit.com/r/dataengineering/comments/1jo2s2c/cloud_pandit_azure_data_engineering_course/,0,False,False,False,False
+1jo9ir2,~33% faster Microsoft Fabric with e6data– Feedback Requested,"Hey folks,
+
+I'm a data engineer at [e6data](https://www.e6data.com/), and we've been working on integrating our engine with Microsoft Fabric. We recently ran some benchmarks (TPC-DS) and observed around a **33% improvement in SQL query performance** while also significantly reducing costs compared to native Fabric compute engines.
+
+Here's what our integration specifically enables:
+
+* **33% faster SQL queries** directly on data stored in OneLake (TPC-DS benchmark results).
+* **2-3x cost reduction** by optimizing compute efficiency.
+* **Zero data movement**: direct querying of data from OneLake.
+* Native vector search support for AI-driven workflows.
+* Scalable to 1000+ QPS with sub-second latency and real-time autoscaling.
+* Enterprise-level security measures.
+
+We've documented our approach and benchmark results: [https://www.e6data.com/blog/e6data-fabric-increased-performance-optimized-capacity](https://www.e6data.com/blog/e6data-fabric-increased-performance-optimized-capacity)
+
+We'd genuinely appreciate your thoughts, feedback, or questions about our approach or experiences with similar integrations.
+
+https://preview.redd.it/vx65oc5zd2se1.jpg?width=6636&format=pjpg&auto=webp&s=57a2a75cd11a8cc616d04a042a12055bddfe5b4b
+
+",0,0,e6data,2025-03-31 17:57:18,https://www.reddit.com/r/dataengineering/comments/1jo9ir2/33_faster_microsoft_fabric_with_e6data_feedback/,0,False,False,False,False
+1jo89r8,Ways to quickly get total rows?,"When i am testing things often i need to run some counts  in databricks.
+
+What is the prefered way?
+
+I am creating a pyspark.dataframe  using spark.sql statements and later
+DF.count().
+
+Further information can be provided.",0,1,Old_Tourist_3774,2025-03-31 17:06:54,https://www.reddit.com/r/dataengineering/comments/1jo89r8/ways_to_quickly_get_total_rows/,0,False,False,False,False
+1jo4n51,Seeking Advice from DE: Taking a Career Break to Work & Travel in Australia,"Hey DE,
+
+I’d love to get your perspective on my situation.
+
+# My Background
+
+I’m a Brazilian Mechanical Engineer with 3 years of experience in the Data field—started as a Data Analyst for 1.5 years, then transitioned into Data Engineering. Next week, I’ll be starting as a Data Architect at a multinational with 100,000+ employees, mainly working with the Azure stack.
+
+# The Plan
+
+My girlfriend and I are planning to move to Australia for about a year to travel and build memories together before settling down (marriage, house, etc.). This new job came unexpectedly, but it offers a good salary (\~$2,000 USD/month).
+
+The idea is to:
+
+* Move to Australia
+* Work hard & save around $1,000 USD/month
+* Travel as much as possible for \~2 years
+* Return and re-enter the data field
+
+# The Challenge
+
+The work visa limitation allows me to stay only 6 months with the same employer, making it tough to get good Data Engineering jobs. So, I plan to work in any job that pays well (fruit picking, hospitality, etc.), and my girlfriend will do the same.
+
+# The Concern
+
+When I return, how hard will it be to get back into the data field after a \~2-year break?
+
+* I’ll have enough savings to stay unemployed for about a year if needed.
+* This isn’t all my savings—I have the equivalent of 6 years of salary in reserve.
+* I regularly get recruiter messages on LinkedIn.
+* I speak Portuguese, English, and Spanish fluently.
+
+Given your experience, how risky is this career break? is totally crazy ? Would you recommend a different approach? Any advice would be appreciated!",0,2,chongsurfer,2025-03-31 14:34:32,https://www.reddit.com/r/dataengineering/comments/1jo4n51/seeking_advice_from_de_taking_a_career_break_to/,0,False,False,False,False
