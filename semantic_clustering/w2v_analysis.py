@@ -1,3 +1,5 @@
+import os 
+os.environ['OMP_NUM_THREADS'] = '3' # set the OP NUM THREADS env variable to 3 to avoid the potential memory leak caused my using KMeans on a Windows Intel machine
 import pandas as pd 
 import matplotlib.pyplot as plt 
 import seaborn as sns 
@@ -5,11 +7,12 @@ import re
 from gensim.models import Word2Vec
 from sklearn.cluster import KMeans 
 from sklearn.decomposition import PCA
+from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.corpus import stopwords 
 import nltk
-import os 
 import sys 
 from adjustText import adjust_text
+from scipy.spatial import ConvexHull
 
 '''
 This program uses Word2Vec to get similar clusters of words, and measures each cluster's average score.
@@ -38,6 +41,22 @@ def preprocess(text):
 
 # get all preprocessed tokens for each post that are not null 
 combined_df['tokens'] = combined_df['body'].dropna().apply(preprocess)
+
+# for TF-IDF vectorization, rejoin the tokens into strings 
+combined_df['processed_body'] = combined_df['tokens'].apply(lambda tokens: " ".join(tokens))
+
+# fit the TF-IDF vectorizer to the post bodies to extract the most important words based on their frequency across documents, while down-weighting common words
+tfidf_vectorizer = TfidfVectorizer()
+tfidf_matrix = tfidf_vectorizer.fit_transform(combined_df['processed_body'])
+tfidf_df = pd.DataFrame(tfidf_matrix.toarray(), columns=tfidf_vectorizer.get_feature_names_out())
+
+# swtich the above df to a long formatted df so each row is a word with its tdidf score 
+tfidf_df_long = tfidf_df.stack().reset_index()
+tfidf_df_long.columns = ['post_num', 'word', 'tfidf']
+
+# find each word's avg TF-IDF 
+avg_tfidf_scores = tfidf_df_long.groupby('word')['tfidf'].mean().reset_index()
+avg_tfidf_scores.columns = ['word', 'avg_tfidf']
 
 # train the word2vec model 
 w2v_model = Word2Vec(
@@ -71,12 +90,21 @@ word_cluster_df = pd.DataFrame({
     "cluster": labels
 })
 
+# merge the above avg_tfidf_scores and the word cluster df on word to get each word's avg tfidf score for clustering 
+word_cluster_df = word_cluster_df.merge(avg_tfidf_scores, on='word', how='left')
+
+
 # filter for the top 10 words for each cluster
-top_words = word_cluster_df.groupby("cluster").apply(lambda df: df.sample(n=min(10, len(df)), random_state=42)).reset_index(drop=True)
+top_words = (word_cluster_df
+             .sort_values(by='avg_tfidf',ascending=False)
+             .groupby('cluster')
+             .head(10)
+             .reset_index(drop=True))
+
 
 # visualize the vectors 
 plt.figure(figsize=(14, 8))
-sns.scatterplot(x=reduced[:, 0], y=reduced[:, 1], hue=labels, palette='tab10', legend=False)
+sns.scatterplot(data=top_words, x='x', y='y', hue='cluster', palette='tab10', legend=True)
 
 texts = []
 
@@ -85,6 +113,27 @@ for _, row in top_words.iterrows():
 
 adjust_text(texts, arrowprops=dict(arrowstyle='-', color='gray', lw=0.5))
 
+# plot hull blocks around each cluster so they are easily distinguishable
+unique_clusters = top_words['cluster'].unique()
+colors = sns.color_palette('tab10', n_colors=len(unique_clusters))  # match colors to clusters
+
+for cluster_id, color in zip(unique_clusters, colors):
+    cluster_points = word_cluster_df[word_cluster_df['cluster'] == cluster_id][['x', 'y']].values
+    if len(cluster_points) >= 3:  # only draw a convex hull block if the cluster has at least 3 points/words
+        hull = ConvexHull(cluster_points)
+        hull_points = cluster_points[hull.vertices]
+        plt.fill(hull_points[:, 0], hull_points[:, 1], alpha=0.2, color=color, label=f"Cluster {cluster_id}")
+
 plt.title("Word2Vec Clusters of Reddit Words")
-os.makedirs("semantic_clustering", exist_ok=True)
 plt.savefig("semantic_clustering/word2vec_clusters.png", bbox_inches='tight')
+
+### - Based on the above clusters, compute the avg score and num of comments for each cluster based on if the cluster's words match a posts
+# store the cluster's scores in a list 
+cluster_scores = []
+
+for cluster_id in word_cluster_df['cluster'].unique():
+    words_in_cluster = word_cluster_df[word_cluster_df['cluster'] == cluster_id]['word'].tolist() # grab all words in each cluster
+
+    # build regex pattern to serach for any word from the cluster in each post body 
+    
+
