@@ -1,6 +1,7 @@
 import os 
 os.environ['OMP_NUM_THREADS'] = '3' # set the OP NUM THREADS env variable to 3 to avoid the potential memory leak caused my using KMeans on a Windows Intel machine
 import pandas as pd 
+import numpy as np
 import matplotlib.pyplot as plt 
 import seaborn as sns 
 import re 
@@ -13,6 +14,7 @@ import nltk
 import sys 
 from adjustText import adjust_text
 from scipy.spatial import ConvexHull
+import plotly.express as px
 
 '''
 This program uses Word2Vec to get similar clusters of words, and measures each cluster's average score.
@@ -93,7 +95,6 @@ word_cluster_df = pd.DataFrame({
 # merge the above avg_tfidf_scores and the word cluster df on word to get each word's avg tfidf score for clustering 
 word_cluster_df = word_cluster_df.merge(avg_tfidf_scores, on='word', how='left')
 
-
 # filter for the top 10 words for each cluster
 top_words = (word_cluster_df
              .sort_values(by='avg_tfidf',ascending=False)
@@ -101,13 +102,13 @@ top_words = (word_cluster_df
              .head(10)
              .reset_index(drop=True))
 
-
 # visualize the vectors 
 plt.figure(figsize=(14, 8))
 sns.scatterplot(data=top_words, x='x', y='y', hue='cluster', palette='tab10', legend=True)
 
 texts = []
 
+# visualize the actual words as text in their cluster
 for _, row in top_words.iterrows():
     texts.append(plt.text(row["x"], row["y"], row["word"], fontsize=9))
 
@@ -125,15 +126,126 @@ for cluster_id, color in zip(unique_clusters, colors):
         plt.fill(hull_points[:, 0], hull_points[:, 1], alpha=0.2, color=color, label=f"Cluster {cluster_id}")
 
 plt.title("Word2Vec Clusters of Reddit Words")
-plt.savefig("semantic_clustering/word2vec_clusters.png", bbox_inches='tight')
+plt.savefig("word2vec_clusters.png", bbox_inches='tight')
 
 ### - Based on the above clusters, compute the avg score and num of comments for each cluster based on if the cluster's words match a posts
 # store the cluster's scores in a list 
 cluster_scores = []
 
+# calculate the thresholds to see which cluster is in which threshold (top 30% or bottom 30%)
+top_30_threshold = combined_df['score'].quantile(0.70)
+bottom_30_threshold = combined_df['score'].quantile(0.30)
+
+# label each engagement level so we can add a new feature to the result set to measure a post by high, mid or low engagement 
+def label_engagement(score):
+    if score > top_30_threshold:
+        return 'High'
+    elif score < bottom_30_threshold:
+        return 'Low'
+    else:
+        return 'Mid'
+
+combined_df['engagement_level'] = combined_df['score'].apply(label_engagement)
+
 for cluster_id in word_cluster_df['cluster'].unique():
     words_in_cluster = word_cluster_df[word_cluster_df['cluster'] == cluster_id]['word'].tolist() # grab all words in each cluster
 
     # build regex pattern to serach for any word from the cluster in each post body 
-    
+    pattern = r'\b(?:' + '|'.join(map(re.escape, words_in_cluster)) + r')\b'
 
+    # see if the above pattern/any words from the cluster match words in a post and return the matching posts
+    matched_posts = combined_df[combined_df['body'].str.contains(pattern, case = False, na = False)]
+
+    # if matched posts are not empty, calculate the avg score and avg num of comments for those posts that contain words that are in the cluster
+    if not matched_posts.empty:
+        avg_score = matched_posts['score'].mean()
+        avg_comments = matched_posts['num_comments'].mean()
+        avg_word_count = matched_posts['word_count'].mean()
+        avg_char_count = matched_posts['char_count'].mean()
+        avg_readability = matched_posts['flesch_reading_ease'].mean()
+        avg_sentence_count = matched_posts['sentence_count'].mean()
+        avg_syllable_count = matched_posts['syllable_count'].mean()
+        avg_smog_index = matched_posts['smog_index'].mean()
+        pct_has_url = matched_posts['has_url'].mean()  # percentage of posts with URLs
+        pct_has_code = matched_posts['has_code'].mean()  # percentage of posts with code
+
+        # divide the post distributions into the top 30%, middle 40%, and bottom 30% of posts, and count how many posts fall into each category (boolean evaluates to 1 if True, 0 if False, so sum gives us the total posts per category)
+        top_engagement_count = (matched_posts['score'] > top_30_threshold).sum()
+        mid_engagement_count = ((matched_posts['score'] <= top_30_threshold) & 
+                                (matched_posts['score'] >= bottom_30_threshold)).sum()
+        bottom_engagement_count = (matched_posts['score'] < bottom_30_threshold).sum()
+
+        # create the dataframe that has the avg statistics for each cluster
+        cluster_scores.append({
+            "cluster": cluster_id,
+            "keywords": ", ".join(words_in_cluster[:10]),  # show only the top 10 keywords for readability
+            "avg_score": round(avg_score, 1),
+            "avg_comments": round(avg_comments, 1),
+            "avg_word_count": round(avg_word_count, 1),
+            "avg_char_count": round(avg_char_count, 1),
+            "avg_readability": round(avg_readability, 1),
+            "avg_sentence_count": round(avg_sentence_count, 1),
+            "avg_syllable_count": round(avg_syllable_count, 1),
+            "avg_smog_index": round(avg_smog_index, 1),
+            "pct_has_url": round(pct_has_url * 100, 1),
+            "pct_has_code": round(pct_has_code * 100, 1),
+            "top_30%_post_count": int(top_engagement_count),
+            "middle_40%_post_count": int(mid_engagement_count),
+            "bottom_30%_post_count": int(bottom_engagement_count),
+            "example_post": matched_posts.iloc[0]['body']
+        })
+
+cluster_insights_df = pd.DataFrame(cluster_scores)
+
+# rank by avg_score and avg_comments
+cluster_insights_df["score_rank"] = cluster_insights_df["avg_score"].rank(ascending=False).astype(int)
+cluster_insights_df["comment_rank"] = cluster_insights_df["avg_comments"].rank(ascending=False).astype(int)
+
+# sort the df by score_rank and comment_rank so highest engagement word clusters are at the top 
+cluster_insights_df = cluster_insights_df.sort_values(by=['score_rank', 'comment_rank'])
+
+# save the df to a csv file 
+cluster_insights_df.to_csv('../data/output/cluster_engagement_insights.csv')
+
+# draw a heatmap to get a comparison of each cluster's avg statistics 
+# filter the columns that we want to compare (cluster id, avg score, avg comments, numer of posts in each quantile)
+heatmap_df = cluster_insights_df[['cluster', 'avg_score', 
+                                  'avg_comments', 'avg_word_count', 'avg_char_count', 
+                                  'avg_readability', 'avg_sentence_count', 'avg_syllable_count', 
+                                  'avg_smog_index', 'pct_has_url', 'pct_has_code', 
+                                  'top_30%_post_count', 'middle_40%_post_count', 'bottom_30%_post_count'
+                                  ]].set_index('cluster')
+
+plt.figure(figsize = (14, 10))
+sns.heatmap(data = heatmap_df, annot = True, fmt = '.2f', cmap = 'YlGnBu')
+plt.title('Engagement Metrics by Word Cluster')
+plt.savefig('cluster_engagement_metrics.png')
+
+# also make the above heatmap with each cluster and their avg statistics in plotly with tooltips to view each clusters words
+heatmap_df_plotly = heatmap_df.copy()
+
+# set index to cluster and drop keywords for heatmap data
+heatmap_df_plotly['keywords'] = cluster_insights_df.set_index('cluster')['keywords']
+data = heatmap_df_plotly.drop(columns='keywords')
+keywords = heatmap_df_plotly['keywords']
+
+# create the heatmap with plotly with the keywords for each cluster labelled
+fig = px.imshow(
+    data, 
+    labels = dict(x = 'Metric', y = 'Cluster', color = 'Value'),
+    text_auto = True
+)
+
+# inject keywords into the hover using customdata and hovertemplate
+fig.update_traces(
+    customdata = np.array(keywords).reshape(-1, 1),
+    hovertemplate =
+        "Cluster %{y}<br>" +
+        "Metric: %{x}<br>" +
+        "Value: %{z}<br>" +
+        "<b>Keywords:</b> %{customdata[0]}<extra></extra>"
+)
+
+# save the labelled heatmap 
+fig.update_layout(title = "Cluster Engagement Metrics with Keywords Tooltip")
+fig.write_html("cluster_engagement_metrics_plotly.html")
