@@ -1592,3 +1592,302 @@ We spent about two weeks redesigning their entire data architecture. Built them 
 The transformation was honestly pretty incredible to watch. Reports that used to take hours now run in seconds. Their analyst actually took a vacation for the first time in a year. And we got this really nice email from their CTO saying we'd ""changed how they make decisions"" which gave us all the warm fuzzies.
 
 It's projects like these that remind us why we got into this field in the first place. There's something so satisfying about taking a messy data situation and turning it into something clean and efficient that actually helps people do their jobs better.",0,9,DataMaster2025,2025-04-04 14:20:44,https://www.reddit.com/r/dataengineering/comments/1jrd286/just_wanted_to_share_a_recent_win_that_made_our/,0,False,False,False,False
+165,1ju81cr,Jira: Is it still helping teams... or just slowing them down?,"I’ve been part of (and led) a teams over the last decade — in enterprises
+
+And one tool keeps showing up everywhere: **Jira**.
+
+It’s the ""default"" for a lot of engineering orgs. Everyone knows it. Everyone uses it.  
+But **I don’t seen anyone who actually likes it.**
+
+Not in the *""ugh it's corporate but fine""* way — I mean people who are actively frustrated by it but still use it daily.
+
+Here are some of the most common friction points I’ve either experienced or heard from other devs/product folks:
+
+1. **Custom workflows spiral out of control** — What starts as ""just a few tweaks"" becomes an unmanageable mess.
+2. **Slow performance** — Large projects? Boards crawling? Yup.
+3. **Search that requires sorcery** — Good luck finding an old ticket without a detailed Jira PhD.
+4. **New team members struggle to onboard** — It’s not exactly intuitive.
+5. **The “tool tax”** — Teams spend hours updating Jira instead of moving work forward.
+
+And yet... most teams stick with it. Because switching is painful. Because “at least everyone knows Jira.” Because the alternative is more uncertainty.  
+What's your take on this?",64,47,IllWasabi8734,2025-04-08 07:40:50,https://www.reddit.com/r/dataengineering/comments/1ju81cr/jira_is_it_still_helping_teams_or_just_slowing/,0,False,False,False,False
+166,1jukwsu,Why do you dislike MS Fabric?,"Title.  I've only tested it. It seems like not a good solution for us (at least currently) for various reasons, but beyond that...
+
+It seems people generally don't feel it's production ready - how specifically?  What issues have you found?",40,41,cdigioia,2025-04-08 18:33:12,https://www.reddit.com/r/dataengineering/comments/1jukwsu/why_do_you_dislike_ms_fabric/,0,False,2025-04-08 23:46:51,False,False
+167,1ju9kqo,How did you start your data engineering journey?,"I am getting into this role, I wondered how other people became data engineers? Most didn't start as a junior data engineer; some came from an analyst(business or data), software engineers, or database administrators. 
+
+What helped you become one or motivated you to become one?",16,39,FuzzyCraft68,2025-04-08 09:39:06,https://www.reddit.com/r/dataengineering/comments/1ju9kqo/how_did_you_start_your_data_engineering_journey/,0,False,False,False,False
+168,1ju6uoo,Ingesting a billion small .csv files from blob?,"Currently, we're ""streaming"" data by having an Azure Function write event grid messages to csv in blob storage, and then by having snowpipe ingest them. There's about a million csv's generated daily. The blob is not partitioned at all.
+
+What's the best way to ingest/delete everything? Snowpipe has a configuration error, and a portion of the data hasn't been loaded, ever. ADF was pretty slow when I tested it out.
+
+This was all done by consultants before I was in house btw.
+
+
+edit: I was a bit unclear in my message. I mean, that we've had snowpipe ingesting these files. However, now we need to re-ingest the billion or so small .csv's that are in the blob, to compare the data to the already ingested data.
+
+What further complicates this is:
+
+- some files have two additional columns
+- we also need to parse the filename to a column
+- there is absolutely no partitioning at all",16,4,hi_top_please,2025-04-08 06:14:25,https://www.reddit.com/r/dataengineering/comments/1ju6uoo/ingesting_a_billion_small_csv_files_from_blob/,0,False,2025-04-08 21:44:57,False,False
+169,1jumngl,Hung DBT jobs,"According to the DBT Cloud [api](https://docs.getdbt.com/dbt-cloud/api-v2#/operations/Retrieve%20Run%20Failure%20Details), I can only tell that a job has failed and retrieve the failure details. 
+
+There's no way for me to know when a job is hung.
+
+Yesterday, an issue with our Fivetran replication and several of our DBT jobs hung for several hours.
+
+Any idea how to monitor for hung DBT jobs?",13,3,CrabEnvironmental864,2025-04-08 19:45:39,https://www.reddit.com/r/dataengineering/comments/1jumngl/hung_dbt_jobs/,0,False,False,False,False
+170,1jugab3,What are the Python Data Engineering approaches every data scientist should know?,"Is it building data pipelines to connect to a DB?
+Is it automatically downloading data from a DB and creating reports or is it something else? 
+I am a data scientist who would like to polish his Data Engineering skills with Python because my company is beginning to incorporate more and more Python and I think I can be helpful. ",13,5,Pineapple_throw_105,2025-04-08 15:25:54,https://www.reddit.com/r/dataengineering/comments/1jugab3/what_are_the_python_data_engineering_approaches/,0,False,False,False,False
+171,1jukena,Clean architecture for Data Engineering,"Hi Guys,
+
+Do anyone use or tried to use clean architecture for data engineering projects? If yes, May I know, how did it go and any comments on it or any references on github if you have?
+
+Please don't give negative comments/responses without reasons.
+
+Best regards",9,5,Harshadeep21,2025-04-08 18:13:04,https://www.reddit.com/r/dataengineering/comments/1jukena/clean_architecture_for_data_engineering/,0,False,False,False,False
+172,1ju714r,"reflect-cpp - a C++20 library for fast serialization, deserialization and validation using reflection, like Python's Pydantic or Rust's serde.","[https://github.com/getml/reflect-cpp](https://github.com/getml/reflect-cpp)
+
+I am a data engineer, ML engineer and software developer with strong background in functional programming. As such, I am a strong proponent of the ""Parse, Don't Validate"" principle (https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/).  
+  
+Unfortunately, C++ does not yet support reflection, which is necessary to do something apply these principles. However, after some discussions on the topic over on r/cpp, we figured out a way to do this anyway. This library emerged out of these discussions.
+
+I have personally used this library in real-world projects and it has been very useful. I hope other people in data engineering can benefit from it as well.
+
+And before you ask: Yes, I use C++ for data engineering. It is quite common in finance and energy or other fields where you really care about speed. ",6,0,liuzicheng1987,2025-04-08 06:26:36,https://www.reddit.com/r/dataengineering/comments/1ju714r/reflectcpp_a_c20_library_for_fast_serialization/,0,False,False,False,False
+173,1jusby0,Best way to handle loading JSON API data into database in pipelines,"Greetings, this is my first post here. I've been working in DE for the last 5 years now doing various things with Airflow and Dagster.  I have a question regarding design of data flow from APIs to our database.
+
+I am using Dagster/Python to perform the API pulls and loads into Snowflake.
+
+My team lead insists that we load JSON data into our Snowflake RAW\_DATA in the following way:
+
+ID (should be a surrogate/non-native PK)  
+PAYLOAD (raw JSON payload, either as a VARCHAR or VARIANT type)  
+CREATED\_DATE (timestamp this row was created in Snowflake)  
+UPDATE\_DATE (timestamp this row was updated in Snowflake)
+
+Flattening of the payload then happens in SQL as a plain View, which we currently autogenerate using Python and manually edit and add to Snowflake.
+
+He does not want us (DE team) to use DBT to do any transforming of RAW\_DATA. DBT is only for the Data Analyst team to use for creating models.
+
+The main advantage I see to this approach is flexibility if the JSON schema changes. You can freely append/drop/insert/reorder/rename columns. whereas a normal table you can only drop, append, and rename.
+
+On the downside, it is slow and clunky to parse with SQL and access the data as a view. It just seems inefficient to have to recompute the view and parse all those JSON payloads whenever you want to access the table.  
+  
+I'd much rather do the flattening in Python, either manually or using dlt. Some JSON payloads I 'pre-flatten' in Python to make them easier to parse in SQL.
+
+Is there a better way, or is this how you all handle this as well?",6,1,fetus-flipper,2025-04-08 23:56:12,https://www.reddit.com/r/dataengineering/comments/1jusby0/best_way_to_handle_loading_json_api_data_into/,0,False,2025-04-09 00:01:00,False,False
+174,1juvgjf,Azure Course for Beginners | Learn Azure & Data Bricks in 1 Hour,"# FREE Azure Course for Beginners | Learn Azure & Data Bricks in 1 Hour
+
+[https://www.youtube.com/watch?v=8XH2vTyzL7c](https://www.youtube.com/watch?v=8XH2vTyzL7c)",4,1,chrisgarzon19,2025-04-09 02:36:56,https://www.reddit.com/r/dataengineering/comments/1juvgjf/azure_course_for_beginners_learn_azure_data/,0,False,False,False,False
+175,1juu00b,Azure vs Microsoft Fabric?,"As a data engineer, I really like the control and customization that Azure offers.
+At the same time, I can see how Fabric is more business-friendly and leans toward a low/no-code experience.
+
+But with all the content and comparisons floating around the internet, why is no one talking about how insanely expensive Fabric is?! Seriously—am I missing something here?
+
+
+-
+",4,7,Dharneeshkar,2025-04-09 01:20:51,https://www.reddit.com/r/dataengineering/comments/1juu00b/azure_vs_microsoft_fabric/,0,False,False,False,False
+176,1jujn9j,Lessons from optimizing dashboard performance on Looker Studio with BigQuery data,"We’ve been using Looker Studio (formerly Data Studio) to build reporting dashboards for digital marketing and SEO data. At first, things worked fine—but as datasets grew, dashboard performance dropped significantly.
+
+
+
+The biggest bottlenecks were:
+
+• Overuse of blended data sources
+
+• Direct querying of large GA4 datasets
+
+• Too many calculated fields applied in the visualization layer
+
+
+
+To fix this, we adjusted our approach on the data engineering side:
+
+• Moved most calculations (e.g., conversion rates, ROAS) to the query layer in BigQuery
+
+• Created materialized views for campaign-level summaries
+
+• Used scheduled queries to pre-aggregate weekly and monthly data
+
+• Limited Looker Studio to one direct connector per dashboard and cached data where possible
+
+
+
+Result: dashboards now load in \~3 seconds instead of 15–20, and we can scale them across accounts with minimal changes.
+
+
+
+Just sharing this in case others are using BI tools on top of large datasets—interested to hear how others here are managing dashboard performance from a data pipeline perspective.",3,1,kodalogic,2025-04-08 17:43:22,https://www.reddit.com/r/dataengineering/comments/1jujn9j/lessons_from_optimizing_dashboard_performance_on/,0,False,False,False,False
+177,1juhrrs,Help: Looking to set up a decent data architecture (data lake and/or warehouse),"Hi, I need help. I need a proper architecture for a department, and I am trying to get a data lake/warehouse.
+
+Why: We have a lot of data sources from SaaS to manually created documents. We use a lot of SaaS products, but we have no centralised repository to store and stage the data, so we end up with a lot of workaround such as using SharePoint and csv stored in folders for reporting. We also change SaaS products quite frequently, so sources can change often. It is difficult to do advanced analytics. 
+
+I prefer a lake & warehouse approach because (1) for SaaS users, they can can just drop the data to the lake and (2) transformation and processing can be done for reporting, and we could combine the datasets even when we change the SaaS software. 
+
+My huge considerations are that (1) the data is to be accessible within the department only and (2) it has to be decent cost. Currently considered Azure Data Lake Storage Gen2 & DataBricks, or Snowflake (to have both the lake and warehouse). My previous experience was only with Data Lake Storage Gen2.
+
+I'm willing to work my way up for my technical limitations, but at this stage I am exploring the software solutions to get the buy in to kickstart this project. 
+
+Any sharing is much appreciated, and if you worked with such an environment, I appreciate your guidance and learnings as well. Thank you in advance.",3,1,thehotdawning,2025-04-08 16:27:08,https://www.reddit.com/r/dataengineering/comments/1juhrrs/help_looking_to_set_up_a_decent_data_architecture/,0,False,False,False,False
+178,1juo1uo,How are entry level data engineering roles at Amazon?,"If anyone on this sub has worked for Amazon as a Data engineer, preferably entry level or early careers, how has your experience been working at amazon at Amazon? 
+
+I’ve heard their work culture is very startup like, and their is an abundance of poor managers. The company just cars about share holder value, instead of caring for their customers and employees.
+
+I wanted to hear on this sub, how has your experience been? How was the hiring process like? What all skills I should develop to work for Amazon?",2,2,gta35,2025-04-08 20:43:31,https://www.reddit.com/r/dataengineering/comments/1juo1uo/how_are_entry_level_data_engineering_roles_at/,0,False,False,False,False
+179,1jufvpe,Question around migrating to dbt,"We're considering moving from a dated ETL system to dbt with data being ingested via AWS Glue.
+
+We have a data warehouse which uses a Kimball dimensional model, and I am wondering how we would migrate the dimension load processes.
+
+We don't have access to all historic data, so it's not a case of being able to look across all files and then pull out the dimensions. Would it make sense fur the dimension table to be bothered a source and a dimension?
+
+I'm still trying to pivot my way of thinking away from the traditional ETL approach so might be missing something obvious.",2,2,receding_bareline,2025-04-08 15:09:02,https://www.reddit.com/r/dataengineering/comments/1jufvpe/question_around_migrating_to_dbt/,0,False,False,False,False
+180,1juvakz,Beginner Predictive Model Feedback/Guidance,"My predictive modeling folks, beginner here could use some feedback guidance. Go easy on me, this is my first machine learning/predictive model project and I had very basic python experience before this.
+
+
+I’ve been working on a personal project building a model that predicts NFL player performance using full career, game-by-game data for any offensive player who logged a snap between 2017–2024. 
+
+I trained the model using data through 2023 with XGBoost Regressor, and then used actual 2024 matchups — including player demographics (age, team, position, depth chart) and opponent defensive stats (Pass YPG, Rush YPG, Points Allowed, etc.) — as inputs to predict game-level performance in 2024.
+
+The model performs really well for some stats (e.g., R² > 0.875 for Completions, Pass Attempts, CMP%, Pass Yards, and Passer Rating), but others — like Touchdowns, Fumbles, or Yards per Target — aren’t as strong.
+
+Here’s where I need input:
+
+-What’s a solid baseline R², RMSE, and MAE to aim for — and does that benchmark shift depending on the industry?
+
+-Could trying other models/a combination of models improve the weaker stats? Should I use different models for different stat categories (e.g., XGBoost for high-R² ones, something else for low-R²)?
+
+-How do you typically decide which model is the best fit? Trial and error? Is there a structured way to choose based on the stat being predicted?
+
+-I used XGBRegressor based on common recommendations — are there variants of XGBoost or alternatives you'd suggest trying? Any others you like better?
+
+-Are these considered “good” model results for sports data?
+
+-Are sports models generally harder to predict than industries like retail, finance, or real estate?
+
+-What should my next step be if I want to make this model more complete and reliable (more accurate) across all stat types?
+
+-How do people generally feel about manually adding in more intangible stats to tweak data and model performance? Example: Adding an injury index/strength multiplier for a Defense that has a lot of injuries, or more player’s coming back from injury, etc.? Is this a generally accepted method or not really utilized?
+
+Any advice, criticism, resources, or just general direction is welcomed.",1,0,ynwFreddyKrueger,2025-04-09 02:27:57,https://www.reddit.com/gallery/1juvakz,0,False,False,False,False
+181,1jugyx7,Cornerstone data,"Hi all,
+
+Has anybody pulled cornerstone training data using their APIs or used anyother method to pull the data?",1,0,arunrajan96,2025-04-08 15:54:25,https://www.reddit.com/r/dataengineering/comments/1jugyx7/cornerstone_data/,0,False,False,False,False
+182,1judm9f,GizmoSQL: Power your Enterprise analytics with Arrow Flight SQL and DuckDB,"Hi! This is Phil - Founder of [GizmoData](https://gizmodata.com). We have a new commercial database engine product called: [GizmoSQL](https://gizmodata.com/gizmosql) \- built with Apache Arrow Flight SQL (for remote connectivity) and DuckDB (or optionally: SQLite) as a back-end execution engine.
+
+This product allows you to run DuckDB or SQLite as a server (remotely) - harnessing the power of computers in the cloud - which typically have more CPUs, more memory, and faster storage (NVMe) than your laptop. In fact, running GizmoSQL on a modern arm64-based VM in Azure, GCP, or AWS allows you to run at terabyte scale - with equivalent (or better) performance - for a fraction of the cost of other popular platforms such as Snowflake, BigQuery, or Databricks SQL.
+
+**GizmoSQL** is self-hosted (for now) - with a possible SaaS offering in the near future. It has these features to differentiate it from ""base"" DuckDB:
+
+* Run DuckDB or SQLite as a server (remote connectivity)
+* Concurrency - allows multiple users to work simultaneously - with independent, ACID-compliant sessions
+* Security
+   * Authentication
+   * TLS for encryption of traffic to/from the database
+* Static executable with Arrow Flight SQL, DuckDB, SQLite, and JWT-CPP built-in. There are no dependencies to install - just a single executable file to run
+* Free for use in development, evaluation, and testing
+* Easily containerized for running in the Cloud - especially in Kubernetes
+* Easy to talk to - with ADBC, JDBC, and ODBC drivers, and now a Websocket proxy server (created by GizmoData) - so it is easy to use with javascript frameworks
+   * Use it with Tableau, PowerBI, Apache Superset dashboards, and more
+* Easy to work with in Python - use ADBC, or the new experimental Ibis back-end - details here: [https://github.com/gizmodata/ibis-gizmosql](https://github.com/gizmodata/ibis-gizmosql)
+
+Because it is powered by DuckDB - GizmoSQL can work with the popular open-source data formats - such as Iceberg, Delta Lake, Parquet, and more.
+
+GizmoSQL performs very well (when running DuckDB as its back-end execution engine) - check out our graph comparing popular SQL engines for TPC-H at scale-factor 1 Terabyte - on the homepage at: [https://gizmodata.com/gizmosql](https://gizmodata.com/gizmosql) \- there you will find it also costs far less than other options.
+
+We would love to get your feedback on the software - it is easy to get started for free in two different ways:
+
+* For a limited time - try GizmoSQL online on our dime - with the SQL Query Navigator - it just requires a quick registration and sign-in to get going - at: [https://app.gizmodata.com](https://app.gizmodata.com) \- where we have a read-only 1TB TPC-H database mounted for you to query in real-time. It is running on an Azure Cobalt 100 VM - with local NVMe SSD's - so it should be quite zippy.
+* Download and self-host GizmoSQL - using our Docker image or executables for Linux and macOS for both x86-64 and arm64 architectures. See our README at: [https://github.com/gizmodata/gizmosql-public](https://github.com/gizmodata/gizmosql-public) for details on how to easily and quickly get started that way
+
+Thank you for taking a look at GizmoSQL. We are excited and are glad to answer any questions you may have!
+
+* **Public facing repo (README):** [https://github.com/gizmodata/gizmosql-public?tab=readme-ov-file](https://github.com/gizmodata/gizmosql-public?tab=readme-ov-file)
+* **HomePage**: [https://gizmodata.com/gizmosql](https://gizmodata.com/gizmosql)
+* **ProductHunt:** [https://www.producthunt.com/posts/gizmosql?embed=true&utm\_source=badge-featured&utm\_medium=badge&utm\_souce=badge-gizmosql](https://www.producthunt.com/posts/gizmosql?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-gizmosql)
+* **Try GizmoSQL online:** [https://app.gizmodata.com](https://app.gizmodata.com)
+* **GizmoSQL in action video:** [https://youtu.be/QSlE6FWlAaM](https://youtu.be/QSlE6FWlAaM)",1,1,Adventurous-Visit161,2025-04-08 13:30:54,https://www.reddit.com/r/dataengineering/comments/1judm9f/gizmosql_power_your_enterprise_analytics_with/,0,False,False,False,False
+183,1jucavs,Is there any tool you use to keep track on the dates you need to reset API keys?,"I currently use teams events where I set a day on my calendar to update keys, but there has to be a better way. How do you guys do it?
+
+Edit: The idea is to renew keys before they expire and there are no errors in the pipelines",1,7,dataguydream,2025-04-08 12:26:25,https://www.reddit.com/r/dataengineering/comments/1jucavs/is_there_any_tool_you_use_to_keep_track_on_the/,0,False,2025-04-08 19:04:12,False,False
+184,1jub08u,How do you group your tables into pipelines?,"I was wondering how do data engineers in different company group their pipelines together ?
+
+Usually tables need to be refreshed at some specific refresh rates. This means that some table upstream might require 1h refresh while downstream table might require daily.
+
+I can see people grouping things by domain and running domain one after each other sequentially, but then this break the concept of having different refresh rate per table or domain. I can see table configure with multiple corn but then I see issues with needing to schedule offset in cron jobs. 
+
+Like most of the domain are very close to each other so when creating them I might be mixing a lot of stuff together which would impact downstream.
+
+What’s your experience in structuring pipeline? Or any good reference I can read ?
+",1,9,Commercial_Dig2401,2025-04-08 11:13:44,https://www.reddit.com/r/dataengineering/comments/1jub08u/how_do_you_group_your_tables_into_pipelines/,0,False,False,False,False
+185,1ju7cmf,What is the best way to reflect data in clickhouse from MySQL other than the MySQL engine?,"Hi everyone, I am working on a project currently where we have a MySQL database. We are using clickhouse as our warehouse. 
+
+What we need to achieve is to reflect the data from MySQL to clickhouse for certain tables. For this, I found a few ways and am looking to get some insights on which method has the most potential and if there are other methods as welp:
+
+1. Use the MySQL engine in clickhouse. 
+
+Pros: No need to store data in clickhouse as it can just proxy it directly from MySQL.
+
+Cons: This however puts extra reads on MySQL and doesn't help us if MySQL ever goes down. 
+
+2. Use signals to send the data to clickhouse whenever there is a change in MySQL.
+
+Pros: We don't have a lot of tables currently so it's the quickest to setup. 
+
+Cons: Extremely inefficient and not scalable. 
+
+3. Use some sort of third party sink to achieve this. I have found this https://github.com/Altinity/clickhouse-sink-connector which seems to do the job but it has way too many open issues and not sure if it is reliable enough. Plus, it complicates our tech stack which we are looking not to do. 
+
+I'm open to any other ideas. We would ideally not want to duplicate this data in clickhouse but if that's the last resort we would go for it. 
+
+Thanks in advance. 
+
+P.S, I am a beginner in data engineering so feel free to correct me if I've used some wrong jargons or if I am seriously deviating from the right path. ",1,9,Danyboi16,2025-04-08 06:49:07,https://www.reddit.com/r/dataengineering/comments/1ju7cmf/what_is_the_best_way_to_reflect_data_in/,0,False,False,False,False
+186,1jun8gx,Designing a database ERP from scratch.,"My goal is to re create something like Oracle's Net-suite, are there any help full resources on how i can go about it. i have previously worked on simple Finance management systems but this one is more complicated. i need sample ERD's books or anything helpfull atp
+
+",0,2,Specific_Bad8942,2025-04-08 20:09:25,https://www.reddit.com/r/dataengineering/comments/1jun8gx/designing_a_database_erp_from_scratch/,0,False,False,False,False
+187,1juj0x6,Beginning Data Scientist in Azure needing some help (iot),"Hi all,
+
+I currently am working on a new structure to save sensor data coming from Azure Iot Hub in Azure to store it into Azure Blob Storage for historical data, and Clickhouse for hot data with TTL (around half year). The sensor data is coming from different entities (e.g building1, boat1, boat2) and should be partioned by entity. The data we’re processing daily is around 300-2 million records per day.
+
+I know Azure Iot Hub is essentially a built-in Azure Hub. I had a few questions since I’ve tried multiple solutions. 
+
+1. Normal message routing to Azure Blob
+Issue: no custom partitioning on file structure (e.g entityid/timestamp_sensor/) it requires you to use the enqueued time. And there is no dead letter queue for fallback
+
+2. IoT hub -> Azure Functions -> Blob Storage & Clickhouse
+Issue: this should work correctly but I have not that much experience in Azure Functions, I tried creating a function with the IoT Hub template but it seems I need to also have an Event Hubs namespace which is not what I want. HTTP trigger is also not what I want. I don’t find any good documentation on it aswell. I know I can maybe use Event Hubs trigger and use the Iot Hub connection string but I didn’t manage to do this yet.
+
+3. IoT hub -> Event Grid 
+Someone suggested using Event Grid, however to my knowledge Event Grid is not used for telemetry data despite there being an option for. Is this beneficial? I don’t really know what the flow would be since you can’t use Event Grid to send data to Clickhouse. You would still need an Azure Functions.
+
+4. IoT Hub -> Event Grid -> Event Hubs -> Azure Functions -> Azure Blob & Clickhouse
+This one seemed the most appealing to me but I don’t know if it’s the smartest, it can get expensive (maybe).
+But the idea here is that we use Event Grid for batching the data and to have a dead letter queue.
+Arrived in Event Hubs we use an Azure Function to send the data to blob storage and clickhouse.
+
+The only problem is I might need some delay to sending to Clickhouse & Blob Storage (around maybe every 15 minutes) to reduce the risks of memory usage in Clickhouse and to reduce costs.
+
+Can someone help me out? Am I forgetting something crucial? I am a graduated data scientist, however I have no in depth experience with Azure.
+
+
+",0,8,PaqS18,2025-04-08 17:18:34,https://www.reddit.com/r/dataengineering/comments/1juj0x6/beginning_data_scientist_in_azure_needing_some/,0,False,2025-04-08 18:22:26,False,False
+188,1juibws,From Data Tyranny to Data Democratization,,0,0,growth_man,2025-04-08 16:50:26,https://moderndata101.substack.com/p/from-data-tyranny-to-data-democratization,0,False,False,False,False
+189,1ju693k,Experienced data engineer looking to expand to devops,"Hey everyone, I've been a working a few years as a data engineer, I'd say I'm very comfortable in python (databricks), sql and git and have mostly worked in Azure. I would like to get comfortable with devops, setting up proper ci/cd, iac etc.
+
+What resources would you recommend?
+
+Where I work we 2 repos set up, an infratsructure repo that I am totally clueless about that is mostly terraform and another repo where we make changes to notebooks and pipelines etc whose structure makes more sense to me.
+
+The whole thing was initially set up by consultants. My goal is really to understand how it was set up, why 2 different repos, how to change the ci/cd pipeline to add testing etc.
+
+Thanks!",0,5,Lamyya,2025-04-08 05:33:41,https://www.reddit.com/r/dataengineering/comments/1ju693k/experienced_data_engineer_looking_to_expand_to/,0,False,False,False,False
+190,1jui1dg,Mirror snowflake to PG,"Hi everyone,
+Once per day, my team needs to mirror a lot of tables from snowflake to postgres. 
+Currently, we are copying data with script written with GO.
+do you familiar with tools, or any idea what is the best way to mirror the tables?",0,6,gal_12345,2025-04-08 16:38:21,https://www.reddit.com/r/dataengineering/comments/1jui1dg/mirror_snowflake_to_pg/,0,False,2025-04-08 17:13:11,False,False
+191,1jukctt,Hot Take: You shouldn't be a data engineer if you've never been a data analyst,"You're better able to understand the needs and goals of what you're actually working towards when you being as an analyst. Not to mention the other skills that you develop whist being an analyst. Understanding downstream requirements helps build DE pipelines carefully keeping in mind the end goals.
+
+What are you thoughts on this?",0,6,_areebpasha,2025-04-08 18:11:04,https://www.reddit.com/r/dataengineering/comments/1jukctt/hot_take_you_shouldnt_be_a_data_engineer_if_youve/,0,False,False,False,False

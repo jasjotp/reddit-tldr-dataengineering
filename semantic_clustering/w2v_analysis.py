@@ -15,13 +15,51 @@ import sys
 from adjustText import adjust_text
 from scipy.spatial import ConvexHull
 import plotly.express as px
+from kneed import KneeLocator
 
+nltk.download('stopwords')
 '''
 This program uses Word2Vec to get similar clusters of words, and measures each cluster's average score.
 '''
 
-nltk.download('stopwords')
+# function to split all of the text of the body into words/tokens
+def preprocess(text):
+    text = str(text).lower()
+    text = re.sub(r"[^a-zA-Z\s]", "", text) # replace all non characters and white spaces with a blank 
+    tokens = text.split()
+    tokens = [word for word in tokens if word not in stop_words and len(word) > 2] # filter out words less than 2 characters and that are in the stop words
+    return tokens
 
+def kmeans_elbow_method(max_k, data, output_file_path):
+    inertia = []
+    k_values = range(2, max_k + 1)
+
+    # find inertia values for each cluster
+    for k in k_values:
+        kmeans = KMeans(n_clusters = k, random_state = 42, max_iter = 1000)
+
+        kmeans.fit_predict(data)
+
+        inertia.append(kmeans.inertia_) # saves the sum of squared distance between the cluster centroid and the data poits in each cluster
+    
+    # use the KneeLocator library to find the optimal k 
+    kn = KneeLocator(k_values, inertia, curve = 'convex', direction = 'decreasing')
+    optimal_k = kn.knee 
+
+    # plot the intertia values to find the optimal k for K Means using the K Means method 
+    plt.figure(figsize = (14, 6))
+    plt.plot(k_values, inertia, marker = 'o', label = 'Inertia')
+    plt.axvline(x = optimal_k, color = 'red', linestyle = '--', label = f'Optimal k = {optimal_k}')
+    plt.title('KMeans Inertia for Different Values of k')
+    plt.xlabel('Numer of Clusters (k)')
+    plt.ylabel('Total WCSS/Error')
+    plt.xticks(k_values)
+    plt.legend()
+    plt.grid(True)
+    plt.savefig(output_file_path)
+
+    return optimal_k
+    
 # add root directory of project to Python's import path so we can import modules from older folders
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -33,13 +71,6 @@ print(combined_df.head())
 
 # preprocess: change all words to lowercase, remove punctuation, and stopwords amd tokenize (split bodies into words/tokens)
 stop_words = set(stopwords.words('english'))
-
-def preprocess(text):
-    text = str(text).lower()
-    text = re.sub(r"[^a-zA-Z\s]", "", text) # replace all non characters and white spaces with a blank 
-    tokens = text.split()
-    tokens = [word for word in tokens if word not in stop_words and len(word) > 2] # filter out words less than 2 characters and that are in the stop words
-    return tokens
 
 # get all preprocessed tokens for each post that are not null 
 combined_df['tokens'] = combined_df['body'].dropna().apply(preprocess)
@@ -80,8 +111,11 @@ vectors = word_vectors[words]
 pca = PCA(n_components=2)
 reduced = pca.fit_transform(vectors)
 
+# use the elbow method to check how many clusters to pick 
+optimal_k = kmeans_elbow_method(20, reduced, 'k_means_interia.png')
+
 # use k-means clustering to get clusters of wrod groups 
-kmeans = KMeans(n_clusters=10, random_state=42)
+kmeans = KMeans(n_clusters=optimal_k, random_state=42)
 labels = kmeans.fit_predict(reduced)
 
 # create a df for each cluster
@@ -220,32 +254,3 @@ plt.figure(figsize = (14, 10))
 sns.heatmap(data = heatmap_df, annot = True, fmt = '.2f', cmap = 'YlGnBu')
 plt.title('Engagement Metrics by Word Cluster')
 plt.savefig('cluster_engagement_metrics.png')
-
-# also make the above heatmap with each cluster and their avg statistics in plotly with tooltips to view each clusters words
-heatmap_df_plotly = heatmap_df.copy()
-
-# set index to cluster and drop keywords for heatmap data
-heatmap_df_plotly['keywords'] = cluster_insights_df.set_index('cluster')['keywords']
-data = heatmap_df_plotly.drop(columns='keywords')
-keywords = heatmap_df_plotly['keywords']
-
-# create the heatmap with plotly with the keywords for each cluster labelled
-fig = px.imshow(
-    data, 
-    labels = dict(x = 'Metric', y = 'Cluster', color = 'Value'),
-    text_auto = True
-)
-
-# inject keywords into the hover using customdata and hovertemplate
-fig.update_traces(
-    customdata = np.array(keywords).reshape(-1, 1),
-    hovertemplate =
-        "Cluster %{y}<br>" +
-        "Metric: %{x}<br>" +
-        "Value: %{z}<br>" +
-        "<b>Keywords:</b> %{customdata[0]}<extra></extra>"
-)
-
-# save the labelled heatmap 
-fig.update_layout(title = "Cluster Engagement Metrics with Keywords Tooltip")
-fig.write_html("cluster_engagement_metrics_plotly.html")
