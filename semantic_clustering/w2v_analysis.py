@@ -9,6 +9,7 @@ from gensim.models import Word2Vec
 from sklearn.cluster import KMeans 
 from sklearn.decomposition import PCA
 from sklearn.feature_extraction.text import TfidfVectorizer
+from transformers import pipeline # for huggingface 
 from nltk.corpus import stopwords 
 import nltk
 import sys 
@@ -30,6 +31,15 @@ def preprocess(text):
     tokens = [word for word in tokens if word not in stop_words and len(word) > 2] # filter out words less than 2 characters and that are in the stop words
     return tokens
 
+# label each engagement level so we can add a new feature to the result set to measure a post by high, mid or low engagement 
+def label_engagement(score):
+    if score > top_30_threshold:
+        return 'High'
+    elif score < bottom_30_threshold:
+        return 'Low'
+    else:
+        return 'Mid'
+    
 def kmeans_elbow_method(max_k, data, output_file_path):
     inertia = []
     k_values = range(2, max_k + 1)
@@ -67,7 +77,20 @@ from eda.eda import get_combined_data
 
 combined_df = get_combined_data()
 
-print(combined_df.head())
+# initialize the huggingface sentiment pipeline to get a 
+sentiment_pipeline = pipeline('sentiment-analysis', model='distilbert-base-uncased-finetuned-sst-2-english')
+
+# truncate the bodies of the posts to fit the models limits 
+combined_df['cleaned_body'] = combined_df['body'].fillna("").apply(lambda x: x[:512]) # 512 token limit for BERT
+
+# run the sentiment analysis in batches, with a batch size of 32 for each batch - returns a dictionary of 'label': and 'score':
+sentiment_results = sentiment_pipeline(combined_df['cleaned_body'].tolist(), truncation = True, batch_size = 32)
+
+print(f'HF Sentiment Results: \n\n {sentiment_results}')
+
+# extract the sentiment label and sentiment score 
+combined_df['sentiment_label'] = [res['label'] for res in sentiment_results]
+combined_df['sentiment_score'] = [res['score'] if res['label'] == 'POSITIVE' else -res['score'] for res in sentiment_results]
 
 # preprocess: change all words to lowercase, remove punctuation, and stopwords amd tokenize (split bodies into words/tokens)
 stop_words = set(stopwords.words('english'))
@@ -83,7 +106,7 @@ tfidf_vectorizer = TfidfVectorizer()
 tfidf_matrix = tfidf_vectorizer.fit_transform(combined_df['processed_body'])
 tfidf_df = pd.DataFrame(tfidf_matrix.toarray(), columns=tfidf_vectorizer.get_feature_names_out())
 
-# swtich the above df to a long formatted df so each row is a word with its tdidf score 
+# switch the above df to a long formatted df so each row is a word with its tdidf score 
 tfidf_df_long = tfidf_df.stack().reset_index()
 tfidf_df_long.columns = ['post_num', 'word', 'tfidf']
 
@@ -139,6 +162,7 @@ top_words = (word_cluster_df
 # visualize the vectors 
 plt.figure(figsize=(14, 8))
 sns.scatterplot(data=top_words, x='x', y='y', hue='cluster', palette='tab10', legend=True)
+plt.savefig("top_10_words_by_cluster.png")
 
 texts = []
 
@@ -170,15 +194,7 @@ cluster_scores = []
 top_30_threshold = combined_df['score'].quantile(0.70)
 bottom_30_threshold = combined_df['score'].quantile(0.30)
 
-# label each engagement level so we can add a new feature to the result set to measure a post by high, mid or low engagement 
-def label_engagement(score):
-    if score > top_30_threshold:
-        return 'High'
-    elif score < bottom_30_threshold:
-        return 'Low'
-    else:
-        return 'Mid'
-
+# get the enagement level of each post 
 combined_df['engagement_level'] = combined_df['score'].apply(label_engagement)
 
 for cluster_id in word_cluster_df['cluster'].unique():
@@ -190,11 +206,12 @@ for cluster_id in word_cluster_df['cluster'].unique():
     # see if the above pattern/any words from the cluster match words in a post and return the matching posts
     matched_posts = combined_df[combined_df['body'].str.contains(pattern, case = False, na = False)]
 
-    # if matched posts are not empty, calculate the avg score and avg num of comments for those posts that contain words that are in the cluster
+    # if matched posts are not empty, calculate the avg statistics for those posts that contain words that are in the cluster
     if not matched_posts.empty:
         avg_score = matched_posts['score'].mean()
         avg_comments = matched_posts['num_comments'].mean()
         avg_word_count = matched_posts['word_count'].mean()
+        avg_sentiment = matched_posts['sentiment_score'].mean()
         avg_char_count = matched_posts['char_count'].mean()
         avg_readability = matched_posts['flesch_reading_ease'].mean()
         avg_sentence_count = matched_posts['sentence_count'].mean()
@@ -216,6 +233,7 @@ for cluster_id in word_cluster_df['cluster'].unique():
             "avg_score": round(avg_score, 1),
             "avg_comments": round(avg_comments, 1),
             "avg_word_count": round(avg_word_count, 1),
+            "avg_sentiment": round(avg_sentiment, 3),
             "avg_char_count": round(avg_char_count, 1),
             "avg_readability": round(avg_readability, 1),
             "avg_sentence_count": round(avg_sentence_count, 1),
@@ -244,8 +262,8 @@ cluster_insights_df.to_csv('../data/output/cluster_engagement_insights.csv')
 # draw a heatmap to get a comparison of each cluster's avg statistics 
 # filter the columns that we want to compare (cluster id, avg score, avg comments, numer of posts in each quantile)
 heatmap_df = cluster_insights_df[['cluster', 'avg_score', 
-                                  'avg_comments', 'avg_word_count', 'avg_char_count', 
-                                  'avg_readability', 'avg_sentence_count', 'avg_syllable_count', 
+                                  'avg_comments', 'avg_word_count', 'avg_sentiment',
+                                  'avg_char_count', 'avg_readability', 'avg_sentence_count', 'avg_syllable_count', 
                                   'avg_smog_index', 'pct_has_url', 'pct_has_code', 
                                   'top_30%_post_count', 'middle_40%_post_count', 'bottom_30%_post_count'
                                   ]].set_index('cluster')

@@ -1891,3 +1891,203 @@ do you familiar with tools, or any idea what is the best way to mirror the table
 191,1jukctt,Hot Take: You shouldn't be a data engineer if you've never been a data analyst,"You're better able to understand the needs and goals of what you're actually working towards when you being as an analyst. Not to mention the other skills that you develop whist being an analyst. Understanding downstream requirements helps build DE pipelines carefully keeping in mind the end goals.
 
 What are you thoughts on this?",0,6,_areebpasha,2025-04-08 18:11:04,https://www.reddit.com/r/dataengineering/comments/1jukctt/hot_take_you_shouldnt_be_a_data_engineer_if_youve/,0,False,False,False,False
+192,1jxb4zd,Understand basics of Snowflake ❄️❄️,"Exciting news, a new blog post about Snowflake architecture. Dive in and explore all the amazing features! 
+
+https://medium.com/@adityasharmah27/understanding-snowflake-architecture-a-beginners-guide-to-cloud-data-warehousing-22a6f4e3a6be?sk=40c0128a3f07d30ba0cd92ab710112ae",21,0,Super_Act_5816,2025-04-12 06:38:55,https://www.reddit.com/r/dataengineering/comments/1jxb4zd/understand_basics_of_snowflake/,0,False,False,False,False
+193,1jxtxqo,How do my fellow on-prem DEs keep their sanity...,"...the joys of memory and compute resources seems to be a neverending suck 😭
+
+We're building ETL pipelines, using Airflow in one K8s namespace and Spark in another (the latter having dedicated hardware). Most data workloads aren't really Spark-worthy as files are typically <20GB, and we keep hitting pain points where processes struggle in Airflow's memory (workers are 6Gi and 6 CPU, with a limit of 10GI; no KEDA or HPA). We are looking into more efficient data structures like DuckDB, Polars, etc or running ""mid-tier"" processes as separate K8s jobs but then we hit constraints like tools/libraries relying on Pandas use so we seem stuck with eager processes.
+
+Case in point, I just learned that our teams are having to split files into smaller files of 125k records so Pydantic schema validation won't fail on memory. I looked into GX Core and see the main source options there again appear to be Pandas or Spark dataframes (yes, I'm going to try DuckDB through SQLAlchemy). I could bite the bullet and just say to go with Spark, but then our pipelines will be using Spark for QA and not for ETL which will be fun to keep clarifying. 
+
+Sisyphus is the patron saint of Data Engineering... just sayin'
+
+[Make it stoooooooooop!](https://preview.redd.it/qwikfhcpihue1.png?width=503&format=png&auto=webp&s=6565d874d8d2213835c172a8ed449b14cff8214a)
+
+(there may be some internal sobbing/laughing whenever I see posts asking ""should I get into DE..."")",15,6,Nightwyrm,2025-04-12 23:08:19,https://www.reddit.com/r/dataengineering/comments/1jxtxqo/how_do_my_fellow_onprem_des_keep_their_sanity/,0,False,False,False,False
+194,1jxasop,Need course advice on building ETL Piplines in Databricks using Python.,Please suggest Courses/YT Channels on building ETL Pipelines in Databricks using Python. I have good knowledge on Pandas and NumPy and also used Databricks for my personal projects but never build ETL Piplines.,13,5,Sweet-Expert-6356,2025-04-12 06:15:15,https://www.reddit.com/r/dataengineering/comments/1jxasop/need_course_advice_on_building_etl_piplines_in/,0,False,False,False,False
+195,1jxun0q,Data Inserts best practices with Iceberg,"I receive various files at different intervals which are not defined. Can be every seconds, hour, daily, etc.
+
+I don’t have any indication also of when something is finished. For example, it’s highly possible to have 100 files that would end up being 100% of my daily table, but I receive them scattered over 15min-30 when the data become available and my ingestion process ingest it. Can be 1 to 12 hours after the day is over.
+
+Not that’s it’s also possible to have 10000 very small files per day.
+
+I’m wondering how is this solves with Iceberg tables. Very newbie Iceberg guy here. Like I don’t see throughput write benchmark anywhere but I figure that rewriting the metadata files must be a big overhead if there’s a very large amount of files so inserting every times there’s a new one must not be the ideal solution.
+
+I’ve read some medium post saying that there was a snapshot feature which track new files so you don’t have to do some fancy things to load them incrementally. But again if every insert is a query that change the metadata files it must be bad at some point.
+
+Do you wait and usually build a process to store a list of files before inserting them or is this a feature build somewhere already in a doc I can’t find ?
+
+Any help would be appreciated.
+
+",9,0,Commercial_Dig2401,2025-04-12 23:44:32,https://www.reddit.com/r/dataengineering/comments/1jxun0q/data_inserts_best_practices_with_iceberg/,1,False,False,False,False
+196,1jxffmp,"Any ETL, Data Quality, Data Governance professionals ?","Hi everyone,
+
+I’m currently working as an IDQ and CDQ developer for a US-based project, with about 2 years of overall experience
+
+I’m really passionate about growing in this space and want to deepen my knowledge, especially in data quality and data governance . 
+
+I’ve recently started reading the DAMA DMBOK2 to build a strong foundation.
+
+I’m here to connect with experienced professionals and like-minded individuals to learn, share insights, and get guidance on how to navigate and grow in this domain.
+
+Any tips, resources, or advice would be truly appreciated. Looking forward to learning from all of you!
+
+Thank you!
+",8,1,Physical_Bad_2945,2025-04-12 11:45:32,https://www.reddit.com/r/dataengineering/comments/1jxffmp/any_etl_data_quality_data_governance_professionals/,0,False,False,False,False
+197,1jxhtte,Non IT background,"After a year of self teaching I managed to secure an internal career move to data engineering from finance 
+
+What I am wondering is long term will my non IT background matter/discount me against other candidates? I have a degree in accountancy and I am a qualified accountant but I am considering doing a masters in data or computing if it will be beneficial longer term
+
+Thanks",7,8,Fancy_Arugula5173,2025-04-12 13:54:29,https://www.reddit.com/r/dataengineering/comments/1jxhtte/non_it_background/,0,False,False,False,False
+198,1jxswyj,Dilemma: SWE vs DE @ Big Tech,"I currently work at a Big Tech and have 3 YoE. My role is a mix of Full-Stack + Data Engineering. 
+
+I want to keep preparing for interviews on the side, and to do that I need to know which role to aim for. 
+
+Pros of SWE:
+- more jobs positions 
+- I have already invested 300 hours into DSA Leetcode. Don’t have to start DE prep from scratch
+-Maybe better quality of work/pay(?)
+
+Pros of DE:
+- targeting a niche has always given me more callbacks
+- if I practice a lot of sql, the interviews at FAANG could be gamed. FAANG do ask DSA but they barely scratch the surface
+
+My thoughts:
+Ideally I want to crack the SWE role at a FAANG as I like both roles equally but SWE pays 20% more. If I don’t get callbacks for SWE, then securing a similar pay through a DE role at FAANG is lucrative too. 
+I’d be completely fine with doing DE, but I feel uneasy wasting the 100s of hours I spent on DSA. 
+
+Applying for both jobs is sub optimal as I can only sink my time into SQL or DSA | system design or data modelling. 
+
+What do you folks suggest? 
+",3,6,marioagario123,2025-04-12 22:17:20,https://www.reddit.com/r/dataengineering/comments/1jxswyj/dilemma_swe_vs_de_big_tech/,0,False,False,False,False
+199,1jxp3m5,Question about HDFS,"The course I'm taking is 10 years old so some information I'm finding is irrelevant, which prompted the following questions from me:
+
+  
+I'm learning about replication factors/rack awareness in HDFS and I'm curious about the current state of the world. How big are replication factors for massive companies today like, let's say, Uber? What about Amazon?
+
+  
+Moreover, do these tech giants even use Hadoop anymore or are they using a modernized version of it in 2025? Thank you for any insights.",3,10,undercoverlife,2025-04-12 19:20:05,https://www.reddit.com/r/dataengineering/comments/1jxp3m5/question_about_hdfs/,0,False,False,False,False
+200,1jxk6l2,Mastering Spark Structured Streaming Integration with Azure Event Hubs,"Are you curious about building real-time streaming pipelines from popular streaming platforms like Azure Event Hubs? In this tutorial, I explain key Event Hubs concepts and demonstrate how to build Spark Structured Streaming pipelines interacting with Event Hubs. Check it out here: [https://youtu.be/wo9vhVBUKXI](https://youtu.be/wo9vhVBUKXI)",2,0,Nice_Substance_6594,2025-04-12 15:43:22,https://www.reddit.com/r/dataengineering/comments/1jxk6l2/mastering_spark_structured_streaming_integration/,0,False,False,False,False
+201,1jxdch4,Which API system for my Postgres DWH?,"Hi everyone,
+
+I am building a data warehouse for my company and because we have to process mostly spatial data I went with a postgres materialization. My stack is currently:
+
+- dlt
+- dbt
+- dagster
+- postgres
+
+Now I have the use case that our developers at our company need some of the data for our software solutions to be integrated. And I would like to provide an API for easy access to the data. 
+
+So I am wondering which solution is best for me. I have some experience in a private project with postgREST and found it pretty cool to directly use DB views and functions as endpoints for the API. But tools like FastAPI might be more mature for a production system. What would you recommend?
+
+
+
+[View Poll](https://www.reddit.com/poll/1jxdch4)",3,0,rick854,2025-04-12 09:20:05,https://www.reddit.com/r/dataengineering/comments/1jxdch4/which_api_system_for_my_postgres_dwh/,0,False,False,False,False
+202,1jxsce8,I'm struggling to evaluate job offer and would appreciate outside opinions,"I've been searching for a new opportunity over the last few years (500+ applications) and have finally received an offer I'm strongly considering. I would really like to hear some outside opinions.
+
+## Current position
+- Analytics Lead
+- $126k base, 10% bonus
+- Tool stack: on-prem SQL Server, SSIS, Power BI, some Python/R
+- Downsides: 
+	- Incoherent/non-existent corporate data strategy
+	- 3 days required in-office (~20-minute commute)
+	- Lack of executive support for data and analytics
+	- Data Scientist and Data Engineer roles have recently been eliminated
+	- No clear path for additional growth or progression 
+	- A significant part of the job involves training/mentoring several inexperienced analysts, which I don't enjoy
+- Upsides: 
+	- Very stable company (no risk of layoffs)
+	- Very good relationship with direct manager
+
+## New offer
+- Senior Data Analyst
+- $130k base, 10% bonus
+- Tool stack: BigQuery, FiveTran, dbt / SQLMesh, Looker Studio, GSheets
+- Downsides:
+	- High-growth company, potentially volatile industry
+- Upsides:
+	- Fully remote
+	- Working alongside experienced data engineers
+
+Other info/significant factors:
+- My current company paid for my MSDS degree, and they are within their right to claw back the entire ~$37k tuition if I leave.  I'm prepared to pay this, but it's a big factor in the decision.
+- At this stage in my career, I'm putting a very high value on growth/development opportunities
+
+Am I crazy to consider a lateral move that involves a significant amount of uncompensated risk, just for a potentially better learning and growth opportunity?",4,21,Dozer11,2025-04-12 21:49:54,https://www.reddit.com/r/dataengineering/comments/1jxsce8/im_struggling_to_evaluate_job_offer_and_would/,0,False,False,False,False
+203,1jxs473,Struggling to resolve tickets - DE Course Recommendations?,"I’m looking for recommendations for a solid online course to learn Data Engineering. Less than a year ago, I started a new role as a BI developer. Most of my work involves creating data models and reports in Power BI using T-SQL and DAX, but lately I’ve been tasked with handling tickets related to reports showing incorrect data on the ETL side.
+
+We use Wherescape for our ETL processes, but I’ve struggled to find good learning material for this tool. There's no formal training and everyone learns on the job. There’s so much to analyze during investigations, especially when reverse-engineering the problem.
+
+I’m a visual learner, so I’d love recommendations for courses with videos and hands-on practice. Any suggestions? Thanks!
+
+Edit: Most posts asking for course recommendations are 1 year older or more. Some links doesn't work anymore or are not found when I look it up. ",2,1,evilsemantics,2025-04-12 21:39:00,https://www.reddit.com/r/dataengineering/comments/1jxs473/struggling_to_resolve_tickets_de_course/,1,False,2025-04-12 23:13:53,False,False
+204,1jxiy3h,Debezium connector Sql server 2016,"I’m trying to get the Debezium SQL Server connector working with a SQL Server 2016 instance, but not having much luck. The official docs mention compatibility with 2017, 2019, and 2022—but nothing about 2016.
+
+Is 2016 just not supported, or has anyone managed to get it working regardless?
+Would love to hear if there are known limitations, workarounds, or specific gotchas for this version.",2,0,hulioshort,2025-04-12 14:47:33,https://www.reddit.com/r/dataengineering/comments/1jxiy3h/debezium_connector_sql_server_2016/,1,False,False,False,False
+205,1jxcryb,Discovering data dependencies / lineage from excel workbooks,Hi r/dataengineering community. Trying to replace excel based reports that connect to databases and have in-built data transformation logic across worksheets. Is there a utility or platform you have used to help decipher and document the data dependencies / data lineage from excel?,2,0,collab_inc,2025-04-12 08:37:34,https://www.reddit.com/r/dataengineering/comments/1jxcryb/discovering_data_dependencies_lineage_from_excel/,0,False,False,False,False
+206,1jxv28g,Help,"I'm using Airbyte Cloud because my PC doesn't have enough resources to install it. I have a Docker container running PostgreSQL on Airbyte Cloud. I want to set the PostgreSQL destination. Can anyone give me some guidance on how to do this? Should I create an SSH tunnel?
+
+",1,1,Imaginary_Pirate_267,2025-04-13 00:06:47,https://www.reddit.com/r/dataengineering/comments/1jxv28g/help/,1,False,False,False,False
+207,1jxtvbu,Thoughts on Acryl vs other metadata platforms,"Hi all, I'm evaluating metadata management solutions for our data platform and would appreciate any thoughts from folks who've actually implemented these tools in production.
+
+We're currently running into scaling issues with our in-house data catalog and I think we need something more robust for governance and lineage tracking.
+
+I've narrowed it down to Acryl (DataHub) and Collate (openmetadata) as the main contenders. I know I should look at Collibra and Alation and maybe Unity Catalog?
+
+For context, we're a mid-sized fintech (\~500 employees) with about 30 data engineers and scientists. We're AWS with Snowflake, Airflow for orchestration, and a growing number of ML models in production.
+
+My question list is: 
+
+1. How these tools handle machine-scale operations 
+2. How painful was it to get set up?
+3. For DataHub and openmetadata specifically - is the open source version viable or is the cloud version necessary?
+4. Any unexpected limitations you've hit with any of these platforms?
+5. Do you feel like these grow with you as we increasingly head into AI governance? 
+6. How well they integrate with existing tools (Snowflake, dbt, Looker, etc.)
+
+If anyone has switched from one solution to another, I'd love to hear why you made the change and whether it was worth it.
+
+Sorry for the pick list of questions - the last post on this was years ago and I was hoping for some more insights. Thanks in advance for anyone's thoughts. ",0,0,arronsky,2025-04-12 23:05:00,https://www.reddit.com/r/dataengineering/comments/1jxtvbu/thoughts_on_acryl_vs_other_metadata_platforms/,0,False,False,False,False
+208,1jxr3uh,How to create changeStreams pipeline to bigquery,"I am building a streaming pipeline in GCP for work that works like this:
+
+Cloud Run Service --> PubSub --> Dataflow --> BigQuery
+
+
+My Cloud Run Service when it starts, it watches a collections with changeStreams and then published all changes into a PubSub topic. Dataflow then streams that messages into BQ.
+
+The service runs in VPC connector where the linked IP is whitelisted in mongodb.
+
+My issue is with my service! It keeps failing die to timeouts when trying to publish to pubsub after a few hours running.
+
+Ive tried batching the publishing, extending the timeout, retries.
+
+
+Any suggestion? Have you done something similar?",0,0,Realistic_Salary_942,2025-04-12 20:51:58,https://www.reddit.com/r/dataengineering/comments/1jxr3uh/how_to_create_changestreams_pipeline_to_bigquery/,0,False,False,False,False
+209,1jxlz1d,"I've been working on a query engine over semi-structured logs (think trino but for JSONs), would like to get feedback / feature ideas","[https://github.com/tontinton/miso](https://github.com/tontinton/miso)
+
+Other than the obvious stuff like:
+
+* Make it faster (benchmarking + improving implementation)
+* Make it spool to disk to handle queries larger than memory
+* Make it distributed to handle queries larger than memory / disk
+* Implement a simple query language frontend for faster onboarding, something like KQL
+
+Currently I only support [quickwit](https://quickwit.io/), and can pretty easily add elasticsearch support, but what other JSON databases would you think are the best fit? Datadog logs? MongoDB? Clickhouse jsons? Snowflake VARIANTs?
+
+What features can a query engine that treats semi-structured data as a first class citizen have, that trino cannot?",0,1,TonTinTon,2025-04-12 17:02:24,https://www.reddit.com/r/dataengineering/comments/1jxlz1d/ive_been_working_on_a_query_engine_over/,0,False,False,False,False
+210,1jxq9r1,Data Engineering Employment,"I'm an Engineer with an MBA. I've spent 5 years at a steelplant and 5 years working in finance for the government.
+
+In the past five years have been building data pipelines in Synapse off D365 data models that I have built with a vendor in SQL/Power BI. I have gained quite a bit of experience in this timeframe, but would actually like more data engineering experience.
+
+Should I try to land a role in the data engineering department where I would get first hand experience in data engineering tools and frameworks or just keep doing what I am doing in Finance and learning as I go.
+
+I make decent money for the city I live in, but I feel like the end to end would definitely help me land other roles in the future that would branch out from just financial reporting and data.
+
+Especially in the capacity for remote work if for some reason company or job gets moved to another city.",0,8,wheels_656,2025-04-12 20:13:03,https://www.reddit.com/r/dataengineering/comments/1jxq9r1/data_engineering_employment/,0,False,2025-04-12 20:30:53,False,False
+211,1jxo6ga,help with a research survey that im doing regarding big data please.,"Hi everyone! I'm conducting a university research survey on commonly used Big Data tools among students and professionals. If you work in data or tech, I’d really appreciate your input — it only takes 3 minutes! Thank you
+
+[https://docs.google.com/forms/d/e/1FAIpQLScXK6CnNUHGR9UIEHUhX83kHoZGYuSunRE0foZgnew81nxxLg/viewform?usp=header](https://docs.google.com/forms/d/e/1FAIpQLScXK6CnNUHGR9UIEHUhX83kHoZGYuSunRE0foZgnew81nxxLg/viewform?usp=header)",0,0,chiki_rukis,2025-04-12 18:39:21,https://www.reddit.com/r/dataengineering/comments/1jxo6ga/help_with_a_research_survey_that_im_doing/,0,False,False,False,False
