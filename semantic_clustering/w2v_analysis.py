@@ -47,7 +47,6 @@ def kmeans_elbow_method(max_k, data, output_file_path):
     # find inertia values for each cluster
     for k in k_values:
         kmeans = KMeans(n_clusters = k, random_state = 42, max_iter = 1000)
-
         kmeans.fit_predict(data)
 
         inertia.append(kmeans.inertia_) # saves the sum of squared distance between the cluster centroid and the data poits in each cluster
@@ -69,7 +68,7 @@ def kmeans_elbow_method(max_k, data, output_file_path):
     plt.savefig(output_file_path)
 
     return optimal_k
-    
+
 # add root directory of project to Python's import path so we can import modules from older folders
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -137,7 +136,7 @@ reduced = pca.fit_transform(vectors)
 # use the elbow method to check how many clusters to pick 
 optimal_k = kmeans_elbow_method(20, reduced, 'k_means_interia.png')
 
-# use k-means clustering to get clusters of wrod groups 
+# use k-means clustering to get clusters of word groups 
 kmeans = KMeans(n_clusters=optimal_k, random_state=42)
 labels = kmeans.fit_predict(reduced)
 
@@ -194,7 +193,7 @@ cluster_scores = []
 top_30_threshold = combined_df['score'].quantile(0.70)
 bottom_30_threshold = combined_df['score'].quantile(0.30)
 
-# get the enagement level of each post 
+# get the engagement level of each post 
 combined_df['engagement_level'] = combined_df['score'].apply(label_engagement)
 
 for cluster_id in word_cluster_df['cluster'].unique():
@@ -229,7 +228,7 @@ for cluster_id in word_cluster_df['cluster'].unique():
         # create the dataframe that has the avg statistics for each cluster
         cluster_scores.append({
             "cluster": cluster_id,
-            "keywords": ", ".join(words_in_cluster[:10]),  # show only the top 10 keywords for readability
+            "keywords": ", ".join(words_in_cluster),  # show all words in cluster
             "avg_score": round(avg_score, 1),
             "avg_comments": round(avg_comments, 1),
             "avg_word_count": round(avg_word_count, 1),
@@ -271,4 +270,77 @@ heatmap_df = cluster_insights_df[['cluster', 'avg_score',
 plt.figure(figsize = (14, 10))
 sns.heatmap(data = heatmap_df, annot = True, fmt = '.2f', cmap = 'YlGnBu')
 plt.title('Engagement Metrics by Word Cluster')
+plt.xticks(rotation = 45) # rotate x acix labels so thet titles are not cut off 
+plt.tight_layout() # precents cutting of labels and title
 plt.savefig('cluster_engagement_metrics.png')
+
+# get each post's avg statistics like the cluster-wise avg statistics above 
+keyword_to_cluster = {} # initialize an empty hashmap that lists all keywords and their cluster they belong to - stores keyword_to_cluster[word] = cluster_id 
+
+# map each word of each post to a cluster
+for _,row in cluster_insights_df.iterrows():
+    for word in str(row['keywords']).split(', '):
+        keyword_to_cluster[word.strip()] = row['cluster']
+
+# function to assign the dominant cluster based on word presense in the body 
+def assign_dominant_cluster(text, keyword_map): 
+    cluster_counts = {}
+    words = str(text).lower().split()
+
+    for word in words:
+        if word in keyword_map:
+            cluster = keyword_map[word] # get the cluster id of the word 
+            cluster_counts[cluster] = cluster_counts.get(cluster, 0) + 1 # get a count of how many times this cluster's words appear in a post 
+
+    if not cluster_counts: # if no matching cluster words are found, return -1 
+        return -1 
+    
+    return max(cluster_counts, key = cluster_counts.get) # return the cluster ID with the max number of keyword matches in the post 
+
+# assign a domiannt cluster to each post 
+combined_df['dominant_cluster'] = combined_df['body'].apply(lambda text: assign_dominant_cluster(text, keyword_to_cluster))
+
+# see the original row count of combined_df before filtering to see if there were any rows removed after the below filter 
+original_row_count = combined_df.shape[0]
+print(f'Original Row Count without Removing Unmatched Posts: {original_row_count}')
+
+# remove any unmatched posts (where dominant_cluster returned - 1)
+combined_df = combined_df[
+                        combined_df['dominant_cluster'] != -1] # remove any unmatched posts
+
+new_row_count = combined_df.shape[0]
+print(f'New Row Count without Removing Unmatched Posts: {new_row_count}')
+
+# recalculate the engagement thresholds only if filtering changed the dataset 
+if new_row_count < original_row_count: # recakculate the row counts if the new row count is less that the orignial row count 
+    top_30_threshold = combined_df["score"].quantile(0.70)
+    bottom_30_threshold = combined_df["score"].quantile(0.30)
+
+    # reassign the engagement level 
+    def label_engagement(score):
+        if score > top_30_threshold:
+            return 'High'
+        elif score < bottom_30_threshold:
+            return 'Low'
+        else:
+            return 'Mid'
+
+    combined_df['engagement_level'] = combined_df['score'].apply(label_engagement)
+
+# merge all the cluster's statistics with each post's statistics using the dominant cluster for each post 
+combined_df = combined_df.merge(
+        cluster_insights_df, 
+        left_on = 'dominant_cluster',
+        right_on = 'cluster',
+        suffixes = ('', '_cluster')
+)
+
+# check the new combined df and all of its columns to see if it was merged correctly 
+print(combined_df.head())
+print(combined_df.columns)
+print(combined_df.info())
+
+# drop all of the columns that are not needed to train the model, like id, url, author, cleaned_body (only used for transformer based NLP), example posts
+combined_df = combined_df.drop(columns = ['id', 'url', 'author', 'cleaned_body'])
+
+combined_df.to_csv('../data/output/post_engagement_insights.csv')
