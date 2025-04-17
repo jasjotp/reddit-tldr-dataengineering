@@ -1,0 +1,338 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1k0mqzh,Data Engineering: Now with 30% More Bullshit,,309,18,luminoumen,2025-04-16 15:08:47,https://luminousmen.com/post/data-engineering-now-with-30-more-bullshit,0,False,False,False,False
+1k0qy7u,Is Kafka a viable way to store lots of streaming data?,"I always heard about Kafka in the context of ingesting streaming data, maybe with some in-transit transformation, to be passed off to applications and storage. 
+
+But, I just watched this video introduction to Kafka, and the speaker talks bout using Kafka to persist and query data indefinitely: [https://www.youtube.com/watch?v=vHbvbwSEYGo](https://www.youtube.com/watch?v=vHbvbwSEYGo)
+
+I'm wondering how viable storage and query of data using Kafka is and how it scales. Does anyone know?",19,20,wcneill,2025-04-16 18:00:02,https://www.reddit.com/r/dataengineering/comments/1k0qy7u/is_kafka_a_viable_way_to_store_lots_of_streaming/,0,False,False,False,False
+1k0lgfr,Refactoring a script taking 17hours to run wit 0 Documentation,"Hey guys, I am a recent graduate working in data engineering. The company has poor processes and also poor documentation, the main task that I will be working on is refactoring and optimizing a script that basically re conciliates assets and customers (logic a bit complex as their supply chain can be made off tens of steps).
+
+The current data is stored in Redshift and it's a mix of transactional and master data. I spent a lot of times going through the script (python script using psycopg2 to orchestrate execute the queries) and one of the things that struck me is that there is no incremental processing, each time the whole tracking of the supply chain gets recomputed.
+
+I have poor guidance from my manager as he never worked on it so I am a bit lost on the methodology side. The tool is huge (hundreds of queries with more than 4000 lines, queries with over 10 joins and all the bad practices that you can think of).
+
+TBH I am starting to get very frustrated, all the suggestions are more than welcomed.",13,13,Ok_Wasabi5687,2025-04-16 14:14:14,https://www.reddit.com/r/dataengineering/comments/1k0lgfr/refactoring_a_script_taking_17hours_to_run_wit_0/,0,False,2025-04-16 15:03:22,False,False
+1k0t6ua,Switching batch jobs to streaming,"Hi folks. My company is trying to switch some batch jobs to streaming. The current method is that the data are streaming data through Kafka, then there's a Spark streaming job that consumes the data and appends them to a raw table (with schema defined, so not 100% raw). Then we have some scheduled batch jobs (also Spark) that read data from the raw table, transform the data, load them into destination tables, and show them in the dashboards. We use Databricks for storage (Unity catalog) and compute (Spark), but use something else for dashboards.
+
+Now we are trying to switch these scheduled batch jobs into streaming, since the incoming data are already streaming anyway, why not make use of it and turn our dashboards into realtime. It makes sense from business perspective too.
+
+However, we've been facing some difficulty in rewriting the transformation jobs from batch to streaming. Turns out, Spark streaming doesn't support some imporant operations in batch. Here are a few that I've found so far:
+
+1. Spark streaming doesn't support window function (e.g. : ROW\_NUMBER() OVER (...)). Our batch transformations have a lot of these.
+2. Joining streaming dataframes is more complicated, as you have to deal with windows and watermarks (I guess this is important for dealing with unbounded data). So it breaks many joining logic in the batch jobs.
+3. Aggregations are also more complicated. For example you can't do this: raw\_df -> get aggregated df from raw\_df -> join aggregated\_df with raw\_df
+
+So far I have been working around these limitations by using Foreachbatch and using intermediary tables (Databricks delta table). However, I'm starting to question this approach, as the pipelines get more complicated. Another method would be refactoring the entire transformation queries to conform both the business logic and streaming limitations, which is probably not feasible in our scenario.
+
+Have any of you encountered such scenario and how did you deal with it? Or maybe do you have some suggestions or ideas? Thanks in advance.",7,3,SnooAdvice7613,2025-04-16 19:31:32,https://www.reddit.com/r/dataengineering/comments/1k0t6ua/switching_batch_jobs_to_streaming/,0,False,False,False,False
+1k0mgmh,"Whats the simplest/fastest way to bulk import 100s of CSVs each into their OWN table in SSMS? (Using SSIS, command prompt, or possibly python)","Example: I want to import 100 CSVs into 100 SSMS tables (that are not pre-created). The datatypes can be varchar for all (unless it could autoassign some).
+
+I'd like to just point the process to a folder with the CSVs and read that into a specific database + schema. Then the table name just becomes the name of the file (all lower case).
+
+What's the simplest solution here? I'm positive it can be done in either SSIS or Python. But my C skill for SSIS are lacking (maybe I can avoid a C script?). In python, I had something kind of working, but it takes way too long (10+ hours for a csv thats like 1gb).
+
+Appreciate any help!",7,22,WorkyMcWorkFace36,2025-04-16 14:56:55,https://www.reddit.com/r/dataengineering/comments/1k0mgmh/whats_the_simplestfastest_way_to_bulk_import_100s/,0,False,False,False,False
+1k0n177,migrating from No-Code middleware platform to another more fundamental tech stack,"Hey everyone, 
+
+we are a company that relies heavy on a so called no-code middleware that combines many different aspects of typical data engineering stuff into one big platform. However we have found ourselves (finally) in the situation that we need to migrate to a lets say more fundamental tech stack that relies more on knowledge about programming, databases and sql. I wanted to ask if someone has been in the same situation and what their experiences have been. Our only option right now is to migrate for business reasons and it will happen, the only question is what we are going to use and how we will use it. 
+
+**Background:**  
+We use this platform as our main ""engine"" or tool to map various business proccess. The platform includes creation and management of various kinds of ""connectors"" including Http, as2, mail, x400 and whatnot. You can then create profiles that can get fetch and transform data based on what comes in by one of the connectors and load the data directly into your database, create files or do whatever the business logic requires. The platform provides a comprehensive amount of logging and administration. In my honest opinion, that is quite a lot that this tool can offer. Does anyone know any kind of other tool that can do the same? I heard about Apache Airflow or Apache Nifi but only on the surface. 
+
+The same platform we are using right now has another software solution for building database entities on top of its own database structure to create ""input masks"" for users to create, change or read data and also apply business logic. We use this tool to provide whole platforms and even ""build"" basic websites. 
+
+What would be the best tech stack to migrate to if your goal was to cover all of the above? I mean there probably is not an all in one solution but that is not what we are looking for right now. If you said to me that for example apache nifi in combination with python would be enough to cover everything our middleware provided would be more than enough for me.  
+  
+What is essential for us is also a good logging capability. We need to make sure that whatever data flows are happening or have happended is comprehensible in case of errors or questions. 
+
+For input masks and simple web platforms we are currently using C# Blazor and have multiple projects that are working very well, which we could also migrate to. ",4,3,Comfortable_Onion318,2025-04-16 15:20:42,https://www.reddit.com/r/dataengineering/comments/1k0n177/migrating_from_nocode_middleware_platform_to/,0,False,False,False,False
+1k0m71j,Part II: Lessons learned operating massive ClickHuose clusters,"Part I was super popular, so I figured I'd share Part II: [https://www.tinybird.co/blog-posts/what-i-learned-operating-clickhouse-part-ii](https://www.tinybird.co/blog-posts/what-i-learned-operating-clickhouse-part-ii)",3,0,itty-bitty-birdy-tb,2025-04-16 14:45:54,https://www.reddit.com/r/dataengineering/comments/1k0m71j/part_ii_lessons_learned_operating_massive/,0,False,False,False,False
+1k0rxxi,Criticism at work because my lack of understanding business requirements is coinciding with quick turnaround times,"Hi,
+
+I'm looking for sincere advice.
+
+I'm basically a data/analytics engineer. My tasks generally are like this
+
+1. put configurations so that the source dataset can ingest and preprocess into aws s3 in correct file format. I've noticed sometimes filepath names randomly change without warning which would cause configs to change so I would have to be cognizant of that. 
+
+2. the s3 output is then put into a mapping tool (which in my experience is super slow and frequently annoying to use) we have to map source -> our schema
+
+3. once you update things in the mapping tool, it SHOULD export automatically to S3 and show in production environment after refresh, which is usually. However, keyword should. There are times where my data didn't show up and it turned out I have to 'manually export' a file to S3 without being made aware beforehand which files require manual export and which ones occur automatically through our pipeline
+
+4. I then usually have to develop a SQL view that combines data from various sources for different purposes
+
+The issues I'm facing lately....
+
+A colleague left end of last year and I've noticed that my workload has dramatically changed. I've been given tasks that I can only assume were once hers from another colleague. The thing is the tasks I'm given:
+
+1. Have zero documentation. I have no clue what the task is meant to accomplish
+
+2. I have very vague understanding of the source data 
+
+3. Just go off of an either previously completed script, which sometimes suffers from major issues (too many subqueries, thousands of lines of code). Try to realistically manage how/if to refactor vs. using same code and 'coming back to it later' if I have time constraints. After using similar code, randomly realize the requirements of old script changed b/c my data doesn't populate in which I have to ask my boss what the issue 
+
+4. Me and my boss have to navigate various excel sheets and communication to play 'guess work' as to what the requirements are so we can get something out 
+
+5. Review them with the colleague who assigned it to me who points out things are wrong OR randomly changes the requirements that causes me to make more changes and then expresses frustration 'this is unacceptable', 'this is getting delayed', 'I am getting frustrated' continuously that is making me uncomfortable in asking questions.
+
+I do not directly interact with the stakeholders. The colleague I just mentioned is the person who does and translates requirements back. I really, honestly have no clue what is going through the stakeholders mind or how they intend to use the product. All I frequently hear is that 'they are not happy', 'I am frustrated', 'this is too slow'. I am expected to get things out within few hours to 1-2 business days. This doesn't give me enough time to ensure if I made many mistakes in the process. I will take accountability that I have made some mistakes in this process by fixing things then not checking and ensuring things are as expected that caused further delays. Overall, I am under constant pressure to churn things out ASAP and I'm struggling to keep up and feel like many mistakes are a result of the pressure to do things fast.
+
+I have told my boss and colleague in detail (even wrote it up) that it would be helpful for me to: 1. just have 1-2 sentences as to what this project is trying to accomplish 2. better documentation.  People have agreed with me but they have not really done much b/c everybody is too busy to document since once one project is done, I'm pulled into the next. I personally am observing a technical debt problem here, but I am new to my job and new to data engineering (was previously in a different analytics role) so I am trying to figure out if this is a me issue and where I can take accountability or this speaks to broader issues with my team and I should consider another job. I am honestly thinking about starting the job search again in a few months, but I am quite discouraged with my current experience and starting to notice signs of burnout.",5,1,thro0away12,2025-04-16 18:40:02,https://www.reddit.com/r/dataengineering/comments/1k0rxxi/criticism_at_work_because_my_lack_of/,0,False,False,False,False
+1k0ogu0,How Universities Are Using Data Warehousing to Meet Compliance and Funding Demands,"Higher ed institutions are under pressure to improve reporting, optimize funding efforts, and centralize siloed systems — but most are still working with outdated or disconnected data infrastructure.
+
+This blog breaks down how a modern data warehouse helps universities:
+
+* Streamline compliance reporting
+* Support grant/funding visibility
+* Improve decision-making across departments
+
+It’s a solid resource for anyone working in edtech, institutional research, or data architecture in education.
+
+🔗 Read it here:  
+[Data Warehousing for Universities: Compliance & Funding](https://data-sleek.com/blog/data-warehousing-for-universities-meeting-compliance-funding-challenges/) 
+
+I would love to hear from others working in higher education. What platforms or approaches are you using to integrate your data?",4,1,Data-Sleek,2025-04-16 16:20:34,https://www.reddit.com/r/dataengineering/comments/1k0ogu0/how_universities_are_using_data_warehousing_to/,0,False,False,False,False
+1k0b99g,Issue with Data Model with Querying Dynamics 365 via ADF,"Hi, I have been having a bit of trouble with ADF and Dynamics 365 and Dynamics CRM. I want to make make fetchxml query that has a consistent data model. From using this example below with or without the filter, the number of columns changed drastically. I've also noticed that if I change the timestamp the number of columns change. Can anyone help me with this problem?
+
+
+
+```xml
+<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""false"">
+<entity name=""agents"">
+<all-attributes />
+<filter type=""and"">
+<condition attribute=""modifiedon"" operator=""on-or-after"" value=""2025-04-10T10:14:32Z"" />
+</filter>
+</entity>
+</fetch>
+```",3,1,112523chen_,2025-04-16 03:47:23,https://www.reddit.com/r/dataengineering/comments/1k0b99g/issue_with_data_model_with_querying_dynamics_365/,1,False,False,False,False
+1k0yejp,Obtaining accurate and valuable datasets for Uni project related to social media analytics.,"Hi everyone,
+
+I’m currently working on my final project titled **“The Evolution of Social Media Engagement: Trends Before, During, and After the COVID-19 Pandemic.”**
+
+I’m specifically looking for **free datasets** that align with this topic, but I’ve been having trouble finding ones that are accessible without high costs — especially as a full-time college student. Ideally, I need to be able to **download the data as CSV files** so I can import them into **Tableau** for visualizations and analysis.
+
+Here are a few research questions I’m focusing on:
+
+1. How did engagement levels on major social media platforms change between the early and later stages of the pandemic?
+2. What patterns in user engagement (e.g., time of day or week) can be observed during peak COVID-19 months?
+3. Did social media engagement decline as vaccines became widely available and lockdowns began to ease?
+
+I’ve already found a couple of datasets on **Kaggle** (linked below), and I may use some information from **gs.statcounter**, though that data seems a bit too broad for my needs.
+
+If anyone knows of any other relevant **free data sources**, or has suggestions on where I could look, I’d really appreciate it!
+
+[Kaggle dataset 1 ](https://www.kaggle.com/datasets/michau96/social-media-popularity-2009-2023?resource=download&select=social_media_3.csv)
+
+[Kaggle Dataset 2](https://www.kaggle.com/datasets/arunavakrchakraborty/covid19-twitter-dataset)",2,4,Poolcrazy,2025-04-16 23:16:11,https://www.reddit.com/r/dataengineering/comments/1k0yejp/obtaining_accurate_and_valuable_datasets_for_uni/,0,False,False,False,False
+1k0sg0i,Very high level Data Services tool,"Hi all! I've been getting a lot of great feedback and usage from data service teams for my tool [mightymerge.io](http://mightymerge.io) (you may have come across it before).
+
+Sharing here with you who might find it useful or know of others who might.
+
+The basics of the tool are...
+
+Quickly merging and splitting of very large csv type files from the web. Great at managing files with unorganized headers and of varying file types. Can merge and split all in one process. Creates header templates with transforming columns. 
+
+Let me know what you think or have any cool ideas. Thanks all!",1,1,jampoole,2025-04-16 19:00:40,https://www.reddit.com/r/dataengineering/comments/1k0sg0i/very_high_level_data_services_tool/,0,False,False,False,False
+1k0q0nx,How do I process PDFs while retaining the semantic info? (Newbie),"So I am working on a project where I have to analyze Financial transactions and interpret the nature of transaction (Goods/Service/Contract/etc), I'm using OCR to extract text from Image based PDFs, but the problem is, the extracted data doesn't make a lot of sense. but using non-OCR PDF to text just results in an empty string, so I have to use the OCR method using pytesseract.
+
+Please, can someone tell me what's the correct way of doing this, how do I make the extracted data readable or usable? Any tips or suggestions would be helpful, thanks :)",2,0,God_of_Finances,2025-04-16 17:22:44,https://www.reddit.com/r/dataengineering/comments/1k0q0nx/how_do_i_process_pdfs_while_retaining_the/,0,False,False,False,False
+1k0or4e,Did anyone manage to create Debezium server iceberg sink with GCS?,"Hello everyone,
+
+Our infra setup for CDC looks like this:
+
+MySQL > Debezium connectors > Kafka > Sink (built in house > BigQuery 
+
+Recently I came across Debezium server iceberg:  [https://github.com/memiiso/debezium-server-iceberg/tree/master](https://github.com/memiiso/debezium-server-iceberg/tree/master), and it looks promising as it cuts the Kafka part and it ingests the data directly to Iceberg. 
+
+My problem is to use Iceberg in GCS. I know that there is the BigLake metastore that can be used, which i tested with BigQuery and it works fine. The issue I'm facing is to properly configure the BigLake metastore in my application.properties. 
+
+In Iceberg [documentation](https://iceberg.apache.org/docs/nightly/kafka-connect/#google-gcs-configuration-example) they are showing something like this:
+
+    ""iceberg.catalog.type"": ""rest"",
+    ""iceberg.catalog.uri"": ""https://catalog:8181"",
+    ""iceberg.catalog.warehouse"": ""gs://bucket-name/warehouse"",
+    ""iceberg.catalog.io-impl"": ""org.apache.iceberg.google.gcs.GCSFileIO""
+
+But I'm not sure if BigLake has exposed REST APIs? I tried to use the REST point that i used for creating the catalog 
+
+    https://biglake.googleapis.com/v1/projects/sproject/locations/mylocation/catalogs/mycatalog
+
+But it seems not working. Has anyone succeeded in implementing a similar setup? ",2,0,BerMADE,2025-04-16 16:32:20,https://www.reddit.com/r/dataengineering/comments/1k0or4e/did_anyone_manage_to_create_debezium_server/,0,False,False,False,False
+1k0i7pz,Best practice for unified cloud cost attribution (Databricks + Azure)?,"Hi! I’m working on a FinOps initiative to improve cloud cost visibility and attribution across departments and projects in our data platform. We do tagging production workflows on department level and can get a decent view in Azure Cost Analysis by filtering on tags like department: X. But I am struggling to bring Databricks into that picture — especially when it comes to SQL Serverless Warehouses.
+
+My goal is to be able to print out: total project cost = azure stuff + sql serverless.
+
+**Questions**:
+
+**1. Tagging Databricks SQL Warehouses for Attribution**
+
+Is creating a separate SQL Warehouse per department/project the only way to track department/project usage or is there any other way? 
+
+
+
+**2. Joining Azure + Databricks Costs**
+
+Is there a clean way to join usage data from Azure Cost Analysis with Databricks billing data (e.g., from system.billing.usage)?
+
+I'd love to get a unified view of total cost per department or project — Azure Cost has most of it, but not SQL serverless warehouse usage or Vector Search or Model Serving. 
+
+
+
+**3. Sharing Cost** 
+
+For those of you doing this well — how do you present project-level cost data to stakeholders like departments or customers?",2,0,Timely_Promotion5073,2025-04-16 11:36:33,https://www.reddit.com/r/dataengineering/comments/1k0i7pz/best_practice_for_unified_cloud_cost_attribution/,0,False,False,False,False
+1k0al6k,3rd Party Api call to push data - Azure,"I need to push data to a 3rd Party system by using their Api for various use cases. The processing logic is quite complicated and I found prefer to construct the json payload, push the data per user , get response and do further processing using python. My org uses Synapse Analytics and since its 3rd Party need to use self hosted integration runtime. That limits my option to use a combination of notebook and web activity since notebook does not run on self hosted IR making the process unnecessarily complicated. What are my options, if someone has similar usecase how do you handle the same?",2,0,idreamoffood101,2025-04-16 03:10:23,https://www.reddit.com/r/dataengineering/comments/1k0al6k/3rd_party_api_call_to_push_data_azure/,0,False,False,False,False
+1k103i8,How do you track LLM billing across multiple platforms? Looking for team management solutions,"Hi everyone,
+
+I'm part of a team that's increasingly using multiple LLM platforms (OpenAI, Anthropic, Cohere, etc.) across different departments and projects. As our usage grows, we're struggling to effectively track and manage billing across these services.
+
+**Current challenges:**
+
+* Fragmented spending across multiple provider accounts
+* Difficulty attributing costs to specific teams/projects
+* No centralized dashboard for monitoring total LLM expenditure
+* Inconsistent billing cycles between providers
+* Unexpected cost spikes that are hard to trace back to specific usage
+
+**I'd love to hear from others:**
+
+1. What tools or systems do you use to track LLM spending across platforms?
+2. How do you handle cost allocation to departments/projects?
+3. Are there any third-party solutions you'd recommend for unified billing management?
+4. What reporting and alerting systems work best for monitoring usage?
+5. Any best practices for forecasting future LLM costs as usage scales?
+
+We're trying to avoid building something completely custom if good solutions already exist. Any insights from those who've solved this problem would be incredibly helpful!",1,0,Frozen-Insightful-22,2025-04-17 00:39:48,https://www.reddit.com/r/dataengineering/comments/1k103i8/how_do_you_track_llm_billing_across_multiple/,0,False,False,False,False
+1k0ztio,error handling with sql constraints?,"i am building a pipeline that writes data to a sql table (in azure). currently, the pipeline cleans the data in python, and it uses the pandas to_sql() method to write to sql.
+
+i wanted to enforce constraints on the sql table, but im struggling with error handling.
+
+for example, suppose column X has a value of -1, but there is a sql table constraint requiring X > 0. when the pipelines tries to write to sql, it throws a generic error msg that doesn’t specify the problematic column(s).
+
+is there a way to get detailed error msgs?
+
+or, more generally, is there a better way to go about enforcing data validity?
+
+thanks all! :)
+
+",1,0,BigCountry1227,2025-04-17 00:25:53,https://www.reddit.com/r/dataengineering/comments/1k0ztio/error_handling_with_sql_constraints/,0,False,False,False,False
+1k0y1uj,Scraped Shopify GraphQL docs with code examples using a Postgres-compatible database,"We scraped the Shopify GraphQL docs with code examples using our Postgres-compatible database. Here's the link to the repo:
+
+[https://github.com/lsd-so/Shopify-GraphQL-Spec](https://github.com/lsd-so/Shopify-GraphQL-Spec)",1,0,yevbar,2025-04-16 23:00:06,https://www.reddit.com/r/dataengineering/comments/1k0y1uj/scraped_shopify_graphql_docs_with_code_examples/,0,False,False,False,False
+1k0vm9t,Best solution for creating list of user-id,"Hi data specialist,
+
+with colleagues we are debating what would be the best solution to create list of users-id giving simple criterions.
+
+let's take an example of line we have
+
+    ID,GROUP,NUM
+    01,group1,0.2
+    02,group1,0.4
+    03,group2,0.5
+    04,group1,0.6
+    
+
+let say we only want the subset of user id that are part of the group1 and that have NUM > 0.3 ; it will give us 02 and 04.
+
+We have currently theses list in S3 parquet (partionned by GROUP, NUM or other dimensionq). We want results in plain CSV files in S3. We have really a lot of it (multi billions of rows). Other constraints are we want to create theses sublist every hours (giving the fact that source are constantly changing) so relatively fast, also we have multiple ""select"" criterions and finally want to keep cost under control.
+
+Currently we fill a big AWS Redshift cluster where we load our inputs from the datalake and make big select to output lists. It worked but clearly show its limits. Adding more dimension will definitely kill it. 
+
+I was thinking this not a good fit as Redshift is a column oriented analytic DB. Personally I would advocate for using spark (with EMR) to directly <filter and produce S3 files. Some are arguing that we could use another Database. Ok but which? (I don't really get the why)
+
+your take?",1,3,ut0mt8,2025-04-16 21:12:36,https://www.reddit.com/r/dataengineering/comments/1k0vm9t/best_solution_for_creating_list_of_userid/,0,False,False,False,False
+1k0umkv,ISO Advice: I want to create an app/software for specific data pipeline. Where should I start?,"Hello! I have a very good understanding of Google Sheets and Excel but for the workflow I want to create, I think I need to consider learning Big Query or something else similar. 
+
+  
+The main challenge I foresee is due to the columnar design (5k-7k columns) and I would really really like to be able to keep this. I have made versions of this using the traditional row design but I very quickly got to 10,000+ rows and the filter functions were too time consuming to apply consistently. 
+
+  
+What do you think is the best way for me to make progress? Should I basically go back to school and learn Big Query, SQL and data engineering? Or, is there another way you might recommend? 
+
+  
+Thanks so much!",0,16,big-old-bitch,2025-04-16 20:31:06,https://www.reddit.com/gallery/1k0umkv,0,False,False,False,False
+1k0ukfy,Your Teams Development Approach,"Currently I am wondering how other teams do their development and especially testing their pipelines.
+
+I am the sole data engineer at a medical research institute. We do everything on premise, mostly in windows world. Due to me being self taught and having no other engineers to learn from I keep implementing things the same way:
+
+Step 1: Get some source data and do some exploration
+
+Step 2: Design a pipeline and a model that is the foundation for the README file
+
+Step 3: Write the main ETL script and apply some defensive programming principles
+
+Step 4: Run the script on my sample data which would have two outcomes:
+
+1. Everything went well? Okay, add more data and try again!
+
+2. Something breaks? See if it is a data quality or logic error, add some nice error handling and run again!
+
+At some point the script will run on all the currently known source data and can be released. Over the course of the process I will add logging, some DQ checks on the DB and add alerting for breaking errors. I try to keep my README up to date with my thought process and how the pipeline works and push it to our self hosted Gitea.
+
+I tried tinkering around with pytest and added some unit tests for complicated deserialization or source data that requires external knowledge. But when I tried setting up integration testing and end to end testing it always felt like so much work. Trying to keep my test environments up to date while also delivering new solutions seems to always end up with me cutting corners on testing. 
+
+At this point I suspect that there might be some way to make this whole testing setup more reproducable and less manual. I really want to be able to onboard new people, if we ever hire, and not let them face an untestable mess of legacy code.
+
+Any input is highly appreciated!
+
+ ",1,2,SchwulibertSchnoesel,2025-04-16 20:28:36,https://www.reddit.com/r/dataengineering/comments/1k0ukfy/your_teams_development_approach/,0,False,False,False,False
+1k0miny,AI for data anomaly detection?,"In my company we are looking to incorporate an AI tool that could identify errors in data automatically. Do you have any recommendations? I was looking into Azure’s Anomaly Detector but it looks like it will be discontinued next year. If you have any good recommendations I’d appreciate it, thanks",1,2,Psychological_Pie194,2025-04-16 14:59:21,https://www.reddit.com/r/dataengineering/comments/1k0miny/ai_for_data_anomaly_detection/,0,False,False,False,False
+1k0kjbu,GCP Professional Data Engineer,"Hey guys,
+
+I would like to hear your thoughts or suggestions on something I’m struggling with. I’m currently preparing for the Google Cloud Data Engineer certification, and I’ve been going through the official study materials on Google Cloud SkillBoost. Unfortunately, I’ve found the experience really disappointing.
+
+The ""Data Engineer Learning Path"" feels overly basic and repetitive, especially if you already have some experience in the field. Up to Unit 6, they at least provide PDFs, which I could skim through. But starting from Unit 7, the content switches almost entirely to videos — and they’re long, slow-paced, and not very engaging. Worse still, they don’t go deep enough into the topics to give me confidence for the exam.
+
+When I compare this to other prep resources — like books that include sample exams — the SkillBoost material falls short in covering the level of detail and complexity needed.  
+
+
+How did you prepare effectively? Did you use other resources you’d recommend?
+
+
+
+",1,7,mark_seb,2025-04-16 13:33:12,https://www.reddit.com/r/dataengineering/comments/1k0kjbu/gcp_professional_data_engineer/,0,False,False,False,False
+1k109oo,"SSD controller issue, any hope? :(",If you know anything about this topic please kindly reach out to me as I am struggling with this issue ,0,0,Initial_Birthday_540,2025-04-17 00:48:22,https://www.reddit.com/r/dataengineering/comments/1k109oo/ssd_controller_issue_any_hope/,0,False,False,False,False
+1k103mu,Machine Learning Engineer looking to transition into Data Engineering. What things should I be learning and focusing on?,"Hello all. I'm currently a ML engineer looking to become a data engineer. More specifically, I'm not just looking to be a SQL monkey, but a data engineer who is designing, building, and maintaining scalable, and reliable data infrastructure and platform, building out data lakes, etc. If I'm interested in these types of roles, what should I be learning? I use AWS at work, so I know things like DynamoDB and RDS are quite important. 
+
+I already know SQL and Python, but how do I go about learning DataOps and the infra to support data warehouse/datalakes?",0,7,Illustrious-Pound266,2025-04-17 00:40:00,https://www.reddit.com/r/dataengineering/comments/1k103mu/machine_learning_engineer_looking_to_transition/,0,False,False,False,False
+1k0tn5s,Types of DE's,"I want a DE position where I can actually grow my technical chops instead of working on dashboards all day.  
+
+  
+Do positions like these exists?
+
+|Role #|High‑signal job‑title keywords|Must‑have skill keywords|
+|:-|:-|:-|
+|**1 — Real‑Time Streaming Platform Engineer**|`Streaming Data EngineerReal‑Time Data EngineerKafka/Flink EngineerSenior Data Engineer – StreamingEvent Streaming Platform Engineer`,  ,  ,  ,  |Kafka, Flink, ksqlDB, Exactly‑once, JVM tuning, Schema Registry, Prometheus/OpenTelemetry, Kubernetes/EKS, Terraform, CEP, Low‑latency|
+|**2 — Lakehouse Performance & Cost‑Optimization Engineer**|`Lakehouse Data EngineerBig Data Performance EngineerData Engineer – Iceberg/DeltaSenior Data Engineer – Lakehouse OptimizationCloud Analytics Engineer`,  ,  ,  ,  |Apache Iceberg, Delta Lake, Spark Structured Streaming, Parquet, AWS S3/EMR, Glue Catalog, Trino/Presto, Data‑skipping, Cost Explorer/FinOps, Airflow, dbt|
+|**3 — Distributed NoSQL & OLTP‑Optimization Engineer**|`NoSQL Data EngineerScyllaDB/Cassandra EngineerOLTP Performance EngineerSenior Data Engineer – NoSQLDistributed Systems Data Engineer`,  ,  ,  ,  |ScyllaDB/Cassandra, Hotspot tuning, NoSQLBench, Go or Java, gRPC, Debezium CDC, Kafka, P99 latency, Prometheus/Grafana, Kubernetes, Multi‑region replication|",0,2,RazzmatazzClear6544,2025-04-16 19:50:32,https://www.reddit.com/r/dataengineering/comments/1k0tn5s/types_of_des/,0,False,False,False,False
+1k0jkfv,Data Mapping,"We have created an AI model and algorithms that enable us to map an organisations data landscape. This is because we found all data catalogs fell short of context to be able to enable purpose-based governance.
+
+Effectively, it enables us to map and validate all data purposes, processing activities, business processes, data uses, data users, systems and service providers automatically without stakeholder workshops - but we are struggling with the last hurdle. 
+
+We are attempting to use the data context to infer (with help from scans of core environments) data fields, document types, business logic, calculations and metrics. We want to create an anchor ""data asset"". 
+
+The difficulty we are having is how do we define the data assets. We need that anchor definition to enable cross-functional utility, so it can't be linked to just one concept (ie purpose, use, process, rights). This is because the idea is that:
+- lawyers can use it for data rights and privacy
+- technology can use it for AI, data engineering and cyber security 
+- commercial can use it for data value, opportunities, decision making and strategy 
+- operations can use it for efficiency and automation
+
+
+We are thinking we need a ""master definition"" that clusters related fields / key words / documents and metrics to uses, processes etc. and then links that to context, but how do we create the names of the clusters! 
+
+Everything we try falls flat, semantic, contextual, etc. All the data catalogs we have tested don't seem to help us actually define the data assets - it assumes you have done this! 
+
+Can anyone tell me how they have done this at thier organisation? Or how you approached defining the data assets you have? 
+
+",0,1,Spare_City8795,2025-04-16 12:47:52,https://www.reddit.com/r/dataengineering/comments/1k0jkfv/data_mapping/,0,False,False,False,False
+1k10dyp,This may be a weird question but do school like mental breakdowns stop when entering the career field?,"Had a mental
+Breakdown the other day from a lot of things on my plate, school, wife, turnover on rentals and midterm exams all at the same time vying for my attention. I just could not take it anymore and broke down. 
+
+Assuming a complete vacume. Do the mental breakdowns stop once in the field or is it more of a you just get used to it type of thing?",0,34,Parking_Anteater943,2025-04-17 00:54:18,https://www.reddit.com/r/dataengineering/comments/1k10dyp/this_may_be_a_weird_question_but_do_school_like/,0,True,False,False,False
+1k0dp5c,Vibe Coding in Data Engineering — Microsoft Fabric Test,"Recently, I came across ""Vibe Coding"". The idea is cool, you need to use only LLM integrated with IDE like Cursor for software development. I decided to do the same but in the data engineering area. In the link you can find a description of my tests in MS Fabric. 
+
+I'm wondering about your experiences and advices how to use LLM to support our work.
+
+  
+My Medium post: [https://medium.com/@mariusz\_kujawski/vibe-coding-in-data-engineering-microsoft-fabric-test-76e8d32db74f](https://medium.com/@mariusz_kujawski/vibe-coding-in-data-engineering-microsoft-fabric-test-76e8d32db74f)",0,13,4DataMK,2025-04-16 06:22:06,https://medium.com/@mariusz_kujawski/vibe-coding-in-data-engineering-microsoft-fabric-test-76e8d32db74f,0,False,False,False,False

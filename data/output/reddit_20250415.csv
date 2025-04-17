@@ -1,0 +1,207 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1jyrrh6,Data Quality Struggles!,,434,8,growth_man,2025-04-14 05:52:12,https://i.redd.it/w8r7q3zyoque1.png,0,False,False,False,False
+1jz0yr9,"[video] What is Iceberg, and why is everyone talking about it?",,71,5,rmoff,2025-04-14 14:59:30,https://www.youtube.com/watch?v=TsmhRZElPvM,0,False,False,False,False
+1jysxtk,Why Data Warehouses Were Created?,"The original data chaos actually started *before* spreadsheets were common. In the pre-ERP days, most business systems were siloed—HR, finance, sales, you name it—all running on their own. To report on anything meaningful, you had to extract data from each system, often manually. These extracts were pulled at different times, using different rules, and then stitched togethe. The result? Data quality issues. And to make matters worse, people were running these reports directly against transactional databases—systems that were supposed to be optimized for speed and reliability, not analytics. The reporting load bogged them down.
+
+The problem was so painful for the businesses, so around the late 1980s, a few forward-thinking folks—most famously Bill Inmon—proposed a better way: a data warehouse.
+
+To make matter even worse, in the late ’00s every department had its own spreadsheet empire. Finance had one version of “the truth,” Sales had another, and Marketing were inventing their own metrics. People would walk into meetings with totally different numbers for the same KPI.
+
+The spreadsheet party had turned into a data chaos rave. There was no lineage, no source of truth—just lots of tab-switching and passive-aggressive email threads. It wasn’t just annoying—it was a risk. Businesses were making big calls on bad data. So data warehousing became common practice!
+
+More about it: [https://www.corgineering.com/blog/How-Data-Warehouses-Were-Created](https://www.corgineering.com/blog/How-Data-Warehouses-Were-Created)
+
+  
+P.S. Thanks to u/rotr0102 I made the post at least 2x times better",37,14,LinasData,2025-04-14 07:15:27,https://www.reddit.com/r/dataengineering/comments/1jysxtk/why_data_warehouses_were_created/,0,False,2025-04-14 19:01:58,False,False
+1jyu3r8,Overclocking dbt: Discord's Custom Solution in Processing Petabytes of Data,,34,8,rmoff,2025-04-14 08:43:47,https://discord.com/blog/overclocking-dbt-discords-custom-solution-in-processing-petabytes-of-data,0,False,False,False,False
+1jyqtrc,Roles when career shifting out of data engineering?,"To be specific, non-code heavy work. I think I’m one of the few data engineers who hates coding and developing. All our projects and clients so far have always asked us to use ADB in developing notebooks for ETL use, and I have never touched ADF -_-
+
+Now I’m sick of it, developing ETL stuff using pyspark or sparksql is too stressful for me and I have 0 interest in data engineering right now. 
+
+Anyone who has successfully left the DE field? What non-code role did you choose? I’d appreciate any suggestions especially for jobs that make use of some of the less-coding side of Data Engineering.
+
+I see lots of people going for software eng because they love coding and some go ML or Data Scientist. Maybe i just want less tech-y work right now but yeah open to any suggestions. I’m also fine with sql, as long as it’s not to be used for developing sht lol",15,21,Specific_Onion2659,2025-04-14 04:50:00,https://www.reddit.com/r/dataengineering/comments/1jyqtrc/roles_when_career_shifting_out_of_data_engineering/,0,False,False,False,False
+1jzb3at,What database did they use?,"ChatGPT can now remember all conversations you've had across all chat sessions. Google Gemini, I think, also implemented a similar feature about two months ago with *Personalization*—which provides help based on your search history.  
+
+I’d like to hear from database engineers, database administrators, and other CS/IT professionals (as well as actual humans): What kind of database do you think they use? Relational, non-relational, vector, graph, data warehouse, data lake?  
+
+*P.S. I know I could just do deep research on ChatGPT, Gemini, and Grok—but I want to hear from Redditors.",13,3,Fast_Hovercraft_7380,2025-04-14 21:51:54,https://www.reddit.com/r/dataengineering/comments/1jzb3at/what_database_did_they_use/,0,False,False,False,False
+1jyve41,Event Sourcing as a creative tool for developers,"Hey, I think there are better use cases for event sourcing.  
+  
+Event sourcing is an architecture where you capture every change in your system as an immutable event, rather than just storing the latest state. Instead of only knowing what your data looks like now, you keep a full history of how it got there. In a simple crud app that would mean that every deleted, updated, and created entry is stored in your event source, that way when you replay your events you can recreate the state that the application was in at any given time.
+
+Most developers see event sourcing as a kind of technical safety net: - Recovering from failures - Rebuilding corrupted read models - Auditability
+
+Surviving schema changes without too much pain
+
+And fair enough, replaying your event stream often feels like a stressful situation. Something broke, you need to fix it, and you’re crossing your fingers hoping everything rebuilds cleanly.
+
+What if replaying your event history wasn’t just for emergencies? What if it was a normal, everyday part of building your system?
+
+Instead of treating replay as a recovery mechanism, you treat it as a development tool — something you use to evolve your data models, improve your logic, and shape new views of your data over time. More excitingly, it means you can derive entirely new schemas from your event history whenever your needs change.
+
+Your database stops being the single source of truth and instead becomes what it was always meant to be: a fast, convenient cache for your data, not the place where all your logic and assumptions are locked in.
+
+With a full event history, you’re free to experiment with new read models, adapt your data structures without fear, and shape your data exactly to fit new purposes — like enriching fields, backfilling values, or building dedicated models for AI consumption. Replay becomes not about fixing what broke, but about continuously improving what you’ve built.
+
+And this has big implications — especially when it comes to AI and MCP Servers.
+
+Most application databases aren’t built for natural language querying or AI-powered insights. Their schemas are designed for transactions, not for understanding. Data is spread across normalized tables, with relationships and assumptions baked deeply into the structure.
+
+But when you treat your event history as the source of truth, you can replay your events into purpose-built read models, specifically structured for AI consumption.
+
+Need flat, denormalized tables for efficient semantic search? Done. Want to create a user-centric view with pre-joined context for better prompts? Easy. You’re no longer limited by your application’s schema — you shape your data to fit exactly how your AI needs to consume it.
+
+And here’s where it gets really interesting: AI itself can help you explore your data history and discover what’s valuable.
+
+Instead of guessing which fields to include, you can use AI to interrogate your raw events, spot gaps, surface patterns, and guide you in designing smarter read models. It’s a feedback loop: your AI doesn’t just query your data — it helps you shape it.
+
+So instead of forcing your AI to wrestle with your transactional tables, you give it clean, dedicated models optimized for discovery, reasoning, and insight.
+
+And the best part? You can keep iterating. As your AI use cases evolve, you simply adjust your flows and replay your events to reshape your models — no migrations, no backfills, no re-engineering.",14,11,No-Exam2934,2025-04-14 10:15:58,https://www.reddit.com/r/dataengineering/comments/1jyve41/event_sourcing_as_a_creative_tool_for_developers/,0,False,False,False,False
+1jyxdlb,ETL for Ingesting S3 files and converting to Iceberg,"So, I'm currently working on a project (my first) to create a scalable data platform for a company. The whole thing structured around AWS, initially using DMS to migrate PostgreSQL data to S3 in parquet format (this is our raw datalake). Then using Glue jobs to read this data and create Iceberg tables which would be used in Athena queries and Quicksight. I've got a working Glue script for reading this data and perform upsert operations. Okay so now that I've given a bit of context of what I'm trying to do, let me tell you my problem.  
+The client wants me to schedule this job to run every 15min or so for staging and most probably every hour for production. The data in the raw datalake is partitioned by date (for example: s3bucket/table\_name/2025/04/10/file.parquet). Now that I have to run this job every 15 min or so I'm not sure how to keep track of the files that have been processed and which haven't. Currently my script finds the current time and modifies the read command to use just the folder for the current date. But still, this means that I'll be reading all the files in the folder (processed already or not) every time the job runs during the day.   
+I've looked around and found that using DynamoDB for keeping track of the files would be my best option but also found something related to Iceberg metadata files that could help me with this. I'm leaning towards the Iceberg option as I wanna make use of all its features but have too little information regarding this to implement. would absolutely appreciate it if someone could help me out with this.  
+Has anyone worked with Iceberg in this matter? and if the iceberg solution isn't usable, could someone help me out with how to implement the DynamoDB way.",10,7,morpheas788,2025-04-14 12:15:20,https://www.reddit.com/r/dataengineering/comments/1jyxdlb/etl_for_ingesting_s3_files_and_converting_to/,0,False,False,False,False
+1jytkai,Need Advice on solution - Mapping Inconsistent Country Names to Standardized Values,"Hi Folks,
+
+In my current project, we are ingesting a wide variety of external public datasets. One common issue we’re facing is that the **country names in these datasets are not standardized**. For example, we may encounter entries like **""Burma"" instead of ""Myanmar""**, or **""Islamic Republic of Iran"" instead of ""Iran""**.
+
+My initial approach was to extract all unique country name variations and map them to a list of standard country names using logic such as CASE WHEN conditions or basic string-matching techniques.
+
+However, my manager has suggested we leverage **AI/LLM-based models** to automate the mapping of these country names to a standardized list to handle new query points as well. 
+
+I have a couple of concerns and would appreciate your thoughts:
+
+1. **Is using AI/LLMs a suitable approach for this problem?**
+2. **Can LLMs be fully reliable in these mappings, or is there a risk of incorrect matches?**
+3. I was considering implementing a **feedback pipeline** that highlights any newly encountered or unmapped country names during data ingestion so we can review and incorporate logic to handle them in the code over time. Would this be a better or complementary solution?
+4. Please suggest if there is some better approach.
+
+Looking forward to your insights!",8,9,RC-05,2025-04-14 08:02:29,https://www.reddit.com/r/dataengineering/comments/1jytkai/need_advice_on_solution_mapping_inconsistent/,0,False,False,False,False
+1jz0yme,Has anyone used Cube.js for operational (non-BI) use cases?,"The semantic layer in Cube looks super useful — defining metrics, dimensions, and joins in one place is a dream. But most use cases I’ve seen are focused on BI dashboards and analytics.
+
+I’m wondering if anyone here has used Cube for more *operational* or *app-level* read scenarios — like powering parts of an internal tool, or building a unified read API across microservices (via Cube's GraphQL support). All read-only, but not just charts — more like structured data fetching.
+
+Any war stories, performance considerations, or architectural tips? Curious if it holds up well when the use case isn't classic OLAP.
+
+Thanks!",7,0,uri3001,2025-04-14 14:59:21,https://www.reddit.com/r/dataengineering/comments/1jz0yme/has_anyone_used_cubejs_for_operational_nonbi_use/,0,False,False,False,False
+1jz0zet,How do I document existing Pipelines?,There is lot of pipelines working in our Azure Data Factory. There is json files available for those. I am new in the team and there not very well details about those pipelines. And my boss wants me to create something which will describe how pipelines working. And looking for how do i Document those so for future anyone new in our team can understand what have done. ,3,7,UnluckyToday4275,2025-04-14 15:00:15,https://www.reddit.com/r/dataengineering/comments/1jz0zet/how_do_i_document_existing_pipelines/,0,False,False,False,False
+1jytgrh,Advice on data warehouse design for ERP Integration with Power BI,"Hi everyone!
+
+I’d like to ask for your advice on designing a relational data warehouse fed from our ERP system. We plan to use Power BI as our reporting tool, and all departments in the company will rely on it for analytics.
+
+The challenge is that teams from different departments expect **the data to be fully related and ready** to use when building dashboards, minimizing the need for additional modeling. We’re struggling to determine the best approach to meet these expectations.
+
+What would you recommend?
+
+Should all dimensions and facts be pre-related in the data warehouse, even if it adds complexity?
+
+Creating separate data models in Power BI for different departments/use cases?
+
+Handling all relationships in the data warehouse and exposing them via curated datasets?
+
+Should we empower Power BI users to create their own data models, or enforce strict governance with documented relationships?
+
+Thanks in advance for your insights! ",5,2,Able-Tomatillo-5122,2025-04-14 07:55:22,https://www.reddit.com/r/dataengineering/comments/1jytgrh/advice_on_data_warehouse_design_for_erp/,1,False,False,False,False
+1jz6bu9,Databricks Pain Points?,"Hi everyone,
+
+My team is working on some tooling to build some user friendly ways to do things in Databricks. Our initial focus is around entity resolution, creating a simple tool that can evaluate the data in unity catalog and deduplicate tables, create identity graphs, etc.
+
+I'm trying to get some insights from people who use Databricks day-to-day to figure out what other kinds of capabilities we'd want this thing to have if we want users to try it out. 
+
+Some examples I have gotten from other venues so far:
+
+* Cost optimization
+* Annotating or using advanced features of Unity Catalog can't be done from the UI and users would like being able to do it without having to write a bunch of SQL
+* Figuring out which libraries to use in notebooks for a specific use case
+
+This is just an open call for input here. If you use Databricks all the time, what kind of stuff annoys you about it or is confusing?
+
+For the record, this tool are building will be open source and this isn't an ad. The eventual tool will be free to use, I am just looking for broader input into how to make it as useful as possible.
+
+Thanks!",2,3,caleb-amperity,2025-04-14 18:37:22,https://www.reddit.com/r/dataengineering/comments/1jz6bu9/databricks_pain_points/,0,False,False,False,False
+1jz9af1,How do managed services work with vendors like ClickHouse?,"  
+**Context:**  
+New to data engineering. New to the cloud too. I am in charge of doing trade studies on various storage solutions for my new company. I'm gathering requirements for the system, then pricing out options that meet those requirements. At the end of all my research, I have to present my trade studies so leadership can decide how to spend their cash.  
+
+**Question:**  
+I am seeing a lot of companies that do ""managed services"" that are not native to a cloud provider like AWS. For example, I see that ClickHouse offers managed services that piggy back off of AWS or other cloud providers. 
+
+Do they have an AWS account that they provision with their software on ec2 instances (or something), and then they give you access to it? Or do they act as consultants who come in and install ClickHouse on your own AWS account? 
+
+
+
+
+
+
+
+",2,13,wcneill,2025-04-14 20:34:56,https://www.reddit.com/r/dataengineering/comments/1jz9af1/how_do_managed_services_work_with_vendors_like/,0,False,False,False,False
+1jz5r9v,"If you've been curious about what a feature store is and if you actually need one, this post might help","I've worked as both a data and ML engineer and feature stores tend to be an interesting subject. I think they're often misunderstood and quite frankly, not needed for many companies. I wanted to write the blog post to solidify my thoughts and thought it might be helpful for others here.",2,0,fithrowaway379,2025-04-14 18:14:31,https://www.daimlengineering.com/p/feature-stores-demistified,0,False,False,False,False
+1jz0clz,Databricks geographic coding on the cheap?,"We're migrating a bunch of geography data from local SQL Server to Azure Databricks.  Locally, we use ArcGIS to match latitude/longitude to city,state locations, and pay a fixed cost for the subscription.  We're looking for a way to do the same work on Databricks, but are having a tough time finding a cost effective ""all-you-can-eat"" way to do it.  We can't just install ArcGIS there to use or current sub.
+
+Any ideas how to best do this geocoding work on Databricks, without breaking the bank?",2,1,stonetelescope,2025-04-14 14:33:42,https://www.reddit.com/r/dataengineering/comments/1jz0clz/databricks_geographic_coding_on_the_cheap/,0,False,False,False,False
+1jyu16h,dbt sqlmesh migration,Has anyone migrated their dbt cloud to sqlmesh? If so what tools did you use? How many models? How much time did take? Biggest pain points?,2,3,do-a-cte-roll,2025-04-14 08:38:03,https://www.reddit.com/r/dataengineering/comments/1jyu16h/dbt_sqlmesh_migration/,0,False,False,False,False
+1jyrzz3,Help with possible skill expansion or clarification on current role,"So after about 25 years of experience in what was considered DBA, I am now unemployed due to the federal job cuts and it seems DBA just isn't a role anymore. I am currently working on getting a cloud certification but the rest of my skills seem to be mixed and I am hoping someone has a more specific role I would fit into. I am also hoping to expand my skills into some newer technology but I have no clue where to even start. 
+
+Current skills are:
+
+Expert level SQL
+
+Some knowledge of Azure and AWS
+
+Python, PowerShell, GIT, .NET, C#, Idera, Vcentre, Oracle, BI, and ETL with some other minor things mixed in. 
+
+Where should I go from here? What role could this be considered? What other skills could I gain some knowledge on?",2,1,RevolutionaryMonk190,2025-04-14 06:08:14,https://www.reddit.com/r/dataengineering/comments/1jyrzz3/help_with_possible_skill_expansion_or/,0,False,False,False,False
+1jzalqz,MySQL CDC for ClickHouse,,1,0,saipeerdb,2025-04-14 21:30:07,https://clickhouse.com/blog/mysql-cdc-connector-clickpipes-private-preview,1,False,False,False,False
+1jz3m2a,Files to be processed in sequence on S3 bucket.,"What is the best possible solution to process the files in an S3 bucket in a sequential order. 
+
+Use case is that an external systems generates CSV files and dump them on to S3 buckets. These CSV files consists of data from few  Oracle tables. These files needs to be processed in a sequential order in order to maintain the referential integrity of the data while loading into the Postgres RDS. If the files are not processed in an order, the load errors out with the reference data doesn't exist. What is a best solution to process the files on a S3 bucket in an order? ",1,3,Awsmason,2025-04-14 16:47:37,https://www.reddit.com/r/dataengineering/comments/1jz3m2a/files_to_be_processed_in_sequence_on_s3_bucket/,0,False,False,False,False
+1jz4fsw,NoSQL Database for Ticketing System,"We're working on a uni project where we need to design the database for an Ticketing system that will support around 7,000 users. Under normal circumstances, I'd definitely go with a relational database. But we're *required* to use multiple **NoSQL** databases instead. Any suggestions for NoSQL Databases?",0,4,StrongFault814,2025-04-14 17:21:23,https://www.reddit.com/r/dataengineering/comments/1jz4fsw/nosql_database_for_ticketing_system/,0,False,False,False,False
+1jz3810,Any success story from Microsoft Feature Stores?,"The idea is great: build once and use everywhere. But for MS Feature Store, it requires a single flat file as source for any given feature set. 
+
+That means if I need multiple data sources, I need write code to connect to the various data sources, merge them, flatten them into a single file -- all of them done outside of Feature Stores.
+
+For me, it creates inefficiency as the raw flattened file is created solely for the purpose of transformation within feature store. 
+
+Plus when there is a mismatch in granularity or non-overlapping domain, I have to create different flattened files for different feature sets. That seems to be more hassles than whatever merit it may bring.
+
+  
+I would love to hear from your success stories before I put in more effort. 
+
+",0,1,Kindly-Principle3706,2025-04-14 16:31:25,https://www.reddit.com/r/dataengineering/comments/1jz3810/any_success_story_from_microsoft_feature_stores/,0,False,False,False,False
+1jz026m,Recommendations for a new grad,"Hello all, I am looking for some advice on the reason of data engineering/data science (yes I know they are different). I will be graduating in May with a degree in Physics. During my time in school, I have spent considerable time doing independent study for Python, MATLAB, Java, and SQL. Due to financial constraints I am not able to pay for a certification course for these languages but I have taken free exams to get some sort of certificate that says I know what I'm talking about. I have grown to not really want to work in a lab setting, but rather a role working with numbers and data points in the abstract. So I'm looking for a role in analyzing data or creating infrastructure for data management. Do you all have any advice for a new head trying to break into the industry? Anything would be greatly appreciated.",0,6,CCrite,2025-04-14 14:21:26,https://www.reddit.com/r/dataengineering/comments/1jz026m/recommendations_for_a_new_grad/,0,False,2025-04-14 14:31:31,False,False
+1jyx7at,How do you improve Data Quality?,I always get different answer from different people on this.,0,17,Foreigner_Zulmi,2025-04-14 12:05:56,https://www.reddit.com/r/dataengineering/comments/1jyx7at/how_do_you_improve_data_quality/,0,False,False,False,False
+1jyvyxh,Fact Tables: The Backbone of Your Data Warehouse,"Check out the new blog about Fact Tables   
+[https://medium.com/@adityasharmah27/fact-tables-the-backbone-of-your-data-warehouse-9a3014cc20c3](https://medium.com/@adityasharmah27/fact-tables-the-backbone-of-your-data-warehouse-9a3014cc20c3)",0,0,adityasharmah,2025-04-14 10:54:13,https://medium.com/@adityasharmah27/fact-tables-the-backbone-of-your-data-warehouse-9a3014cc20c3,0,False,False,False,False
+1jyv7r9,Khatabook (YC S18) replaced Mixpanel and cut its analytics cost by 90%,"Khatabook, a leading Indian fintech company (YC 18), replaced Mixpanel with Mitzu and Segment with RudderStack to manage its massive scale of over 4 billion monthly events, achieving a 90% reduction in both data ingestion and analytics costs. By adopting a warehouse-native architecture centered on Snowflake, Khatabook enabled real-time, self-service analytics across teams while maintaining 100% data accuracy.",0,1,Still-Butterfly-3669,2025-04-14 10:03:50,https://i.redd.it/v8x1gtjvxrue1.jpeg,0,False,False,False,False
+1jyv9wq,One of the best Fivetran alternative,"If you're urgently looking for a Fivetran alternative, this might help
+
+Been seeing a lot of people here caught off guard by the new Fivetran pricing. If you're in eCommerce and relying on platforms like Shopify, Amazon, TikTok, or Walmart, the shift to MAR-based billing makes things really hard to predict and for a lot of teams, hard to justify.
+
+If you’re in that boat and actively looking for alternatives, this might be helpful.
+
+**Daton**, built by Saras Analytics, is an ETL tool specifically created for eCommerce. That focus has made a big difference for a lot of teams we’ve worked with recently who needed something that aligns better with how eComm brands operate and grow.
+
+Here are a few reasons teams are choosing it when moving off Fivetran:
+
+**Flat, predictable pricing**  
+There’s no MAR billing. You’re not getting charged more just because your campaigns performed well or your syncs ran more often. Pricing is clear and stable, which helps a lot for brands trying to manage budgets while scaling.
+
+**Retail-first coverage**  
+Daton supports all the platforms most eComm teams rely on. Amazon, Walmart, Shopify, TikTok, Klaviyo and more are covered with production-grade connectors and logic that understands how retail data actually works.
+
+**Built-in reporting**  
+Along with pipelines, Daton includes Pulse, a reporting layer with dashboards and pre-modeled metrics like CAC, LTV, ROAS, and SKU performance. This means you can skip the BI setup phase and get straight to insights.
+
+**Custom connectors without custom pricing**  
+If you use a platform that’s not already integrated, the team will build it for you. No surprise fees. They also take care of API updates so your pipelines keep running without extra effort.
+
+**Support that’s actually helpful**  
+You’re not stuck waiting in a ticket queue. Teams get hands-on onboarding and responsive support, which is a big deal when you’re trying to migrate pipelines quickly and with minimal friction.
+
+Most eComm brands start with a stack of tools. Shopify for the storefront, a few ad platforms, email, CRM, and so on. Over time, that stack evolves. You might switch CRMs, change ad platforms, or add new tools. But Shopify stays. It grows with you. Daton is designed with the same mindset. You shouldn't have to rethink your data infrastructure every time your business changes. It’s built to scale with your brand.
+
+If you're currently evaluating options or trying to avoid a painful renewal, Daton might be worth looking into. I work with the Saras team and happy to help , here's the link if you want to checkout [https://www.sarasanalytics.com/saras-daton](https://www.sarasanalytics.com/saras-daton)
+
+Hope this helps !",0,7,Temporary_You5983,2025-04-14 10:07:58,https://www.reddit.com/r/dataengineering/comments/1jyv9wq/one_of_the_best_fivetran_alternative/,0,False,False,False,False

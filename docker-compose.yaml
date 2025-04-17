@@ -16,6 +16,7 @@ x-airflow-common:
     - ./plugins:/opt/airflow/plugins
     - ./tests:/opt/airflow/tests
     - ./utils:/opt/airflow/utils
+    - ./graphs:/opt/airflow/graphs
    # - ./airflow.cfg:/opt/airflow/airflow.cfg
     - ./requirements.txt:/opt/airflow/requirements.txt
   depends_on:
@@ -49,11 +50,20 @@ services:
     command: webserver
     ports:
       - "8080:8080"
+    depends_on:
+      - airflow-init
+    restart: always
 
   airflow-scheduler:
     <<: *airflow-common
     command: scheduler
+    depends_on:
+      - airflow-init
+    restart: always
 
   airflow-worker:
     <<: *airflow-common
     command: celery worker
+    depends_on:
+      - airflow-init
+    restart: always

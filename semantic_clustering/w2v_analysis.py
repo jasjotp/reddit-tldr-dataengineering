@@ -72,7 +72,7 @@ def kmeans_elbow_method(max_k, data, output_file_path):
 # add root directory of project to Python's import path so we can import modules from older folders
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from eda.eda import get_combined_data
+from pipelines.get_combined_data import get_combined_data
 
 combined_df = get_combined_data()
 

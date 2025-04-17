@@ -1,0 +1,433 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1jztqf6,US job search 2025 results,"Currently Senior DE at medium size global e-commerce tech company, looking for new job. Prepped for like 2 months Jan and Feb, and then started applying and interviewing. Here are the numbers:
+
+Total apps: 107. 6 companies reached out for at least a phone screen. 5.6% conversion ratio.
+
+The 6 companies where the following:
+
+|Company|Role|Interviews|
+|:-|:-|:-|
+|Meta|Data Engineer|HR and then LC tech screening. Rejected after screening|
+|Amazon|Data Engineer 1|Take home tech screening then LC type tech screening. Rejected after second screening|
+|Root|Senior Data Engineer|HR then HM. Got rejected after HM|
+|Kin|Senior Data Engineer|Only HR, got rejected after.|
+|Clipboard Health|Data Engineer|Online take home screening, fairly easy but got rejected after.|
+|Disney Streaming|Senior Data Engineer|Passed HR and HM interviews. Declined technical screening loop.|
+
+At the end of the day, my current company offered me a good package to stay as well as a team change to a more architecture type role. Considering my current role salary is decent and fully remote, declined Disneys loop since I was going to be making the same while having to move to work on site in a HCOL city.
+
+PS. Im a US Citizen.",68,19,rudboi12,2025-04-15 14:47:13,https://www.reddit.com/r/dataengineering/comments/1jztqf6/us_job_search_2025_results/,0,False,False,False,False
+1jzpar1,Shoutout to everyone building complete lineage on unstructured data!,,41,5,Embarrassed_Spend976,2025-04-15 11:18:43,https://i.redd.it/rz42pqk2gzue1.png,0,False,False,False,False
+1jzx8lx,Greenfield: Do you go DWH or DL/DLH?,"If you're building a data platform from scratch today, do you start with a DWH on RDBMS? Or Data Lake[House] on object storage with something like Iceberg?
+
+I'm assuming the near dominance of Oracle/DB2/SQL Server of > ~10 years ago has shifted? And Postgres has entered the mix as a serious option? But are people building data lakes/lakehouses from the outset, or only once they breach the size of what a DWH can reliably/cost-effectively do?",28,69,rmoff,2025-04-15 17:07:52,https://www.reddit.com/r/dataengineering/comments/1jzx8lx/greenfield_do_you_go_dwh_or_dldlh/,0,False,False,False,False
+1jzq748,"Faster Data Pipelines with MCP, Cursor and DuckDB",,21,3,TransportationOk2403,2025-04-15 12:06:59,https://motherduck.com/blog/faster-data-pipelines-with-mcp-duckdb-ai/,0,False,False,False,False
+1jzptxc,The Universal Data Orchestrator: The Heartbeat of Data Engineering,,6,0,sspaeti,2025-04-15 11:48:10,https://www.ssp.sh/blog/universal-data-orchestrator/,0,False,False,False,False
+1jzo8q2,Address & Name matching technique,"Context: 
+I have a dataset of company owned products like: Name: Company A, Address: 5th avenue, Product: A. 
+Company A inc, Address: New york, Product B. 
+Company A inc. , Address, 5th avenue New York, product C. 
+
+I have 400 million entries like these. As you can see, addresses and names are in inconsistent formats. 
+I have another dataset that will be me ground truth for companies. It has a clean name for the company along with it’s parsed address. 
+
+The objective is to match the records from the table with inconsistent formats to the ground truth, so that each product is linked to a clean company. 
+
+
+
+Questions and help: 
+- i was thinking to use google geocoding api to parse the addresses and get geocoding. Then use the geocoding to perform distance search between my my addresses and ground truth BUT i don’t have the geocoding in the ground truth dataset. So, i would like to find another method to match parsed addresses without using geocoding. 
+
+- Ideally, i would like to be able to input my parsed address and the name (maybe along with some other features like industry of activity) and get returned the top matching candidates from the ground truth dataset with a score between 0 and 1. Which approach would you suggest that fits big size datasets? 
+
+- The method should be able to handle cases were one of my addresses could be: company A, address: Washington (meaning an approximate address that is just a city for example, sometimes the country is not even specified). I will receive several parsed addresses from this candidate as Washington is vague. What is the best practice in such cases? As the google api won’t return a single result, what can i do?
+
+- My addresses are from all around the world, do you know if google api can handle the whole world? Would a language model be better at parsing for some regions? 
+
+Help would be very much appreciated, thank you guys. 
+",7,11,Bojack-Cowboy,2025-04-15 10:13:54,https://www.reddit.com/r/dataengineering/comments/1jzo8q2/address_name_matching_technique/,0,False,False,False,False
+1jzi6u4,Dataverse vs. Azure SQL DB,"Thank you everyone with all of your helpful insights from my initial post! Just as the title states, I'm an intern looking to weigh the pros and cons of using Dataverse vs an Azure SQL Database (After many back and forths with IT, we've landed at these two options that were approved by our company). 
+
+Our team plans to use Microsoft Power Apps to collect data and are now trying to figure out where to store the data. Upon talking with my supervisor, they plan to have data exported from this database to use for data analysis in SAS or RStudio, in addition to the Microsoft Power App.
+
+What would be the better or ideal solution for this? Thank you!
+Edit: Also, they want to store images as well. Any ideas on how and where to store them?",5,4,JPBOB1431,2025-04-15 03:35:41,https://www.reddit.com/r/dataengineering/comments/1jzi6u4/dataverse_vs_azure_sql_db/,0,False,2025-04-15 04:44:35,False,False
+1jzgdob,How has Business Intelligence Analytics changed the way you make decisions at work?,"I’ve been diving deep into how companies use Business Intelligence Analytics to not just track KPIs but actually transform how they operate day to day. It’s crazy how powerful real-time dashboards and predictive models have become. imagine optimizing customer experiences before they even ask for it or spotting a supply chain delay before it even happens. Curious to hear how others are using BI analytics in your field Have tools like tableau, Power BI, or even simple CRM dashboards helped your team make better decisions or is it all still gut feeling and spreadsheets?  P.S. I found an article that simplified this topic pretty well. If anyones curious I’ll drop the link below. Not a promotion just thought it broke things down nicely https://instalogic.in/blog/the-role-of-business-intelligence-analytics-what-is-it-and-why-does-it-matter/",4,6,Sadikshk2511,2025-04-15 02:01:57,https://www.reddit.com/r/dataengineering/comments/1jzgdob/how_has_business_intelligence_analytics_changed/,0,False,False,False,False
+1jzyxdw,How would you handle the ingestion of thousands of files ?,"Hello,
+I’m facing a philosophical question at work and I can’t find an answer that would put my brain at ease. 
+
+Basically we work with Databricks and Pyspark for ingestion and transformation.
+
+We have a new data provider that sends crypted and zipped files to an s3 bucket. There are a couple of thousands of files (2 years of historic).
+
+We wanted to use dataloader from databricks. It’s basically a spark stream that scans folders, finds the files that you never ingested (it keeps track in a table) and reads the new files only and write them.
+The problem is that dataloader doesn’t handle encrypted and zipped files (json files inside).
+
+We can’t unzip files permanently. 
+
+My coworker proposed that we use the autoloader to find the files (that it can do) and in that spark stream use the for each batch method to apply a lambda that does:
+- get the file name (current row)
+-decrypt and unzip
+-hash the files (to avoid duplicates in case of failure)
+-open the unzipped file using spark
+-save in the final table using spark 
+
+I argued that it’s not the right place to do all that and since it’s not the use case of autoloader it’s not a good practice, he argues that spark is distributed and that’s the only thing we care since it allows us to do what we need quickly even though it’s hard to debug (and we need to pass the s3 credentials to each executor using the lambda…)
+
+I proposed a homemade solution which isn’t the most optimal, but it seems better and easier to maintain which is:
+- use boto paginator to find files
+- decrypt and unzip each file 
+- write then json in the team bucket/folder
+-create a monitoring table in which we save the file name, hash, status (ok/ko) and exceptions if there are any
+
+He argues that this is not efficient since it’ll only use one single node cluster and not parallelised. 
+
+I never encountered such use case before and I’m kind of stuck, I read a lot of literature but everything seems very generic. 
+
+Edit: we only receive 2 to 3 files daily per data feed (150mo per file on average) but we have 2 years of historical data which amounts to around 1000 files. So we need 1 run for all the historic then a daily run. 
+Every feed ingested is a class instantiation (a job on a cluster with a config) so it doesn’t matter if we have 10 feeds. 
+
+Edit2: 1000 files roughly summed to 130go after unzipping. Not sure of average zip/json file though. 
+
+What do you people think of this? Any advices ?
+Thank you ",5,28,Heiwashika,2025-04-15 18:15:12,https://www.reddit.com/r/dataengineering/comments/1jzyxdw/how_would_you_handle_the_ingestion_of_thousands/,0,False,2025-04-15 19:09:42,False,False
+1jznyyv,How much does your org spend on ETL tools monthly?,"Looking for a general estimate on how much companies spend on tools like Airbyte, Fivetran, Stitch, etc, per month?
+
+
+
+[View Poll](https://www.reddit.com/poll/1jznyyv)",3,17,jah_reddit,2025-04-15 09:55:46,https://www.reddit.com/r/dataengineering/comments/1jznyyv/how_much_does_your_org_spend_on_etl_tools_monthly/,0,False,False,False,False
+1jzfaso,Spark sql vs Redshift tiebreaker rules during sorting,"I’m looking to move some of my teams etl away from redshift and on to AWS glue. 
+
+I’m noticing that the spark sql data frames don’t sort back in the same order in the case of having nulls vs redshift. 
+
+My hope was to port over the Postgres sql to spark sql and end up with very similar output. 
+
+Unfortunately it’s looking like it’s off. 
+For instance if I have a window function for row count, the same query assigns the numbers to different rows in spark. 
+
+What is the best path forward to get the sorting the same?",5,3,sghokie,2025-04-15 01:06:55,https://www.reddit.com/r/dataengineering/comments/1jzfaso/spark_sql_vs_redshift_tiebreaker_rules_during/,0,False,False,False,False
+1jzm2zf,PowerAutomate as an ETL Tool,"Hi!
+
+This is a problem I am facing in my current job right now. We have a lot of RPA requirements and 300's of CSV's and Excel files are manually obtained from some interfaces and mail and customer only works with excels including reporting and operational changes are being done manually by hand.
+
+The thing is we don't have any data. We plan to implement Power Automate to grab these files from the said interfaces. But as some of you know, PowerAutomate has SQL Connectors. 
+
+Do you think it is ok to write files directly to a database with PowerAutomate? Have any of you experience in this? Thanks.",3,12,Brilliant_Breath9703,2025-04-15 07:42:17,https://www.reddit.com/r/dataengineering/comments/1jzm2zf/powerautomate_as_an_etl_tool/,0,False,False,False,False
+1jzgltu,Suggest best sources to master DBMS,"I recently joined as an intern in an organisation. They assigned me database technology, and they wanted me to learn everything about database and database management systems in the span of 5 months.
+They suggested to me a book to learn from but it's difficult to learn from that book. 
+I have an intermediate knowledge on Oracle SQL and Oracle PL/SQL. 
+I want to gain much knowledge on Database and DBMS.
+
+So i request people out there who have knowledge on databases to suggest the best sources(preffered free) to learn from scratch to advanced as soon as possible.",3,3,TrulyIntrovert45,2025-04-15 02:13:21,https://www.reddit.com/r/dataengineering/comments/1jzgltu/suggest_best_sources_to_master_dbms/,0,False,False,False,False
+1k063vg,SAP Databricks,"Curious if anyone is brave enough to leave Azure/AWS Databricks for SAP Databricks? Or if you are an SAP shop would you choose that over pure Databricks. From past experiences with SAP I’ve never been a fan of anything they do outside ERP. Personally, I believe you should separate yourself as much as possible for future contract negotiations. Also the risk of limited people singing up and you have a bunch of half baked integrations.",2,2,TowerOutrageous5939,2025-04-15 23:21:01,https://www.reddit.com/r/dataengineering/comments/1k063vg/sap_databricks/,0,False,False,False,False
+1k05igl,"Are complex data types (JSON, BSON, MAP, LIST, etc.) commonly used in Parquet?","Hey folks,
+
+I'm building a tool to convert between Parquet and other formats (CSV, JSON, etc.).  You can see it here: [https://dataconverter.io/tools/parquet](https://dataconverter.io/tools/parquet)
+
+Progress has been very good so far.  The question now is how far into complex Parquet types to go – given than many of the target formats don't have an equivalent type.
+
+How often do you come across Parquet files with complex or nested structures?  And what are you mostly seeing?
+
+I'd appreciate any insight you can share.",3,1,delete99,2025-04-15 22:53:16,https://www.reddit.com/r/dataengineering/comments/1k05igl/are_complex_data_types_json_bson_map_list_etc/,0,False,False,False,False
+1jzvxei,Looking for advice or resources on folder structure for a Data Engineering project,"Hey everyone,  
+I’m working on a Data Engineering project and I want to make sure I’m organizing everything properly from the start. I'm looking for **best practices, lessons learned, or even examples of folder structures** used in real-world data engineering projects.
+
+Would really appreciate:
+
+* Any **advice or personal experience** on what worked well (or didn’t) for you
+* **Blog posts, GitHub repos, YouTube videos**, or other resources that walk through good project structure
+* Recommendations for organizing things like ETL pipelines, raw vs processed data, scripts, configs, notebooks, etc.
+
+Thanks in advance — trying to avoid a mess later by doing things right early on!",2,4,Responsible_Yak_1162,2025-04-15 16:15:01,https://www.reddit.com/r/dataengineering/comments/1jzvxei/looking_for_advice_or_resources_on_folder/,0,False,False,False,False
+1jznj1b,Use the output of a cell in a Databricks notebook in another cell,"Hi,
+I have a Notebook A containing multiple SQL scripts in multiple cells.  I am trying to use the output of specific cells of Notebook_A in another notebook. Eg: count of records returned in cell2 of notebook_a in the python Notebook_B.
+
+Kindly suggest on the feasible ways to implement the above.",2,5,Interesting-Today302,2025-04-15 09:24:21,https://www.reddit.com/r/dataengineering/comments/1jznj1b/use_the_output_of_a_cell_in_a_databricks_notebook/,0,False,False,False,False
+1jzhx1e,Tracking Ongoing tasks for the team,"My team is involved in Project development work that fits perfectly in the agile framework, but we also have some ongoing tasks related to platform administration, monitoring support, continuous enhancement of security, etc. These tasks do not fit well in the agile process. How do others track such tasks and measure progress on them? Do you use specific tools for this?",2,1,PreparationScared835,2025-04-15 03:21:03,https://www.reddit.com/r/dataengineering/comments/1jzhx1e/tracking_ongoing_tasks_for_the_team/,0,False,False,False,False
+1jzh1v2,Parquet Nested Type to JSON in C++/Rust,"Hi Reddit community! This is my first Reddit post and I’m hoping I could get some help with this task I’m stuck with please!
+
+I read a parquet file and store it in an arrow table. I want to read a parquet complex/nested column and convert it into a JSON object. I use C++ so I’m searching for libraries/tools preferably in C++ but if not, then I can try to integrate it with rust. 
+What I want to do:
+Say there is a parquet column in my file of type (arbitrary, just to showcase complexity): List(Struct(List(Struct(int,string,List(Struct(int, bool)))), bool))
+I want to process this into a JSON object (or a json formatted string, then I can convert that into a json object). I do not want to flatten it out for my current use case. 
+
+What I have found so far:
+1. Parquet's inbuilt toString functions don’t really work with structs (they’re just good for debugging)
+2. haven’t found anything in C++ that would do this without me having to writing a custom recursive logic, even with rapidjson
+3. tried Polars with Rust but didn’t get a Json yet. 
+
+I know I can get write my custom logic to create a json formatted string, but there must be some existing libraries that do this? I've been asked to not write a custom code because they're difficult to maintain and easy to break :)
+
+Appreciate any help!",2,14,Upper-Replacement142,2025-04-15 02:36:14,https://www.reddit.com/r/dataengineering/comments/1jzh1v2/parquet_nested_type_to_json_in_crust/,0,False,False,False,False
+1k07pua,AI for data and analytics,"We just launched **Seda.** You can connect your data and ask questions in plain English, write and fix SQL with AI, build dashboards instantly, ask about data lineage, and auto-document your tables and metrics. We’re opening up early access now at [seda.ai](https://www.seda.ai/). It works with Postgres, Snowflake, Redshift, BigQuery, dbt, and more.",0,1,secodaHQ,2025-04-16 00:40:23,https://www.reddit.com/r/dataengineering/comments/1k07pua/ai_for_data_and_analytics/,0,False,False,False,False
+1k07g9i,"Data Governance, a safe role in the near future?","What’s your take on the Data Governance role when it comes to job security and future opportunities, especially with how fast technology is changing, tasks getting automated, new roles popping up, and some jobs becoming obsolete?",0,3,AdministrativeBuy885,2025-04-16 00:26:34,https://www.reddit.com/r/dataengineering/comments/1k07g9i/data_governance_a_safe_role_in_the_near_future/,0,False,False,False,False
+1k05w90,Does Microsoft Purview has MDM feature?,"I know Purview is a data governance tool but does it has any MDM functionality.  From the article it seems it has integration with third party MDM solution partners such as CluedIn, profisee but I am not very clear whether or not it can do MDM by itself. 
+
+One of my client's budget is very slim and they wanted to implement MDM. Do you think Microsoft Data Services (MDS) is an option but it looks very old to me and it seems to require a dedicated SQL server license. ",1,0,boogie_woogie_100,2025-04-15 23:10:56,https://www.reddit.com/r/dataengineering/comments/1k05w90/does_microsoft_purview_has_mdm_feature/,1,False,False,False,False
+1k05837,How do you handle datetime dimentions ?,"I had a small “argument” at the office today. I am building a fact table to aggregate session metrics from our Google Analytics environment. One of the columns is the of course the session’s datetime. There are multiple reports and dashboards that do analysis at hour granularity. Ex : “What hour are visitors from this source more likely to buy hour product?”
+
+To address this, I creates a date and time dimention. Today, the Data Specialist had an argument with me and said this is suboptimal and a single timestamp dimention should have been created. I though this makes no sense since it would result in extreme redudancy : you would have multiple minute rows for a single day for example. 
+
+Now I am questioning my skills as he is a specialist and teorically knows better. I am failing to understand how a single timestamp table is better than seperates time and date dimentions",1,7,mrkatatau,2025-04-15 22:39:58,https://www.reddit.com/r/dataengineering/comments/1k05837/how_do_you_handle_datetime_dimentions/,0,False,False,False,False
+1k00qv1,Best setup report builder within SaaS?,"Hi everyone,
+
+We've built a CRM and are looking to implement a report builder in our app.
+
+We are exploring the best solutions for our needs and it seems like we have two paths we could take:
+
+* Option A: Build the front-end/query builder ourselves and hit read-only replica
+* Option B: Build the front-end/query builder ourselves and hit a data warehouse we've built using a key-base replication mechanism on BigQuery/Snowflake, etc..
+* Option C: Use third party tools like Explo etc...
+
+About the app:
+
+* Our stack is React, Rails, Postgres.
+* Our most used table (contacts) have 20,000,000 rows
+* Some of our users have custom fields
+
+We're trying to build something scalable but most importantly not spend months in this project.  
+As a result, I'm wondering about the viability of Option A vs. Option B.  
+  
+One important point is how to manage custom fields that our users created on some objects.
+
+We were thinking about, for contacts for example, we were thinking about simply running with joins across the following tables
+
+* contacts
+* contacts\_custom\_fields
+* companies (and any other related 1:1 table so we can query fields from related 1:1 objects)
+* contacts\_calculated\_fields (materialized view to compute values from 1:many relationship like # of deals the contacts is on)
+
+So the two questions are:
+
+* Would managing all this on the read-only be viable for our volume and a good starting point or will we hit the performance limits soon given our volume?
+* Is managing custom fields this way the right way?",1,2,birdshine7,2025-04-15 19:28:35,https://www.reddit.com/r/dataengineering/comments/1k00qv1/best_setup_report_builder_within_saas/,0,False,False,False,False
+1k003wp,Doing a Hard Delete in Fivetran,"Wondering if doing a hard delete in fivetran is possible without a dbt connector. I did my initial sync, go to transformations and can't figure out how to just add a sql statement to run after each sync.",1,0,TheBrady4,2025-04-15 19:02:28,https://www.reddit.com/r/dataengineering/comments/1k003wp/doing_a_hard_delete_in_fivetran/,0,False,False,False,False
+1jzznos,Airflow or Prefect,"I've just started a data engineering project where I’m building a data pipeline using DuckDB and DBT, but I’m a bit unsure whether to go with Airflow or Prefect for orchestration. Any suggestions?",1,3,SomewhereStandard888,2025-04-15 18:44:36,https://www.reddit.com/r/dataengineering/comments/1jzznos/airflow_or_prefect/,1,False,False,False,False
+1jzzf00,My Experience in preparing Azure Data Engineer Associate DP-203.,"So I recently appeared for the DP-203 certification by Microsoft and want to share my learnings and strategy that I followed to crack the exam.
+
+As you all must already be knowing that this exam is labelled as “**Intermediate**” by Microsoft themselves which is perfect in my opinion. This exam does test you in the various concepts that are required for a data engineer to  master in his/her career. 
+
+Having said that, it is not too hard to crack the exam but at the same time also not as easy as appearing for AZ-900. 
+
+DP-203 is aimed at testing the understanding of data related concepts and various tools Microsoft has offered in its suite to make your life easier. Some topics include SQL, Modern Data Warehousing, Python, PySpark, Azure Data Factory, Azure Synapse Analytics, Azure Stream Analytics, Azure EventHubs, Azure Data Lake Storage and last but not the least Azure Databricks. You can go through the complete set of topics this exam focuses on here - [https://learn.microsoft.com/en-us/credentials/certifications/azure-data-engineer/?practice-assessment-type=certification#certification-take-the-exam](https://learn.microsoft.com/en-us/credentials/certifications/azure-data-engineer/?practice-assessment-type=certification#certification-take-the-exam)
+
+
+
+**Courses:**
+
+I had just taken this one course for DP-203 by Alan Rodrigues *(This is not a paid promotion. I just thought that these resources were good to refer to)* and this is a 24 hour long course which has covered all the important and core concepts clearly and precisely. What I loved the most about this course is that it is a complete hands-on course. One more thing is that the instructor very rarely mentions anything as “this has already been covered in the previous sections”. If there is anything that we are using in the current section he makes sure to give a quick background on what has been covered in the earlier sections. Why this is so important is because we tend to forget some things and by just getting a refresher in a couple of sentences we are up to speed. 
+
+For those of you who don’t know, Microsoft offers access to majority resources if not all for FREE credit worth $200 for 30 days. So you simply have to sign up on their portal (insert link) and get access to all of them for 30 days. If you are residing in another country then convert dollars to your local currency. That is how much worth of free credit you will get for 30 days. 
+
+**For example -** 
+
+I live in India. 
+
+1 $ = 87.789 INR 
+
+So I got FREE credits worth 87.789 X 200 = Rs 17,557
+
+Even when I appeared for the exam (Feb 8th, 2025) I hardly got 3-4 questions from the mock tests. But don’t get disheartened. Be sure you are consistent with your learning path and take notes whenever required. As I mentioned earlier, the exam is not very hard.
+
+**Link -** [https://www.udemy.com/course/data-engineering-on-microsoft-azure/learn/lecture/44817315?start=40#overview](https://www.udemy.com/course/data-engineering-on-microsoft-azure/learn/lecture/44817315?start=40#overview)
+
+
+
+**Mock Tests Resources:**
+
+So I had referred a couple of resources for taking the mocks which I have mentioned below. *(This is not a paid promotion. I just thought that these resources were good to refer to.)*
+
+
+
+1. **Udemy Practice Tests -** [https://www.udemy.com/course/practice-exams-microsoft-azure-dp-203-data-engineering/?couponCode=KEEPLEARNING](https://www.udemy.com/course/practice-exams-microsoft-azure-dp-203-data-engineering/?couponCode=KEEPLEARNING)
+2. **Microsoft Practice Assessments -** [https://learn.microsoft.com/en-us/credentials/certifications/azure-data-engineer/practice/assessment?assessment-type=practice&assessmentId=49&practice-assessment-type=certification](https://learn.microsoft.com/en-us/credentials/certifications/azure-data-engineer/practice/assessment?assessment-type=practice&assessmentId=49&practice-assessment-type=certification)
+3. [https://www.examtopics.com/exams/microsoft/dp-203/](https://www.examtopics.com/exams/microsoft/dp-203/)
+
+
+
+
+
+**DO’s:**
+
+
+
+1. Make sure that if and whenever possible you do hands-on for all the sections and videos that have been covered in the Udemy course as I am 100% sure that you will encounter certain errors and would have to explore and solve the errors by yourself. This will build a sense of confidence and achievement after being able to run the pipelines or code all by yourself. (Also don’t forget to delete or pause resources whenever needed so that you get a hang of it and don’t lose out on money. The instructor does tell you when to do so.)
+2. Let’s be very practical, nobody remembers all the resolutions or solutions to every single issue or problem faced in the past. We tend to forget things over time and hence it is very important to document everything that you think is useful and would be important in the future. Maintain an excel sheet and create two columns “**Errors” and “Learnings/Resolution**” so that next time you encounter the same issue you already have a solution and don’t waste time. 
+3. Watch and practice at least 5-10 videos daily. This way you can complete all the videos in a month and then go back and rewatch lessons you thought were hard. Then you can start giving practice tests. 
+
+
+
+
+
+**DON'Ts:**
+
+
+
+1. By heart all the MCQs or answers to the questions. 
+2. Refer to many resources so much so that you will get overwhelmed and not be able to focus on preparation.
+3. Even refer to multiple courses from different websites.
+
+
+
+
+
+**Conclusion:**
+
+All in all, just make sure you do your hands on, practice regularly, give a timeline for yourself, don’t mug up things, don’t by heart things, make sure you use limited but quality resources for learning and practice. I am sure that by following these things you will be able to crack the exam in the first attempt itself. ",1,1,saahilrs14,2025-04-15 18:34:58,https://www.reddit.com/r/dataengineering/comments/1jzzf00/my_experience_in_preparing_azure_data_engineer/,0,False,False,False,False
+1jzymk5,Spark UI DAG,Just wanted ro understand if after doing an union I want to write to S3 as parquet.  Why do I see 76 task ? Is it because union actually partitioned the data ? I tried doing salting after union still I see 76 tasks for a given stage. Perhaps I see it is read parquet I am guessing something to do with committed whixh creates a temporary folder before writing to s3. Any help is appreciated. Please note I don't have access to the spark UI to debug the DAG. I have manged to give print statements and that I where I am trying to  corelate. ,1,0,cida1205,2025-04-15 18:03:08,https://www.reddit.com/r/dataengineering/comments/1jzymk5/spark_ui_dag/,0,False,False,False,False
+1jzunnw,"bigquery/sheet/tableau, need for advice","Hello everyone,
+
+I recently joined a project that uses BigQuery for data storage, dbt for transformations, and Tableau for dashboarding. I'd like some advice on improving our current setup.
+
+# Current Architecture
+
+* Data pipelines run transformations using dbt
+* Data from BigQuery is synchronized to Google Sheets
+* Tableau reports connect to these Google Sheets (not directly to BigQuery)
+* Users can modify tracking values directly in Google Sheets
+
+# The Problems
+
+1. **Manual Process**: Currently, the Google Sheets and Tableau connections are created manually during development
+2. **Authentication Issues**: In development, Tableau connects using the individual developer's account credentials
+3. **Orchestration Concerns**: We have Google Cloud Composer for orchestration, but the Google Sheets synchronization happens separately
+
+# Questions
+
+1. What's the best way to automate the creation and configuration of Google Sheets in this workflow? Is there a Terraform approach or another IaC solution?
+2. How should we properly manage connection strings in tableau between environments, especially when moving from development (using personal accounts) to production?
+
+Any insights from those who have worked with similar setups would be greatly appreciated!",1,0,Acceptable-Sail-4575,2025-04-15 15:24:07,https://www.reddit.com/r/dataengineering/comments/1jzunnw/bigquerysheettableau_need_for_advice/,0,False,False,False,False
+1jztjln,Is it possible to generate an open-table/metadata store that combines multiple data sources?,"I've recently learned about open-table paradigm, which if I am interpreting correctly, is essentially a mechanism for storing metadata so that the data associated with it can be efficiently looked up and retrieved. (Please correct this understanding if it is wrong). 
+
+My question is whether or not you could have a single metadata store or open-table that combines metadata from two different storage solutions, so that you could query both from a single CLI tool using SQL like syntax? 
+
+And as a follow on question... I've learned about and played with AWS Athena in an online course. It uses Glue Crawler to somehow discover metadata. Is this based on an open-table paradigm? Or a different technology? ",1,3,wcneill,2025-04-15 14:39:22,https://www.reddit.com/r/dataengineering/comments/1jztjln/is_it_possible_to_generate_an_opentablemetadata/,0,False,False,False,False
+1jztbwd,API Help,"Hello, I am working on a personal ETL project with a beginning goal of trying to ingest data from Google Books API and batch insert into pg.  
+
+
+Currently I have a script that cleans the API result into a list which is then inserted into pg. But, I have many repeat values each time I run this query, resulting in no data being inserted into pg.
+
+I also notice that I get very random books that are not at all on topic for what I specific with my query parameters. e.g. title='data' and author=' '. 
+
+  
+I am wondering if anybody knows how to get only relevant data with API calls, as well as non duplicate value with each run of the script (eg persistent pagination).
+
+  
+Example of a \~320 book query.
+
+In the first result I get somewhat data-related books. However, in the second result i get results such as: ""Homoeopathic Journal of Obstetrics, Gynaecology and Paedology"".
+
+I understand that this is a broad query, but when I specify I end up getting very few book results(\~40-80), which is surprising because I figured a Google API would have more data. 
+
+I may be doing this wrong, but any advice is very much appreciated.
+
+    ❯ python3 apiClean.py
+    The selfLink we get data from: https://www.googleapis.com/books/v1/volumes?q=data+inauthor:&startIndex=0&maxResults=40&printType=books&fields=items(selfLink)&key=AIzaSyDirSZjmIfQTvYgCnUZ0BhbIlrKRF8qxHw
+    
+    ...
+    
+    The selfLink we get data from: https://www.googleapis.com/books/v1/volumes?q=data+inauthor:&startIndex=240&maxResults=40&printType=books&fields=items(selfLink)&key=AIzaSyDirSZjmIfQTvYgCnUZ0BhbIlrKRF8qxHw
+    
+    size of result rv:320",1,1,GwHeezE,2025-04-15 14:30:37,https://www.reddit.com/r/dataengineering/comments/1jztbwd/api_help/,0,False,False,False,False
+1jzt2ho,Need advice - Informatica production support,"Hi , i have working as a informatica production support where i need to monitor ETL jobs on daily basis and report the bottlenecks to the developer to fix the issue and im getting $9.5k/year with 5 YOE. rightnow its kind of boring and planning to move to informatica powercenter admin position since its not opensource its hard for me to self learn myself. just want to know any opensource tools related to data integration that has high in demand for administrator role would be great. ",1,4,Odd_Insect_9759,2025-04-15 14:20:01,https://www.reddit.com/r/dataengineering/comments/1jzt2ho/need_advice_informatica_production_support/,0,False,False,False,False
+1jznrvv,Database design problem for many to many data relationship...need suggestions,"I have to come up with a database design working on postgres. I have to migrate at the end almost trillions volumes of data into a postgres DB wherein CRUD operations can be run most efficiently. The data present is in the form of a many to many relationship. How the data looks is:  
+  
+In my old data base i have a value T1 which is connected to on average 700 values (like x1,x2,x3...x700). Here in the old DB we are saving 700 records of this connection. Similarly other values like T2,T3,T100 all have multiple connections each having a separate row
+
+Use case:  
+We need to make updates,deletions and inserts to both values of T and values of X  
+for example,  
+I am given That value T1 instead of 700 connections of X has now 800 connections...so i must update or insert all the new connections corresponding to T1  
+And like wise if I am given , we need to update all T values X1 (say X1 has 200 connection of T) i need to insert/update or delete T values associated with X1.
+
+  
+for now, I was thinking of aggregating my data in the form of a jsonb column  
+where  
+Column T             Column X (jsonb)  
+T1                           {""value"":\[X1,X2,X3.....X700\]}
+
+But i will have to create another similar table where i keep column T as jsonb. Since any updates in one table needs to be synced to the other any errors may cause it to be out of sync.
+
+Also the time taken to read and update a jsonb row will be high
+
+Any other suggestions on how i should think about creating schema for my problem?",1,2,CollectionPerfect248,2025-04-15 09:41:51,https://www.reddit.com/r/dataengineering/comments/1jznrvv/database_design_problem_for_many_to_many_data/,0,False,False,False,False
+1jzvfys,"Event sourcing isn’t about storing history. it’s about replaying it.
+Discussion","Replay isn’t just about fixing broken systems. It’s about rethinking how we build them in the first place. If your data architecture is driven by immutable events instead of current state, then replay stops being a recovery mechanism and starts becoming a way to continuously reshape, refine, and evolve your system with zero fear of breaking things.
+
+Let’s talk about replay :)
+
+**Event sourcing is misunderstood**  
+For most developers, event sourcing shows up as a safety mechanism. It’s there to recover from a failure, rebuild a read model, trace an audit trail, or get through a schema change without too much pain. Replay is something you reach for in the rare cases when things go sideways.
+
+That’s how it’s typically treated. A fallback. Something reactive.
+
+But that lens is narrow. It frames replay as an emergency tool instead of something more fundamental. When events are treated as the source of truth, replay can become a normal, repeatable part of development. Not just a way to recover, but a way to refine.
+
+**What if replay wasn’t just for emergencies?**  
+What if it was a routine, even joyful, part of building your system?
+
+Instead of treating replay as a recovery mechanism, you treat it as a development tool. Something you use to evolve your data models, improve your business logic, and shape entirely new views of your data over time. And more excitingly, it means you can derive entirely new schemas from your event history whenever your needs change.
+
+**Why replay is so hard in most setups**  
+Here’s the catch. In most event-sourced systems, **events are emitted after your app logic runs**. Your API gets the request, updates the database, and only then emits a change event. That event is a side effect, not the source of truth.
+
+So when you want to replay, it gets tricky. You need replay-safe logic. You need to carefully version events. You need infrastructure to reprocess historical data. And you have to make absolutely sure you’re not double-applying anything.
+
+That’s why replay often feels fragile. It’s not that the idea is bad. It’s just hard to pull off.
+
+**But what if you flip the model?**  
+What if events come first, not last?
+
+That’s the approach we took.
+
+A user action, like creating a user, updating an address, or assigning a tag, sends an event. That event is immediately appended to an immutable event store, **and only then** is it passed along to the application API to validate and store in the database.
+
+Suddenly your database isn’t your source of truth. It’s just a read model. A fast, disposable output of your event stream.
+
+So when you want to evolve your logic or reshape your data structure, all you have to do is update your flow, delete the old database, and press replay.
+
+That’s it.
+
+No migrations.  
+No fragile ETL jobs.  
+No one-off backfills.  
+Just replay your history into the new shape.
+
+**Your data becomes fluid**  
+Say you’re running an e-commerce platform, and six months in, you realize you never tracked the discount code a customer used at checkout. It wasn’t part of the original schema. Normally, this would mean a migration, a painful manual backfill (if the data even still exists), or writing a fragile script to stitch it in later, assuming you’re lucky enough to recover it.
+
+But with a full event history, you don’t need to hack anything.
+
+You just update your flow logic to extract the discount code from the original checkout events. Then replay them.
+
+Within minutes, your entire dataset is updated. The new field is populated everywhere it should have been, as if it had been there from day one.
+
+**Your database becomes what it was always meant to be**  
+A cache.  
+Not a source of truth.  
+Something you can throw away and rebuild without fear.  
+You stop treating your schema like a delicate glass sculpture and start treating it like software.
+
+**Replay unlocks AI-native data (with MCP Servers)**  
+Most application databases are optimized for transactions, not understanding. They’re normalized, rigid, and shaped around application logic, not meaning. That’s fine for serving an app. But for AI? Nope.
+
+Language models thrive on context. They need denormalized, readable structures. They need relationships spelled out. They need the why, not just the what.
+
+When you have an event history, not just state but actions and intent. You can replay those events into entirely new shapes. You can build read models that are tailored specifically for AI: flattened tables for semantic search, user-centric structures for chat interfaces, agent-friendly layouts for reasoning.
+
+And it’s not just one-and-done. You can reshape your models over and over as your use cases evolve. No migrations. No backfills. Just a new flow and a replay.
+
+What is even more interesting is that with the help of MCP Servers AI can help you do this. By interrogating the event history with natural language prompts, it can suggest new model structures, flag gaps, and uncover meaning you didn’t plan for. It’s a feedback loop: replay helps AI make sense of your data, and AI helps you decide how to replay.
+
+And none of this works without events that store intent. Current state is just a snapshot. Events tell the story.
+
+**So, why doesn’t everyone build this way?**  
+Because it’s hard. You need immutable storage. Replay-safe logic. Tools to build and maintain read models. Schema evolution support. Observability. Infrastructure to safely reprocess everything.
+
+The architecture has been around for a while — Martin Fowler helped popularize event sourcing nearly two decades ago. But most teams ran into the same issue: implementing it well was too complex for everyday use.
+
+That’s the reason behind the Flowcore Platform To make this kind of architecture not just possible, but effortless. Flowcore handles the messy parts. The ingestion, the immutability, the reprocessing, the flow management, the replay. So you can just build. You send an event, define what you want done with it, and replay it whenever you need to improve.",0,3,OAEareMyInitials,2025-04-15 15:55:44,https://www.reddit.com/r/dataengineering/comments/1jzvfys/event_sourcing_isnt_about_storing_history_its/,0,False,2025-04-15 16:09:47,False,False
+1jzo47v,Kimball's Approach In Harry Potter Style,"Checkout this amazing post about Kimball's Approach 
+
+[https://medium.com/@adityasharmah27/kimballs-approach-the-sorcerer-s-stone-of-data-warehousing-9658f292eeb4](https://medium.com/@adityasharmah27/kimballs-approach-the-sorcerer-s-stone-of-data-warehousing-9658f292eeb4)",0,2,adityasharmah,2025-04-15 10:05:17,https://www.reddit.com/r/dataengineering/comments/1jzo47v/kimballs_approach_in_harry_potter_style/,0,False,False,False,False

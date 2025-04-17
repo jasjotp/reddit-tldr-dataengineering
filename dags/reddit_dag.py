@@ -9,6 +9,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from pipelines.reddit_pipeline import reddit_pipeline
 from pipelines.aws_s3_pipeline import upload_to_s3_pipeline
+from pipelines.get_combined_data import get_combined_data
+from pipelines.eda_pipeline import run_reddit_eda
 
 # set default arguments 
 default_args = {
@@ -44,9 +46,22 @@ extract = PythonOperator(
 # upload to s3 bucket 
 upload_to_s3 = PythonOperator(
     task_id = 'S3_Upload',
-    python_callable=upload_to_s3_pipeline,
+    python_callable = upload_to_s3_pipeline,
     dag = dag
 )
 
-extract >> upload_to_s3
+# grab the updated data from the s3 bucket daily and conduct cleaning and feature engineering through rubbing the get_combined_data.py file 
+combine_and_clean_data = PythonOperator(
+    task_id = 'combine_and_clean_data',
+    python_callable = get_combined_data,
+    dag = dag
+)
 
+# run EDA on the updated data and generate graphs 
+generate_eda_and_graphs = PythonOperator(
+    task_id = 'generate_eda_and_graphs',
+    python_callable = run_reddit_eda, 
+    dag = dag
+)
+
+extract >> upload_to_s3 >> combine_and_clean_data >> generate_eda_and_graphs

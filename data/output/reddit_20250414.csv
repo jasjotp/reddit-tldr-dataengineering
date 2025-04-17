@@ -1,0 +1,240 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1jy09o8,Is this take-home assignment too large and complex ?,"I was given the following assignment as part of a job application. Would love to hear if people think this is reasonable or overkill for a take-home test:
+
+**Assignment Summary:**
+
+* Build a **Python data pipeline** and expose it via an **API**.
+* The API must:
+   * Accept a **venue ID**, **start date**, and **end date**.
+   * Use Open-Meteo's historical weather API to fetch **hourly weather data** for the specified range and location.
+   * Extract 10+ parameters (e.g., temperature, precipitation, snowfall, etc.).
+   * Store the data in a **cloud-hosted database**.
+   * Return success or error responses accordingly.
+* Design the database schema for storing the weather data.
+* Use **OpenAPI 3.0** to document the API.
+* Deploy on **any cloud provider** (AWS, Azure, or GCP), including:
+   * Database
+   * API runtime
+   * API Gateway or equivalent
+* Set up **CI/CD pipeline** for the solution.
+* Include a **README** with setup and testing instructions (Postman or Curl).
+* Implement **QA checks in SQL** for data consistency.
+
+Does this feel like a reasonable assignment for a take-home? How much time would you expect this to take?",87,105,hopesandfearss,2025-04-13 05:13:59,https://www.reddit.com/r/dataengineering/comments/1jy09o8/is_this_takehome_assignment_too_large_and_complex/,0,False,False,False,False
+1jxtxqo,How do my fellow on-prem DEs keep their sanity...,"...the joys of memory and compute resources seems to be a neverending suck 😭
+
+We're building ETL pipelines, using Airflow in one K8s namespace and Spark in another (the latter having dedicated hardware). Most data workloads aren't really Spark-worthy as files are typically <20GB, and we keep hitting pain points where processes struggle in Airflow's memory (workers are 6Gi and 6 CPU, with a limit of 10GI; no KEDA or HPA). We are looking into more efficient data structures like DuckDB, Polars, etc or running ""mid-tier"" processes as separate K8s jobs but then we hit constraints like tools/libraries relying on Pandas use so we seem stuck with eager processes.
+
+Case in point, I just learned that our teams are having to split files into smaller files of 125k records so Pydantic schema validation won't fail on memory. I looked into GX Core and see the main source options there again appear to be Pandas or Spark dataframes (yes, I'm going to try DuckDB through SQLAlchemy). I could bite the bullet and just say to go with Spark, but then our pipelines will be using Spark for QA and not for ETL which will be fun to keep clarifying. 
+
+Sisyphus is the patron saint of Data Engineering... just sayin'
+
+[Make it stoooooooooop!](https://preview.redd.it/qwikfhcpihue1.png?width=503&format=png&auto=webp&s=6565d874d8d2213835c172a8ed449b14cff8214a)
+
+(there may be some internal sobbing/laughing whenever I see posts asking ""should I get into DE..."")",49,14,Nightwyrm,2025-04-12 23:08:19,https://www.reddit.com/r/dataengineering/comments/1jxtxqo/how_do_my_fellow_onprem_des_keep_their_sanity/,0,False,False,False,False
+1jxun0q,Data Inserts best practices with Iceberg,"I receive various files at different intervals which are not defined. Can be every seconds, hour, daily, etc.
+
+I don’t have any indication also of when something is finished. For example, it’s highly possible to have 100 files that would end up being 100% of my daily table, but I receive them scattered over 15min-30 when the data become available and my ingestion process ingest it. Can be 1 to 12 hours after the day is over.
+
+Not that’s it’s also possible to have 10000 very small files per day.
+
+I’m wondering how is this solves with Iceberg tables. Very newbie Iceberg guy here. Like I don’t see throughput write benchmark anywhere but I figure that rewriting the metadata files must be a big overhead if there’s a very large amount of files so inserting every times there’s a new one must not be the ideal solution.
+
+I’ve read some medium post saying that there was a snapshot feature which track new files so you don’t have to do some fancy things to load them incrementally. But again if every insert is a query that change the metadata files it must be bad at some point.
+
+Do you wait and usually build a process to store a list of files before inserting them or is this a feature build somewhere already in a doc I can’t find ?
+
+Any help would be appreciated.
+
+",18,2,Commercial_Dig2401,2025-04-12 23:44:32,https://www.reddit.com/r/dataengineering/comments/1jxun0q/data_inserts_best_practices_with_iceberg/,0,False,False,False,False
+1jy1n56,is Microsoft fabric the right shortcut for a data analyst moving to data engineer ?,"I'm currently on my data engineering journey using AWS as my cloud platform. However, I’ve come across the Microsoft Fabric data engineering challenge. Should I pause my AWS learning to take the Fabric challenge? Is it worth switching focus?
+",17,40,LinkWray0101,2025-04-13 06:48:20,https://www.reddit.com/r/dataengineering/comments/1jy1n56/is_microsoft_fabric_the_right_shortcut_for_a_data/,0,False,False,False,False
+1jyg4ps,Self-Healing Data Quality in DBT — Without Any Extra Tools,"I just published a practical breakdown of a method I call **Observe & Fix** — a simple way to manage data quality in DBT without breaking your pipelines or relying on external tools.
+
+It’s a self-healing pattern that works entirely within DBT using native tests, macros, and logic — and it’s ideal for fixable issues like duplicates or nulls.
+
+Includes examples, YAML configs, macros, and even when to alert via Elementary.
+
+Would love feedback or to hear how others are handling this kind of pattern.
+
+👉[Read the full post here ](https://medium.com/@baruchjacob/self-healing-pipelines-with-dbt-the-observe-fix-method-9d6b2da4eae3)",18,2,jb_nb,2025-04-13 19:41:47,https://www.reddit.com/r/dataengineering/comments/1jyg4ps/selfhealing_data_quality_in_dbt_without_any_extra/,0,False,False,False,False
+1jydmqv,We built a natural language search tool for finding U.S. government datasets,"Hey everyone! My friend and I built [Crystal](https://askcrystal.info/search), a tool to help you search through 300,000+ datasets from [data.gov](http://data.gov) using plain English.
+
+Example queries:
+
+* *""Air quality in NYC after 2015""*
+* *""Unemployment trends in Texas""*
+* *""Obesity rates in Alabama""*
+
+It finds and ranks the most relevant datasets, with clean summaries and download links.
+
+We made it because searching [data.gov](http://data.gov) can be frustrating — we wanted something that feels more like asking a smart assistant than guessing keywords.
+
+It’s in early alpha, but very usable. We’d love feedback on how useful it is for everyone's data analysis, and what features might make your work easier.
+
+Try it out: [askcrystal.info/search](https://askcrystal.info/search)",13,2,xmrslittlehelper,2025-04-13 17:55:33,https://www.reddit.com/r/dataengineering/comments/1jydmqv/we_built_a_natural_language_search_tool_for/,0,False,False,False,False
+1jyi735,"Landed a Role with SQL/dbt, But Clueless About Data Modeling — Advice?","Hi everyone,  
+I’m a 2025 new grad starting this May, and I’ll be working at a small start-up as an Analytics Engineer. I’ve gotten pretty solid at SQL as I’ve been grinding Leetcode questions for fun, and it really helped me land the job. During my internships, I also worked a lot with dbt, Snowflake, and Airflow, so I’m fairly comfortable with the tooling side of things. 
+
+Where I’m struggling is data modeling—specifically the Kimball methodology, Star Schemas, and different types of dimensions and fact tables. I tried reading the Kimball book, but honestly, it felt super abstract without any hands-on practice. I get that real data modeling often involves trade-offs, business context, and actual stakeholder input, which isn’t easy to simulate on your own.
+
+So my question is—how can a college student or new grad start building intuition and skills in data modeling? Are there any practical resources or projects I can work through to better understand this area? And if you have any general advice for someone entering the industry in this kind of role, I’d love to hear it.
+
+Thanks a lot!",9,6,SmartPersonality1862,2025-04-13 21:12:25,https://www.reddit.com/r/dataengineering/comments/1jyi735/landed_a_role_with_sqldbt_but_clueless_about_data/,0,False,False,False,False
+1jy9eh1,Data modeling for analytics with legacy Schema-on-Read data lake?,"Most guides on data modeling and data pipelines seem to focus on greenfield projects.
+
+But how do you deal with a legacy data lake where there's been years of data written into tables with no changes to original source-defined schemas?
+
+I have hundreds of table schemas which analysts want to use but can't because they have to manually go through the data catalogue and find every column containing 'x' data or simply not bothering with some tables.
+
+How do you tackle such a legacy mess of data? Say I want to create a Kimball model that models a persons fact table as the grain, and dimensions tables for biographical and employment data. Is my only choice to just manually inspect all the different tables to find which have the kind of column I need? Note here that there wasn't even a basic normalisation of column names enforced (""phone_num"", ""phone"", ""tel"", ""phone_number"" etc) and some of this data is already in OBT form with some containing up to a hundred sparsely populated columns.
+
+Do I apply fuzzy matching to identify source columns? Use an LLM to build massive mapping dictionaries? What are some approaches or methods I should consider when tackling this so I'm not stuck scrolling through infinite print outs? There is a metadata catalogue with some columns having been given tags to identify its content, but these aren't consistent and also have high cardinality.
+
+From the business perspective, they want completeness, so I can't strategically pick which tables to use and ignore the rest. Is there a way I should prioritize based on integrating the largest datasets first?
+
+The tables are a mix of both static imports and a few daily pipelines. I'm primarily working in pyspark and spark SQL ",7,0,No_Poem_1136,2025-04-13 14:51:05,https://www.reddit.com/r/dataengineering/comments/1jy9eh1/data_modeling_for_analytics_with_legacy/,1,False,False,False,False
+1jy7sii,Building a Real-Time Analytics Pipeline: Balancing Throughput and Latency,"Hey everyone,
+
+I'm designing a system to process and analyze a continuous stream of data with a focus on both high throughput and low latency. I wanted to share my proposed architecture and get your insights.
+
+1. The core components are: **Kafka:** Serving as the central nervous system for ingesting a massive amount of data reliably.
+2. **Go Processor:** A consumer application written in Go, placed directly after Kafka, to perform initial, low-latency processing and filtering of the incoming data.
+3. **Intermediate Queue (Redis Streams/NATS JetStream):** To decouple the low-latency processing from the potentially slower analytics and to provide buffering for data that needs further analysis.
+4. **Analytics Consumer:** Responsible for the more intensive analytical tasks on the filtered data from the queue.
+5. **WebSockets:** For pushing the processed insights to a frontend in real-time.
+
+The idea is to leverage Kafka's throughput capabilities while using Go for quick initial processing. The queue acts as a buffer and allows us to be selective about the data sent for deeper analytics. Finally, WebSockets provide the real-time link to the user.
+
+I built this keeping in mind these three principles
+
+* **Separation of Concerns:** Each component has a specific responsibility.
+* **Scalability:** Kafka handles ingestion, and individual consumers can be scaled independently.
+* **Resilience:** The queue helps decouple processing stages.
+
+Has anyone implemented a similar architecture? What were some of the challenges and lessons learned? Any recommendations for improvements or alternative approaches?
+
+Looking forward to your feedback!",7,14,Opposite_Confusion96,2025-04-13 13:35:41,https://www.reddit.com/r/dataengineering/comments/1jy7sii/building_a_realtime_analytics_pipeline_balancing/,1,False,False,False,False
+1jyj4wc,Freelancing - Real Talk,"
+Hey folks,
+I’m a data/software engineer trying to break into freelancing, and honestly, I could use some advice. I’ve been focusing on niches like building ETL pipelines, automation tools, web scraping, data mining, and even playing around with RAG bots.
+
+I’ve been on Upwork for about 2 months now and only landed one small scraping gig so far. My portfolio is pretty solid (or at least I think it is), but I’m not getting much traction, barely any invites.
+
+So I’m wondering:
+
+Is Upwork just super saturated for this kind of work right now?
+
+Are there better platforms or communities for technical freelancing gigs (especially data-related)?
+
+What worked for you when you were just starting out?
+
+Is there a niche I should lean harder into?
+
+
+Would love to hear from anyone who’s been through this or has some pointers. I'm open to harsh truths, hacks, or anything in between. Appreciate it!
+
+
+",6,0,Majestic_Band_9071,2025-04-13 21:54:58,https://www.reddit.com/r/dataengineering/comments/1jyj4wc/freelancing_real_talk/,1,False,False,False,False
+1jy0zwo,I need assistance in optimizing this ADF workflow.,"[my\_pipeline](https://preview.redd.it/6xdqaeiikjue1.png?width=1792&format=png&auto=webp&s=7ca7ab2d25d73b1f4f7869c3927fd16c0246bb04)
+
+Hello all! I'm excited to dive into **ADF** and try out some new things.
+
+Here, you can see we have a copy data activity that transfers files from the source ADLS to the raw ADLS location. Then, we have a Lookup named **Lkp\_archivepath** which retrieves values from the SQL server, known as the Metastore. This will get values such as **archive\_path** and **archive\_delete\_flag** (typically it will be Y or N, and sometimes the parameter will be missing as well). After that, we have a copy activity that copies files from the source ADLS to the archive location. Now, I'm encountering an issue as I'm trying to introduce this archive delete flag concept.
+
+If the **archive\_delete\_flag** is '**Y**', it should not delete the files from the source, but it should delete the files if the **archive\_delete\_flag** is '**N**', '' or NULL, depending on the Metastore values. How can I make this work?
+
+Looking forward to your suggestions, thanks!",5,8,wild_data_whore,2025-04-13 06:02:54,https://www.reddit.com/r/dataengineering/comments/1jy0zwo/i_need_assistance_in_optimizing_this_adf_workflow/,0,False,False,False,False
+1jy79rg,Creating AWS Glue Connection for On-prem JDBC source,"There seems to be little to no documentation(or atleast I can't find any meaningful guides), that can help me establish a successful connection with a MySQL source. 
+Either getting this VPC endpoint or NAT gateway error:
+
+InvalidInputException: VPC S3 endpoint validation failed for SubnetId: subnet-XXX. VPC: vpc-XXX. Reason: Could not find S3 endpoint or NAT gateway for subnetId: subnet-XXX in Vpc vpc-XXX
+
+Upon creating said endpoint and NAT gateway connection halts and provides Timeout after 5 or so minutes. My JDBC connection is able to successfully establish with either something like PyMySQL package on local machine, or in Glue notebooks with Spark JDBC connection. Any help would be great. ",3,1,TableSouthern9897,2025-04-13 13:09:41,https://www.reddit.com/r/dataengineering/comments/1jy79rg/creating_aws_glue_connection_for_onprem_jdbc/,1,False,False,False,False
+1jyj7gm,"I've built a ""Cursor for data"" app and looking for beta testers","Cipher42 is a ""Cursor for data"" which works by connecting to your database/data warehouse, indexing things like schema, metadata, recent used queries and then using it to provide better answers and making data analysts more productive. It took a lot of inspiration from cursor but for data related app cursor doesn't work as well as data analysis workloads are different by nature.",2,0,jekapats,2025-04-13 21:58:22,https://www.cipher42.ai/,0,False,False,False,False
+1jy2obx,Data interpretation,"any book recommendations for data interpretation for ipucet bcom h paper
+",2,0,Round_Eye4720,2025-04-13 08:02:09,https://www.reddit.com/r/dataengineering/comments/1jy2obx/data_interpretation/,0,False,False,False,False
+1jxy77l,Want opinion about Lambdas,"Hi all.
+I'd love your opinion and experience about the data pipeline I'm working on.
+
+The pipeline is for the RAG inference system.
+The user would interact with the system through an API which triggers a Lambda.
+
+The inference consists of  4 main functions-
+1. Apply query guardrails
+2. Fetch relevant chunks
+3. Pass query and chunks to LLM and get response 
+4. Apply source attribution (additional metadata related to the data) to the response 
+
+I've assigned 1 AWS Lambda function to each component/function totalling to 4 lambdas in the pipeline.
+
+Can the above mentioned functions be achieved under 30 secs if they're clubbed into 1 Lambda function?
+
+Pls clarify in comments if this information is not sufficient to answer the question.
+
+Also, please share any documentation that suggests which approach is better ( multiple lambdas or 1 lambda)
+
+Thank you in advance!",2,7,VeganChicken18,2025-04-13 03:03:52,https://www.reddit.com/r/dataengineering/comments/1jxy77l/want_opinion_about_lambdas/,0,False,False,False,False
+1jyh77c,"Developing, testing and deploying production grade data pipelines with AWS Glue","Serious question for data engineers working with AWS Glue: How do you actually structure and test production-grade pipelines.
+
+For simple pipelines it's straight forward: just write everything in a single job using glue's editor, run and you're good to go, but for production data pipelines, how is the gap between the local code base that is modularized ( utils, libs, etc ) bridged with glue, that apparently needs everything to be bundled into jobs?
+
+This is the first thing I am struggling to understand, my second dilemma is about testing jobs locally.  
+How does local testing happen?
+
+**->** if we will use glue's compute engine we run into the first question of: gap between code base and single jobs.
+
+**->** if we use open source spark locally:
+
+1. data can be too big to be processed locally, even if we are just testing, and this might be the reason we opted for serverless spark on the first place.
+
+  
+2. Glue’s customized Spark runtime behaves differently than open-source Spark, so local tests won’t fully match production behavior. This makes it hard to validate logic before deploying to Glue",1,4,Icy-Professor-1091,2025-04-13 20:28:12,https://www.reddit.com/r/dataengineering/comments/1jyh77c/developing_testing_and_deploying_production_grade/,0,False,False,False,False
+1jxtvbu,Thoughts on Acryl vs other metadata platforms,"Hi all, I'm evaluating metadata management solutions for our data platform and would appreciate any thoughts from folks who've actually implemented these tools in production.
+
+We're currently running into scaling issues with our in-house data catalog and I think we need something more robust for governance and lineage tracking.
+
+I've narrowed it down to Acryl (DataHub) and Collate (openmetadata) as the main contenders. I know I should look at Collibra and Alation and maybe Unity Catalog?
+
+For context, we're a mid-sized fintech (\~500 employees) with about 30 data engineers and scientists. We're AWS with Snowflake, Airflow for orchestration, and a growing number of ML models in production.
+
+My question list is: 
+
+1. How these tools handle machine-scale operations 
+2. How painful was it to get set up?
+3. For DataHub and openmetadata specifically - is the open source version viable or is the cloud version necessary?
+4. Any unexpected limitations you've hit with any of these platforms?
+5. Do you feel like these grow with you as we increasingly head into AI governance? 
+6. How well they integrate with existing tools (Snowflake, dbt, Looker, etc.)
+
+If anyone has switched from one solution to another, I'd love to hear why you made the change and whether it was worth it.
+
+Sorry for the pick list of questions - the last post on this was years ago and I was hoping for some more insights. Thanks in advance for anyone's thoughts. ",1,1,arronsky,2025-04-12 23:05:00,https://www.reddit.com/r/dataengineering/comments/1jxtvbu/thoughts_on_acryl_vs_other_metadata_platforms/,0,False,False,False,False
+1jxv28g,Help,"I'm using Airbyte Cloud because my PC doesn't have enough resources to install it. I have a Docker container running PostgreSQL on Airbyte Cloud. I want to set the PostgreSQL destination. Can anyone give me some guidance on how to do this? Should I create an SSH tunnel?
+
+",0,1,Imaginary_Pirate_267,2025-04-13 00:06:47,https://www.reddit.com/r/dataengineering/comments/1jxv28g/help/,0,False,False,False,False
+1jyegqk,What to do and how to do???,"This is a photo of my notes (not OG rewrote later) about a meet at work about this said project. The project is about migration of ms sql server to snowflake. 
+
+The code conversion will be done using Snowconvert. 
+
+For historic data
+1. The data extraction is done using a python script using bcp command and pyodbc library 
+2. The converted code from snowconvert will be used in a python script again to create all the database objects. 
+3. data extracted will be loaded into internal stage and then to table 
+
+2 and 3 will use snowflake’s python connector 
+
+For transitional data: 
+1. Use ADF to store pipeline output into an Azure blob container 
+2. Use external stage to utilise this blob and load data into table 
+
+
+1. My question is if you have ADF for transitional data then why not use the same thing for historic data as well (I was given the task of historic data)
+2. Is there a free way to handle this transitional data as well. It needs to be enterprise level (Also what is wrong with using VS Code extension) 
+3. After I showed initial approach following things were asked by mentor/friend to incorporate in this to really sell my approach (He went home after giving me no clarification about how to do this and what even are they)
+- validation of data on both sides 
+- partition aware extraction 
+- parallely extracting data (Idts it is even possible)
+
+I request help on where to even start looking and rate my approach I am a fresh graduate and been on job for a month. 🙂‍↕️🙂‍↕️
+",0,4,Optimal_Carrot4453,2025-04-13 18:30:34,https://i.redd.it/ttbzo15fbnue1.jpeg,0,False,False,False,False
