@@ -1,0 +1,311 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1k1fvsy,"LLMs, ML and Observability mess","Anyone else find that building reliable LLM applications involves managing significant complexity and unpredictable behavior?
+
+It seems the era where basic uptime and latency checks sufficed is largely behind us for these systems.
+
+Tracking response quality, detecting hallucinations *before* they impact users, and managing token costs effectively – key operational concerns for production LLMs. All needs to be monitored...
+
+There are *so many* tools, every day a new shiny object comes up - **how do you go about choosing your tracing/ observability stack?**
+
+Honestly, I wasn't sure how to go about building evals and tracing in a good way.  
+I reached out to a friend who runs one of those observability startups.
+
+That's what he had to say -
+
+The core message was that robust observability requires multiple layers.  
+**1. Tracing** (to understand the full request lifecycle),  
+**2. Metrics** (to quantify performance, cost, and errors),  
+**3 .Quality/Eval** evaluation (critically assessing response validity and relevance),  
+4. and **Insights** (to drive iterative improvements - ie what would you do with the data you observe?).
+
+All in all - *how do you go about setting up your approach for LLMObservability?*
+
+Oh, and the full conversation with Traceloop's CTO about obs tools and approach [is here](https://youtu.be/-Bbvd8cbjac) :)
+
+[thanks luminousmen for the inspo!](https://preview.redd.it/e7iroq4kseve1.jpg?width=1536&format=pjpg&auto=webp&s=dd8525d5c3d85ea7fdaf447ec836966f8aca946a)",71,8,oba2311,2025-04-17 15:40:20,https://www.reddit.com/r/dataengineering/comments/1k1fvsy/llms_ml_and_observability_mess/,0,False,2025-04-17 16:08:10,False,False
+1k1b8on,"What are the best open-source alternatives to SQL Server, SSAS, SSIS, Power BI, and Informatica?","I’m exploring open-source replacements for the following tools:
+	•	SQL Server as data warehouse 
+	•	SSAS (Tabular/OLAP)
+	•	SSIS
+	•	Power BI
+	•	Informatica
+
+What would you recommend as better open-source tools for each of these?
+
+Also, if a company continues to rely on these proprietary tools long-term, what kind of problems might they face — in terms of scalability, cost, vendor lock-in, or anything else?
+
+Looking to understand pros, cons, and real-world experiences from others who’ve explored or implemented open-source stacks. Appreciate any insights!
+",68,58,Signal-Friend-1203,2025-04-17 12:12:16,https://www.reddit.com/r/dataengineering/comments/1k1b8on/what_are_the_best_opensource_alternatives_to_sql/,0,False,False,False,False
+1k1etqr,"Best storage option for high-frequency time-series data (100 Hz, multiple producers)?","Hi all, I’m building a data pipeline where sensor data is published via PubSub and processed with Apache Beam. Each producer sends 100 sensor values every 10 ms (100 Hz). I expect up to 10 producers, so ~30 GB/day total. Each producer should write to a separate table (no cross-correlation).
+
+Requirements:
+
+•	Scalable (horizontally, more producers possible) 
+
+•	Low-maintenance / serverless preferred
+
+•	At least 1 year of retention
+
+•	Ability to download a full day’s worth of data per producer with a button click
+
+•	No need for deep analytics, just daily visualization in a web UI
+
+BigQuery seems like a good fit due to its scalability and ease of use, but I’m wondering if there are better alternatives for long-term high-frequency time-series data. Would love your thoughts!",12,14,Shot-Fisherman-7890,2025-04-17 14:56:02,https://www.reddit.com/r/dataengineering/comments/1k1etqr/best_storage_option_for_highfrequency_timeseries/,1,False,2025-04-17 14:59:23,False,False
+1k1c0cc,Star schema implementation in Glue + Redshift.,"I'm setting up a Glue (Spark) to Redshift pipeline with incremental SQL loads, and while fact tables are straightforward (just append new records), dimension tables are more complex to be honest - I have a few questions regarding the practical implementation of a star schema data warehouse model ?   
+  
+First, avoiding duplicates, transactional facts won't have this issue because they will be unique, but for dimensions it is not the case,  do you pre-filter in Spark (reads existing Redshift dim tables and ensure new chunks of dim tables are new records) or just dump everything to Redshift and let it deduplicate (let Redshift handle upinserts)?   
+  
+Second, surrogate keys, they have to be globally unique across all the table because they will serve as primary keys, do you generate them in Spark (risk collisions across job runs) or use Redshift IDENTITY for example?   
+  
+Third, SCD Type 2: implement change detection in Spark (comparing new vs old records) or handle it in Redshift (with MERGE/triggers)? Would love to hear real-world experiences on what actually scales, especially for large dimensions (10M+ rows) - how do you balance the Spark vs Redshift work while keeping everything consistent?
+
+Last but not least I want to know how to ensure fact tables are properly pointing to dimension tables, do we fill the foreign key column in spark before loading to redshift? 
+
+PS: if you have any learning resources with practical implementations and best practices in place please provide them, because I feel the majority of the info on the web is theoretical.   
+Thank you in advance.",10,1,Icy-Professor-1091,2025-04-17 12:51:24,https://www.reddit.com/r/dataengineering/comments/1k1c0cc/star_schema_implementation_in_glue_redshift/,0,False,False,False,False
+1k1t8ix,Stuck at JSONL files in AWS S3 in middle of pipeline,"I am building a pipeline for the first time, using dlt, and it's kind of... janky. I feel like an imposter, just copying and pasting stuff into a zombie.
+
+Ideally: SFTP (.csv) -> AWS S3 (.csv) -> Snowflake
+
+Currently: I keep getting a JSONL file in the s3 bucket, which would be okay if I could get it into Snowflake table
+
+* SFTP -> AWS: this keeps giving me a JSONL file
+* AWS S3 -> Snowflake: I keep getting errors, where it is not reading the JSONL file deposited here
+
+Other attempts to find issue:
+
+* Local CSV file -> Snowflake: I am able to do this using read\_csv\_duckdb(), but not read\_csv()
+* CSV manually moved to AWS -> Snowflake: I am able to do this with read\_csv()
+* so I can probably do it directly SFTP -> Snowflake, but I want to be able to archive the files in AWS, which seems like best practice?
+
+There are a few clients, who periodically drop new files into their SFTP folder. I want to move all of these files (plus new files and their file date) to AWS S3 to archive it. From there, I want to move the files to Snowflake, before transformations.
+
+When I get the AWS middle point to work, I plan to create one table for each client in Snowflake, where new data is periodically appended / merged / upserted to existing data. From here, I will then transform the data.",7,1,v__v,2025-04-18 01:30:28,https://www.reddit.com/r/dataengineering/comments/1k1t8ix/stuck_at_jsonl_files_in_aws_s3_in_middle_of/,1,False,False,False,False
+1k1752f,A hybrid on prem and cloud based architecture?,"I am working with a customer for a use case , wherein they are would like to keep on prem for sensitive loads and cloud for non sensitive workloads . Basically they want compute and storage to be divided accordingly but ultimately the end users should one unified way of accessing data based on RBAC.
+
+I am thinking I will suggest to go for spark on kubernetes for sensitive workloads that sits on prem and the non-sensitive goes through spark on databricks. For storage , the non sensitive data will be handled in databricks lakehouse (delta tables) but for sensitive workloads there is a preference secnumcloud storages. I don’t have any idea on such storage as they are not very mainstream. Any other suggestions here for storage ? 
+
+Also for the final serving layer should I go for a semantic layer and then abstract the data in both the cloud and on prem storage ? Or are there any other ways to abstract this ?",6,6,Hungry_Resolution421,2025-04-17 07:36:53,https://www.reddit.com/r/dataengineering/comments/1k1752f/a_hybrid_on_prem_and_cloud_based_architecture/,0,False,False,False,False
+1k1tbmb,Fivetran Price Impact,"There is an anonymous survey about the Fivetran Pricing changes: https://forms.gle/UR7Lx3T33ffTR5du5
+
+I guess it would be good to have a good sample size in there, so feel free to take part (2 minutes) if you're a fivetran customer.
+
+Regardless of that, what has been the effect since the price model changes for you?",5,8,t9h3__,2025-04-18 01:35:07,https://www.reddit.com/r/dataengineering/comments/1k1tbmb/fivetran_price_impact/,0,False,False,False,False
+1k18463,What is Data Architecture?,,5,2,Veritis-Group,2025-04-17 08:50:27,https://www.veritis.com/blog/what-is-data-architecture/,0,False,False,False,False
+1k1pl3y,"A databricks project, a tight deadline, and a PIP.","Hey r/dataengineering, I need your help to find a solution to my dumpster fire and potentially save a soul (or two)).
+
+I'm working together with an older dev who has been put on a project and it's a mess left behind by contractors. I noticed he's on some kind of PIP thing, and the project has a set deadline which is not realistic. It could be both of us are set up to fail. The code is the worst I have seen in my ten years in the field. No tests, no docs, a mix of prod and test, infra mixed with application code, a misunderstanding of how classes and scope work, etc.
+
+The project itself is a ""library"" that syncing databricks with data from an external source. We query the external source and insert data into databricks, and every once in a while query the source again for changes (for sake of discussion, lets assume these are page reads per user) which need to be done incrementally. We also frequently submit new jobs to the external source with the same project. what we ingest from the source is not a lot of data, usually under 1 million rows and rarely over 100k a day. 
+
+Roughly 75% of the code is doing computation in python for databricks, where they first pull out the dataframe and then filter it down with python and spark. The remaining 25% is code to wrap the API on the external source. All code lives in databricks and is mostly vanilla python. It is called from a notebook. (...)
+
+My only idea is that the ""library"" should be split instead of having to do everything. The ingestion part of the source can be handled by dbt and we can make that work first. The part that holds the logic to manipulate the dataframes and submit new jobs to the external api is buggy and I feel it needs to be gradually rewritten, but we need to double the features to this part of the code base if we are to make the deadline. 
+
+I'm already pushing back on the deadline and I'm pulling in another DE to work on this, but I am wondering what my technical approach should be.",5,5,MyBossIsOnReddit,2025-04-17 22:28:41,https://www.reddit.com/r/dataengineering/comments/1k1pl3y/a_databricks_project_a_tight_deadline_and_a_pip/,0,False,False,False,False
+1k1p04c,Practical Implementation of Data Warehouses with Spark (and Redshift),"Serious question to those who have done some data warehousing where Spark/Glue is the transformation engine, bonus if the data warehouse is Redshift.
+
+This is my first time putting a data warehouse in place, and , I am doing so with AWS Glue and Redshift. The data load is incremental.
+
+While in theory dimensional modeling ( star schemas to be exact ) is not hard, I am finding a hard time implementing the actual model.
+
+I want to know how are these dimensional modeling concepts are actually implemented, the following is  my thoughts about how I understand some theoretical concepts and the way I find gaps between them and the actual practice.
+
+**Avoiding duplicates in both fact and dimension tables** –does this happen in the Spark job or Redshift itself? 
+
+I feel like for transactional fact tables it is not a problem, but for dimensions, it is not straight forward: you need to insure uniqueness of entries for all the table not just the chunk you loaded during this run and this raises the above question, whether it is done in Spark, and in this case we will need to somehow load the dimension table  in dataframes so that we can filter new data loads, or in redshidt, and in this case we just load everything new to Redshift and delegate upserts and duplication checks to Redshift.
+
+  
+And speaking of uniqueness of entries in dimension tables ( I know it is getting long, bear with me, we are almost there xD) , we have to also allow exceptions, because when dealing with **SCD type 2,** we must allow duplicate entries and update the old ones to be depricated, so again how is this exception implemented practically? 
+
+**Surrogate keys** – Generate in Spark (eg. UUIDs/hashes?) or rely on Redshift `IDENTITY` for example?
+
+Surrogate keys are going to serve as primary keys for both our fact and dimension tables, so they have to be unique, again do we generate them in Spark then load to, Redshift or do we just make Redshift handle these for us and not worry about uniqueness? 
+
+**Fact-dim integrity** – Resolve FKs in Spark or after loading to Redshift?
+
+Another concern arises when talking about surrogate keys, each fact table has to point to its dimensions with FKs, which in reality will be the surrogate keys of the dimensions, so these columns need to be filled with the right values, I am wondering whether this is done in Spark, and in this case we will have to again load the dimensions from Redshift in Spark dataframes and extract the right values of FKs, or can this be done in Reshift????
+
+If you have any thoughts or insights please feel free to share them, litterally anything can help at this point xD",5,0,Icy-Professor-1091,2025-04-17 22:02:05,https://www.reddit.com/r/dataengineering/comments/1k1p04c/practical_implementation_of_data_warehouses_with/,1,False,False,False,False
+1k1nw8o,Databricks in Excel,"Anyone have any experience or ideas getting Databricks data into Excel aside from the ODBC spark driver or whatever? 
+
+I've seen an uptick for requests for raw data for other teams to do data discovery and scoping out future PBI dashboards but it has been a little cumbersome to get them set up with the driver, connected to compute clusters, added to Unity Catalog, etc. Most of them are not SQL experienced so in the past when we had regular Azure SQL we would create views or tables for them to pull into Excel to do their work.
+
+I have a few instances where I drop a csv file to a storage account and then shuffle those around to SharePoint or other locations using a logic app but was wondering if anyone had better ideas before I got too committed to that method.
+
+We also considered backloading some data into a downsized Azure SQL instance because it plays better with Excel but it seems like a step backwards.
+
+Frustrating that PBI has has bunch of direct connectors but Excel (and power automate/logic apps to a lesser extent) seems left out, considering how commonplace it is...",6,1,Midnight_Old,2025-04-17 21:13:03,https://www.reddit.com/r/dataengineering/comments/1k1nw8o/databricks_in_excel/,1,False,False,False,False
+1k1k1h4,High cardinality meets columnar time series system,"Wrote a blog post based on my experiences working with high-cardinality telemetry data and the challenges it poses for storage and query performance.
+
+The post dives into how using **Apache Parquet** and a **columnar-first design** helps mitigate these issues, by isolating cardinality per column, enabling better compression, selective scans, and avoiding the combinatorial blow-up seen in time-series or row-based systems.
+
+It includes some complexity analysis and practical examples. Thought it might be helpful for anyone dealing with observability pipelines, log analytics, or large-scale event data.
+
+👉 [https://www.parseable.com/blog/high-cardinality-meets-columnar-time-series-system](https://www.parseable.com/blog/high-cardinality-meets-columnar-time-series-system)",4,0,PutHuge6368,2025-04-17 18:30:00,https://www.reddit.com/r/dataengineering/comments/1k1k1h4/high_cardinality_meets_columnar_time_series_system/,1,False,False,False,False
+1k1gwfy,Spark for beginners,I am pretty confident with Dagster-dbt-sling/dlt-Aws . I would like to upskill in big data topics. Where should I start? I have seen spark is pretty the go to.  Do you have any suggestions to start with? is it better to use it in native java/scala JVM or go for for pyspark? Is it ok to train in local? Any suggestion would me much appreciated,4,6,ubiond,2025-04-17 16:21:56,https://www.reddit.com/r/dataengineering/comments/1k1gwfy/spark_for_beginners/,0,False,False,False,False
+1k1osuu,GCP Data engineer oppirtunities,"Hey , I was working on on premise data engineering and recently started to use google cloud data services like data form, BigQuery, cloud storage etc. 
+I am trying to switch my position to gcp data engineer. Any better suggestions on job market demands on gcp data engineers especially like when having comparison with azure, and aws?",3,0,No-Expression-288,2025-04-17 21:53:21,https://www.reddit.com/r/dataengineering/comments/1k1osuu/gcp_data_engineer_oppirtunities/,0,False,False,False,False
+1k1md1v,jsonb vs. separate table (EAV) for metadata/custom fields,"Hi everyone,
+
+Our SaaS app that does task management allows users to add custom fields.  
+
+
+I want to eventually allow filtering, grouping and ordering by these custom fields like any other task app.  
+  
+However, I'm stuck on the best data structure to allow this:
+
+* jsonb column within the tasks table
+* EAV column
+
+Does anyone have any guidance on how other platform with custom fields allow/built this?  
+",3,1,birdshine7,2025-04-17 20:07:32,https://www.reddit.com/r/dataengineering/comments/1k1md1v/jsonb_vs_separate_table_eav_for_metadatacustom/,0,False,False,False,False
+1k1f0sa,How to run a long Python script on an Azure VM from ADF and get execution status?,"In Azure ADF, how can I invoke a Python scripts on an Azure VM (behind a VPN), if the script can run for several hours and I need the success/failure status returned to the pipeline?",3,6,Away_Efficiency_5837,2025-04-17 15:04:11,https://www.reddit.com/r/dataengineering/comments/1k1f0sa/how_to_run_a_long_python_script_on_an_azure_vm/,0,False,2025-04-17 15:20:15,False,False
+1k1d5st,Exploring a DAAS Business Opportunity in Geospatial Data—Where to Start?,"Hey Reddit,
+
+I currently work as a BA/project lead in the ESG space, and I’ve spotted a business gap in the geospatial data industry that I’d love to explore as a potential DAAS (Data-as-a-Service) venture.
+
+I have solid product ownership and requirements gathering skills, understand the data sources well, and have a good grasp of database structuring. 
+
+However, I don't have coding skills—so I’m wondering how best to approach this.
+Where would you start if you were in my shoes?
+
+Additionally, any recommendations for low-code/no-code data platforms that could help me build an MVP myself would be hugely appreciated! Open to general advice too.
+
+Thanks in advance!",5,2,FirstInteraction5882,2025-04-17 13:45:09,https://www.reddit.com/r/dataengineering/comments/1k1d5st/exploring_a_daas_business_opportunity_in/,0,False,False,False,False
+1k1wtbm,Data Pipeline Question,"I'm fairly new to the idea of ETL even though I've read about and followed it for years; however, the implementation is what I have a question about.
+
+Our needs have migrated towards the idea of Spark so I'm thinking of building our pipeline in Scala.  I've used it on and off in the past so it's not a foreign language for me.
+
+However, the question I have is should I build our workflow and hard code it from A-Z (data ingestion, create or replace, populate tables) outside of snowflake, or is it better practice to have it fragmented and saved as snowflake worksheets?  My aim with this change would be strongly typed services that can't be ""accidentally"" fired off.
+
+I'm thinking the pipeline would be more of a spot instance that is fired off with certain configs with the A-Z only allowed for certain logins.  There aren't many people on the team but there are people working with tables that have drop permissions (not from me) and I just want to be prepared for disasters and recovery.
+
+It's like a mini-dream whereas I'm in full control of the data and ingestion pipelines but everything is sql currently.  Therefore, we are building from scratch right now and the Scala system would mainly be a disaster recovery so made to repopulate tables, or to ingest a new set of raw data to be transformed and loaded (updates).
+
+This is a non-profit so I don't want to load them up with huge bills (databricks) so I do want to do most of the stuff myself with the help of apache.  I understand there are numerous options but essentially it's going to be like this
+
+Scala server -> Apache Spark -> ML Categorization From Spark -> Snowflake
+
+Since we are ingesting data I figured we should mix in the machine learning while transforming and processing to save on time and headaches.
+
+WHY I DIDN'T CHOOSE SNOWPARK:  
+After looking over snowpark I see it as a great gateway for people either needing pure speed, or those who are newer to software engineering and needing a box to be in.  I'm well-versed in pandas, numpy, etc. so I wanted to be able to break the mold at any point.  I know this may not be preferable for snowflake people but I have about a decade of experience writing complex software systems, and I didn't want vendor lock-in so I hope that can be respected to some extent.  If I am blatantly wrong then please let me know how snowpark is better.  
+
+  
+Note: I do see snowpark offers Scala (or something like that); however, the point isn't solely to use Scala, I come from Golang and want a sturdy pipeline that won't run into breaking changes and make it a JVM shop.
+
+Any other advice from engineers here on other things I should recommend would be greatly appreciated as well.  Scraping is a huge concern, which is why I chose Golang off the bat, but scraping new data can't objectively be the main priority, I feel like there are other things that I might be unaware of.  Maybe a checklist of things that I can make sure we have just so we don't run into major issues then I catch the blame shift.
+
+Therefore, please be gentle I am not the most well-versed in data engineering but I do see it as a fascinating discipline that I'd like to find a niche in if possible.",2,1,Sufficient_Ant_3008,2025-04-18 04:51:51,https://www.reddit.com/r/dataengineering/comments/1k1wtbm/data_pipeline_question/,1,False,False,False,False
+1k1uh7y,Attempting to Solve the Cross-Platform AI Billing Challenge as a Solo Engineer/Founder - Need Feedback,"Hey Everyone
+
+I'm a self-taught solo engineer/developer (with university + multi-year professional software engineer experience) developing a solution for a growing problem I've noticed many organizations are facing: managing and optimizing spending across multiple AI and LLM platforms (OpenAI, Anthropic, Cohere, Midjourney, etc.).
+
+# The Problem I'm Research / Attempting to Address:
+
+From my own research and conversations with various teams, I'm seeing consistent challenges:
+
+* No centralized way to track spending across multiple AI providers
+* Difficulty attributing costs to specific departments, projects, or use cases
+* Inconsistent billing cycles creating budgeting headaches
+* Unexpected cost spikes with limited visibility into their causes
+* Minimal tools for forecasting AI spending as usage scales
+
+# My Proposed Solution
+
+Building a platform-agnostic billing management solution that would:
+
+* Provide a unified dashboard for all AI platform spending
+* Enable project/team attribution for better cost allocation
+* Offer usage analytics to identify optimization opportunities
+* Include customizable alerts for budget management
+* Generate forecasts based on historical usage patterns
+
+# I Need Your Input:
+
+Before I go too deep into development, I want to make sure I'm building something that genuinely solves problems:
+
+1. What features would be most valuable for your organization?
+2. What platforms beyond the major LLM providers should we support?
+3. How would you ideally integrate this with your existing systems?
+4. What reporting capabilities are most important to you?
+5. How do you currently handle this challenge (manual spreadsheets, custom tools, etc.)?
+
+Seriously would love your insights and/or recommendations of other projects I could build because I'm pretty good at launching MVPs extremely quickly (few hours to 1 week MAX).",2,1,Frozen-Insightful-22,2025-04-18 02:37:18,https://www.reddit.com/r/dataengineering/comments/1k1uh7y/attempting_to_solve_the_crossplatform_ai_billing/,0,False,False,False,False
+1k194a2,Agent 2 Agent Protocol,"Read this article about the Agent2Agent Protocol   
+[https://medium.com/everyday-ai/understanding-google-clouds-agent2agent-a2a-protocol-81d0d9bcfd91](https://medium.com/everyday-ai/understanding-google-clouds-agent2agent-a2a-protocol-81d0d9bcfd91)",2,0,adityasharmah,2025-04-17 10:04:27,https://www.reddit.com/r/dataengineering/comments/1k194a2/agent_2_agent_protocol/,0,False,False,False,False
+1k1l7vo,"MS ACCESS, no clickbait, kinda long","Hello to all,
+
+Thank you for reading the following and talking the time to answer.
+
+I'm a consultant and I work as...non idea what I am, maybe you'll tell me what I am.
+
+In my current project (1+ years) I normally do stored procedures in tsql, I create reports towards Excel, sometimes powerbi, and...AND...AAAANNDDD * drums * Ms access (yeah, same as title says).
+
+So many things happens inside ms access, mainly views from tsql and some...how can I call them? Like certain ""structures"" inside, made by a dude that was 7 years (yes, seven, S-E-V-E-N) on the project. These structures have a nice design with filters, with inputs, outputs. During this 1+ year I somehow made some modifications which worked (I was the first one surprised, most of the times I had no idea what I was doing, but it was working and nobody complained so, *shoulder pat* to me).
+
+The thing is that I enjoy all the (buzz word incoming) * ✨️✨️✨️automation✨️✨️✨️"" like the jobs, the procedures that do stuff etc. I enjoy tsql, is very nice. It can do a lot of shit (still trying to figure out how to send automatic mails, some procedures done by the previous dude already send emails with csv inside, for now it's black magic for me). The jobs and their schedule is pure magic. It's nice. 
+
+Here comes the actual dilemma:
+
+I want to do stuff. I'm taking some courses on SSIS (for now it seems it does the same as a stored procedures with extra steps+no code, but I trust the process).
+
+How can I replace the entire ms access tool? How can I create a menu with stuff, like ""Sales, Materials, Aquisitions"" etc, where I have to put filters (as end user) to find shit. 
+
+For every data eng. positions i see instruments required such as sql, no sql, postgresql, mongodb, airflow, snowflake, apake, hadoop, databricks, python, pyspark, Tableau, powerbi, click, aws, azure, gcp, my mother's virginity. I've taken courses (coursera / udemy) on almost all and they don't do magic. It seems they do pretty much what tsql can do (except ✨️✨️✨️ cloud ✨️✨️✨️).
+
+In python I did some things, mainly stuff about very old excel format files, since they come from a sap Oracle cloud, they come sometimes with rows/columns positioned where they shouldn't have been, so, I stead of the 99999+ rows of VBA script my predecessor did, I use 10 rows of python to do the same.
+
+So, coming back to my question, is there something to replace Ms access? Keeping the simplicity and also the utility it has, but also ✨️✨️✨️future proof✨️✨️✨️, like, in 5 years when fresh people will come in my place (hopefully faster than 5y) they will have some contemporary technology to work with instead of stone age tools.
+
+Thank you again for your time and for answering :D",0,4,AnotherDrink555,2025-04-17 19:19:44,https://www.reddit.com/r/dataengineering/comments/1k1l7vo/ms_access_no_clickbait_kinda_long/,0,False,False,False,False
+1k1vf5i,How about changing the medallion architecture's names?,"the bronze, silver, gold of the medallion architecture is kind of confusing, how about we start calling it Smelting, Casting, and Machining instead? I think it makes so much more sense.",0,16,iwalkthelonelyroads,2025-04-18 03:29:43,https://www.reddit.com/r/dataengineering/comments/1k1vf5i/how_about_changing_the_medallion_architectures/,0,False,False,False,False
+1k1je39,How Dirty Is Your Data?,"While I find these Buzzfeed-style quizzes somewhat… *gimmicky*, they do make it easy to reflect on how your team handles core parts of your analytics stack. How does your team stack up in these areas?
+
+**Semantic Layer Documentation:**
+
+**Data Testing:**
+
+* ✅ Automated tests run prior to merging anything into main. Failed tests block the commit.
+* 🟡 We do some manual testing.
+* 🚩 We rely on users to tell us when something is wrong.
+
+**Data Lineage:**
+
+* ✅ We know where our data comes from.
+* 🟡 We can trace data back a few steps, but then it gets fuzzy.
+* 🚩 Data lineage? What's that?
+
+**Handling Data Errors:**
+
+* ✅ We feel confident our errors are reasonably limited by our tests. When errors come up, we are able to correct them and implement new tests as we see fit.
+* 🟡 We fix errors as they come up, but don't track them.
+* 🚩 We hope the errors go away on their own.
+
+**Warehouse / RB Access Control:**
+
+* ✅ Our roles are defined in code (Terraform, Pulumi, etc...) and are git controlled, allowing us to reconstruct who had access to what and when.
+* 🟡 We have basic access controls, but could be better.
+* 🚩 Everyone has access to everything.
+
+**Communication with Data Consumers:**
+
+* ✅ We communicate changes, but sometimes users are surprised.
+* 🟡 We communicate major changes only.
+* 🚩 We let users figure it out themselves.
+
+Scoring: 
+
+Each ✅ - 0 points, Each 🟡 - 1 point, Each 🚩 - 2 points.
+
+**0-4:** Your data practices are in good shape. 
+
+**5-7:** Some areas could use improvement. 
+
+**8+:** You might want to prioritize a data quality initiative.",0,10,Driftwave-io,2025-04-17 18:02:57,https://www.reddit.com/r/dataengineering/comments/1k1je39/how_dirty_is_your_data/,0,False,False,False,False
+1k16dv7,DataPig - RIP spark,"Can you imagine a world where no more huge price to pay or determine data ingestion frequency so it won't be costly to move data raw files like CSV to target data warehouse like SQL server. That is pay per compute.. am paying to run 15 threads aka Spark Pool compute always so I can move 15 tables delta data to target..Now here comes DataPig.. They say can move 200 tables delta less than 10 seconds..
+
+How according benchmark it takes 45 min to write 1 million rows data to target tables using Azure Synapse spark pool.. but DataPig does it 8 sec to stage data into SQL server for same data. With leveraging only target compute power eliminating pay to play on compute side of spark and they implemented multithreaded parallel processing aka parallel 40 threads processing 40 tables changes at same time. Delta ingestion to milliseconds from seconds. Persevering both CDC and keeping only latest data for data warehouse for application like D365 is bang for money.
+
+Let me know what you guys think. I build the engine so any feedback is valuable. We took one use case but with preserving base concept we can make both source Dataverse,SAP HANA, etc.. and target it can be SQL server, Snowflake,etc plug and play. So will industry ingest this shift in Big Data batch processing?",0,5,Ok-Analyst6021,2025-04-17 06:42:59,https://www.reddit.com/r/dataengineering/comments/1k16dv7/datapig_rip_spark/,0,False,False,False,False

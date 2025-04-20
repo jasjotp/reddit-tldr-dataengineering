@@ -11,6 +11,7 @@ from pipelines.reddit_pipeline import reddit_pipeline
 from pipelines.aws_s3_pipeline import upload_to_s3_pipeline
 from pipelines.get_combined_data import get_combined_data
 from pipelines.eda_pipeline import run_reddit_eda
+from semantic_clustering.w2v_analysis import run_nlp_clustering_pipeline
 
 # set default arguments 
 default_args = {
@@ -64,4 +65,11 @@ generate_eda_and_graphs = PythonOperator(
     dag = dag
 )
 
-extract >> upload_to_s3 >> combine_and_clean_data >> generate_eda_and_graphs
+# run the w2v analysis and NLP pipeline on the updated data before generating updated post level statistics and keywords for each cluster
+run_w2v_nlp_analysis = PythonOperator(
+    task_id = 'run_w2v_and_nlp_analysis',
+    python_callable = run_nlp_clustering_pipeline,
+    dag = dag
+)
+
+extract >> upload_to_s3 >> combine_and_clean_data >> generate_eda_and_graphs >> run_w2v_nlp_analysis

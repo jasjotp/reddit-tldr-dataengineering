@@ -14,6 +14,7 @@ x-airflow-common:
     - ./logs:/opt/airflow/logs
     - ./pipelines:/opt/airflow/pipelines
     - ./plugins:/opt/airflow/plugins
+    - ./semantic_clustering:/opt/airflow/semantic_clustering 
     - ./tests:/opt/airflow/tests
     - ./utils:/opt/airflow/utils
     - ./graphs:/opt/airflow/graphs

@@ -11,24 +11,23 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction import text 
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+# set the current and output dirs for Airflow and make the output directory if it does not exist already 
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_DIR = os.path.join(CURRENT_DIR, "../data/output")
+GRAPHS_DIR = os.path.join(CURRENT_DIR, "../graphs")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+os.makedirs(GRAPHS_DIR, exist_ok=True)
+
 # add root directory of project to Python's import path so we can import modules from older folders
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.constants import aws_access_key, aws_secret_access_key, aws_bucket_name, aws_region
+from utils.s3_helpers import upload_graph_to_s3, load_combined_data_from_s3
 
 def run_reddit_eda():
-    # create a new aws session 
-    session = boto3.Session(
-        aws_access_key_id = aws_access_key,
-        aws_secret_access_key = aws_secret_access_key,
-        region_name=aws_region
-    )
 
-    s3 = session.client('s3')
-
-    # read the processed combined data file from the aws bucket and read it into a pandas df
-    obj = s3.get_object(Bucket=aws_bucket_name, Key='processed/reddit_combined_data.csv')
-    combined_df = pd.read_csv(io.BytesIO(obj['Body'].read()))
+    # read the updated combined data using the load_combined_data heper function from utils to get the updated (daily) data
+    combined_df = load_combined_data_from_s3(aws_access_key, aws_secret_access_key, aws_region, aws_bucket_name)
 
     ### 1. Find what times users have been posting the most for most recent days 
 
@@ -48,7 +47,7 @@ def run_reddit_eda():
     plt.figure(figsize=(12, 6))
     ax = sns.countplot(x = 'hour', hue='hour', data = combined_df, order = sorted_hourly_counts, palette = 'Blues_d')
     ax.legend().set_visible(False)
-    
+
     for container in ax.containers:
         ax.bar_label(container, label_type='edge', fontsize=10, fontweight='bold')
 
@@ -58,8 +57,10 @@ def run_reddit_eda():
     plt.ylabel('Number of Posts', fontsize = 12)
     plt.xticks(ticks=range(len(sorted_hourly_counts)), labels=[hour_labels[h] for h in sorted_hourly_counts])
     plt.tight_layout()
-    os.makedirs("graphs", exist_ok=True)
-    plt.savefig('graphs/post_frequency_by_hour.png', bbox_inches='tight')
+   
+    post_frequency_by_hour_path = os.path.join(GRAPHS_DIR, 'post_frequency_by_hour.png')
+    plt.savefig(post_frequency_by_hour_path, bbox_inches='tight')
+    upload_graph_to_s3(post_frequency_by_hour_path)
     plt.close()
 
     ### The most posts are being posted at 5PM recently (UTC time)
@@ -82,7 +83,10 @@ def run_reddit_eda():
     plt.ylabel('Average', fontsize=12)
     plt.xticks(ticks=range(len(hourly_avg_score_counts)), labels=[hour_labels[h] for h in hourly_avg_score_counts.index])
     plt.tight_layout()
-    plt.savefig('graphs/avg_score_comments_by_hour.png', bbox_inches='tight')
+       
+    avg_score_comments_by_hour_path = os.path.join(GRAPHS_DIR, 'avg_score_comments_by_hour.png')
+    plt.savefig(avg_score_comments_by_hour_path)
+    upload_graph_to_s3(avg_score_comments_by_hour_path)
     plt.close()
 
     ### Posts see the most engagement around 5AM UTC Time
@@ -112,7 +116,10 @@ def run_reddit_eda():
     plt.xlabel('Wordcount of Post', fontsize=12)
     plt.ylabel('Average', fontsize=12)
     plt.tight_layout()
-    plt.savefig('graphs/avg_score_comments_by_wordcount.png', bbox_inches='tight')
+
+    avg_score_comments_by_wordcount_path = os.path.join(GRAPHS_DIR, 'avg_score_comments_by_wordcount.png')
+    plt.savefig(avg_score_comments_by_wordcount_path)
+    upload_graph_to_s3(avg_score_comments_by_wordcount_path)
     plt.close()
 
     ### It looks like posts with around < 50 words have been getting the most engagement (highest scores and number of comments)
@@ -125,7 +132,10 @@ def run_reddit_eda():
     plt.xlabel('Weekday', fontsize=12)
     plt.ylabel('Average Score', fontsize=12)
     plt.tight_layout()
-    plt.savefig('graphs/avg_score_by_weekday.png', bbox_inches='tight')
+
+    avg_score_by_weekday_path = os.path.join(GRAPHS_DIR, 'avg_score_by_weekday.png')
+    plt.savefig(avg_score_by_weekday_path)
+    upload_graph_to_s3(avg_score_by_weekday_path)
     plt.close()
 
     ### Based on the engagement data from r/dataengineering, posts made on Saturdays consistently outperform those made on weekdays — both in terms of average score and likelihood of going viral (score > 100)
@@ -162,7 +172,11 @@ def run_reddit_eda():
     plt.ylabel('Frequency', fontsize=12)
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
-    plt.savefig('graphs/top30_common_words_all_posts.png', bbox_inches='tight')
+
+    top30_common_words_path = os.path.join(GRAPHS_DIR, 'top30_common_words_all_posts.png')
+    plt.savefig(top30_common_words_path)
+    upload_graph_to_s3(top30_common_words_path)
+    plt.close()
 
     ### 6. use TfidfVectorizer to find words that commonly appear in high engagement posts but do not appear much in other lower engagement posts
     # find the top 15% of highest engagement posts 
@@ -184,8 +198,12 @@ def run_reddit_eda():
     plt.ylabel('Score', fontsize=12)
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
-    plt.savefig('graphs/highest_post_top30_tf-idf_words.png', bbox_inches='tight')
-
+    
+    top30_tf_idf_words_path = os.path.join(GRAPHS_DIR, 'highest_post_top30_tf-idf_words.png')
+    plt.savefig(top30_tf_idf_words_path)
+    upload_graph_to_s3(top30_tf_idf_words_path)
+    plt.close()
+    
     ### 7. use TfidfVectorizer to find words that commonly appear in low engagement posts but do not appear much in other highlower engagement posts
     # find the lowest 15% of posts by engagement (scores less than the 15th percentile of scores)
     low_engagement_posts = combined_df[combined_df['score'] < combined_df['score'].quantile(0.30)]
@@ -208,7 +226,11 @@ def run_reddit_eda():
     plt.ylabel('Score', fontsize=12)
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
-    plt.savefig('graphs/lowest_post_top30_tf-idf_words.png', bbox_inches='tight')
+    
+    lowest_post_top30_tf_idf_words_path = os.path.join(GRAPHS_DIR, 'lowest_post_top30_tf-idf_words.png')
+    plt.savefig(lowest_post_top30_tf_idf_words_path)
+    upload_graph_to_s3(lowest_post_top30_tf_idf_words_path)
+    plt.close()
 
     # create a combined df where each word is scored for its high engagement vs low engagement posts
     tfidf_comparison = pd.DataFrame({
@@ -238,7 +260,11 @@ def run_reddit_eda():
     plt.xticks(rotation=45, ha='right')
     plt.xlabel("Word")
     plt.tight_layout()
-    plt.savefig('graphs/tfidf_high_vs_low_difference_comparison.png', bbox_inches='tight')
+
+    tfidf_high_vs_low_difference_path = os.path.join(GRAPHS_DIR, 'tfidf_high_vs_low_difference_comparison.png')
+    plt.savefig(tfidf_high_vs_low_difference_path)
+    upload_graph_to_s3(tfidf_high_vs_low_difference_path)
+    plt.close() 
 
     # calculate the ratio for each word that shows up in high engagement posts vs low engageemnt posts
     tfidf_comparison['Ratio'] = tfidf_comparison['High Engagement'] / (tfidf_comparison['Low Engagement'] + 1e-6)
@@ -262,12 +288,19 @@ def run_reddit_eda():
     plt.legend().set_visible(False)
     plt.xlabel("Word")
     plt.tight_layout()
-    plt.savefig('graphs/tfidf_high_vs_low_ratio_comparison.png', bbox_inches='tight')
+
+    tfidf_high_vs_low_ratio_comparison_path = os.path.join(GRAPHS_DIR, 'tfidf_high_vs_low_ratio_comparison.png')
+    plt.savefig(tfidf_high_vs_low_ratio_comparison_path)
+    upload_graph_to_s3(tfidf_high_vs_low_ratio_comparison_path)
+    plt.close()  
 
     ### 8. Check correlations between numeric features
     plt.figure(figsize=(14, 8))
     sns.heatmap(combined_df.corr(numeric_only=True), annot=True, cmap='coolwarm')
     plt.title("Correlation Matrix of Numeric Features")
     plt.tight_layout()
-    plt.savefig("graphs/correlation_matrix.png", bbox_inches='tight')
-    plt.close()
+
+    correlation_matrix_path = os.path.join(GRAPHS_DIR, 'correlation_matrix.png')
+    plt.savefig(correlation_matrix_path)
+    upload_graph_to_s3(correlation_matrix_path)
+    plt.close()  

@@ -1,0 +1,178 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1k3qw05,You can become a millionaire working in Data,,893,25,IdlePerfectionist,2025-04-20 16:50:15,https://i.redd.it/tk3ipjstr0we1.png,0,False,False,False,False
+1k3b3yb,Merge Parquet with DuckDB,,23,2,Clohne,2025-04-20 01:06:31,https://emilsadek.com/blog/merge-parquet-duckdb,0,False,False,False,False
+1k3pifk,Best tools for automation?,"I’ve been tasked at work with automating some processes — things like scraping data from emails with attached CSV files, or running a script that currently takes a couple of hours every few days.
+
+I’m seeing this as a great opportunity to dive into some new tools and best practices, especially with a long-term goal of becoming a Data Engineer. That said, I’m not totally sure where to start, especially when it comes to automating multi-step processes — like pulling data from an email or an API, processing it, and maybe loading it somewhere maybe like a PowerBi Dashbaord or Excel.
+
+I’d really appreciate any recommendations on tools, workflows, or general approaches that could help with automation in this kind of context!",14,16,JeffTheSpider,2025-04-20 15:48:21,https://www.reddit.com/r/dataengineering/comments/1k3pifk/best_tools_for_automation/,0,False,False,False,False
+1k3m7d4,Advice wanted: planning a Streamlit + DuckDB geospatial app on Azure (Web App Service + Function),"Hey all,
+
+I’m in the design phase for a lightweight, map‑centric web app and would love a sanity check before I start provisioning Azure resources.
+
+Proposed architecture:
+- Front‑end: Streamlit container in an Azure Web App Service. It plots store/parking locations on a Leaflet/folium map.
+- Back‑end: FastAPI wrapped in an Azure Function (Linux custom container). DuckDB runs inside the function.
+- Data: A ~200 MB GeoParquet file in Azure Blob Storage (hot tier).
+- Networking: Web App ↔ Function over VNet integration and Private Endpoints; nothing goes out to the public internet.
+- Data flow: User input → Web App calls /locations → Function queries DuckDB → returns payloads.
+
+Open questions
+
+	1.	Function vs. always‑on container: Is a serverless Azure Function the right choice, or would something like Azure Container Apps (kept warm) be simpler for DuckDB workloads? Cold‑start worries me a bit.
+
+	2.	Payload format: For ≤ 200 k rows, is it worth the complexity of sending Arrow/Polars over HTTP, or should I stick with plain JSON for map markers? Any real‑world gains?
+
+	3.	Pre‑processing beyond “query from Blob”: I might need server‑side clustering, hexbin aggregation, or even vector‑tile generation to keep the payload tiny. Where would you put that logic—inside the Function, a separate batch job, or something else?
+
+	4.	Gotchas: Security, cost surprises, deployment quirks? Anything you wish you’d known before launching a similar setup?
+
+Really appreciate any pointers, war stories, or blog posts you can share. 🙏",13,4,Appropriate-Lab-Coat,2025-04-20 13:09:51,https://www.reddit.com/r/dataengineering/comments/1k3m7d4/advice_wanted_planning_a_streamlit_duckdb/,1,False,2025-04-20 13:33:53,False,False
+1k3cuws,"Has anyone used and recommend good data observability tools? Soda, Bigeye...","I am looking at some options for my company for data observability, I want to see if anyone has experience with tools like Bigeye and Soda, Monte Carlo..? What has your experience been like with them? are there good? What is lacking with those tools? what can you recommend... Basically trying to find the best tool there is, for pipelines, so our engineers do not have to keep checking multiple pipelines and control points daily (weekends included), lmk if yall do this as well lol. But I really care a lot about knowing what the tool has in terms of weaknesses, so I won't assume it does that later to only find out after integrating it lacks a pretty logical feature...",10,4,Economy-Fee-5958,2025-04-20 02:47:54,https://www.reddit.com/r/dataengineering/comments/1k3cuws/has_anyone_used_and_recommend_good_data/,0,False,False,False,False
+1k3vz1m,Anybody else find dbt documentation hopelessly confusing,"I have been using dbt for over 1 year now i moved to a new company and while there is a lot of documentation for DBT, what I have found is that it's not particularly well laid out unlike documentation for many python packages like pandas, for example, where you can go to a particular section and get an exhaustive list of all the options available to you.
+
+ I find that Google is often the best way to parse my way through DBT documentation. It's not clear where to go to find an exhaustive list of all the options for yml files is so I keep stumbling across new things in dbt which shouldn't be the case. I should be able to read through documentation and find an exhaustive list of everything I need does anybody else find this to be the case? Or have any tips",11,1,yanicklloyd,2025-04-20 20:39:58,https://www.reddit.com/r/dataengineering/comments/1k3vz1m/anybody_else_find_dbt_documentation_hopelessly/,0,False,False,False,False
+1k3rtpa,Best way to sync RDS Posgtres Full load + CDC data?,"What would this data pipeline look like? The total data size is 5TB on postgres and it is for a typical SaaS B2B2C product
+
+Here is what the part of the data pipeline looks like
+
+1. Source DB: Postgres running on RDS
+2. AWS Database migration service -> Streams parquet into a s3 bucket
+3. We have also exported the full db data into a different s3 bucket - this time almost matches the CDC start time
+
+What we need on the other end is a good cost effective data lake to do analytics and reporting on - as real time as possible
+
+I tried to set something up with pyiceberg to go iceberg -
+
+\- Iceberg tables mirror the schema of posgtres tables
+
+\- Each table is partitioned by account\_id and created\_date
+
+I was able to load the full data easily but handling the CDC data is a challenge as the updates are damn slow. It feels impractical now - I am not sure if I should just append data to iceberg and get the latest row version by some other technique?
+
+how is this typically done? Copy on write or merge on read?
+
+What other ways of doing something like this exist that can work with 5TB data with 100GB data changes every day?",6,3,CityYogi,2025-04-20 17:31:13,https://www.reddit.com/r/dataengineering/comments/1k3rtpa/best_way_to_sync_rds_posgtres_full_load_cdc_data/,0,False,2025-04-20 17:49:17,False,False
+1k3u48f,Real-time 4/20 cannabis sales dashboard using streaming data,"We built this dashboard to visualize cannabis sales in real time across North America during 4/20. The data updates live from thousands of dispensary POS transactions as the day unfolds.
+
+Under the hood, we’re using Estuary for data streaming and Tinybird to power super fast analytical queries. The charts are made in Tremor and the map is D3.",8,1,dabasaurus_rex_rawr,2025-04-20 19:13:01,https://420.headset.io,0,False,False,False,False
+1k3u13r,My first on-cloud data engineering project,"I have done these two projects:
+
+  
+**Real Time Azure Data Lakehouse Pipeline (Netflix Analytics) | Databricks, Synapse Mar. 2025**
+
+• Delivered a real time medallion architecture using Azure data factory, Databricks, Synapse, and Power BI.
+
+• Built parameterized ADF pipelines to extract structured data from GitHub and ADLSg2 via REST APIs, with
+
+validation and schema checks.
+
+• Landed raw data into bronze using auto loader with schema inference, fault tolerance, and incremental loading.
+
+• Transformed data into silver and gold layers using modular PySpark and Delta Live Tables with schema evolution.
+
+• Orchestrated Databricks Workflows with parameterized notebooks, conditional logic, and error handling.
+
+• Implemented CI/CD to automate deployment of notebooks, pipelines, and configuration across environments.
+
+• Integrated with Synapse and Power BI for real-time analytics with 100% uptime during validation.
+
+**Enterprise Sales Data Warehouse | SQL· Data Modeling· ETL/ELT· Data Quality· Git Apr. 2025**
+
+• Designed and delivered a complete medallion architecture (bronze, silver, gold) using SQL over a 14 days.
+
+• Ingested raw CRM and ERP data from CSVs (>100KB) into bronze with truncate plus insert batch ELT,
+
+achieving 100% record completeness on first run.
+
+• Standardized naming for 50+ schemas, tables, and columns using snake case, resulting in zero naming conflicts across 20 Git tracked commits.
+
+• Applied rule based quality checks (nulls, types, outliers) and statistical imputation resulting in 0 defects.
+
+• Modeled star schema fact and dimension tables in gold, powering clean, business aligned KPIs and aggregations.
+
+• Documented data dictionary, ER diagrams, and data flow
+
+
+
+**QUESTION: What would be a step up from this now?**   
+**I think I want to focus on Azure Data Engineering solutions.** ",6,1,Gloomy-Profession-19,2025-04-20 19:09:01,https://www.reddit.com/r/dataengineering/comments/1k3u13r/my_first_oncloud_data_engineering_project/,0,False,False,False,False
+1k3pzh7,Feedback on my MCD for a training management system?,"Hey everyone! 👋
+
+I’m working on a **Conceptual Data Model (MCD)** for a training management system and I’d love to get some feedback
+
+The main elements of the system are:
+
+* **Formateurs** (trainers) teach **Modules**
+* Each **Module** is scheduled into one or more **Séances** (sessions)
+* **Stagiaires** (trainees) can participate in sessions, and their participation can be marked as ""Present"" or ""Absent""
+* If a trainee is absent, there can be a **Justification** linked to that absence
+
+I decided to merge the ""Assistance"" (Assister) and “Absence” (Absenter) relationships into a single **Participation** relationship with a possible attribute like `Status`, and added a link from participation to a **Justification** (0 or 1).
+
+Does this structure look correct to you? Any suggestions to improve the logic, simplify it further, or potential pitfalls I should watch out for?
+
+Thanks in advance for your help
+
+https://preview.redd.it/mpn8p43kk0we1.png?width=806&format=png&auto=webp&s=ea0c00e582b94a8168a3d991d90cef5439c3bee9
+
+",4,0,drawlin__,2025-04-20 16:09:19,https://www.reddit.com/r/dataengineering/comments/1k3pzh7/feedback_on_my_mcd_for_a_training_management/,0,False,False,False,False
+1k3pnjf,How do you balance short and long term as an IC,"Hi all ! I'm an analytics engineer not DE but felt it would be relevant to ask this here.
+
+When you're taking on a new project, how do you think about balancing turning something around asap vs really digging in and understanding and possibly delivering something better? 
+
+For example, I have a report I'm updating and adding to. On one extreme, I could probably ship the thing in like a week without much of an understanding outside of what's absolutely necessary to understand to add what needs to be added. 
+
+On the other hand, I could pull the thread and work my way all the way from source system to queries that create the views to the transformations done in the reporting layer and understanding the business process and possibly modeling the data if that's not already done etc 
+
+I know oftentimes I hear leaders of data teams talk about balancing short versus long-term investments, but even as an IC I wonder how y'all do it?
+
+In a previous role, I aired on the side of understanding everything super deeply from the ground up on every project, but that means you don't deliver things quickly.",4,7,0sergio-hash,2025-04-20 15:54:48,https://www.reddit.com/r/dataengineering/comments/1k3pnjf/how_do_you_balance_short_and_long_term_as_an_ic/,0,False,False,False,False
+1k3ugrj,Looking for recent trends or tools to explore in the data world,"Hey everyone,
+
+ I'm currently working on strengthening my tech watch efforts around the data ecosystem and I’m looking for fresh ideas on recent features, tools, or trends worth diving into.
+
+Any suggestions are welcome — thanks in advance!",5,2,Ilyes_ch,2025-04-20 19:29:12,https://www.reddit.com/r/dataengineering/comments/1k3ugrj/looking_for_recent_trends_or_tools_to_explore_in/,1,False,False,False,False
+1k3n8h9,Live CSV updating,"Hi everyone , 
+
+I have a software that writes live data to a CSV file in realtime. I want to be able to import this data every second, into Excel or a another spreadsheet program, where I can use formulas to mirror cells and manipulate my data. I then want this to export to another live CSV file in realtime. Is there any easy way to do this? 
+
+I have tried Google sheets (works for json but not local CSV, and requires manual updates)
+
+I have used macros in VBA in excel to save and refresh data every second and it is unreliable. 
+
+Any help much appreciated.. possibly create a database?",2,6,adamgmx24,2025-04-20 14:03:02,https://www.reddit.com/r/dataengineering/comments/1k3n8h9/live_csv_updating/,0,False,False,False,False
+1k3wenv,Need advice: Codec (Data Engineer) vs Optum (Data Analyst) offer — which one to choose?,"Hi everyone,
+
+I’ve just received two job offers — one from Codec for a Data Engineer role and another from Optum for a Data Analyst position. I'm feeling a bit confused about which one to go with.
+
+Can anyone share insights on the roles or the companies that might help me decide? I'm especially curious about growth opportunities, work-life balance, and long-term career prospects in each.
+
+Would love to hear your thoughts on:
+
+Company culture and work-life balance
+
+Tech stack and learning opportunities
+
+Long-term prospects in Data Engineer vs Data Analyst roles at these companies
+
+Thanks in advance for your help!",2,2,FluffyBonus3868,2025-04-20 21:00:34,https://www.reddit.com/r/dataengineering/comments/1k3wenv/need_advice_codec_data_engineer_vs_optum_data/,1,False,False,False,False
+1k3er2s,Has anyone used Leen? They call themselves a 'unified API for security',"I have been researching some easier ways to build integrations and was suggested by a founder to look up Leen. They seem like a relatively new startups, \~2y old. Their docs look pretty compelling and straightforward, but curious is anyone has heard or used them or a similar service. ",0,2,Ok_Piece8772,2025-04-20 04:42:52,https://www.reddit.com/r/dataengineering/comments/1k3er2s/has_anyone_used_leen_they_call_themselves_a/,0,False,False,False,False
+1k3gadk,Slowness of Small Data,"Got a meeting coming up with high profile data analysts at my org that primarily use SAS which doesn’t like large CSV or parquet (with their current version) drawing from MSSQL/otherMScrap. I can give them all their data, daily, (5gb parquet or whatever that is —more— as csv) right to their doorstep in secured Shaerpoint/OnDrive folders they can sync in their OS.
+
+Their primary complaint is slowness of SAS drawing data.  They also seem misguided with their own MSSQL DBs. Instead of using schemas, they just spin up a new DB. All tables have owner DBO. Is this normal? They don’t use Git. My heart wants to show them so many things:
+
+DataWrangler in VS Code
+DuckDB in DBeaver (or Harelquin, Vim-dadbod, the new local Motherduck UI)
+Streamlit
+pygwalker
+
+Our org is pressing hard for them to adapt to using PBI/Fabric, and I feel they should go a different direction given their needs (speed), ability to upskill (they use SAS, Excel, SSMS, Cognos… they do not use VS Code/any-IDE, Git, Python), and constraints (high workload, limited and fixed staff & $. Public Sector, HighEd.
+
+My boss recommended I show them VS Code Data Wrangler. Which is fine with me…but they are on managed machines, have never installed/used VS Code, but let me know they “think its in their software center”, god knows what that means.
+
+I’m a little worried if I screw this meeting up,  I’ll kill any hope these folks would adapt/evolve, get with the times. There’s queries that take 45 min on their current setup that are sub-second on parquet/DuckDB. And as retarded as Fabric is, it’s also complicated. IMO, more complicated than the awesome FOSS stuff heavily trained by LLMs. I really think DBT would be a game changer too, but nobody at my org uses anything like it. And notebook/one-off development vs. DRY is causing real obstacles.
+
+You guys have any advice? Where are the women DE’s? This is an area I’ve failed far more, and more recent, than I’ve won. 
+
+If this comes off smug, then I tempt the Reddit gods to roast me.",0,3,None,2025-04-20 06:24:39,https://www.reddit.com/r/dataengineering/comments/1k3gadk/slowness_of_small_data/,0,False,False,False,False
