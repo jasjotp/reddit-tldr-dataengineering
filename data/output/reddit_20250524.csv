@@ -1,0 +1,308 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1ktpgcf,"New data engineer getting paid more than me, a senior DE","I found out that a new data engineer coming onto my team is making a few thousand more than me (a senior thats been with the company several years) annually, despite this new DE having less direct/applicable experience than me. Having to be a bit vague for obvious reasons. I have been a top individual contributor on my team every year. Every review I've received from management is overwhelmingly positive. This new DE and I are in the same geographic area, so thats not the explanation. 
+
+How should I broach this with my management without: 
+ - revealing that I am 100% sure what this new DE is making, 
+ - threatening to leave if they don't up my pay,
+ - getting myself on the short list for layoffs
+
+We just finished our annual reviews. This pay disparity is even after I received a meager merit raise. 
+
+Anyone else navigated this? Am I really going to have to company hop just to get paid a fair market salary? I want to stay at this company. I like what I do, but I also need more money to make ends meet.
+
+EDIT (copying a comment I left): I guess I should have said this in the original post, but I already tried this before our annual reviews. I provided evidence of my contribution, asked for a specific annual salary increase, and wanted it to be part of my annual increase which had a specific deadline. 
+
+What I ended up getting was a bunch of excuses as to why it wasn't possible, empty promises of things they might be able to do for me later this year, and a meager merit raise well below inflation.
+
+So, to take your advice and many others here, sounds like I should just start looking elsewhere.",112,111,Yoyo_Baggins,2025-05-23 17:31:03,https://www.reddit.com/r/dataengineering/comments/1ktpgcf/new_data_engineer_getting_paid_more_than_me_a/,0,False,2025-05-23 19:44:50,False,False
+1kthcrg,How is an actual data engineering project executed?,"Hi,
+
+I am new to data engineering and am trying to learn it by myself. 
+
+So far, I have learnt that we generally process data in three stages:
+- bronze/ raw/ a snapshot of original data with very little modification. 
+
+- Silver/ performing transformations for our business purpose
+
+- Gold / dimensionally modelling our data to be consumed by reporting tools. 
+----------
+I used :
+- Azure Data Factory to ingest data into bronze,
+ then 
+
+- Azure DataBricks to store the raw data as delta tables and them perfomed transformations on that data in Silver layer
+
+- Modelled Data for Gold Layer
+-----------
+I want to understand, how an actual real world project is executed. I see companies processing petabytes of data. How do you do that at your job?
+
+Would really be helpful to get an overview of your execution of a project. 
+
+Thanks.  ",27,17,BricksData,2025-05-23 11:39:14,https://www.reddit.com/r/dataengineering/comments/1kthcrg/how_is_an_actual_data_engineering_project_executed/,0,False,False,False,False
+1ktc6so,N8n in Data engineering.,"where exactly does n8n fit into your data engineering stack, if at all?
+
+I’m evaluating it for workflow automation and ETL coordination. Before I commit time to wiring it in, I’d like to know:
+	•	Is n8n reliable enough for production-grade pipelines?
+	•	Are you using it for full ETL (extract, transform, load) or just as an orchestration and alerting layer?
+	•	Where has it actually added value vs. where has it been a bottleneck?
+	•	Any use cases with AI/ML integration like anomaly detection, classification, or intelligent alerting?
+
+Not looking for marketing fluff—just practical feedback on how (or if) it works for serious data workflows.
+
+Thanks in advance. Would appreciate any sample flows, gotchas, or success stories.",15,10,Different-Future-447,2025-05-23 05:52:42,https://www.reddit.com/r/dataengineering/comments/1ktc6so/n8n_in_data_engineering/,0,False,False,False,False
+1kt6ndz,How does your team decide who gets access to what data?,"This is a question I've wondered for a while - simply put, given a data warehouse several facts, dimensions etc. 
+
+How does your company decide who gets access to what data? 
+
+If someone from Finance requests data which is typically used for Marketing - just because they say they need it. 
+
+What are your processes like? How do you decide? 
+
+
+At least to me it seems completely arbitrary with my boss just deciding depending on how much pressure he has for a project.",16,9,exact-approximate,2025-05-23 00:42:12,https://www.reddit.com/r/dataengineering/comments/1kt6ndz/how_does_your_team_decide_who_gets_access_to_what/,0,False,False,False,False
+1ktkqj6,Modular Data Pipeline (Microservices + Delta Lake) for Live ETAs – Architecture Review of La Poste’s Case,"In a recent blog, the team at La Poste (France’s postal service) shared how they redesigned their real-time package tracking pipeline from a monolithic app into a modular microservice architecture. The goal was to provide more accurate ETA predictions for deliveries while making the system easier to scale and monitor in production. They describe splitting the pipeline into multiple decoupled stages (using Pathway – an open-source streaming ETL engine) connected via Delta Lake storage and Kafka. This revamped design not only improved performance and reliability, but also significantly cut costs (the blog cites a 50% reduction in total cost of ownership for the IoT data platform and a projected 16% drop in fleet capital expenditures, which is huge). Below I’ll outline the architecture, key decisions, and trade-offs from the blog in an engineering-focused way.
+
+From Monolith to Microservices: Originally, a single streaming pipeline handled everything: data cleansing, ETA calculation, and maybe some basic monitoring. That monolith worked for a prototype, but it became hard to extend – for instance, adding continuous evaluation of prediction accuracy or integrating new models would make the one pipeline much more complex and fragile. The team decided to decouple the concerns into separate pipelines (microservices) that communicate through shared data layers. This is analogous to breaking a big application into microservices – here each Pathway pipeline is a lightweight service focused on one part of the workflow.
+
+They ended up with four main pipeline components:
+
+1. Data Acquisition & Cleaning: Ingest raw telemetry from delivery vehicles and clean it. IoT devices on trucks emit location updates (latitude/longitude, speed, timestamp, etc.) to a Kafka topic. This first pipeline reads from Kafka, applies a schema, and filters out bad data (e.g. GPS (0,0) errors, duplicates, out-of-order events). The cleaned, normalized data is then written to a Delta Lake table as the “prepared data” store. Delta Lake was used here to persist the stream in a queryable table format (every incoming event gets appended as a new row). This makes the downstream processing simpler and the intermediate data reusable. (Notably, they chose Delta Lake over something like chaining another Kafka topic for the clean data – a design choice we’ll discuss more below.)
+
+2. ETA Prediction: This stage consumes two things – the cleaned vehicle data (from that Delta table) and incoming ETA requests. ETA request events come as another stream (Kafka topic) containing a delivery request ID, the target destination, the assigned vehicle ID, and a timestamp. The topic is partitioned by vehicle ID so all requests for the same vehicle are ordered (ensuring the sequence of stops is handled correctly). The Pathway pipeline joins each request with the latest state of the corresponding vehicle from the clean data, then computes an estimated arrival time. The blog kept the prediction logic straightforward (e.g., basically using current location to estimate travel time to the destination), since the focus was architecture. The important part is that this service is stateless with respect to historical data – it relies on the up-to-date clean data table as its source of truth for vehicle positions. Once an ETA is computed for a request, the result is written out to two places: a Kafka topic (so that whoever requested the ETA gets the answer in real-time) and another Delta Lake table storing all predictions (for later analysis).
+
+3. Ground Truth Extraction: This pipeline waits for deliveries to actually be completed, so they can record the real arrival times (“ground truth” data for model evaluation). It reads the same prepared data table (vehicle telemetry) and the requests stream/table to know what destinations were expected. The logic here tracks each vehicle’s journey and identifies when a vehicle has reached the delivery location for a request (and has no further pending deliveries for that request). When it detects a completed delivery, it logs the actual time of arrival for that specific order. Each of these actual arrival records is written to a ground-truth Delta Lake table. This component runs asynchronously from the prediction one – an order might be delivered 30 minutes after the prediction was made, but by isolating this in its own service, the system can handle that naturally without slowing down predictions. Essentially, the ground truth job is doing a continuous join between live positions and the list of active delivery requests, looking for matches to signal completion.
+
+4. Evaluation & Monitoring: The final stage joins the predictions with their corresponding ground truths to measure accuracy. It reads from the predictions Delta table and the ground truths table, linking records by request ID (each record pairs a predicted arrival time with the actual arrival time for a delivery). The pipeline then computes error metrics. For example, it can calculate the difference in minutes between predicted and actual delivery time for each order. These per-delivery error records are extremely useful for analytics – the blog mentions calculating overall Mean Absolute Error (MAE) and also segmenting error by how far in advance the prediction was made (predictions made closer to the delivery tend to be more accurate). Rather than hard-coding any specific aggregation in the pipeline, the approach was to output the raw prediction-vs-actual data into a PostgreSQL database (or even just a CSV file), and then use external tools or dashboards for deeper analysis and alerting. By doing so, they keep the streaming pipeline focused and let data analysts iterate on metrics in a familiar environment. (One cool extension: because everything is modular, they can add an alerting microservice that monitors this error data stream in real-time – e.g. trigger a Slack alert if error spikes – without impacting the other components.)
+
+Key Architectural Decisions:
+
+Decoupling via Delta Lake Tables: A standout decision was to connect these microservice pipelines using Delta Lake as the intermediate store. Instead of passing intermediate data via queues or Kafka topics, each stage writes its output to a durable table that the next stage reads. For example, the clean telemetry is a Delta table that both the Prediction and Ground Truth services read from. This has several benefits in a data engineering context:
+
+Data Reusability & Observability: Because intermediate results are in tables, it’s easy to query or snapshot them at any time. If predictions look off, engineers can examine the cleaned data table to trace back anomalies. In a pure streaming hand-off (e.g. Kafka topic chaining), debugging would be harder – you’d have to attach consumers or replay logs to inspect events. Here, Delta gives a persistent history you can query with Spark/Pandas, etc.
+
+Multiple Consumers: Many pipelines can read the same prepared dataset in parallel. The La Poste use case leveraged this to have two different processes (prediction and ground truth) independently consuming the prepared\_data table. Kafka could also multicast to multiple consumers, but those consumers would each need to handle data cleaning or maintaining state. With the Delta approach, the heavy lifting (cleaning) is done once and all consumers get a consistent view of the results.
+
+Failure Recovery: If one pipeline crashes or needs to be redeployed, the downstream pipelines don’t lose data – the intermediate state is stored in Delta. They can simply pick up from the last processed record by reading the table. There’s less worry about Kafka retention or exactly-once delivery mechanics between services, since the data lake serves as a reliable buffer and single source of truth.
+
+Of course, there are trade-offs. Writing to a data lake introduces some latency (micro-batch writes of files) compared to an in-memory event stream. It also costs storage – effectively duplicating data that in a pure streaming design might be transient. The blog specifically calls out the issue of many small files: frequent Delta commits (especially for high-volume streams) create lots of tiny parquet files and transaction log entries, which can degrade read performance over time. The team mitigated this by partitioning the Delta tables (e.g. by date) and periodically compacting small files. Partitioning by a day or similar key means new data accumulates in a separate folder each day, which keeps the number of files per partition manageable and makes it easier to run vacuum/compaction on older partitions. With these maintenance steps (partition + compact + clean old metadata), they report that the Delta-based approach remains efficient even for continuous, long-running pipelines. It’s a case of trading some complexity in storage management for a lot of flexibility in pipeline design.
+
+Schema Management & Versioning: With data passing through tables, keeping schemas in sync became an important consideration. If the schema of the cleaned data table changes (say they add a new column from the IoT feed), then the downstream Pathway jobs reading that table must be updated to expect that schema. The blog notes this as an increased maintenance overhead compared to a monolith. They likely addressed it by versioning their data schemas and coordinating deployments – e.g. update the writing pipeline to add new columns in parallel with updating readers, or use schema evolution features of Delta Lake. On the plus side, using Delta Lake made some aspects of schema handling easier: Pathway automatically stores each table’s schema in the Delta log, so when a job reads the table it can fetch the schema and apply it without manual definitions. This reduces code duplication and errors. Still, any intentional schema changes require careful planning across multiple services. This is just the nature of microservices – you gain modularity at the cost of more coordination.
+
+Independent Scaling & Fault Isolation: A big reason for the microservice approach was scalability and reliability in production. Each pipeline can be scaled horizontally on its own. For example, if ETA requests volume spikes, they could scale out just the Prediction service (Pathway supports parallel processing within a job as well, but logically separating it is an extra layer of scalability). Meanwhile, the data cleaning service might be CPU-bound and need its own scaling considerations, separate from the evaluation service which might be lighter. In a monolithic pipeline, you’d have to scale the whole thing as one unit, even if only one part is the bottleneck. By splitting them, only the hot spots get more resources. Likewise, if the evaluation pipeline fails due to, say, a bug or out-of-memory error, it doesn’t bring down the ingestion or prediction pipelines – they keep running and data accumulates in the tables. The ops team can fix and redeploy the evaluation job and catch up on the stored data. This isolation is crucial for a production system where you want to minimize downtime and avoid one component’s failure cascading into an outage of the whole feature.
+
+Pipeline Extensibility: The modular design also opened up new capabilities with minimal effort. The case study highlights a few:
+
+They can easily plug in an anomaly detection/alerting service that reads the continuous error metrics (from the evaluation stage) and sends notifications if something goes wrong (e.g., if predictions suddenly become very inaccurate, indicating a possible model issue or data drift).
+
+They can do offline model retraining or improvement by leveraging the historical data collected. Since they’re storing all cleaned inputs and outcomes, they have a high-quality dataset to train next-generation models. The blog mentions using the accumulated Delta tables of inputs and ground truths to experiment with improved prediction algorithms offline.
+
+They can perform A/B testing of prediction strategies by running two prediction pipelines in parallel. For example, run the current model on half the vehicles and a new model on a subset of vehicles (perhaps by partitioning the Kafka requests by transport\_unit\_id hash). Because the infrastructure supports multiple pipelines reading the same input and writing results, this is straightforward – you just add another Pathway service, maybe writing its predictions to a different topic/table, and compare the evaluation metrics in the end. In a monolithic system, A/B testing could be really cumbersome or require building that logic into the single pipeline.
+
+  
+Operational Insights: On the operations side, the team did have to invest in coordinated deployments and monitoring for multiple services. There are four Pathway processes to deploy (plus Kafka, plus maybe the Delta Lake storage on S3 or HDFS, and the Postgres DB for results). Automated deploy pipelines and containerization likely help here (the blog doesn’t go deep into it, but it’s implied that there’s added complexity). Monitoring needs to cover each component’s health as well as end-to-end latency. The payoff is that each component is simpler by itself and can be updated or rolled back independently. For instance, deploying a new model in the Prediction service doesn’t require touching the ingestion or evaluation code at all – reducing risk. The scaling benefits were already mentioned: Pathway allows configuring parallelism for each pipeline, and because of the microservice separation, they only scale the parts that need it. This kind of targeted scaling can be more cost-efficient.
+
+The La Poste case is a compelling example of applying software engineering best practices (modularity, fault isolation, clear data contracts) to a streaming data pipeline. It demonstrates how breaking a pipeline into microservices can yield significant improvements in maintainability and extensibility for data engineering workflows. Of course, as the authors caution, this isn’t a silver bullet – one should adopt such complexity only when the benefits (scaling, flexibility, etc.) outweigh the overhead. In their scenario of continuously improving an ETA prediction service, the trade-off made sense and paid off.
+
+I found this architecture interesting, especially the use of Delta Lake as a communication layer between streaming jobs – it’s a hybrid approach that combines real-time processing with durable data lake storage. It raises some great discussion points: e.g., would you have used message queues (Kafka topics) between each stage instead, and how would that compare? How do others handle schema evolution across pipeline stages in production? The post provides a concrete case study to think about these questions. If you want to dive deeper or see code snippets of how Pathway implements these connectors (Kafka read/write, Delta Lake integration, etc.), I recommend checking out the original blog and the Pathway GitHub. Links below. Happy to hear others’ thoughts on this design!",15,2,Typical-Scene-5794,2025-05-23 14:18:34,https://www.reddit.com/r/dataengineering/comments/1ktkqj6/modular_data_pipeline_microservices_delta_lake/,0,False,False,False,False
+1ktvupw,Practice Python,I've been working as a data engineer since an year and almost 2 months now. Since pyspark is used in databricks and codes are not really that difficult except a few concepts of using different functions and tough complex sql queries. But if i want to switch from this job in the later part of the year i gotta have some hands on experience with python. I have been trying out Data factory and Databricks courses separately apart from my work to hone those skills but python is what i feel will be really required upto some levels in technical interviews of Junior of Senior data engineers. Please suggest me a good coding practice website or course which can help me be up to the mark of a data engineer and how much is enough to learn for now?(Ofcourse there's no limit to it). :),6,3,theeyecatcher,2025-05-23 22:01:30,https://www.reddit.com/r/dataengineering/comments/1ktvupw/practice_python/,1,False,False,False,False
+1ktr6u3,A no-code tool to explore & clean datasets,"Hi guys,
+
+I’ve built a small tool called [**DataPrep**](https://data-prep.app) that lets you visually **explore and clean datasets** in your browser without any coding requirement.
+
+You can try the live demo here (no signup required):  
+ [demo.data-prep.app](https://demo.data-prep.app)
+
+  
+I work with data pipelines and I often needed a quick way to inspect raw files, test cleaning steps, and get some insights into my data without jumping into Python or SQL and for that I started working on **DataPrep**.  
+The app is in its **MVP / Alpha** stage.
+
+It'd be really helpful if you guys can try it out and provide some feedback on some topics like :
+
+* Would this save time in your workflows ?
+* What features would make it more useful ?
+* Any integrations or export options that should be added to it ?
+* How can the UI / UX be improved to make it more intuitive ?
+* Bugs encountered
+
+Thanks in advance for giving it a look. Happy to answer any questions regarding this.",4,8,enzineer-reddit,2025-05-23 18:42:04,https://www.reddit.com/r/dataengineering/comments/1ktr6u3/a_nocode_tool_to_explore_clean_datasets/,0,False,False,False,False
+1kteklu,Bytebase 3.6.2 released -- Database DevSecOps for MySQL/PG/MSSQL/Oracle/Snowflake/Clickhouse,,6,2,op3rator_dec,2025-05-23 08:38:49,https://www.bytebase.com/changelog/bytebase-3-6-2/,1,False,False,False,False
+1ktvdwj,Curious about your background before getting into data engineering,"If you’re now working as a data engineer but didn’t start your career in this role, what were you doing before?
+
+Was it software dev, analytics, sysadmin, academia, something totally unrelated? What pushed you toward data engineering, and how was the transition for you?
+
+",4,10,No_Chest_5294,2025-05-23 21:40:46,https://www.reddit.com/r/dataengineering/comments/1ktvdwj/curious_about_your_background_before_getting_into/,1,False,False,False,False
+1ktc9oy,Data strategy,"If you’ve ever been part of a team that had to rewrite a large, complex ETL system that’s been running for year what was your overall strategy?
+	•	How did you approach planning and scoping the rewrite?
+	•	What kind of questions did you ask upfront?
+	•	How did you handle unknowns buried in legacy logic?
+	•	What helped you ensure improvements in cost, performance, and data quality?
+	•	Did you go for a full re-architecture or a phased refactor?
+
+Curious to hear how others tackled this challenge, what worked, and what didn’t.",5,5,Different-Future-447,2025-05-23 05:58:09,https://www.reddit.com/r/dataengineering/comments/1ktc9oy/data_strategy/,1,False,False,False,False
+1ktuzlu,Is DE cyclical?,"As people complain about visual tools removing Data Engineering jobs, I'm wondering if you agree that there are cycles to the industry:
+
+1 - we need someone to organize and control access (e.g. DBAs)
+2 - we're losing velocity, fire the data people and let people make their own integrations/tables/schemas
+3 - we just had another outage, we're not scaling well, we need expert advice
+4 - lets create a team to enable everyone to use the data stores efficiently and correctly
+5 - but now there are great tools to handle that automatically, do we really need this whole team?
+
+I've seen at least two phases of this, first with tools like SSIS, and now with all these generative tools for writing integrations and queries.",3,1,serverlessmom,2025-05-23 21:23:26,https://www.reddit.com/r/dataengineering/comments/1ktuzlu/is_de_cyclical/,1,False,False,False,False
+1ktqbov,"Sharing cache between spark executors, possible?","Hi,
+
+  
+I'm trying to make parallel API calls using pyspark RDD.  
+I have list of tuples like : (TableName, URL, Offset) . I'm making RDD out of it. So the structure looks like something like this :  
+
+
+|TableName|URL|Offset|
+|:-|:-|:-|
+|Invoices|[https://api.example.com/invoices](https://api.example.com/invoices)|0|
+|Invoices|[https://api.example.com/invoices](https://api.example.com/invoices)|100|
+|Invoices|[https://api.example.com/invoices](https://api.example.com/invoices)|200|
+|PurchaseOrders|[https://api.example.com/purchaseOrders](https://api.example.com/purchaseOrders)|0|
+|PurchaseOrders|[https://api.example.com/purchaseOrders](https://api.example.com/purchaseOrders)|150|
+|PurchaseOrders|[https://api.example.com/purchaseOrders](https://api.example.com/purchaseOrders)|300|
+
+ For each RDD, a function is called to extract data from API and returns a dictionary of data.
+
+Later on I want to filter RDD based on table name and create separate dataframes out of it. Each table has a different schema, so I'm avoiding creating a data frame that could include extra irrelevant schemas for my tables
+
+    rdd = spark.sparkContext.parallelize(offset_tuple_list)
+    fetch_rdd = rdd.flatMap(lambda tuple:get_data(tuple,extraction_date,token)).cache()
+    
+    ## filter RDD per table
+    invoices_rdd = fetch_rdd.filter(lambda row: row[""table""] == ""Invoices"")
+    purchaseOrders_rdd = fetch_rdd.filter(lambda row: row[""table""] == ""PurchaseOrders"")
+    
+    ## convert it to json for automatic schema inference by read.json
+    invoices_json_rdd = invoices_rdd.map(lambda row: json.dumps(row))
+    purchaseOrders_json_rdd = purchaseOrders_rdd.map(lambda row: json.dumps(row))
+    
+    invoices_df = spark.read.json(invoices_json_rdd)
+    purchaseOrders_df = spark.read.json(purchaseOrders_json_rdd)
+
+I'm using cache() to avoid multiple API calls and do it only once.  
+My problem is that caching won't work for me if **invoices\_df and purchaseOrders\_df**  are running by different executors. If they are run on the same executor then one takes 3 min and the other a few seconds, since it uses the cache(). If not both take 3 min + 3 min = 6min calling API twice.  
+  
+This behaviour is random, sometimes it runs on separate executors and I can see locality becomes RACK\_LOCAL instead of PROCESS\_LOCAL  
+
+
+Any idea how I can make all executors use the same cached RDD? ",3,1,AartaXerxes,2025-05-23 18:06:20,https://www.reddit.com/r/dataengineering/comments/1ktqbov/sharing_cache_between_spark_executors_possible/,0,False,False,False,False
+1ktn8tv,Should I switch teams? Manager limiting my growth opportunities,"Background: 
+
+I’m on a support data engineering team and have recently been working on a full stack project that helped me learn new tools and skills that I was really interested in. I really enjoyed the work and felt like I was growing in the right direction. I also expressed my interest in this work with my manager and he said he would forward any similar projects to me as they come. 
+
+The issue: 
+
+However, now my manager seems to have changed his mind and told me that any future full stack opportunities will go to other team members instead of me because “I’ve had enough.” His reasoning is that projects should rotate through the team members one by one before coming back to me. While I understand wanting to give everyone opportunities, this feels like it’s limiting my ability to build expertise and grow in areas where I’m performing well.
+
+I’m also sensing some tension from teammates who seem to think I’m being “greedy” for wanting to continue with this type of work, even though I’m just trying to advance my career like anyone else would.
+
+My question: I’m considering talking to the director of data engineering about potentially switching to a different team that focuses more on core data engineering work rather than support. Is this a reasonable move, or should I try to work things out with my current manager first?
+
+Additional context:
+- I’ve been doing well in the full stack/data engineering work and it aligns with my career goals
+- This seems to be part of a broader pattern where I feel like growth opportunities are being limited
+- The team culture feels like it discourages ambition or self-advocacy
+
+Has anyone been in a similar situation? How did you handle it?
+
+TL;DR: Manager is rotating opportunities away from me after I had success with a project. Considering switching teams. Good idea or should I try to resolve this first?",5,7,eatdrinksleepp,2025-05-23 16:01:41,https://www.reddit.com/r/dataengineering/comments/1ktn8tv/should_i_switch_teams_manager_limiting_my_growth/,0,False,2025-05-23 16:39:30,False,False
+1ktv48w,How would you tackle this?,"My company needs to normalize and structure blood test data that comes in PDF format, containing patient data, results, reference values, and status (when outside reference ranges). The PDFs don't have a common template because tests vary from lab to lab, and even within the same lab there are tests written with and without accents or different units of measurement... What strategy would you use for this challenge?",2,0,volvodude-,2025-05-23 21:29:06,https://www.reddit.com/r/dataengineering/comments/1ktv48w/how_would_you_tackle_this/,1,False,False,False,False
+1kttnvm,How valuable do you guys find structured learning vs learning/improving on the job?,"I am a mechanical engineer slowly converted into an analytics/data engineer. I'm only around 1.5 years into data engineering and 3 years into working closely with data.
+
+My team primarily works almost exclusively in Databricks, ADF, and Power BI. I've taken a variety of Databricks courses and I recently finished reading Fundamental of Data Engineering but I feel like neither of those have been quite as valuable as I would have hoped. Yes I get small nuggets of info that I didn't know here and there but it feels like a large majority of the info Is not really relevant or is very surface level. Yet it takes a lot of time to go through.   
+  
+I feel like I have gotten significantly more value out of simply learning on the job. Doing projects and researching questions as they come up. I'm sure there are very nuanced, highly technical questions that come up when working with specific scenarios like IoT or banking information but I don't really experience that.
+
+I've also worked on some wed development side projects in the past that require a DB on that backend and that real life experience has also taught me a lot about both programming principles and optimizing DBs/Queries.
+
+I have three other books that I would consider reading:
+
+* Pragmatic Programmer
+* Designing Data Intensive Applications
+* Kimball's Data Warehouse Guide
+
+  
+I know at least the bottom two are way more technical but is it worth fully reading through from someone who learns better so hands on? Should I just skim through them and look up some basics that I can further deep dive once I know I need it? Or is there really value in reading through it and taking notes? How do you guys approach learning at different points in your career?",2,4,Reddit_Account_C-137,2025-05-23 20:26:24,https://www.reddit.com/r/dataengineering/comments/1kttnvm/how_valuable_do_you_guys_find_structured_learning/,0,False,False,False,False
+1ktpa5a,Public data analysis using PostgresSQL and Power BI,"Hey guys!
+
+I just wrapped up a data analysis project looking at publicly available development permit data from the city of Fort Worth.
+
+I did a manual export, cleaned in Postgres, then visualized the data in a Power Bi dashboard and described my findings and observations.
+
+This project had a bit of scope creep and took about a year. I was between jobs and so I was able to devote a ton of time to it.
+
+The data analysis here is part 3 of a series. The other two are more focused on history and context which I also found super interesting.
+
+I would love to hear your thoughts if you read it. 
+
+Thanks ! 
+
+https://medium.com/sergio-ramos-data-portfolio/city-of-fort-worth-development-permits-data-analysis-99edb98de4a6  ",2,1,0sergio-hash,2025-05-23 17:24:13,https://www.reddit.com/r/dataengineering/comments/1ktpa5a/public_data_analysis_using_postgressql_and_power/,0,False,False,False,False
+1ktjkf6,Should I do the AWS SAA Certification or skip and go straight to AWS DE Certification?,Bit of a background: I am currently working in Amazon as a business intelligence engineer. I plan on eventually switching to DE in 2-3 years time but first would like to gain some experience in my current role first. The main reason for doing these certifications is not only to help bolster my internal move to a DE role in amazon but outside as well when I move out of Amazon in the future. I have minimal interaction with AWS data tools except for quicksights (visualization tool). AWS DE certification is the ultimate prize but should I do the AWS SAA first? I'm still relatively new in the BIE role and have lots to learn about DE practices and core technical skills around that role. I also already have an AWS CCP certification but we all know how basic that is compared to SAA.,2,0,rudimentaryblues,2025-05-23 13:27:48,https://www.reddit.com/r/dataengineering/comments/1ktjkf6/should_i_do_the_aws_saa_certification_or_skip_and/,0,False,2025-05-23 14:18:29,False,False
+1ktxzdt,Struggling in the Current Market – Seeking Advice and Support from Fellow Data Engineers,"Hey folks,
+
+Just wanted to share a bit and maybe get some advice or help if anyone’s around.
+
+I’ve been working as a data engineer for about 5 years now — real hands-on experience building pipelines, working with cloud tools, databases, all that stuff. My last job was a contract role and it ended a little over a month ago. Since then, I’ve been applying non-stop — probably hundreds of applications by now.
+
+I’m not just spraying my CV either. I actually read each job description and tweak my CV to match what they’re asking for. I know the market is tough right now, but it’s been a bit frustrating not hearing back much, even with solid experience.
+
+Just wondering if anyone here has any tips that helped them during their job search, or maybe knows someone hiring or could point me in the right direction. I’m open to full-time, contract, freelance — anything to get back to work.
+
+Appreciate any help or advice. Thanks for reading.
+",1,4,Careful-King-276,2025-05-23 23:43:01,https://www.reddit.com/r/dataengineering/comments/1ktxzdt/struggling_in_the_current_market_seeking_advice/,1,False,False,False,False
+1ktxryz,Starting from scratch with automation,"Hello, 
+
+I am not really a dataengineer but after looking at what I'm going to be working on I may be one soon. 
+
+  
+Ok to start with the project, I work for a clinical research company and we currently are pulling reports manually and working with them in excel (occasionally making visualizaitons).  We pull from two sources, one we own but can't access (we could probably ask but we want a proof of concept first) but the other source we can use their API to access our data on their system.  
+
+I am looking for open-source (free) programs I can use to take the information given in the API break it into a full database (dataset tables) and keep in constantly updated in a gateway.  In this phase of the project I am more invested in being able to do an API call and automatically pulling the data to set it into the appropriate schema. 
+
+I have a really good understanding of dataset creation put I am new to the scripting an API side.  
+
+I don't really know what else to add but if you have any follow up questions please comment. 
+
+  
+I appreciate any help or advice you can give me. (I will be using our lord and savior youtube to learn as much as I can about whatever you suggest). ",1,2,bmiller201,2025-05-23 23:32:35,https://www.reddit.com/r/dataengineering/comments/1ktxryz/starting_from_scratch_with_automation/,1,False,False,False,False
+1ktu9ru,"Amazon L4 or Stable, Comfortable Job as New Grad?","Hello fellow data engineers,
+
+Hoping for some guidance on how to evaluate an offer I just got from Amazon.
+
+Currently working hybrid (1-2 days), \~120k in VHCOL city, offer is for \~160 in HCOL city.
+
+My current job has been alright, but I am a team of one, and there is very little ""data engineering"" to do around here. Feel a little bit stagnant in that regard. Often just uploading Excel files and running some stored procedure/ETL. I'm looking at around 35 hours a week, pretty lax.
+
+Not sure what to expect at Amazon, 50 hours a week, 60? I know the experience would probably be huge for my career, but not sure if I'm willing to pay with my life. I am also aware that I would go from hardly going into the office to going in every day.
+
+Any current or prior Amazon DE's that could weigh in here? Am I walking into a death trap?",1,9,Interesting_Tea6963,2025-05-23 20:52:57,https://www.reddit.com/r/dataengineering/comments/1ktu9ru/amazon_l4_or_stable_comfortable_job_as_new_grad/,0,False,False,False,False
+1ktcc05,LLM / AI use case for logs,"I’m exploring LLMs to make sense of large volumes of logs—especially from data tools like DataStage, Airflow, or Spark—and I’m curious:
+	•	Has anyone used an LLM to analyze logs, classify errors, or summarize root causes?
+	•	Are there any working log analysis use cases (not theoretical) that actually made life easier?
+	•	Any open-source projects or commercial tools that impressed you?
+	•	What didn’t work when you tried using AI/LLMs on logs?
+
+Looking for real examples, good or bad. I’m building something similar and want to avoid wasting cycles on what’s already been tried.",1,2,Different-Future-447,2025-05-23 06:02:01,https://www.reddit.com/r/dataengineering/comments/1ktcc05/llm_ai_use_case_for_logs/,0,False,False,False,False
+1kte7ur,Modular pipeline design: ADF + Databricks notebooks,"I'm building ETL pipelines using ADF for orchestration and Databricks notebooks for logic. Each notebook handles one task (e.g., dimension load, filtering, joins, aggregations), and pipelines are parameterized.
+
+The issue: joins and aggregations need to be separated, but Databricks doesn’t allow sharing persisted data across notebooks easily. That forces me to write intermediate tables to storage.
+
+**Is this the right approach?**
+
+* Should I combine multiple steps (e.g., join + aggregate) into one notebook to reduce I/O?
+* Or is there a better way to keep it modular without hurting performance?
+
+Any feedback on best practices would be appreciated.",0,4,ur64n-,2025-05-23 08:12:35,https://www.reddit.com/r/dataengineering/comments/1kte7ur/modular_pipeline_design_adf_databricks_notebooks/,0,False,False,False,False
+1ktb2jo,Anyone else dealing with messy fleet data?,"Between GPS logs, fuel cards, and maintenance reports, our fleet data used to live everywhere — and nowhere at the same time.
+
+We recently explored how cloud-based data warehousing can clean that up. Better asset visibility, fewer surprises, and way easier decision-making.
+
+Here’s a blog that breaks it down if you're curious:  
+🔗 [Fleet Management & Cloud-Based Warehousing](https://data-sleek.com/blog/fleet-management-cloud-based-data-warehousing/)
+
+Curious how others are solving this — are you centralizing your data or still working across multiple systems?",0,0,Data-Sleek,2025-05-23 04:41:29,https://www.reddit.com/r/dataengineering/comments/1ktb2jo/anyone_else_dealing_with_messy_fleet_data/,0,False,False,False,False
+1kt7ve2,I've built a Cursor for data with context aware agent and auto-complete (Now working for BigQuery),,0,0,jekapats,2025-05-23 01:46:01,https://cipher42.ai,0,False,False,False,False

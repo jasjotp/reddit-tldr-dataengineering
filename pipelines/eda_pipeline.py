@@ -22,12 +22,19 @@ os.makedirs(GRAPHS_DIR, exist_ok=True)
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.constants import aws_access_key, aws_secret_access_key, aws_bucket_name, aws_region
-from utils.s3_helpers import upload_graph_to_s3, load_combined_data_from_s3
+from utils.s3_helpers import upload_to_s3, load_latest_data_from_s3
 
 def run_reddit_eda():
 
     # read the updated combined data using the load_combined_data heper function from utils to get the updated (daily) data
-    combined_df = load_combined_data_from_s3(aws_access_key, aws_secret_access_key, aws_region, aws_bucket_name)
+    combined_df = load_latest_data_from_s3(
+        aws_access_key, 
+        aws_secret_access_key, 
+        aws_region, 
+        aws_bucket_name, 
+        prefix = 'processed',
+        keyword = 'reddit_combined_data'
+    )
 
     ### 1. Find what times users have been posting the most for most recent days 
 
@@ -60,7 +67,7 @@ def run_reddit_eda():
    
     post_frequency_by_hour_path = os.path.join(GRAPHS_DIR, 'post_frequency_by_hour.png')
     plt.savefig(post_frequency_by_hour_path, bbox_inches='tight')
-    upload_graph_to_s3(post_frequency_by_hour_path)
+    upload_to_s3(post_frequency_by_hour_path, 'graphs')
     plt.close()
 
     ### The most posts are being posted at 5PM recently (UTC time)
@@ -86,7 +93,8 @@ def run_reddit_eda():
        
     avg_score_comments_by_hour_path = os.path.join(GRAPHS_DIR, 'avg_score_comments_by_hour.png')
     plt.savefig(avg_score_comments_by_hour_path)
-    upload_graph_to_s3(avg_score_comments_by_hour_path)
+    upload_to_s3(avg_score_comments_by_hour_path, 'graphs')
+
     plt.close()
 
     ### Posts see the most engagement around 5AM UTC Time
@@ -119,7 +127,7 @@ def run_reddit_eda():
 
     avg_score_comments_by_wordcount_path = os.path.join(GRAPHS_DIR, 'avg_score_comments_by_wordcount.png')
     plt.savefig(avg_score_comments_by_wordcount_path)
-    upload_graph_to_s3(avg_score_comments_by_wordcount_path)
+    upload_to_s3(avg_score_comments_by_wordcount_path, 'graphs')
     plt.close()
 
     ### It looks like posts with around < 50 words have been getting the most engagement (highest scores and number of comments)
@@ -135,7 +143,8 @@ def run_reddit_eda():
 
     avg_score_by_weekday_path = os.path.join(GRAPHS_DIR, 'avg_score_by_weekday.png')
     plt.savefig(avg_score_by_weekday_path)
-    upload_graph_to_s3(avg_score_by_weekday_path)
+    upload_to_s3(avg_score_by_weekday_path, 'graphs')
+
     plt.close()
 
     ### Based on the engagement data from r/dataengineering, posts made on Saturdays consistently outperform those made on weekdays — both in terms of average score and likelihood of going viral (score > 100)
@@ -175,7 +184,8 @@ def run_reddit_eda():
 
     top30_common_words_path = os.path.join(GRAPHS_DIR, 'top30_common_words_all_posts.png')
     plt.savefig(top30_common_words_path)
-    upload_graph_to_s3(top30_common_words_path)
+    upload_to_s3(top30_common_words_path, 'graphs')
+
     plt.close()
 
     ### 6. use TfidfVectorizer to find words that commonly appear in high engagement posts but do not appear much in other lower engagement posts
@@ -201,7 +211,8 @@ def run_reddit_eda():
     
     top30_tf_idf_words_path = os.path.join(GRAPHS_DIR, 'highest_post_top30_tf-idf_words.png')
     plt.savefig(top30_tf_idf_words_path)
-    upload_graph_to_s3(top30_tf_idf_words_path)
+    upload_to_s3(top30_tf_idf_words_path, 'graphs')
+
     plt.close()
     
     ### 7. use TfidfVectorizer to find words that commonly appear in low engagement posts but do not appear much in other highlower engagement posts
@@ -229,7 +240,8 @@ def run_reddit_eda():
     
     lowest_post_top30_tf_idf_words_path = os.path.join(GRAPHS_DIR, 'lowest_post_top30_tf-idf_words.png')
     plt.savefig(lowest_post_top30_tf_idf_words_path)
-    upload_graph_to_s3(lowest_post_top30_tf_idf_words_path)
+    upload_to_s3(lowest_post_top30_tf_idf_words_path, 'graphs')
+
     plt.close()
 
     # create a combined df where each word is scored for its high engagement vs low engagement posts
@@ -263,7 +275,8 @@ def run_reddit_eda():
 
     tfidf_high_vs_low_difference_path = os.path.join(GRAPHS_DIR, 'tfidf_high_vs_low_difference_comparison.png')
     plt.savefig(tfidf_high_vs_low_difference_path)
-    upload_graph_to_s3(tfidf_high_vs_low_difference_path)
+    upload_to_s3(tfidf_high_vs_low_difference_path, 'graphs')
+
     plt.close() 
 
     # calculate the ratio for each word that shows up in high engagement posts vs low engageemnt posts
@@ -291,7 +304,8 @@ def run_reddit_eda():
 
     tfidf_high_vs_low_ratio_comparison_path = os.path.join(GRAPHS_DIR, 'tfidf_high_vs_low_ratio_comparison.png')
     plt.savefig(tfidf_high_vs_low_ratio_comparison_path)
-    upload_graph_to_s3(tfidf_high_vs_low_ratio_comparison_path)
+    upload_to_s3(tfidf_high_vs_low_ratio_comparison_path, 'graphs')
+
     plt.close()  
 
     ### 8. Check correlations between numeric features
@@ -302,5 +316,6 @@ def run_reddit_eda():
 
     correlation_matrix_path = os.path.join(GRAPHS_DIR, 'correlation_matrix.png')
     plt.savefig(correlation_matrix_path)
-    upload_graph_to_s3(correlation_matrix_path)
+    upload_to_s3(correlation_matrix_path, 'graphs')
+
     plt.close()  

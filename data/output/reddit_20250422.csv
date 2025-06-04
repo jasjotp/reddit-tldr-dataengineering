@@ -1,0 +1,224 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1k3zle1,Which companies outside of FAANG make $200k+ for DE?,"For a Senior DE, which companies have a relevant tech stack, pay well, and have decent WLB outside of FAANG? 
+
+EDIT: US-based, remote, $200k+ base salary ",39,42,TownAny8165,2025-04-20 23:34:15,https://www.reddit.com/r/dataengineering/comments/1k3zle1/which_companies_outside_of_faang_make_200k_for_de/,0,False,2025-04-21 13:28:26,False,False
+1k4e9ja,What's the best tool for loading data into Apache Iceberg?,"I'm evaluating ways to load data into Iceberg tables and trying to wrap my head around the ecosystem.
+
+Are people using Spark, Flink, Trino, or something else entirely?
+
+Ideally looking for something that can handle CDC from databases (e.g., Postgres or SQL Server) and write into Iceberg efficiently. Bonus if it's not super complex to set up.
+
+Curious what folks here are using and what the tradeoffs are.",29,10,Livid_Ear_3693,2025-04-21 14:01:35,https://www.reddit.com/r/dataengineering/comments/1k4e9ja/whats_the_best_tool_for_loading_data_into_apache/,0,False,False,False,False
+1k41nsf,When is it ok to use any non ACID compliant db ?,"I don’t understand when anyone would use a non acid compliant DB. Like I understand that they are very fast can deliver a lot of data and xyz but why is it worth it and how do you make it work ?
+
+Like is it by a second validation steps ? Instead of just writing the data all of your process write, then wait to validate if the data is store somewhere ? 
+
+Like is it because the data itself isn’t valuable enough that even if you lost the data from one transaction it doesn’t matter ?
+
+Like I know most social platforms use non acid compliant DB like Cassandra for example. But what happen under the hood ? Let’s say a user post something on the platform, it doesn’t just crash or say “sent” and then it’s maybe not. Are there process to ensure that if something goes wrong the app handles it or this because this doesn’t happen very often nobody care ? Like the use will repost it’s thing if it didn’t work
+Is the user or process alerted in such case and how ?
+
+For example if this happen every 500 millions inserts and I have 500 billions records how could I even trust my data ? 
+
+So yeah a lot of scattered question but I think the general idea is shared.",22,18,Commercial_Dig2401,2025-04-21 01:20:15,https://www.reddit.com/r/dataengineering/comments/1k41nsf/when_is_it_ok_to_use_any_non_acid_compliant_db/,0,False,False,False,False
+1k46wz7,How can I capture deletes in CDC if I can't modify the source system?,"I'm working on building a data pipeline where I need to implement Change Data Capture (CDC), but I don't have permission to modify the source system at all — no schema changes (like adding `is_deleted` flags), no triggers, and no access to transaction logs.
+
+I still need to detect **deletes** from the source system. Inserts and updates are already handled through timestamp-based extracts.
+
+Are there best practices or workarounds others use in this situation?
+
+So far, I found that comparing primary keys between the source extract and the warehouse table can help detect missing (i.e., deleted) rows, and then I can mark those in the warehouse. Are there other patterns, tools, or strategies that have worked well for you in similar setups?
+
+For context:
+
+* Source system = \[insert your DB or system here, e.g., PostgreSQL used by Odoo\]
+* I'm doing periodic batch loads (daily).
+* I use \[tool or language you're using, e.g., Python/SQL/Apache NiFi/etc.\] for ETL.
+
+Any help or advice would be much appreciated!",18,10,Acceptable-Ride9976,2025-04-21 06:31:42,https://www.reddit.com/r/dataengineering/comments/1k46wz7/how_can_i_capture_deletes_in_cdc_if_i_cant_modify/,1,False,False,False,False
+1k4p9mm,What was Python before Python?,The field of data engineering goes as far back as the mid 2000s when it was called different things. Around that time SSIS came out and Google made their hdfs paper. What did people use for data manipulation where now Python would be used. Was it still Python2? ,24,33,sumant28,2025-04-21 21:31:08,https://www.reddit.com/r/dataengineering/comments/1k4p9mm/what_was_python_before_python/,0,False,False,False,False
+1k4g3y4,How Tencent Music saved 80% in costs by migrating from Elasticsearch to Apache Doris,NL2SQL is also included in their system.,15,0,ApacheDoris,2025-04-21 15:18:35,https://doris.apache.org/blog/tencent-music-migrate-elasticsearch-to-doris,1,False,False,False,False
+1k408vu,Seeking Advice - Is DE at Meta worth pursuing?,"Hello fellow DEs!
+
+I’m hoping to get some career advice from the experienced folks in this sub.
+
+I have 4.5 YOE and a related master’s degree. Most of my experience has been in DE consulting, but earlier this year I grew tired of the consulting grind and began looking for something new. I applied to a bunch of roles, including a few at Meta, but never made it past initial screenings.
+
+Fast forward to now — I landed a senior DE position at a well-known crypto exchange about 4 months ago. I’m enjoying it so far: I’ve been given a lot of autonomy, there’s room for impactful infrastructure work, and I’m helping shape how data is handled org-wide. We use a fairly modern stack: Snowflake, Databricks, Airflow, AWS, etc.
+
+A technical recruiter from Meta recently reached out to say they’re hiring DEs (L4/L5) and invited me to begin technical interviews.
+
+I’m torn on what decision would be best for my career: Should I pursue the opportunity at Meta, or stay in my current role and keep building?
+
+Here are some things I’m weighing:
+
+* Prestige: Having work experience at a company like Meta could open doors for me in the future.
+* Tech stack: I’ve heard Meta uses mostly in-house tools (some open sourced), and I worry that might hurt future job transitions where industry-standard tools are more relevant.
+* Role scope: I’ve read that DEs at Meta may do work closer to analytics engineering. I enjoy analytics, but I’d miss the more technical DE aspects.
+* Compensation: I’m currently making \~$160K base + pre-IPO equity + bonus potential. Meta’s base range is similar, but equity would likely be more valuable and far lower risk.
+* Location: My current role is entirely remote. I would have to relocate to accommodate Meta's hybrid in person requirement.
+
+So if you were in my shoes, what would you do? I appreciate any thoughts or advice!",12,18,indyscout,2025-04-21 00:06:47,https://www.reddit.com/r/dataengineering/comments/1k408vu/seeking_advice_is_de_at_meta_worth_pursuing/,0,False,2025-04-21 00:11:45,False,False
+1k4k7fs,"Six Months with ClickHouse at CloudQuery (The Good, The Bad, and the Unexpected)",,13,8,JoeKarlssonCQ,2025-04-21 18:07:02,https://www.cloudquery.io/blog/six-months-with-clickhouse-at-cloudquery,0,False,False,False,False
+1k4hki6,Can I become a Junior DE as a middle aged person?,"A little background about myself, I am in my mid 40s, based Europe and currently looking to get a new career or simply a job.  I did a BS in information systems in 2003 and worked as a sys admin and then as a linux dev guy until 2007.  I then switched careers, got a business degree and started working in consulting (banking).  For the past few years I have been a freelancer. 
+
+My last freelance project ended in Dec 2023 and while searching for another job I fell ill and needed surgeries and was not capable of doing much until last month. Since then I have been looking for work and the freelance project work for banks in Europe is drying up. 
+
+Since I know how to program (I did some scripting as a consultant every now and then in VBA and Python) and since the data field is growing I was wondering if I could switch to being a Data Engineer?
+
+\* Will recruiters and mangers consider my profile if I get some certifications?
+
+\* Is age a barrier in finding work?  Will my 1.5 year long career break prevent me from getting a job?
+
+\* Are there freelance projects/gigs available in this field and what skills/background are needed to break into the field.
+
+\* Any other advice tips you have for someone in my position.  What other careers could/should I consider?",10,38,Easy-Echidna-3542,2025-04-21 16:24:42,https://www.reddit.com/r/dataengineering/comments/1k4hki6/can_i_become_a_junior_de_as_a_middle_aged_person/,0,False,False,False,False
+1k4974w,"Performance Evaluation of Trino 468, Spark 4.0.0-RC2, and Hive 4 on MR3 2.0 using the TPC-DS Benchmark","[https://mr3docs.datamonad.com/blog/2025-04-18-performance-evaluation-2.0](https://mr3docs.datamonad.com/blog/2025-04-18-performance-evaluation-2.0)
+
+
+
+In this article, we report the results of evaluating the performance of the following systems using the 10TB TPC-DS Benchmark.
+
+1. Trino 468 (released in December 2024)
+2. Spark 4.0.0-RC2 (released in March 2025)
+3. Hive 4.0.0 on Tez (built in February 2025)
+4. Hive 4.0.0 on MR3 2.0 (released in April 2025)",11,0,ForeignCapital8624,2025-04-21 09:15:57,https://www.reddit.com/r/dataengineering/comments/1k4974w/performance_evaluation_of_trino_468_spark_400rc2/,1,False,False,False,False
+1k4hzeq,Should I learn Scala?,"Hello folks, I’m new to data engineering and currently exploring the field.
+I come from a software development background with 3 years of experience, and I’m quite comfortable with Python, especially libraries like Pandas and NumPy. I'm now trying to understand the tools and technologies commonly used in the data engineering domain.
+
+I’ve seen that Scala is often mentioned in relation to big data frameworks like Apache Spark. I’m curious—is learning Scala important or beneficial for a data engineering role? Or can I stick with Python for most use cases?
+",11,17,Present-Break9543,2025-04-21 16:40:59,https://www.reddit.com/r/dataengineering/comments/1k4hzeq/should_i_learn_scala/,0,False,False,False,False
+1k41hcg,Cloudflare R2 + Apache Iceberg + R2 Data Catalog + Daft,,11,0,averageflatlanders,2025-04-21 01:10:38,https://dataengineeringcentral.substack.com/p/cloudflare-r2-apache-iceberg-r2-data,1,False,False,False,False
+1k4fz5s,What’s the best way to upload a Parquet file to an Iceberg table in S3?,"I currently have a Parquet file with 193 million rows and 39 columns. I’m trying to upload it into an Iceberg table stored in S3.
+
+Right now, I’m using Python with the pyiceberg package and appending the data in batches of 100,000 rows. However, this approach doesn’t seem optimal—it’s taking quite a bit of time.
+
+I’d love to hear how others are handling this. What’s the most efficient method you’ve found for uploading large Parquet files or DataFrames into Iceberg tables in S3?",8,10,chrmux,2025-04-21 15:13:08,https://www.reddit.com/r/dataengineering/comments/1k4fz5s/whats_the_best_way_to_upload_a_parquet_file_to_an/,0,False,False,False,False
+1k4eyv2,Moving from Software Engineer to Data Engineer,"Hi , Probably the first post in this subreddit but I find lot of useful tutorials and content to learn from.
+
+May I know, if you had to start on a data space, what are the blind spots, areas you will look out for, what books / courses I should rely on.
+
+I have seen posts on asking to stay on Software Engineer, the new role is still software engineering but in data team. 
+
+Additionally, I see lot of tools  and especially now data coincide with machine learning. I would like to know what kind of tools really made a difference. 
+
+Edit::
+I am moving to the company where they are just starting on the data-space, so going to probably struggle through getting the data into one place, cleaning data etc",9,7,homelescoder,2025-04-21 14:31:37,https://www.reddit.com/r/dataengineering/comments/1k4eyv2/moving_from_software_engineer_to_data_engineer/,0,False,False,False,False
+1k48izz,"DBT Logging, debugging and observability overall is a challenge. Discuss.","This problem exists for most Data tooling, not just DBT.
+
+  
+Like a really basic thing would be how can we do proper incident management from log to alert to tracking to resolution. ",8,7,sxcgreygoat,2025-04-21 08:29:00,https://www.reddit.com/r/dataengineering/comments/1k48izz/dbt_logging_debugging_and_observability_overall/,0,False,2025-04-21 08:43:38,False,False
+1k4aa0z,Will WSL Perform Better Than a VM on My Low-End Laptop?,"Here are my device specifications:
+- Processor: Intel(R) Core(TM) i3-4010U @ 1.70GHz
+- RAM: 8 GB
+- GPU: AMD Radeon R5 M230 (VRAM: 2 GB)
+
+I tried running Ubuntu in a virtual machine, but it was really slow. So now I'm wondering: if I use WSL instead, will the performance be better and more usable? I really don't like using dual boot setups.
+
+I mainly want to use Linux for learning data engineering and DevOps.",7,7,MazenMohamed1393,2025-04-21 10:30:35,https://www.reddit.com/r/dataengineering/comments/1k4aa0z/will_wsl_perform_better_than_a_vm_on_my_lowend/,0,False,False,False,False
+1k471tz,How can I speed up the Stream Buffering in BigQuery?,"Hello all, I have created a backfill for a table which is about 1gb and tho the backfill finished very quickly, I am still having problems querying the database as the data is in buffering (Stream Buffer). How can I speed up the buffering and make sure the data is ready to query? 
+
+Also, when I query the data sometimes I get the query results and sometimes I don't (same query), this is happening randomly, why is this happening?
+
+P.S., We usually change the staleness limit to 5 mins, now sure what effect this has on the buffering tho, my rationale is, since the data is considered to be so outdated, it will get a priority in system resources when it comes to buffering. But, is there anything else we can do?
+
+",5,8,Weird-Trifle-6310,2025-04-21 06:41:31,https://www.reddit.com/r/dataengineering/comments/1k471tz/how_can_i_speed_up_the_stream_buffering_in/,1,False,2025-04-21 06:44:41,False,False
+1k45ujt,Anyone attending the Databricks Field Lab in London on April 29?,"Hey everyone, Databricks and Datapao are running a free Field Lab in London on April 29. It’s a full-day, hands-on session where you’ll build an end-to-end data pipeline using streaming, Unity Catalog, DLT, observability tools, and even a bit of GenAI + dashboards. It’s very practical, lots of code-along and real examples. Great if you're using or exploring Databricks. [https://events.databricks.com/Datapao-Field-Lab-April](https://events.databricks.com/Datapao-Field-Lab-April) 
+
+",6,1,Adept_Explanation831,2025-04-21 05:17:35,https://www.reddit.com/r/dataengineering/comments/1k45ujt/anyone_attending_the_databricks_field_lab_in/,1,False,False,False,False
+1k4fe7b,Load SAP data into Azure gen2.,"Hi Everyone,
+
+I have overall 2 years of experience as a Data engineer.
+I have been given one task to extract the data from SAP S4 to data lake gen2.
+Current architecture is like below-
+SAP S4 (using SLT)- BW HANA DB - ADLS Gen2(via ADF).
+Can you guys help me to understand how can I extract the data. 
+I have no idea about SAP source. How to handle data and CDC/SCD for incremental load.",4,0,ChildhoodMost2264,2025-04-21 14:49:32,https://www.reddit.com/r/dataengineering/comments/1k4fe7b/load_sap_data_into_azure_gen2/,0,False,False,False,False
+1k4e0go,Sync data from snowflake to postgres,"Hi
+My team need to sync data on a huge tables and huge amount of tables from snowflake to pg on some trigger (we are using temporal), 
+We looked on CDC stuff but we think this overkill.
+Can someone advise on some tool? 
+",5,13,gal_12345,2025-04-21 13:50:44,https://www.reddit.com/r/dataengineering/comments/1k4e0go/sync_data_from_snowflake_to_postgres/,1,False,False,False,False
+1k41dxp,(Streaming) How do you know if things are complete ?,"I didn’t work a lot with streaming concept, did mostly batch.
+
+I’m wondering how do you define when a data will be done?
+
+For example you count the sums of multiple blockchain wallets. You have the transactions and end up doing sum over a time period. Let’s say you do this per 15 min periods. How do you know you period is finished ? Like you define that arbitrary like 30min and hope for the best ?
+
+Can you reprocess the same period later if some system fail badly ?  
+
+I except a very generic answer here. I just don’t understand the concept. Like do you need to have data that if you miss some records it’s fine to deliver Half the response or can you have precise data there too where every records count ?
+
+TLDR; how do you validate that you have all your data before letting the downstream module consume an aggregated topic or flush the period of aggregation from the stream ?",4,4,Commercial_Dig2401,2025-04-21 01:05:40,https://www.reddit.com/r/dataengineering/comments/1k41dxp/streaming_how_do_you_know_if_things_are_complete/,0,False,False,False,False
+1k4p5gh,Storing multivariate time series in parquet for machine learning,"Hi, sorry this is a bit of a noob question. I have a few long time series I want to use for machine learning.
+
+So e.g. x\_1 \~ t\_1, t\_2, ..., t\_billion
+
+and i have just like 20 or something x
+
+  
+So intuitively I feel like it should be stored in a row oriented format since i can quickly search across the time indicies I want to use. Like I'd say I want all of the time series points at t = 20,345:20,400 to plug into ml. Instead of I want all the xs then pick out a specific index from each x.
+
+I saw on a post around 8 months ago that parquet is the way to go. So parquet being a columnar format I thought maybe if I just transpose my series and try to save it, then it's fine.
+
+But that made the write time go from 15 seconds (when I it's t row, and x time series) to 20+ minutes (I stopped the process after a while since I didn't know when it would end). So I'm not really sure what to do at this point. Maybe keep it as column format and keep re-reading the same rows each time? Or change to a different type of data storage?",3,2,Affectionate_Use9936,2025-04-21 21:26:23,https://www.reddit.com/r/dataengineering/comments/1k4p5gh/storing_multivariate_time_series_in_parquet_for/,1,False,False,False,False
+1k4hl3x,Thoughts on TOGAF vs CDMP certification,"Based on my research:
+
+1. TOGAF seems to be the go-to for enterprise architecture and might give me a broader IT architecture framework. [TOGAF](https://www.opengroup.org/certifications/togaf-certification-portfolio?utm_source=chatgpt.com)
+2. CDMP is more focused on data governance, metadata, and overall data management best practices. [CDMP](https://www.dama.org/cpages/cdmp-information?utm_source=chatgpt.com)
+
+I’m a data engineer with a few certs already (Databricks, dbt) and looking to expand into more strategic roles—consulting, data architecture, etc. My company is paying for the certification, so price is not a factor.
+
+Has anyone taken either of these certs?
+
+* Which one did you find more practical or respected?
+* Was one of them outdated material? Did you gain any value from it?
+* Which one did clients or employers actually care about?
+* How long did it take you and were there available study materials?
+
+Would love to hear honest thoughts before spending the next couple of months on it haha! Or maybe there is another cert that is more valueable for learning architecture/data management? Thanks!",2,6,ActRepresentative378,2025-04-21 16:25:19,https://www.reddit.com/r/dataengineering/comments/1k4hl3x/thoughts_on_togaf_vs_cdmp_certification/,0,False,False,False,False
+1k4gzcn,Thoughts on Prophecy?,"I’ve never had a positive experience using low/no code tools but my company is looking to explore Prophecy to streamline our data pipeline development. 
+
+If you’ve used Prophecy in production or even during a POC, I’m curious to hear your unbiased opinions. If you don’t mind answering a few questions at the top of my head:
+
+How much development time are you actually saving?
+
+Any pain points, limitations, or roadblocks?
+
+Any portability issues with the code it generates?
+
+How well does it scale for complex workflows?
+
+How does the Git integration feel?",2,6,Jumpy-Log-5772,2025-04-21 16:02:00,https://www.reddit.com/r/dataengineering/comments/1k4gzcn/thoughts_on_prophecy/,0,False,False,False,False
+1k44izr,Most prominent data quality issues,"Hello,
+
+For those expert in the field or has been in the field for 5 years and more, what you would say are top issues you face when it comes to data quality and observability in snowflake?
+
+",2,3,Existing-Push-2142,2025-04-21 03:56:30,https://www.reddit.com/r/dataengineering/comments/1k44izr/most_prominent_data_quality_issues/,0,False,False,False,False
+1k4orwg,Apache iceberg schema evolution,"Hello
+
+  
+Is it possible to insert data into Apache iceberg without initially defining it's schema, so that schema is updated after examining the stored data?",2,0,Endgame4One,2025-04-21 21:10:47,https://www.reddit.com/r/dataengineering/comments/1k4orwg/apache_iceberg_schema_evolution/,0,False,False,False,False
+1k4fhg4,What does a  data collective officer do?,So what are the daily tasks and responsibilities of a data collective officer?,1,4,Varysko,2025-04-21 14:53:20,https://www.reddit.com/r/dataengineering/comments/1k4fhg4/what_does_a_data_collective_officer_do/,0,False,False,False,False
+1k4ij3v,Benchmark library for PostgreSQL,"Copy pasting text from LinkedIn post guys…
+
+Long story short:
+Over the course of my career, every time I had a query to test, I found myself spamming the “Run” button in DataGrip or re‑writing the same boilerplate code over and over again. After some Googling, I couldn’t find an easy‑to‑use PostgreSQL benchmarking library—so I wrote my own.
+(Plus, `pgbenchmark` was such a good name that I couldn't resist writing a library for it)
+
+It still has plenty of rough edges, but it’s extremely easy to use and packed with powerful features by design. Plus, it comes with a simple (but ugly) UI for ad‑hoc playground experiments.
+
+Long way to go, but stay tuned and I'm ofc open for suggestions and feature requests :)
+
+Why should you try `pgbenchmark`?
+
+•  README is very user-friendly and easy to follow <3
+• ⚙️ Zero configuration: Install, point at your database, and you’re ready to go
+• 🗿 Template engine: Jinja2-like template engine to generate random queries on the fly
+• 📊 Detailed results: Execution times, min-max-average-median, and percentile summaries  
+• 📈 Built‑in UI: Spin up a simple, no‑BS playground to explore results interactively. [WIP]
+
+PyPI: https://pypi.org/project/pgbenchmark/
+GitHub: https://github.com/GujaLomsadze/pgbenchmark
+
+",0,0,NoCryptographer4635,2025-04-21 17:02:02,https://i.redd.it/3zso1naxy7we1.jpeg,0,False,False,False,False

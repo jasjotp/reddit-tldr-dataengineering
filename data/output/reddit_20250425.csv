@@ -1,0 +1,260 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1k6vl2l,WTF that guy just wrote a database in 2 lines of bash,"That comes from ""Designing Data-Intensive Applications"" by Martin Kleppmann if you're wondering ",410,72,TheBigRoomXXL,2025-04-24 15:49:02,https://i.redd.it/nqcgrkcm0twe1.png,0,False,False,False,False
+1k6i2pb,Best hosting/database for data engineering projects?,"I've got a text analytics project for crypto I am working on in python and R. I want to make the results public on a website.
+
+I need a database which will be updated with new data (for example every 24 hours). Which is the better platform to start off with if I want to launch it fast and preferrably cheap?
+
+[https://streamlit.io/](https://streamlit.io/)
+
+[https://render.com/](https://render.com/)
+
+[https://www.heroku.com/](https://www.heroku.com/)
+
+[https://www.digitalocean.com/](https://www.digitalocean.com/)",55,18,buklau00,2025-04-24 03:04:10,https://www.reddit.com/r/dataengineering/comments/1k6i2pb/best_hostingdatabase_for_data_engineering_projects/,0,False,False,False,False
+1k76w9l,"We're all on this page now, yea?","Giving credit where it is due, read the blog post → [https://luminousmen.com/post/change-data-capture](https://luminousmen.com/post/change-data-capture)  
+  
+If you want CDC that meets the all the specs in the post, we open sourced a tool 👀 [https://github.com/sequinstream/sequin](https://github.com/sequinstream/sequin)  ",23,11,goldmanthisis,2025-04-24 23:43:29,https://i.redd.it/ke82ndrpcvwe1.jpeg,0,False,False,False,False
+1k6mctq,Instant SQL : Speedrun ad-hoc queries as you type,"Unlike web development, where you get instant feedback through a local web server, mimicking that fast development loop is much harder when working with SQL.
+
+Caching part of the data locally is kinda the only way to speed up feedback during development.
+
+Instant SQL uses the power of in-process DuckDB to provide immediate feedback, offering a potential step forward in making SQL debugging and iteration faster and smoother.
+
+What are your current strategies for easier SQL debugging and faster iteration?
+
+",16,6,TransportationOk2403,2025-04-24 07:29:19,https://motherduck.com/blog/introducing-instant-sql/,0,False,False,False,False
+1k70eli,Icebird: I wrote an Apache Iceberg reader from scratch in JavaScript,"Hi I'm the author of [Icebird](https://github.com/hyparam/icebird) and [Hyparquet](https://github.com/hyparam/hyparquet) which are new open-source implementations of Iceberg and Parquet written entirely in JavaScript.
+
+Why re-write Parquet and Iceberg in javascript? Because it enables building data applications in the browser with a drastically simplified stack. Usually accessing iceberg requires a backend, often with full spark processing, or paying for cloud based OLAP. Icebird allows the browser to directly fetch Iceberg tables from S3 storage, without the need for backend servers.
+
+I am excited about the new kinds of data applications than can be built with modern data formats, and bringing them to the browser with hyparquet and icebird. Building these libraries has been a labor-of-love -- I hope they can benefit the data engineering community. Let me know your thoughts!",12,3,dbplatypii,2025-04-24 19:02:18,https://github.com/hyparam/icebird,0,False,False,False,False
+1k6wi8y,Does your company expect data engineers to understand enterprise architecture?,"I'm noticing a trend at work (mid-size financial tech company) where more of our data engineering work is overlapping with enterprise architecture stuff. Things like aligning data pipelines with ""long-term business capability maps"", or justifying infra decisions to solution architects in EA review boards.
+
+It did make me think that maybe it's worth getting a [TOGAF certification](https://www.advisedskills.com/enterprise-architecture/togaf-ea-foundation-and-practitioner-level-1-and-2) like this. It's online and maybe easier to do, and could be useful if I'm always in meetings with architects who throw around terminology from ADM phases or talk about ""baseline architectures"" and ""transition states.""
+
+But basically, I get the high-level stuff, but I haven't had any formal training in EA frameworks. So is this happening everywhere? Do I need TOGAF as a data engineer, is it really useful in your day-to-day? Or more like a checkbox for your CV?",9,12,TrainingVapid7507,2025-04-24 16:25:24,https://www.reddit.com/r/dataengineering/comments/1k6wi8y/does_your_company_expect_data_engineers_to/,0,False,False,False,False
+1k7214y,Feedback on two rough draft architectures made by a noob.,"I am a SWE with no DE experience. I have been tasked with architecting our storage and ETL pipelines. I took a month long online course leading up to my start date, and have done a ton of research and asked you guys a lot of questions (**thank you!!**). 
+
+All of this study/research has led me to two rough draft architectures to present to my company. I was hoping to get some constructive feedback on them, if you all would do me the honor. 
+
+Here's some context for the images below:
+
+1. Scale of data is many terabytes to a few petabytes uncompressed. Largely sensor data. 
+2. Data is initially generated and stored on an air-gapped network. 
+3. Data will be moved into a lab by detaching hard-drives. There, we will need to retain some raw data for regulatory purposes, and we will also want to perform ETL into an analytical database/warehouse. 
+
+I have a lot of time to refine these before implementation time, and specific technologies are flexible. but next week I wan to present a *reasonable* view of the types of solutions we might use.  What do you think of this as a first draft? Any obvious show stoppers or bad ideas here?
+
+[On Premise Rough Draft](https://preview.redd.it/9ktilxpp8uwe1.png?width=1413&format=png&auto=webp&s=bfe0ab54c719bc69a89480a42dad08e6b0f8c6a6)
+
+[Cloud Rough Draft. ](https://preview.redd.it/8y82yjrv8uwe1.png?width=1548&format=png&auto=webp&s=1f2a64daad73fa82679d2e82c1b2383adae6910a)
+
+",8,1,wcneill,2025-04-24 20:08:02,https://www.reddit.com/r/dataengineering/comments/1k7214y/feedback_on_two_rough_draft_architectures_made_by/,0,False,False,False,False
+1k70nee,ML/Data Engineer -> Robotics Engineering,"Wanted to get the opinion from the community on Robotics Engineering from anyone with some experience. My experience is about 3 years in industry as a Data engineer and 1 as an ML engineer.
+
+I'm willing to do a part time Msc (paid out my own pocket). Just not sure if it's worth it in the north of the UK.
+
+The TDLR is: 
+- I think robotics is really interesting 
+- its where i think the next big innovations are gonna be (using AI) and I'd love to be a part of it.
+
+Just weighing up the sacrifice of a currently comfy  career vs something more interesting to me. Data plumbing (and ai plumbing) isn't particularly exciting but it's definitely paying the bills.",9,0,izaax42,2025-04-24 19:12:12,https://www.reddit.com/r/dataengineering/comments/1k70nee/mldata_engineer_robotics_engineering/,1,False,False,False,False
+1k6xfby,Query runs longer than your AWS bill. How do I improve it,"Hey folks,
+
+So I have this query that joins two table, selects a few columns, runs a dense rank and then filters to keep only the rank 1s. Pretty simple right ?
+
+Here’s the kicker. The overpaid, under evolved nit wit who designed the databases didn’t add a single index on either of these tables. Both of which have upwards of 10M records. So, this simple query takes upwards of 90 mins to run and return a result set of 90K records. Unacceptable. 
+
+So, I set out to right this cosmic wrong. My genius idea was to simplify the query to only perform the join and select the required columns. Eliminate the dense rank calculation and filtering. I would then read the data into Polars and then perform the same operations.
+
+Yes, seems weird but here’s the reasoning. I’m accessing the data from a Tibco Data Virtualization layer. And the TDV docs themselves admit that running analytical functions on TDV causes a major performance hit. So it kinda makes sense to eliminate the analytical function. 
+
+And it worked. Kind of. The time to read in the data from the DB was around 50 minutes. And Polars ran the dense rank and filtering in a matter of seconds. So, the total run time dropped to around half, even though I’m transferring a lot more data. Decent trade off in my book. 
+
+But the problem is, I’m still not satisfied. I feel like there should be more I can do. I’d appreciate any suggestions and I’d be happy to provide any additional details. Thanks. ",7,10,YameteGPT,2025-04-24 17:02:30,https://www.reddit.com/r/dataengineering/comments/1k6xfby/query_runs_longer_than_your_aws_bill_how_do_i/,0,False,False,False,False
+1k6gva7,Opportunity to DE or SWE,"My background is in finance and economics. I've worked with data for the past 3 years mainly using SQL, python and power bi. On the side I've developed low-code apps and VB apps for small businesses, with the ultimate goal to automate their processes and offer analytics. I have now some foundation on OOP too. I'm in a point of my life in which I could go for the DE path with some more study or learn SWE, I have the time to do it and the resources to pay for online courses if needed (no bootcamps though), let's say I can study whatever I want for the next two years. I'm 30, what would you do in my case?",7,3,Ok_Earth2809,2025-04-24 02:06:27,https://www.reddit.com/r/dataengineering/comments/1k6gva7/opportunity_to_de_or_swe/,0,False,False,False,False
+1k7803a,How to prepare for first day as DE?,"Little background about myself; I have been working as full stack developer hybrid, decided to move to UK for MSc in Data Science. I’ve worked in a startup so I know my way around learning new things quick. Pretty good at Django, SQL, Python(Please don’t say Django is Python, it’s not). The company I have joined is focused on travel, and are onboarding a data team.
+
+They have told me they aren’t expecting me to create wonders but grow myself into it. The head of data is an awesome person, and was impressed the amount of knowledge I knew.
+
+Now you are wondering why am I asking this question? Basically, I want to make sure I can secure a visa sponsorship and want to work hard, learn as much as possible. I have moved country to get this job and want to settle over here. 
+
+
+",4,3,FuzzyCraft68,2025-04-25 00:37:39,https://www.reddit.com/r/dataengineering/comments/1k7803a/how_to_prepare_for_first_day_as_de/,0,False,False,False,False
+1k6sth5,How do you manage versioning when both raw and transformed data shift?,"Ran into a mess debugging a late-arriving dataset. The raw and enriched data were out of sync, and tracing back the changes was a nightmare.
+
+How do you keep versions aligned across stages? Snapshots? Lineage? Something else?",4,3,inntenoff,2025-04-24 13:54:59,https://www.reddit.com/r/dataengineering/comments/1k6sth5/how_do_you_manage_versioning_when_both_raw_and/,1,False,False,False,False
+1k6p9uv,Where do you publish your PowerBI dashboards?,"Just curious. I just moved from the Salesforce  to the Microsoft ecosystem. I'm currently publishing my PowerBI dashboards and posting them in a SharePoint page so everything lives organized in the same place. 
+
+Looking for different and better ideas.
+
+Thank you in advance ",4,1,sirtuinsenolytic,2025-04-24 10:55:34,https://www.reddit.com/r/dataengineering/comments/1k6p9uv/where_do_you_publish_your_powerbi_dashboards/,1,False,False,False,False
+1k6zbhh,Best approach to warehousing flats,"I have about 20 years worth of flat files stored in a folder on a network drive as a result of lackluster data practices. Essentially, three different flat files get printed to this folder on a nightly bases that represent three different types of data (think: person, sales, products). Essentially this data could exist as three separate long tables with date as key. 
+
+I'd like to establish a proper data warehouse, but am unsure of how to best handle the process of warehousing these flats. I have been interfacing with the data through Python Pandas so far, but the company has a SQL server...It would probably be best to place the warehouse as a database on the server, then pull/manipulate the data from there? But what is tripping me up is the order of operations to perform in the warehousing procedure. I don't believe I would be able to dump into SQL server without profiling the data first as number of columns and the type of data stored in the flat files may have changed throughout the years.
+
+
+
+I am essentially struggling with how to sequence the process of : network drive flats > sql server db:
+
+  
+My concerns are:
+
+Best method to profile the data?
+
+Best way to store the metadata?
+
+Throw flats into SQL server and then query them from there to perform data transformations/validations? 
+
+  \-- It seems without knowing the meta data, I should perform this step in Pandas first before loading into SQL server? What is the best practice for that? perform operations on each flat file separately or combine first (e.g., should I clean the data during the loop or after combining tables)?
+
+   \-- Right now, I am creating a list of flat files, using that list to create a dictionary of dataframes, and then using that dictionary to create a dataframe of dataframes to group and concatenate into 3 long tables -- am I convoluting this process?
+
+How to approach data cleaning/validation/and additional column calculations? e.g. -- Should I perform these procedures on each file separately before concatenating into a long table or perform these procedures after concatenation?-- Should I even concatenate into longs or keep them separate and define a relationship to their keys stored in a separate table?
+
+How many databases for this process? One for raws? One for staging? A third as the datawarehouse to be queried?
+
+When to stage and how much of the process to perform in RAM/behind the scenes before printing to a new table?
+
+Should I consider compressing the data at any point in the process? (e.g. store as Parquet)
+
+
+
+The data gets used for data analytics and to assemble reports/dashboards. Ideally, I would like to eliminate having to perform as many joins as possible during the querying for analysis process. I'd also like to orchestrate the warehouse so that adjustments only need to happen in a single place and propagate throughout the pipeline with a history of adjustments stored as record.",3,2,Kate-WeHaveToGoBack,2025-04-24 18:18:34,https://www.reddit.com/r/dataengineering/comments/1k6zbhh/best_approach_to_warehousing_flats/,0,False,False,False,False
+1k70kwz,GA4 Bigquery export - anyone tried loading the raw data into another dwh?,"I have been tasked with replicating some GA4 dashboards in PowerBI. As some of the measures are non-additive, I would need the raw GA4 event data as a basis for this, otherwise reports on User metrics will not be the same as the GA4 portal.
+
+Has anyone successfully exported GA4 raw data from Bigquery into ANOTHER dwh of a different type? Is it even possible?",2,1,Any_Tap_6666,2025-04-24 19:09:17,https://www.reddit.com/r/dataengineering/comments/1k70kwz/ga4_bigquery_export_anyone_tried_loading_the_raw/,0,False,False,False,False
+1k6w80r,Data Analyst/Engineer,"I have a bachelor’s and master’s degree in Business Analytics/Data Analytics respectively. I graduated from my master’s program in 2021, and started my first job as a data engineer upon graduation. Even though my background was analytics based, I had a connection that worked within the company and trusted I could pick up more of the backend engineering easily. I worked for that company for almost 3 years and unfortunately, got close to no applicable experience. They had previously outsourced their data engineering so we faced constant roadblocks with security in trying to build out our pipelines and data stack. In short, most of our time was spent arguing with security for reasons we needed access to data/tools/etc to do our job. They laid our entire team off last year and the job search has been brutal since. I’ve only gotten 3 engineering interviews from hundreds of applications and I’ve made it to the final round during each, only to be rejected because of technical engineering questions/problems I didn’t know how to figure out. I am very discouraged and wondering if data engineering is the right field for me. The data sphere is ever evolving and daunting, I already feel too far behind from my unfortunate first job experience. Some backend engineering concepts are still difficult for me to wrap my head around and I know now I much prefer the analysis side of things. I’m really hoping for some encouragement and suggestions on other routes to take as a very early career data professional. I’m feeling very burnt out and hopeless in this already difficult job market",3,6,Ok_Plan7764,2025-04-24 16:14:05,https://www.reddit.com/r/dataengineering/comments/1k6w80r/data_analystengineer/,0,False,False,False,False
+1k6vlwr,AirByte: How to transform data before sync to destination,"Hi there, 
+
+I have PII data in the Source db that I need to transform before sync to Destination warehouse in AirByte. 
+Has anybody done this before?
+
+In docs they suggest transforming AT Destination. But this isn’t what I’m trying to achieve. I need to transform before sync. 
+
+Disclaimer: I already tried Google and forums, but can’t find anything
+
+Any help appreciated ",2,4,Terrible_Dimension66,2025-04-24 15:49:56,https://www.reddit.com/r/dataengineering/comments/1k6vlwr/airbyte_how_to_transform_data_before_sync_to/,0,False,False,False,False
+1k6v7t1,Inverted index for dummies,,2,0,Any_Opportunity1234,2025-04-24 15:34:11,https://v.redd.it/pr5kw514xswe1,0,False,False,False,False
+1k6nsdf,Bytebase 3.6.0 released -- Database DevSecOps for MySQL/PG/MSSQL/Oracle/Snowflake/Clickhouse,,2,0,op3rator_dec,2025-04-24 09:14:14,https://www.bytebase.com/changelog/bytebase-3-6-0/,0,False,False,False,False
+1k6m8tu,How do I deal with really small data instances ?,"Hello, I recently started learning spark.
+
+I wanted to clear up this doubt, but couldn't find a clear answer, so please help me out.
+
+Let's assume I have a large dataset of like 200 gb, with each data instance (like, lets assume a pdf) of 1 MB each.  
+I read somewhere (mostly gpt) that I/O bottleneck can cause the performance to dip, so how can I really deal with this ? Should I try to combine these pdfs into like larger sizes, around 128 MB before asking spark to create partitions ? If I do so, can I later split this back into pdfs ?  
+I kinda lack in both the language and spark department, so please correct me if i went somewhere wrong.
+
+Thanks!",2,5,Thiccboyo420,2025-04-24 07:21:24,https://www.reddit.com/r/dataengineering/comments/1k6m8tu/how_do_i_deal_with_really_small_data_instances/,0,False,False,False,False
+1k6m65t,Need solutions to increase read throughput in a streaming architecture,"Long story short we are processing 40M records from a input file in s3 by directly streaming each line by line we used ray architecture to submit each line as tasks and parallelize them across available cores in the cluster(ray rakes care of scheduling based on config)
+
+We did poc for 6M records in a small machine 16core cpu catering towards the worst case (if it can work on a small machine will work in bigger resource pool) now he had successfully ran it for without any memory overload by using ray wait and get to constantly clear memory.
+
+Problem with bigger resources is the stream reading we are doing is still single threaded python smart open package while processing is a Ferrari car with parallelization based on bigger cores available so we are not submitting enough tasks to make use of the full cores available which causes a discrepancy in the cost and time projection we did based on poc 
+
+Any ideas to parallelize the streaming using python smartopen without any duplication? To increase read throughput and submit more tasks in parallel to parallel processing",2,12,ShadowKing0_0,2025-04-24 07:16:11,https://www.reddit.com/r/dataengineering/comments/1k6m65t/need_solutions_to_increase_read_throughput_in_a/,0,False,False,False,False
+1k6j6ay,Scope of data engineering,"A few years ago I worked on a project that involved running distributed computations on a spark cluster (AWS ec2 machines). The data was pulled from data sources (CSV files in S3) and transformed and stored in parquet files, which were then fed in the computation engine running on spark, the output of which was mostly stored in a transactional database. The transactional db in turn powered a user interface.  
+
+The computation engine ran as a job in the pipeline (processing high volume data) as well as upon user actions on the UI (low volume calculations). This computation engine was pretty complex component, doing a bunch of different things. Given the complexity, there was a strong need to have a properly structured code that stays maintainable, as a large team worked just on this. Also as this was the slowest component of the pipeline, there was also a need to be well versed in how spark works internally, so that well optimized code is written. The codebase was in scala.
+
+My question is - does this component come under the purview of a data engineer or a software engineer. As I mentioned this was several years ago, and ""data engineer"" title was only gradually picking up at that time. All of us were SWE then (most transitioned into a DE role subsequently). I ask this question because I've come across several data engineers who have pretty strong demarcations around what a data engineer shouldn't be doing. And mostly I find the software engineering principles (that get used  to create a maintainable, 'enterprisey' codebase) are often ignored or underdeveloped.",2,1,ksceriath,2025-04-24 04:04:10,https://www.reddit.com/r/dataengineering/comments/1k6j6ay/scope_of_data_engineering/,0,False,False,False,False
+1k76mmf,Data Engineer/Analyst Jobs in Service Hospitality industry,"Hello! I have an education in data analytics and a few years job experience as a data engineer in the insurance industry. I’ve also been a bartender for almost a decade during school and sometimes one the weekends even when I was a data engineer. I have a passion for the service/food &bev/hospitality industry, but haven’t come across many jobs or met anyone yet in the data sphere that works in these industry. Does anyone have any insight into breaking into that industry as a data scientist? Thank you!",1,1,Ok_Plan7764,2025-04-24 23:30:22,https://www.reddit.com/r/dataengineering/comments/1k76mmf/data_engineeranalyst_jobs_in_service_hospitality/,1,False,False,False,False
+1k7475r,How to assess the quality of written feedback/ comments given my managers.,"
+I have the feedback/comments given by managers from the past two years (all levels).
+
+My organization already has an LLM model. They want me to analyze these feedbacks/comments and come up with a framework containing dimensions such as clarity, specificity, and areas for improvement. The problem is how to create the logic from these subjective things to train the LLM model (the idea is to create a dataset of feedback). How should I approach this?
+
+I have tried LIWC (Linguistic Inquiry and Word Count), which has various word libraries for each dimension and simply checks those words in the comments to give a rating. But this is not working.
+
+Currently, only word count seems to be the only quantitative parameter linked with feedback quality (longer comments = better quality).
+
+Any reading material on this would also be beneficial.",1,0,Sandwichboy2002,2025-04-24 21:39:01,https://www.reddit.com/r/dataengineering/comments/1k7475r/how_to_assess_the_quality_of_written_feedback/,0,False,False,False,False
+1k71cqf,Iceberg CDC and Cron,"I'm designing an ETL pipeline, and I want to automate it. My use case is not real-time, but the data is very big so I want to not waste resources. I've read about various solutions like Apache Airflow, but I've also read that simple cron jobs can do the trick. 
+
+For context, I'm looking using Iceberg to populate a MinIO datalake with raw data coming in from Flink topics. Then, I want to schedule cron jobs to query CDC tables like the ones described here: [CDC on Iceberg](https://www.dremio.com/blog/cdc-with-apache-iceberg/). If the queries return changes, then I perform ETL on the changes and they go into a data-warehouse.   
+  
+Is this approach feasible? Is there a simpler way? A better way even if it isn't quite as simple?
+
+",1,1,wcneill,2025-04-24 19:40:30,https://www.reddit.com/r/dataengineering/comments/1k71cqf/iceberg_cdc_and_cron/,0,False,False,False,False
+1k6xasn,Functional Design Documentation practice,"What practice do you follow for the functional design documentation? The team uses the Agile framework to break down big projects into small, sizeable tasks, The same team also works on tickets to fix existing issues and enhancements to extend existing functionalities. We will build a functional area in a big project and continue to enhance it with smaller updates in the later sprints. 
+
+Has anyone been in this situation? do you create a functional design document and keep updating it or build one document per story? Please share a template if something is working for you.
+
+Thanks!",1,0,PreparationScared835,2025-04-24 16:57:35,https://www.reddit.com/r/dataengineering/comments/1k6xasn/functional_design_documentation_practice/,0,False,False,False,False
+1k6r1by,Looking for insights from current Solution Architects or Senior Solution Architects at Databricks (or similar tech organizations) — what are the key differences in roles and responsibilities between the two positions?,"
+
+Here is some background, I'm currently in the interviewing process for a presales solution architect at Databricks in Canada. I am currently employed as a senior manager at a consulting firm where I largely work on technical project delivery. I understand the role at Databrick is more client conversation and less technical, but what I'm trying to evaluate is how did others shift from people management to a presales roles and also whether I should target for a senior or specialist solution architect role rather than a solution architect.
+
+I am fairly technical and solution most of the work and deep dive into day-to-day technical issues.",1,1,Opening_Ad6142,2025-04-24 12:32:38,https://www.reddit.com/r/dataengineering/comments/1k6r1by/looking_for_insights_from_current_solution/,0,False,False,False,False
+1k6p7x9,How do you handle real-time data access (<100ms) while keeping bulk ingestion efficient and stable?,"We’re currently indexing blockchain data using our Golang services, sending it into Redpanda, and from there into ClickHouse via the Kafka engine. This data is then exposed to consumers through our GraphQL API.
+
+However, we’ve run into issues with real-time ingestion. Pushing data into ClickHouse at high frequency is causing too many merge parts and system instability — to the point where insert blocks are occasionally being rejected. This is especially problematic since some of our data (like blocks and transactions) needs to be available in real-time, with query latency under 100ms.
+
+To manage this better, we’re considering separating our ingestion strategy: keeping batch ingestion into ClickHouse for historical and analytical needs, while finding a way to access fresh data in real-time when needed — particularly for the GraphQL layer.
+
+Would love to get thoughts on how we can approach this — especially around managing real-time queryability while keeping ingestion efficient and stable.",1,7,not_happy_kratos,2025-04-24 10:52:14,https://www.reddit.com/r/dataengineering/comments/1k6p7x9/how_do_you_handle_realtime_data_access_100ms/,0,False,False,False,False
+1k6mqe7,File Monitoring on AWS,"Here for some advice...
+
+  
+I'm hoping to build a PowerBI dashboard to display whether our team has received a file in our S3 bucket each morning. We have circa 200+ files received every morning, and we need to be aware if one of our providers hasn't delivered.
+
+  
+My hope is to set up event notifications from S3, that can be used to drive the dashboard. We know the filenames we're expecting, and the time each should arrive, but have got a little lost on the path between S3 & PowerBI.
+
+  
+We are an AWS house (mostly), so was considering using SQS, SNS, Lambda... But, still figuring out the flow. Any suggestions would be greatly appreciated! TIA",1,0,Feedthep0ny,2025-04-24 07:56:42,https://www.reddit.com/r/dataengineering/comments/1k6mqe7/file_monitoring_on_aws/,0,False,False,False,False
+1k72yym,Why does Trino baseline specs are so extreme? isn't it overkill?,"Hi, i'm currently swapping my company data warehouse to a more modular solution using, among other things, a data lake.
+
+I'm using Trino to set up a cluster and using it to connect to my AWS glue catalog and access my data on S3 buckets.
+
+So, while setting Trino up, i was looking at their docs and some forum answers, and why does everywhere i look, people suggest ludicrous powerful machines as a baseline for trino? People recomend 64GB m5.4xlarge as a baseline for EACH worker? saying stuff like ""200GB should be enough for a starting point"".
+
+I get it, Trino might be a really good solution for big datasets, and some bigger companies might just not care about expending 5k USD monthly only on EC2. But a smaller company with 4 employees, a startup, specially one located on other regions beyond us-east, simply saying you need 5x 4xlarge instances is, well, a lot...  
+(for comparison, in my country, 5kUSD pays the salary of all members of the team and cover most of our other costs. and we have above average salaries for staff engineers...)  
+  
+I initially set my Trino cluster up with a 8gb ram machine and workers with 4 gb (t3.large and t3.medium on aws Ec2) and trino is actually working well, I have a 2TB dataset, which for many, is actually enough space.
+
+Am I missing something? Is Trino bad as a simple solution for something like simply replacing athena queries costs and having more control over my data? Should i be looking somewhere else? Or is this just simply a problem of ""usually companies have a bigger budget?""
+
+How can i get what is really a minimum baseline for using it?
+
+",0,9,Glass_Celebration217,2025-04-24 20:46:51,https://www.reddit.com/r/dataengineering/comments/1k72yym/why_does_trino_baseline_specs_are_so_extreme_isnt/,0,False,False,False,False
+1k6ugw8,Just realized that I don't fully understand how Snowflake decouples storage and compute. What happens behind the scenes from when I submit a query to when I see the results?,"I've worked with Snowflake for a while and understood that storage was separated from compute. In my head that makes sense but practically speaking realized I didn't know how a query is processed and data is loaded from storage onto a DW. Is there anything special going on? 
+
+For example, let's say I have a table employees without any partitioning and run a basic query of `select department, count(*) from employees where start_date > '2020-01-01'` and using a Large data warehouse. Can someone explain what happens after I hit run on the query until I see the results?",0,6,jbnpoc,2025-04-24 15:03:28,https://www.reddit.com/r/dataengineering/comments/1k6ugw8/just_realized_that_i_dont_fully_understand_how/,0,False,False,False,False
+1k6l84c,[Help Needed] Trying to build a real-time MongoDB + Neo4j project — does this make sense?,"Hi everyone 👋
+
+I’m trying to work on a new project to improve my data engineering skills and would love to get some advice from people more experienced in real-world systems.
+
+# 🔁 What I’m Trying to Do:
+
+I previously built a Medallion Architecture project using MongoDB, Pandas, and PostgreSQL (Bronze → Silver → Gold). It helped me understand the basics of ELT pipelines.
+
+Now I want to do something different, so I’m trying to build a **real-time pipeline** that also uses **graph modeling**. Here’s my rough idea:
+
+* Use **MongoDB Atlas** to store real-time event data (e.g., product views, purchases)
+* Use **AWS Lambda** to process/clean those events.
+* Push the cleaned events into **Neo4j** to create user-product relationships (for example: `(:User)-[:VIEWED]->(:Product)`)
+
+I’d also like to simulate the stream using Python + Faker, just to have some data coming in regularly.
+
+# 🙋‍♂️ Where I’m Stuck / Need Help:
+
+1. **Is it even a good idea to combine MongoDB and Neo4j like this?** Or should I focus on just one?
+2. Are there any common mistakes or traps I should watch out for with this kind of setup?
+3. Any suggestions on making it more realistic or structured like a production system?
+
+I’m still learning and trying to figure out how to make this useful, so any feedback or tips would mean a lot.
+
+Thanks in advance 🙏",0,1,Loud-Effective7198,2025-04-24 06:11:39,https://www.reddit.com/r/dataengineering/comments/1k6l84c/help_needed_trying_to_build_a_realtime_mongodb/,0,False,2025-04-24 07:00:27,False,False
+1k776e5,How Should I Approach My Job Search As An Eager Learner with Limited Experience?,"I come from a non-technical degree and self-taught background and I work for a US non-profit where I wear many hats; data engineer, Microsoft Power Platform developer, Data Analyst, and User Support. I want to move to a more specialized DE role. We currently have an on-premise SQL Server stack with a pipeline managed by SSIS packages that feed into an SSAS cube as our warehouse for reporting in Power BI reports that I also develop.
+
+Our senior DE retired last year and I have been solely managing and trying to modernize the pipeline and warehouse since as much as I can with an on-premise setup. I pushed for a promotion and raise in the wake of that but the organization is stubborn and it was denied. I have completed the Data Talks Studio DE Zoomcamp certificate in an effort to show that I am eager to move into more cloud based data engineering despite my limited professional experience.
+
+I need to leave this job as they are unwilling to match my responsibilities with an appropriate salary. My question to the sub is what approach should I take to my job search? Where should I be looking for jobs? What kinds of jobs should I be looking for? Should I look for bridge roles like Data Analyst or Analytics Engineer? If anyone would be willing to mentor me through this a bit, that would also be greatly appreciated.",0,0,cjones91594,2025-04-24 23:57:00,https://www.reddit.com/r/dataengineering/comments/1k776e5/how_should_i_approach_my_job_search_as_an_eager/,0,False,False,False,False
+1k715xq,Data Engineering Manager Tech Screen Prep,Hi! I have a final round technical screen next week for a Data Engineering Manager role. I have a strong data analytics/data science leadership background and have dipped my toes into DE from time to time over more than a decade long career. I'm looking for good prep tools for this (hands on) Manager level role.,0,1,redrumredrun,2025-04-24 19:32:50,https://www.reddit.com/r/dataengineering/comments/1k715xq/data_engineering_manager_tech_screen_prep/,0,False,False,False,False
+1k6nokk,EY GDS vs Deloitte India for Azure Data Engineer,"Hi folks,  
+I got two offers in hand, one is from EY GDS for 10.5LPA + 5% VBA (which I heard people actually get around 10-20% on a A or B rating) and Deloitte India 11 LPA + 10% VPB (Didn't accepted the offer yet, asked for 14 LPA ). Which one should I join, which is better in terms of projects, work culture and career growth. I have 5 days to decide.",0,4,Creepy_Area5974,2025-04-24 09:06:20,https://www.reddit.com/r/dataengineering/comments/1k6nokk/ey_gds_vs_deloitte_india_for_azure_data_engineer/,0,False,False,False,False
+1k6idhk,Which degree has the best ROI,"Hi all. I’m considering another degree to put off paying back student loans. In the US if you’re in school at least part time (6 hours every long semester) your loans will be in deferment and not impacting your credit. I’m curious what degree (preferably online) has the best ROI. I’m a Senior Azure Data Engineer and I already have a Bachelor’s and Master’s degree in Management Information Systems. I was thinking of maybe getting an associates in Computer Science from a community college then getting a Masters in Computer Science. I’m open to suggestions. Unfortunately I don’t think there’s an official master or bachelor’s of data engineering, otherwise I’d do that. I’m not interested in management yet so an MBA is a highly unlikely. Cybersecurity is cool but I like my career in data. Maybe if there’s no other options. Thanks in advance. 
+
+PS. This isn’t a political post. I don’t care whether people pay student loans or not, I just don’t want to pay mine yet. ",0,21,hijkblck93,2025-04-24 03:20:18,https://www.reddit.com/r/dataengineering/comments/1k6idhk/which_degree_has_the_best_roi/,0,False,2025-04-24 03:27:49,False,False

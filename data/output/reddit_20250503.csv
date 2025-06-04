@@ -1,0 +1,253 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1kcsidy,Best Practice for Storing Raw Data: Use Correct Data Types or Store Everything as VARCHAR?,"My team is standardizing our raw data loading process, and we’re split on best practices.
+
+I believe raw data should be stored using the correct data types (e.g., INT, DATE, BOOLEAN) to enforce consistency early and avoid silent data quality issues.
+My teammate prefers storing everything as strings (VARCHAR) and validating types downstream — rejecting or logging bad records instead of letting the load fail.
+
+We’re curious how other teams handle this:
+	•	Do you enforce types during ingestion?
+	•	Do you prefer flexibility over early validation?
+	•	What’s worked best in production?
+
+We’re mostly working with structured data in Oracle at the moment and exploring cloud options. ",51,32,mhpoon,2025-05-02 04:32:16,https://www.reddit.com/r/dataengineering/comments/1kcsidy/best_practice_for_storing_raw_data_use_correct/,0,False,False,False,False
+1kcrd8o,"What is the key use case of DBT with DuckDB, rather than handling transformation in DuckDB directly?","I am a new learner and have recently learned more about tools such as DuckDB and DBT. 
+
+As suggested by the title, I have some questions as to why DBT is used when you can quite possibly handle most transformations in DuckDB itself using SQL queries or pandas.
+
+Additionally, I also want to know what tradeoff there would be if I use DBT on DuckDB before loading into the data warehouse, versus loading into the warehouse first before handling transformation with DBT? ",43,34,Zacarinooo,2025-05-02 03:24:22,https://www.reddit.com/r/dataengineering/comments/1kcrd8o/what_is_the_key_use_case_of_dbt_with_duckdb/,0,False,False,False,False
+1kcyesf,what do you use Spark for?,"Do you use Spark to parallelize/dstribute/batch existing code and etls, or do you use it as a etl-transformation tool like could be dlt or dbt or similar?
+
+I am trying to understand what personal projects I can do to learn it but it is not obvious to me what kind of idea would it be best. Also because I don’t believe using it on my local laptop would present the same challanges of using it on a real cluster/cloud environment. Can you prove me wrong and share some wisdom?
+
+Also, would be ok to integrate it in Dagster or an orchestrator in general, or it can be used an orchestrator itself with a scheduler as well? ",42,52,ubiond,2025-05-02 11:17:53,https://www.reddit.com/r/dataengineering/comments/1kcyesf/what_do_you_use_spark_for/,0,False,2025-05-02 12:22:33,False,False
+1kd63d0,"Is it common for companies to hire people for ""data engineering"" roles, but really the role is DevOps?","My team has been working to hire some folks for a Data Engineering role. We are restricted to hiring in certain regions right now. But in short, one thing that I have noticed is that it seems like HR is bringing us a lot of people who say they had a ""Data Engineer"" background, but really the type of work they describe doing is very basic and more on the DevOps level. E.G. configuring and tuning big data infrastructure.
+
+Is this a common misconception that companies have about the Data Engineering title, where they confuse DevOps for Data Engineering? And if we need someone with a solid coding background, should we be targeting Software Engineers instead?",40,34,OverEngineeredPencil,2025-05-02 17:02:52,https://www.reddit.com/r/dataengineering/comments/1kd63d0/is_it_common_for_companies_to_hire_people_for/,0,False,False,False,False
+1kct5lz,Laid-off Data Engineer Struggling to Transition – Need Career Advice,"
+Hi everyone,
+
+I’m based in the U.S. and have around 8 years of experience as a data engineer, primarily working with legacy ETL tools like Ab Initio and Informatica. I was laid off last year, and since then, I’ve been struggling to find roles that still value those tools.
+
+Realizing the market has moved on, I took time to upskill myself – I’ve been learning Python, Apache Spark, and have also brushed up on advanced SQL. I’ve completed several online courses and done some hands-on practice, but when it comes to actual job interviews (especially those first calls with hiring managers), I’m not making it through.
+
+This has really shaken my confidence. I’m beginning to worry: did I wait too long to make the shift? Is my career in data engineering over?
+
+If anyone has been in a similar situation or has advice on how to bridge this gap, especially when transitioning from legacy tech to modern stacks, I’d really appreciate your thoughts.
+
+Thanks in advance!
+",29,53,Diligent-Steak-8268,2025-05-02 05:13:20,https://www.reddit.com/r/dataengineering/comments/1kct5lz/laidoff_data_engineer_struggling_to_transition/,0,False,False,False,False
+1kcmtda,How I do analytics on an OLTP database,"I work for a small company so we decided to use Postgres as our DWH. It's easy, cheap and works well for our needs. 
+
+Where it falls short is if we need to do any sort of analytical work. As soon as the queries get complex, the time to complete skyrockets. 
+
+I started using duckDB and that helped tremendously. The only issue was the scaffolding every time just so I could do some querying was tedious and the overall experience is pretty terrible when you compare writing SQL in a notebook or script vs an editor.
+
+I liked the duckDB UI but the non-persistent nature causes a lot of headache. This led me to build [soarSQL](https://soarsql.com/) which is a duckDB powered SQL editor. 
+
+soarSQL has quickly become my default SQL editor at work because it makes working with OLTP databases a breeze. On top of this, I get save a some money each month because I the bulk of the processing happens on my machine locally!
+
+It's free, so feel free to give it a shot and let me know what you think!",30,38,rahulsingh_ca,2025-05-01 23:27:53,https://v.redd.it/fntn1nmm89ye1,0,False,False,False,False
+1kd6u3s,"How much is your org spending on ETL SaaS, and how hard would it be to internalize it?","My current org builds all ETL in-house. The AWS bill for is a few hundred USD a month (more context on this number at the end), and it's a lot cheaper to hire more engineers in our emerging market than it is to foot 4 or 5 digit monthly payments in USD. Are any of you in the opposite situation? 
+
+For some data sources that we deal with, afaik there isn't any product available that would even do what's needed, e.g. send a GET request to endpoint E with payload P if conditions C1 or C2 or ... or Cn are met, schedule that with cronjob T, and then write the response to the DW. Which I imagine is a very normal situation.
+
+I keep seeing huge deals in the ETL space (fivetran just acquired census btw), and I wonder who's making the procurement decisions that culminate in the tens of thousands of six or seven digit monthly ETL bills that justify these valuations.
+
+Context: Our DW grows at about 2-3 GB/ month, and we have ~120GB in total. We ingest data from a bit over a dozen different sources, and it's all regular Joe kinds of data, like production system transactional dbs, event streams, commercial partner's APIs, some event data stuck in dynamoDB, some CDC logs.",8,12,verysmolpupperino,2025-05-02 17:33:25,https://www.reddit.com/r/dataengineering/comments/1kd6u3s/how_much_is_your_org_spending_on_etl_saas_and_how/,0,False,False,False,False
+1kd34is,Data infrastructure for self-driving labs,"Hello folks, I recently joined a research center with a mission to manage data generated from our many labs. This is my first time building data infrastructure, I'm eager to learn from you in the industry.
+
+We deal with a variety of data. Time-series from sensor data log, graph data from knowledge graph, and vector data from literature embedding. We also have relational data coming from characterization. Right now, each lab manages their own data, they are all saved as Excel for csv files in disperse places.
+
+From initial discussion, we think that we should do the following:
+
+A. Find databases to house the lab operational data.
+
+B. Implement a data lake to centralize all the data from different labs
+
+C. Turn all relational data to documents (JSON), as schema might evolve and we don't really do heave analytics or reporting, AI/ML modelling is more of the focus.
+
+If you have any comments on the above points, they will be much appreciated.
+
+I also have a question in mind:
+
+1. For databases, is it better to find specific database for each type of data (neo4j for graph, Chroma for vector...etc), or we would be better of with a general purpose database (e.g. Cassandra) that houses all types of data to simplify managing processes but to lose specific computing capacity for each data type(for example, Cassandra can't do graph traversal)?
+2. Cloud infrastructure seems to be the trend, but we have our own data center so we need to leverage it. Is it possible to use the managed solution from Cloud provides (Azure, AWS, we don't have a preference yet) and still work with our own storage and compute on-prem?
+
+Thank you for reading, would love to hear from you.",7,10,xiexieni9527,2025-05-02 15:01:04,https://www.reddit.com/r/dataengineering/comments/1kd34is/data_infrastructure_for_selfdriving_labs/,1,False,False,False,False
+1kdd067,"I built a small tool like cat, but for Jupyter notebooks","I built **nbcat**, a lightweight CLI tool that lets you preview Jupyter notebooks right in your terminal — no web UI, no Jupyter server, no fuss.
+
+🔹 Minimal dependencies  
+🔹 Handles *all* notebook versions (even ancient ones)  
+🔹 Works with remote files — no need to download first  
+🔹 Super fast and clean output
+
+Most tools I found were either outdated or bloated with half-working features. I just wanted a no-nonsense way to view notebooks over SSH or in my daily terminal workflow — so I made one.   
+  
+Here is a link to repo [https://github.com/akopdev/nbcat](https://github.com/akopdev/nbcat)",4,1,akopkesheshyan,2025-05-02 21:56:17,https://www.reddit.com/r/dataengineering/comments/1kdd067/i_built_a_small_tool_like_cat_but_for_jupyter/,1,False,False,False,False
+1kd1mfl,is the CDVP2 (Certified Data vault practitioner) worth it?,"We’re planning to pursue the training and certification simultaneously, but the course is quite expensive (around $5,000 USD each). Is this certification currently recognized in the industry, and is it worth the investment?",4,6,Upper_Tennis7898,2025-05-02 13:58:23,https://www.reddit.com/r/dataengineering/comments/1kd1mfl/is_the_cdvp2_certified_data_vault_practitioner/,0,False,False,False,False
+1kczly2,Have a non DE title and doesn’t help at all,"Have been trying to land a DE role with a non DE title as the current role for almost an year with no success.My current title is Data Warehouse Engineer with most of my focused around Databricks,Pyspark/Python,SQL and AWS services.
+
+I have a total of 8 years of experience with the following titles.
+
+SQL DBA
+
+BI Data Engineer
+
+Data Warehouse Engineer
+
+Since I have 8 years of experience, I get rejected when I apply for DE roles that require only 3 years of experience.
+It’s a tough ride so far.
+
+Wondering how to go from here.
+
+",4,14,cruze_8907,2025-05-02 12:22:17,https://www.reddit.com/r/dataengineering/comments/1kczly2/have_a_non_de_title_and_doesnt_help_at_all/,0,False,2025-05-02 12:54:03,False,False
+1kcyxqa,Need incremental data from lake,"We are getting data from different systems to lake using fabric pipelines and then we are copying the successful tables to warehouse and doing some validations.we are doing full loads from source to lake and lake to warehouse right now. Our source does not have timestamp or cdc , we cannot make any modifications on source. We want to get only upsert data to warehouse from lake, looking for some suggestions.
+
+",5,3,data_learner_123,2025-05-02 11:47:16,https://www.reddit.com/r/dataengineering/comments/1kcyxqa/need_incremental_data_from_lake/,0,False,False,False,False
+1kda94y,dbt to PySpark,"Hi all
+
+I’ve got two pipelines built using dbt where I have bunch of sql and python models. I’m looking to migrate both pipelines to PySpark based pipeline using EMR cluster in AWS.
+
+I’m not worried about managing cluster but I’m here to ask your opinion about what you think would be a good migration plan? 
+I’ve got around 6 engineers who are relatively comfortable with PySpark.
+
+
+If I were to ask you what would be your strategy to do the migration what would it be? 
+
+These pipelines also contains bunch of stored procedures that also have a bunch of ML models.
+
+Both are complex pipelines.
+
+Any help or ideas would be greatly appreciated!
+",3,1,tripple69,2025-05-02 19:58:00,https://www.reddit.com/r/dataengineering/comments/1kda94y/dbt_to_pyspark/,1,False,False,False,False
+1kd4zrm,Astronomer Airflow 2 Cert worth it for a new DE?,"I'm **completely new to Data Engineering**. Went from never touched Docker, Terraform, Airflow, DBT  ->to->  just **finished the DataTalks DE Zoomcamp (**[capstone](https://github.com/MichaelSalata/compare-my-biometrics)**)**.  After struggling so much with Airflow, I looked at the Astronomer Fundamentals Cert and feel I **have \~70% of the knowledge** off the top of my head and **could learn the rest in about a week**.
+
+Job wise, I figure **companies would still use Airflow 2** a while until Airflow 3 is very stable. That or I might be able to **find work helping migrating to Airflow 3**.",3,2,RustyEyeballs,2025-05-02 16:17:05,https://www.reddit.com/r/dataengineering/comments/1kd4zrm/astronomer_airflow_2_cert_worth_it_for_a_new_de/,0,False,2025-05-02 19:54:38,False,False
+1kd2n6v,How to better prepare for an entry-level data engineer as a fresh grad?,"background:  
+had internships as a backend developer in college, no return offer for any backend roles due to head count. HR got me to try for a data role, passed the interviews
+
+feeling a bit apprehensive as i have 0 prior experience. The role seems to expect a lot from me and the company's work culture is intense (FAANG-adjacent). I'm starting the job in about a month, what i've done so far is :
+
+\- read DDIA  
+\- look up on spark's documentation (one of their tech stack used)
+
+Any tips on what are the key skills to obtain / how to better prepare as a fresher? Thanks in advance.",4,6,Soltem,2025-05-02 14:41:19,https://www.reddit.com/r/dataengineering/comments/1kd2n6v/how_to_better_prepare_for_an_entrylevel_data/,0,False,False,False,False
+1kcxi1j,Not able to create compute cluster in Databricks.,"I am a newbie and trying to learn Data Engineering using Azure. I am currently using the trial version with 200$ credit. While trying to create a cluster, I am getting errors. So far, I have tried changing locations, but it is not working. I tried Central Canada, East US, West US 2, Central India. Also, I tried changing size of compute, but it is getting failed as it takes too long to create a cluster. I used Personal compute. Please help a newbie out:  
+This is the error:  
+The requested VM size for resource 'Following SKUs have failed for Capacity Restrictions: Standard\_DS3\_v2' is currently not available in location 'eastus'. Please try another size or deploy to a different location or different zone.",3,13,internet_baba,2025-05-02 10:21:20,https://www.reddit.com/r/dataengineering/comments/1kcxi1j/not_able_to_create_compute_cluster_in_databricks/,0,False,False,False,False
+1kd781f,Data Governance Analysts tasks and duties ?,"What are them? I heard all the time that the role is a very strategic/ high demand role, future proof since is not easy to automate.
+
+Just started a role as a DG Specialist and the tasks are very few. Building and maintaining a data catalog is very manual, and also don’t think is a task that takes 40 hours a week during many months. Ensuring data quality?
+There are very fancy AI tools that search for anomalies and evaluate data quality metrics throughout the entire pipeline. What else we do?",2,1,Empty_Compote9052,2025-05-02 17:49:34,https://www.reddit.com/r/dataengineering/comments/1kd781f/data_governance_analysts_tasks_and_duties/,0,False,2025-05-02 21:54:30,False,False
+1kczjhp,"Get Your Own Open Data Portal: Zero Ops, Fully Managed","__Disclaimer: I’m one of the creators of PortalJS.__
+
+Hi everyone, I wanted to share why we built this service:
+
+**Our mission:**
+
+Open data publishing shouldn’t be hard. We want local governments, academics, and NGOs to treat publishing their data like any other SaaS subscription: sign up, upload, update, and go.
+
+**Why PortalJS?**
+
+- Small teams need a simple, affordable way to get their data out there.
+- Existing platforms are either extremely expensive or require a technical team to set up and maintain.
+- Scaling an open data portal usually means dedicating an entire engineering department—and we believe that shouldn’t be the case.
+
+Happy to answer any questions!",2,0,anuveya,2025-05-02 12:18:52,https://www.portaljs.com/,0,False,False,False,False
+1kcscbn,Update Salesforce data with Bigquery clean table content,"Hey all, so I setup an export from Salesforce to Bigquery, but I want to clean data from product and other sources and RELOAD it back into salesforce. For example, saying this customer opened X emails and so forth. 
+
+I've done this with reverse ETL tools like Skyvia in the past, BUT after setting up the transfer from SFDC to bigquery, it really seems like it shouldn't be hard to go in the opposite direction. Am I crazy? [This is the tutorial](https://cloud.google.com/bigquery/docs/salesforce-transfer) I used for SFDC data export, but couldn't find anything for data import. ",2,5,final_boss_editing,2025-05-02 04:21:44,https://www.reddit.com/r/dataengineering/comments/1kcscbn/update_salesforce_data_with_bigquery_clean_table/,0,False,False,False,False
+1kdc32y,Recommendations of course for an ex-developer,"Hello everyone, I'm looking for course recommendations as I transition into a Data Architect role within my company. My background includes several years as a Developer (proficient in C++, C#, and Golang) and as a DBA (Oracle and SQL Server). While I have some foundational knowledge in data analysis, I'm eager to deepen my expertise specifically for a Data Architect position. I've explored a few online learning platforms like Coursera (specifically the IBM Data Architect Professional Certificate), DataCamp, and Codecademy. From my initial research, Coursera's offerings seem more comprehensive and aligned with data architecture principles. However, I'm located in Brazil, and the cost of Coursera is significantly higher compared to DataCamp. Considering my background and the need to specialize in data architecture, and keeping in mind the cost difference in Brazil, what courses or learning paths would you recommend? Are there any other platforms or specific courses I should consider? Any insights or suggestions based on your experience would be greatly appreciated!",1,3,WhiteBearScout,2025-05-02 21:15:42,https://www.reddit.com/r/dataengineering/comments/1kdc32y/recommendations_of_course_for_an_exdeveloper/,1,False,False,False,False
+1kd422z,Replace a web app with dataiku - advice?,"Hello everyone,
+
+I work as a Data Engineer in a team where we have set up a fairly standard but robust processing chain:
+	• We have “raw” tables in BigQuery
+	• We make transformations to move from the fine mesh (transaction) to the aggregate mesh.
+	• Then we export a copy of this data into PostgreSQL
+	• The backend relies on these tables to power a web application allowing businesses to make dynamic multi-mesh aggregations
+
+And there… we are being told that we are going to replace this web application with Dataiku.
+The idea is to keep the processing in BigQuery, but for business users to do their exploration directly via Dataiku instead of going through the app.
+
+I am divided:
+	• I understand that Dataiku can give more autonomy to professions
+	• But I find that it is not designed for dynamic or multi-mesh visualization
+	• And that seems a little rigid to me compared to a web front which offered more control, more logic, and a real UX
+
+Have any of you experienced a similar situation?
+Do you think Dataiku can really replace a web analytics app?
+Or is there a risk of “switching everything to no-code” for cases that are not so simple?
+
+Thank you for your feedback!",1,1,Comfortable-Nail8251,2025-05-02 15:38:50,https://www.reddit.com/r/dataengineering/comments/1kd422z/replace_a_web_app_with_dataiku_advice/,0,False,False,False,False
+1kd9mju,Need advice on tech stack for large table,"Hi everyone,
+
+I work in a small ad tech company, I have events coming as impression, click, conversion. 
+
+We have an aggregated table which is used for user-facing reporting.
+
+Right now, the data stream is like Kafka topic -> Hive parquet table -> a SQL server 
+
+So we have click, conversion, and the aggregated table on SQL server
+
+The data size per day on sql server is \~ 2 GB for aggregated,  \~2 GB for clicks, and 500mb for conversion.   
+  
+Impression being too large is not stored in SQL Server, its stored on Hive parquet table only.
+
+Requirements - 
+
+1.  We frequently update conversion and click data. Hence, we keep updating aggregated data as well.
+
+2. New column addition is frequent( once a month). Currently, this requires changes in lots of Hive QL and SQL procedures
+
+  
+
+My question is, I want to move all these stats tables away from SQL server.  Please suggest where can we move where updating of data is possible.
+
+
+
+Daily row count of tables -   
+aggregated table \~ 20 mil  
+impression \~ 20 mil ( stored in Hive parquet only)  
+click \~ 2 mil  
+conversion \~ 200k",0,5,AdvertisingAny3807,2025-05-02 19:30:55,https://www.reddit.com/r/dataengineering/comments/1kd9mju/need_advice_on_tech_stack_for_large_table/,0,False,False,False,False
+1kd9ogi,"If i use azure in my first job, will i be stuck with that forever?","Yes i know the skills are transferable. I want to know from a recruiters side. I’ve posted something similar about this before where Reddit has said they’ll always prefer someone with the other cloud stack than someone that doesn’t. 
+
+I’m more keen on AWS because of people from this Reddit have stated it’s much cleaner and easier to use. 
+
+Onto my question: Will i be employable for AWS if I’m on Azure as my FIRST job? I wanna switch to AWS, what are ways i could do that (i know nothing can beat experience so what’s the second best for me to be a worthwhile competitor?)",0,8,Gloomy-Profession-19,2025-05-02 19:33:17,https://www.reddit.com/r/dataengineering/comments/1kd9ogi/if_i_use_azure_in_my_first_job_will_i_be_stuck/,0,False,False,False,False
+1kcy459,Are you a system integration pro or an iPaaS enthusiast? 🛠️,"  
+We’re conducting a quick survey to gather insights from professionals who work with system integrations or iPaaS tools.  
+✅ Step 1: Take our 1-minute pre-survey  
+✅ Step 2: If you qualify, complete a 3-minute follow-up survey  
+🎁 Reward: Submit within 24 hours and receive a $15 Amazon gift card as a thank you!  
+Help shape the future of integration tools with just 4 minutes of your time.  
+👉 [**Pre-survey Link**](https://docs.google.com/forms/d/e/1FAIpQLSfia5NJz3vtyu_wcyvLk3LDycs92ZSSM5zwB7j2vFQFM8bSzw/viewform)  
+Let your experience make a difference!  
+
+
+
+
+
+
+",0,0,AlternativeTough9168,2025-05-02 11:00:39,https://www.reddit.com/r/dataengineering/comments/1kcy459/are_you_a_system_integration_pro_or_an_ipaas/,0,False,False,False,False
+1kde5oe,I'm lazy and I need help.,"Okay. I've started working on a new business in a new country I just moved to.
+
+I need to cold call companies via email giving them my company's introduction and telling them what we do and Yada Yada Yada. 
+
+
+I have a list the registered name of about 16000 companies. 
+
+Process 1: So, If I Google ""contact email _company x_"", 7 out of 10 times Google comes up with the email I need. 
+
+Process 2: I then go on to copy paste that email into my outlook and send them the introduction.
+
+
+Is there any way we can automate either/both of these processes? 
+
+
+Its been 10 days since I started working on my project at I'm still only 10% through. :/
+
+Any kind of advice would go a long way in helping me. Thanks! 
+
+",0,3,xkrcd,2025-05-02 22:48:03,https://www.reddit.com/r/dataengineering/comments/1kde5oe/im_lazy_and_i_need_help/,0,False,False,False,False
+1kcss8x,Looking for omnichannel brands who has been hit by the ELT price hike and whose contract will end in next 3-6months,"If your ELT contract is gonna end in the next 3-6months, I would love to connect. Dm me or comment and i will reach out to you.",0,0,Temporary_You5983,2025-05-02 04:49:54,https://www.reddit.com/r/dataengineering/comments/1kcss8x/looking_for_omnichannel_brands_who_has_been_hit/,0,False,False,False,False

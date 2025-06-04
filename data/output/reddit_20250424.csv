@@ -1,0 +1,356 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1k5z8oa,Is the title “Data Engineer” losing its value?,"Lately I’ve been wondering: is the title “Data Engineer” starting to lose its meaning?
+
+This isn’t a complaint or a gatekeeping rant—I love how accessible the tech industry has become. Bootcamps, online resources, and community content have opened doors for so many people. But at the same time, I can’t help but feel that the role is being diluted.
+
+What once required a solid foundation in Computer Science—data structures, algorithms, systems design, software engineering principles—has increasingly become something you can “learn” in a few weeks. The job often gets reduced to moving data from point A to point B, orchestrating some tools, and calling it a day. And that’s fine on the surface—until you realize that many of these pipelines lack test coverage, versioning discipline, clear modularity, or even basic error handling.
+
+Maybe I’m wrong. Maybe this is exactly what democratization looks like, and it’s a good thing. But I do wonder: are we trading depth for speed? And if so, what happens to the long-term quality of the systems we build?
+
+Curious to hear what others think—especially those with different backgrounds or who transitioned into DE through non-traditional paths.
+",53,45,Used_Shelter_3213,2025-04-23 13:31:24,https://www.reddit.com/r/dataengineering/comments/1k5z8oa/is_the_title_data_engineer_losing_its_value/,0,False,False,False,False
+1k5pclz,Am I even a data engineer?,"So I moved internally from a system analyst to a data engineer. I feel the hard part is done for me already. We are replicating hundreds of views from a SQL server to AWS redshift. We use glue, airflow, s3, redshift, data zone. We have a custom developed tool to do the glue jobs of extracting from source to s3. I just got to feed it parameters, run the air flow jobs, create the table scripts, transform the datatypes to redshift compatible ones. I do check in some code but most of the terraform ground work is laid out by the devops team, I'm just adding in my json file, SQL scripts, etc. I'm not doing any python, not much terraform, basic SQL. I'm new but I feel like I'm in a cushy cheating position.",47,22,curiouscsplayer,2025-04-23 03:18:05,https://www.reddit.com/r/dataengineering/comments/1k5pclz/am_i_even_a_data_engineer/,0,False,False,False,False
+1k6749b,"Interviewed for Data Engineer, offer says Software Engineer — is this normal?","Hey everyone,
+I recently interviewed for a Data Engineer role, but when I got the offer letter, the designation was “Software Engineer”. When I asked HR, they said the company uses generic titles based on experience, not specific roles.
+
+Is this common practice?
+
+",45,35,Competitive-Tie4063,2025-04-23 18:51:59,https://www.reddit.com/r/dataengineering/comments/1k6749b/interviewed_for_data_engineer_offer_says_software/,0,False,False,False,False
+1k63rdp,Graph Data Structures for Data Engineers Who Never Took CS101,,32,5,ivanovyordan,2025-04-23 16:38:10,https://www.datagibberish.com/p/graph-theory-101-for-data-engineers,0,False,False,False,False
+1k66f2e,"Are Delta tables a good option for high volume, real-time data?","Hey everyone, I was doing a POC with Delta tables for a real-time data pipeline and started doubting if Delta even is a good fit for high-volume, real-time data ingestion. 
+
+Here’s the scenario: 
+- We're consuming data from multiple Kafka topics (about 5), each representing a different stage in an event lifecycle. 
+
+- Data is ingested every 60 seconds with small micro-batches. (we cannot tweak the micro batch frequency much as near real-time data is a requirement)
+
+- We’re using Delta tables to store and upsert the data based on unique keys, and we’ve partitioned the table by date. 
+
+
+While Delta provides great features like ACID transactions, schema enforcement, and time travel, I’m running into issues with table bloat. Despite only having a few days’ worth of data, the table size is growing rapidly, and optimization commands aren’t having the expected effect. 
+
+From what I’ve read, Delta can handle real-time data well, but there are some challenges that I'm facing in particular:
+- File fragmentation: Delta writes new files every time there’s a change, which is result in many  files and inefficient storage (around 100-110 files per partition - table partitioned by date). 
+
+- Frequent Upserts: In this real-time system where data is constantly updated, Delta is ending up rewriting large portions of the table at high frequency, leading to excessive disk usage. 
+
+- Performance: For very high-frequency writes, the merge process is becoming slow, and the table size is growing quickly without proper maintenance. 
+
+To give some facts on the POC: The realtime data ingestion to delta ran for 24 hours full, the physical accumulated was 390 GB, the count of rows was 110 million.
+
+The main outcome of this POC for me was that there's a ton of storage overhead as the data size stacks up extremely fast!
+
+For reference, the overall objective for this setup is to be able to perform near real time analytics on this data and use the data for ML.
+
+Has anyone here worked with Delta tables for high-volume, real-time data pipelines? Would love to hear your thoughts on whether they’re a good fit for such a scenario or not. ",19,14,StriderAR7,2025-04-23 18:24:15,https://www.reddit.com/r/dataengineering/comments/1k66f2e/are_delta_tables_a_good_option_for_high_volume/,0,False,2025-04-23 19:34:12,False,False
+1k60f5e,"Game data moves fast, but our pipelines can’t keep up. Anyone tried simplifying the big data stack?","The gaming industry is insanely fast-paced—and unforgiving. Most games are expected to break even within six months, or they get sidelined. That means every click, every frame, every in-game action needs to be tracked and analyzed almost instantly to guide monetization and retention decisions.
+
+From a data standpoint, we’re talking hundreds of thousands of events per second, producing tens of TBs per day. And yet… most of the teams I’ve worked with are still stuck in spreadsheet hell.
+
+Some real pain points we’ve faced:
+- Engineers writing ad hoc SQL all day to generate 30+ Excel reports per person. Every. Single. Day.
+- Dashboards don’t cover flexible needs, so it’s always a back-and-forth of “can you pull this?”
+- Game telemetry split across client/web/iOS/Android/brands—each with different behavior and screen sizes.
+- Streaming rewards and matchmaking in real time sounds cool—until you’re debugging Flink queues and job delays at 2AM.
+- Our big data stack looked “simple” on paper but turned into a maintenance monster: Kafka, Flink, Spark, MySQL, ZooKeeper, Airflow… all duct-taped together.
+
+We once worked with a top-10 game where even a 50-person data team took 2–3 days to handle most requests. 
+
+And don’t even get me started on security. With so many layers, if something breaks, good luck finding the root cause before business impact hits.
+
+So my question to you:
+Has anyone here actually simplified their data pipeline for gaming workloads?
+What worked, what didn’t?
+Any experience moving away from the Kafka-Flink-Spark model to something leaner?",15,17,AssistPrestigious708,2025-04-23 14:22:37,https://www.reddit.com/r/dataengineering/comments/1k60f5e/game_data_moves_fast_but_our_pipelines_cant_keep/,0,False,False,False,False
+1k5nha2,DE interviews for Gen AI focused companies,"Have any of you recently had an interviews for a data engineering role at a company highly focused on GenAI, or with leadership who strongly push for it? Are the interviews much different from regular DE interviews for supporting analysts and traditional data science?
+
+I assume I would need to talk about data quality, prepping data products/datasets for training, things like that as well as how I’m using or have plans to use Gen AI currently. 
+
+What about agentic AI?",12,5,jinbe-san,2025-04-23 01:41:14,https://www.reddit.com/r/dataengineering/comments/1k5nha2/de_interviews_for_gen_ai_focused_companies/,0,False,False,False,False
+1k63yyz,What do you use for real-time time-based aggregations,"I have to come clean: I am an ML Engineer always lurking in this community.  
+  
+We have a fraud detection model that depends on many time based aggregations e.g. `customer_number_transactions_last_7d`.
+
+We have to compute these in real-time and we're on GCP, so I'm about to redesign the schema in BigTable as we are p99ing at 6s and that is too much for the business. We are currently on a combination of BigTable and DataFlow.
+
+  
+So, I want to ask the community: what do you use?  
+  
+I for one am considering a timeseries DB but don't know if it will actually solve my problems.
+
+If you can point me to legit resources on how to do this, I also appreciate.",9,7,bernardo_galvao,2025-04-23 16:46:48,https://www.reddit.com/r/dataengineering/comments/1k63yyz/what_do_you_use_for_realtime_timebased/,0,False,False,False,False
+1k68zp6,AgentHouse – A ClickHouse MCP Server Public Demo,,4,1,kadermo,2025-04-23 20:08:01,https://clickhouse.com/blog/agenthouse-demo-clickhouse-llm-mcp,0,False,False,False,False
+1k5xk1r,Excel-based listings file into an ETL pipeline,"Hey r/dataengineering,
+
+I’m 6 months into learning Python, SQL and DE.
+
+For my current work (non-related to DE) I need to process an Excel file with 10k+ rows of product listings (boats, ATVs, snowmobiles) for a classifieds platform (like Craigslist/OLX).
+
+I already have about 10-15 scripts in Python I often use on that Excel file which made my work tremendously easier. And I thought it would be logical to make the whole process automated in a full pipeline with Airflow, normalization, validation, reporting etc.
+
+Here’s my plan:
+
+**Extract**
+
+- load Excel (local or cloud) using pandas
+
+**Transform**
+
+- create a 3NF SQL DB
+
+- validate data, check unique IDs, validate years columns, check for empty/broken data, check constency, data types fix invalid addresses etc)
+
+- run obligatory business-logic scripts (validate addresses, duplicate rows if needed, check for dealerships and many more)
+
+- query final rows via joins, export to data/transformed.xlsx
+
+**Load**
+
+- upload final Excel via platform’s API
+- archive versioned files on my VPS
+
+**Report**
+
+- send Telegram message with row counts, category/address summaries, Matplotlib graphs, and attached Excel
+- error logs for validation failures
+
+**Testing**
+
+- pytest unit tests for each stage (e.g., Excel parsing, normalization, API uploads).
+
+Planning to use Airflow to manage the pipeline as a DAG, with tasks for each ETL stage and retries for API failures but didn’t think that through yet.
+
+As experienced data engineers what strikes you first as bad design or bad idea here? How can I improve it as a project for my portfolio?
+
+Thank you in advance!",5,2,onebraincellperson,2025-04-23 12:10:30,https://www.reddit.com/r/dataengineering/comments/1k5xk1r/excelbased_listings_file_into_an_etl_pipeline/,0,False,2025-04-23 13:20:14,False,False
+1k5w1hx,DAG DBT structure Intermediate vs Marts,"Do you usually use your Marts table which are considered finals as inputs for some intermediate ?
+
+I’m wondering if this is bad practice or something ?
+
+So let’s says you need the list of customers to build something that might require multiple steps (I want to avoid people saying, let’s build your model in Marts that select from Marts. Like yes I could but if there 30 transformation I’ll split that in multiple chunks and I don’t want those chunks to live in Marts also). Your customer table lives in Marts, but you need it in a lot of intermediate models because you need to do some joins on it with other things. Is that ok? Is there a better way ?
+
+Currently a lot of DS models are bind to STG directly and rebuild the same things as DE those and this makes me crazy so I want to buoy some final tables which can be used in any flows but wonder if that’s good practices because of where the “final” table would live ",4,11,Commercial_Dig2401,2025-04-23 10:44:09,https://www.reddit.com/r/dataengineering/comments/1k5w1hx/dag_dbt_structure_intermediate_vs_marts/,0,False,False,False,False
+1k6f8fm,"From 1 to 10 , how stressful is your job as a DE","Hi all of you,
+
+I was wondering this as I’m a newbie DE about to start an internship in couple days, I’m curious about this as I might wanna know what’s gonna be and how am I gonna feel I get some experience.
+
+So it will be really helpful to do this kind of dumb questions and maybe not only me might find useful this information.
+
+So do you really really consider your job stressful? Or now that you (could it be) are and expert in this field and product or services of your company is totally EZ
+
+Thanks in advance",4,10,LongCalligrapher2544,2025-04-24 00:44:07,https://www.reddit.com/r/dataengineering/comments/1k6f8fm/from_1_to_10_how_stressful_is_your_job_as_a_de/,1,False,False,False,False
+1k5zt31,Go/NoGo to AWS for ETL ?,"Hello, 
+
+i've recently joined a company that works with a home made ETL solution (Python for scripts, node-red as an orchestrator, the whole in Linux environment). 
+
+  
+We're starting to consider moving this app to AWS (aws itself is new to the company). As i don't have any idea about what AWS offers , is it a good idea to shift to AWS ? maybe it's an overkill ?  i mean what could be the ROI of this project? a on daily basis , i'm handling support of the home made ETL, and evolution. The solution as a whole is not monitored and depends on few people that could understand it and eventually provide support in case of problem. 
+
+  
+Your opinions / retex are highly appreciated. 
+
+  
+Thanks ",3,3,Impressive_Pop9024,2025-04-23 13:56:34,https://www.reddit.com/r/dataengineering/comments/1k5zt31/gonogo_to_aws_for_etl/,0,False,False,False,False
+1k5ufqk,How To Create a Logical Database Design in a Visual Way. Types of Relationships and Normalization Explained with Examples.,,3,0,NoInteraction8306,2025-04-23 08:54:45,https://youtu.be/t4MKvTVk-sw,0,False,False,False,False
+1k6f2d9,pyarrow docstring popups in vs code?,"does anyone know why so many pyarrow functions/classes/methods lack docstrings (or they don't show up in vs code)? is there an extension to resolve this problem? (trying to avoid pyarrow website in a separate window.)
+
+thanks all!
+
+https://preview.redd.it/z1u99mfhhowe1.png?width=454&format=png&auto=webp&s=87e69afa606ac15cab1f5f2a19bacff7da22f72c",2,0,BigCountry1227,2025-04-24 00:35:32,https://www.reddit.com/r/dataengineering/comments/1k6f2d9/pyarrow_docstring_popups_in_vs_code/,1,False,False,False,False
+1k61ws0,Thoughts on NetCDF4 for scientific data currently?,The most recent discussion I saw about NetCDF basically said it's outdated and to use HDF5 (15 years ago). Any thoughts on it now?,2,9,Affectionate_Use9936,2025-04-23 15:23:57,https://www.reddit.com/r/dataengineering/comments/1k61ws0/thoughts_on_netcdf4_for_scientific_data_currently/,0,False,False,False,False
+1k61n2x,Surrogate Key Implementation In Glue and Redshift,"I am currently implementing a Data Warehouse using Glue and Redshift, a star schema dimensional model to be exact. 
+
+  
+And I think of the data transformations, that need to be done before having the clean fact and dimension tables in the data warehouse, as two types:
+
+  
+\* Transformations related to the logic or business itself, eg. drop irrelevant columns, create new columns etc,   
+ \* Transformations that are purely related to the structure of a table, eg. the surrogate key column, the foreign key columns that we need to add to fact tables, etc  
+For the second type, from what I understood from mt research, it can be done in Glue or Redshift, but apparently it will be more complicated to do it in Glue?  
+
+Take the example of surrogate keys, they will be Primary keys later on, and therefore if we will generate them in Glue, we have to ensure their uniqueness, this is feasible for the same job run, but if you want to ensure uniqueness across the entire table, you need to load the entire surrogate key column from Redshift and ensure that the newly generated ones in the job are unique.  
+
+
+I find this type of question recurrent in almost everything related to the structure of the data warehouse, from surrogate keys, to foreign keys, to SCD type 2.
+
+Please if you have any thoughts or suggestions feel free to comment them.  
+Thanks :)",2,1,Icy-Professor-1091,2025-04-23 15:13:10,https://www.reddit.com/r/dataengineering/comments/1k61n2x/surrogate_key_implementation_in_glue_and_redshift/,0,False,False,False,False
+1k5xaxn,Working on data mapping tool,"I have been trying to build a tool which can map the data from an unknown input file to a standardised output file where each column has a meaning to it. So many times you receive files from various clients and you need to standardise them for internal use. The objective is to be able to take any excel file as an input and be able to convert it to a standardized output file.
+Using regex does not make sense due to limitations such as the names of column may differ from input file to input file (eg rate of interest or ROI or growth rate ).
+
+Anyone with knowledge in the domain please help.",2,5,palaash_naik,2025-04-23 11:57:54,https://www.reddit.com/r/dataengineering/comments/1k5xaxn/working_on_data_mapping_tool/,0,False,False,False,False
+1k5pdg6,Aspect and Tags in Dataplex Catalog,"please explain the key differences between using Aspects , Aspect Types and Tags , Tags Template in Dataplex Catalog.   
+  
+\- We use Tags to define the business metadata for the an entry ( BQ Table ) using Tag Templates.   
+\- Why we also have aspect and aspect types which also are similar to Tags & Templates.   
+\- If Aspect and Aspect Types are modern and more robust version of Tags and Tag Templates will Tags will be removed from Dataplex Catalog ?  
+\- I just need to understand why we have both if both have similar functionality. ",2,0,DarkGrinG,2025-04-23 03:19:22,https://www.reddit.com/r/dataengineering/comments/1k5pdg6/aspect_and_tags_in_dataplex_catalog/,0,False,False,False,False
+1k6fiw8,I built a free app that uses ML to find Data Engineering jobs,"link: www.filtrjobs.com
+
+I was tired of finding irrelevant postings, so i built a tool for myself
+
+Many companies (like airbnb/meta) hire data engineers, but postings are titled software engineer. So if you search for data engineer in linkedin its hard to find those SWE roles that are actually data engineering roles
+
+**How it works**
+
+You upload your CV and I automatically create a query:
+
+`""Find ${title listed in CV} jobs with experience similar to ${your CV bullets}""`
+
+and it ranks all job postings based on match
+
+I built this for Engineering roles (SWE/ML) in the US only. It's 100% free as im running it within free tiers!
+
+**Resource List:**
+
+I did a ton of research to find cheap hosting ways. Here are my best finds:
+
+* Free 5GB Postgres via [aiven.io](http://aiven.io/): [https://aiven.io/free-postgresql-database](https://aiven.io/free-postgresql-database)
+* Free 15GB Postgres from [xata.io](http://xata.io/): [https://xata.io/blog/postgres-free-tier](https://xata.io/blog/postgres-free-tier)
+* CockroachDB: [https://www.cockroachlabs.com/docs/cockroachcloud/quickstart-trial-cluster](https://www.cockroachlabs.com/docs/cockroachcloud/quickstart-trial-cluster)
+
+I'm hosting on [modal.com](http://modal.com/) which gives you 30$/mo of free GPU usage",2,2,_lambda1,2025-04-24 00:58:49,https://www.reddit.com/r/dataengineering/comments/1k6fiw8/i_built_a_free_app_that_uses_ml_to_find_data/,0,False,False,False,False
+1k6fbra,University Advice?  Data Science + Global Studies or Chinese Language Major || Double Major (Maybe Even Triple?),"I'm coming into college for Fall 25  originally intending to major in Global Studies and Chinese Language. My original desire was to work for The State Department in some capacity, and to be a subject matter expert in Chinese Affairs - potentially in the Diplomatic Security Service, or as an analyst for the FBI/CIA, etc - something where I can serve the US.
+
+I didn't expect to get into Cal, and this changed everything for me, I suddenly feel emboldened to reach out of my comfort level - and I excelled in statistics and enjoyed the class in HS over 10 years ago. Data Science seems like a great fit, and the career opportunities are very appealing after talking to a few of my peers in the field. It's also something that the State Department / FBI / CIA / etc. would need. I'm going to take all the courses needed to declare the major (Data C8, Calc 1, Calc 2, etc) and do a comprehensive review.
+
+  
+I feel like there's a lot of overlap in Global Studies / Chinese Language, which is why I had it as my original double major goal.   
+Just looking at the requirements is making it clear I'll easily bust the 136 or so credit course limit for transfer students. Even without the credit limit, the Semesters will be extremely rigorous. 
+
+So I'm thinking of ""just"" choosing either Global Studies or Chinese Language. I can see pros/cons to both. In a perfect world, I would Triple Major. I would love to be a diplomat, and discuss global policy and implications of policy decisions. An advisor in told me I could still do that without taking Global Studies classes, and I would have more expertise and knowledge if I studied Chinese Language as a Major.
+
+Any input?
+
+Some background about me: I'm a bit older, more mature, and prepared to work hard. I took 18 credit semesters for both semesters at my community college, worked 40 hours a week, and did monthly National Guard obligations - so a high course load doesn't intimidate me.",2,1,RestoredV,2025-04-24 00:48:44,https://www.reddit.com/r/dataengineering/comments/1k6fbra/university_advice_data_science_global_studies_or/,1,False,False,False,False
+1k5y9sf,Synthetic data was useless for domain tasks until we let models read real docs,"The problem: outputs looked fine, but missed org-specific language and structure. Too generic.
+
+The fix: feed in actual user docs, support guides, policies, and internal wikis as grounding.
+
+Now it generates:
+
+* Domain-aligned data
+* Context-aware responses
+* Better results in compliance + support-heavy workflows
+
+Small change, big gain.
+
+Anyone else experimenting with grounded generation for domain-specific tasks? What's worked (or broken) for you?",1,1,Future_AGI,2025-04-23 12:46:18,https://www.reddit.com/r/dataengineering/comments/1k5y9sf/synthetic_data_was_useless_for_domain_tasks_until/,0,False,False,False,False
+1k5vc3i,How I Use Real-Time Web Data to Build AI Agents That Are 10x Smarter,,2,0,9millionrainydays_91,2025-04-23 09:58:18,https://blog.stackademic.com/how-i-use-real-time-web-data-to-build-ai-agents-that-are-10x-smarter-8995115798d6,0,False,False,False,False
+1k5sxqg,How to handle coupon/promotion discounts in sale order lines when building a data warehouse?,"Hi everyone,  
+I'm design a dimensional Sales Order schema data using the `sale_order` and `sale_order_line` tables. My fact table `sale_order_transaction` has a granularity of one row per one product ordered. I noticed that when a coupon or promotion discount is applied to a sale order, it appears as a separate line in `sale_order_line`, just like a product.
+
+In my fact table, I'm taking only actual product lines (excluding discount lines). But this causes a mismatch:  
+**The sum of** `price_total` **from sale order lines doesn't match the** `amount_total` **from the sale order.**
+
+How do you handle this kind of situation?
+
+* Do you include discount lines in your fact table and flag them?
+* Or do you model order-level data separately from product lines?
+* Any best practices or examples would be appreciated!
+
+Thanks in advance!",1,8,Acceptable-Ride9976,2025-04-23 07:03:21,https://www.reddit.com/r/dataengineering/comments/1k5sxqg/how_to_handle_couponpromotion_discounts_in_sale/,0,False,False,False,False
+1k5s8wj,Data Retention - J-SOX / SOX in your Organisation,"Hi. This will be the first post of a few as I am remidiating an analytics platform. The org has opted for B/S/G in their past interation but fumbled and are now doing everything on bronze, snapshots come into the datalake and records are overwritten/deleted/inserted. There's a lot more required but I want to start with storage and regulations around data retention.
+
+Data is coming from D365FO, currently via Synapse link.
+
+How are you guys maintaining your INSERTS,UPDATES,DELETES to comply with SOX/J-SOX? From what I understand the organisation needs to keep any and all changes to financial records for 7 years.
+
+My idea was Iceberg tables with daily snapshots and keeping all delta updates with the last year in hot and the older records in cold storage.
+
+Any advice appreciated. ",1,2,UltraInstinctAussie,2025-04-23 06:15:53,https://www.reddit.com/r/dataengineering/comments/1k5s8wj/data_retention_jsox_sox_in_your_organisation/,0,False,2025-04-23 07:28:18,False,False
+1k6bx58,Career Change: From Data Engineering to Data Security,"Hello everyone,
+
+I'm a Junior IT Consultant in Data Engineering in Germany with about two years of experience, and I hold a Master's degree in Data Science. My career has been focused on data concepts, but I'm increasingly interested in transitioning into the field of Data Security.
+
+I've been researching this career path but haven't found much documentation or many examples of people who have successfully made a similar switch from Data Engineering to Data Security.
+
+Could anyone offer recommendations or insights on the process for transitioning into a Data Security role from a Data Engineering background?
+
+Thank you in advance for your help! 😊",0,2,Cool_Inspector7468,2025-04-23 22:09:23,https://www.reddit.com/r/dataengineering/comments/1k6bx58/career_change_from_data_engineering_to_data/,0,False,False,False,False
+1k5riax,Should I Focus on Syntax or just Big Picture Concepts?,"I'm just starting out in data engineering and still consider myself a noob. I have a question: in the era of AI, what should I really focus on? Should I spend time trying to understand every little detail of syntax in Python, SQL, or other tools? Or is it enough to be just comfortable reading and understanding code, so I can focus more on concepts like data modeling, data architecture, and system design—things that might be harder for AI to fully automate?
+
+Am I on the right track thinking this way?",0,1,MazenMohamed1393,2025-04-23 05:26:19,https://www.reddit.com/r/dataengineering/comments/1k5riax/should_i_focus_on_syntax_or_just_big_picture/,0,False,False,False,False
+1k6141q,Ever wondered about the real cost of browser-based scraping at scale?,"I’ve been diving deep into the costs of running browser-based scraping at scale, and I wanted to share some insights on what it takes to run 1,000 browser requests, comparing commercial solutions to self-hosting (DIY). This is based on some research I did, and I’d love to hear your thoughts, tips, or experiences scaling your own scraping setups.
+
+# Why Use Browsers for Scraping?
+
+Browsers are often essential for two big reasons:
+
+* **JavaScript Rendering**: Many modern websites rely on JavaScript to load content. Without a browser, you’re stuck with raw HTML that might not show the data you need.
+* **Avoiding Detection**: Raw HTTP requests can scream “bot” to websites, increasing the chance of bans. Browsers mimic human behavior, helping you stay under the radar and reduce proxy churn.
+
+The downside? Running browsers at scale can get expensive fast. So, what’s the actual cost of 1,000 browser requests?
+
+# Commercial Solutions: The Easy Path
+
+Commercial JavaScript rendering services handle the browser infrastructure for you, which is great for speed and simplicity. I looked at high-volume pricing from several providers (check the blog link below for specifics). On average, costs for 1,000 requests range from \~$0.30 to $0.80, depending on the provider and features like proxy support or premium rendering options.
+
+These services are plug-and-play, but I wondered if rolling my own setup could be cheaper. Spoiler: it often is, if you’re willing to put in the work.
+
+# Self-Hosting: The DIY Route
+
+To get a sense of self-hosting costs, I focused on running browsers in the cloud, excluding proxies for now (those are a separate headache). The main cost driver is your cloud provider. For this analysis, I assumed each browser needs \~2GB RAM, 1 CPU, and takes \~10 seconds to load a page.
+
+# Option 1: Serverless Functions
+
+Serverless platforms (like AWS Lambda, Google Cloud Functions, etc.) are great for handling bursts of requests, but cold starts can be a pain, anywhere from 2 to 15 seconds, depending on the provider. You’re also charged for the entire time the function is active. Here’s what I found for 1,000 requests:
+
+* Typical costs range from \~$0.24 to $0.52, with cheaper options around $0.24–$0.29 for providers with lower compute rates.
+
+# Option 2: Virtual Servers
+
+Virtual servers are more hands-on but can be significantly cheaper—often by a factor of \~3. I looked at machines with 4GB RAM and 2 CPUs, capable of running 2 browsers simultaneously. Costs for 1,000 requests:
+
+* Prices range from \~$0.08 to $0.12, with the lowest around $0.08–$0.10 for budget-friendly providers.
+
+**Pro Tip**: Committing to long-term contracts (1–3 years) can cut these costs by 30–50%.
+
+For a detailed breakdown of how I calculated these numbers, check out the full blog post here (replace with your actual blog link).
+
+# When Does DIY Make Sense?
+
+To figure out when self-hosting beats commercial providers, I came up with a rough formula:
+
+    (commercial price - your cost) × monthly requests ≤ 2 × engineer salary
+
+* **Commercial price**: Assume \~$0.36/1,000 requests (a rough average).
+* **Your cost**: Depends on your setup (e.g., \~$0.24/1,000 for serverless, \~$0.08/1,000 for virtual servers).
+* **Engineer salary**: I used \~$80,000/year (rough average for a senior data engineer).
+* **Requests**: Your monthly request volume.
+
+For serverless setups, the breakeven point is around \~108 million requests/month (\~3.6M/day). For virtual servers, it’s lower, around \~48 million requests/month (\~1.6M/day). So, if you’re scraping 1.6M–3.6M requests *per day*, self-hosting might save you money. Below that, commercial providers are often easier, especially if you want to:
+
+* Launch quickly.
+* Focus on your core project and outsource infrastructure.
+
+**Note**: These numbers don’t include proxy costs, which can increase expenses and shift the breakeven point.
+
+# Key Takeaways
+
+Scaling browser-based scraping is all about trade-offs. Commercial solutions are fantastic for getting started or keeping things simple, but if you’re hitting millions of requests daily, self-hosting can save you a lot if you’ve got the engineering resources to manage it. At high volumes, it’s worth exploring both options or even negotiating with providers for better rates.
+
+For the full analysis, including specific provider comparisons and cost calculations, check out my blog post here (replace with your actual blog link).
+
+What’s your experience with scaling browser-based scraping? Have you gone the DIY route or stuck with commercial providers? Any tips or horror stories to share?",0,0,arnaupv,2025-04-23 14:51:45,https://www.blat.ai/blog/how-much-does-it-really-cost-to-run-browser-based-web-scraping-at-scale,0,False,False,False,False
+1k6e50x,An automation work flow is not an ai agents,"  
+**Connecting GPT with Zapier doesn’t mean you’ve created a smart agent**
+
+A lot of people think they have ""smart agents"" just by linking GPT with Zapier, but the truth is, what you have is simply **automation**. It follows a set sequence of steps, doesn't understand the objective, and doesn’t interact with any complex context.
+
+But there's another level of **AI Agents**, and it’s something entirely different. **Real AI Agents** understand the environment they’re working in. They don't just follow orders; they comprehend intent, make decisions based on variables, and operate like you’ve hired a smart person who works autonomously.
+
+**What can AI Agents do?**  
+They’re more than just automation tools. They’re “internet robots” that can perform ANY task you need without mistakes, tirelessly working around the clock. Here’s what they can do:
+
+* Build massive email lists
+* Manage social media accounts
+* Create and maintain websites
+* Perform any service you need and deliver money!
+
+**Does this sound too good to be true?**  
+It’s not. AI Agents are real, and they’re changing everything. **Do you need tech skills?**  
+No! The great thing is that these agents can work efficiently without the need for advanced technical knowledge.
+
+**Are we at the beginning of something big?**  
+Yes! This is the perfect time to get involved before this technology becomes mainstream and disrupts the job market. In the future, these agents will become an integral part of working online. If you're curious about exploring this game-changing technology, you can start by checking out the **AI Agents** capabilities through [this link](https://aieffects.art/ai-agents), where you'll get everything you need to start",0,4,Equivalent_War9116,2025-04-23 23:50:02,https://www.reddit.com/r/dataengineering/comments/1k6e50x/an_automation_work_flow_is_not_an_ai_agents/,0,False,False,False,False

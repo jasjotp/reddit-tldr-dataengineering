@@ -1,0 +1,221 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1k92813,Saved $30K+ in marketing ops budget by self-hosting Airbyte on Kubernetes: A real-world story,"A small win I’m proud of.
+
+The marketing team I work with was spending a lot on SaaS tools for basic data pipelines.
+
+Instead of paying crazy fees, I deployed Airbyte self-hosted on Kubernetes.
+	•	Pulled data from multiple marketing sources (ads platforms, CRMs, email tools, etc.)
+	•	Wrote all raw data into S3 for later processing (building L2 tables)
+	•	Some connectors needed a few tweaks, but nothing too crazy
+
+Saved around $30,000 USD annually.
+Gained more control over syncs and schema changes.
+No more worrying about SaaS vendor limits or lock-in.
+
+Just sharing in case anyone’s considering self-hosting ETL tools. It’s absolutely doable and worth it for some teams.
+
+Happy to share more details if anyone’s curious about the setup.
+
+I don’t know want to share the name of the tool which marketing team was using. 
+",120,31,tasrie_amjad,2025-04-27 11:54:17,https://www.reddit.com/r/dataengineering/comments/1k92813/saved_30k_in_marketing_ops_budget_by_selfhosting/,0,False,False,False,False
+1k93nf9,General guidance - Docker/dagster/postgres ETL build,"Hello
+
+I need a sanity check.
+
+I am educated and work in an unrelated field to DE. My IT experience comes from a pure layman interest in the subject where I have spent some time dabbing in python building scrapers, setting up RDBs, building scripts to connect everything and then building extraction scripts to do analysis. Ive done some scripting at work to automate annoying tasks. That said, I still consider myself a beginner.
+
+At my workplace we are a bunch of consultants doing work mostly in excel, where we get lab data from external vendors. This lab data is then to be used in spatial analysis and comparison against regulatory limits. 
+
+I have now identified 3-5 different ways this data is delivered to us, i.e. ways it could be ingested to a central DB. Its a combination of APIs, emails attachments, instrument readings, GPS outputs and more. Thus, Im going to try to get a very basic ETL pipeline going for at least one of these delivery points which is the easiest, an API.
+
+Because of the way our company has chosen to operate, because we dont really have a fuckton of data and the data we have can be managed in separate folders based on project/work, we have servers on premise. We also have some beefy computers used for computations in a server room. So i could easily set up more computers to have scripts running. 
+
+My plan is to get a old computer up and running 24/7 in one of the racks. This computer will host docker+dagster connected to a postgres db. When this is set up il spend time building automated extraction scripts based on workplace needs. I chose dagster here because it seems to be free in our usecase, modular enought that i can work on one job at a time and its python friendly. Dagster also makes it possible for me to write loads to endpoint users who are not interested in writing sql against the db.  Another important thing with the db on premise is that its going to be connected to GIS software, and i dont want to build a bunch of scripts to extract from it.
+
+Some of the questions i have:
+
+* If i run docker and dagster (dagster web service?) setup locally, could that cause any security issues? Its my understanding that if these are run locally they are contained within the network
+* For a small ETL pipeline like this, is the setup worth it? 
+* Am i missing anything?
+
+",13,11,VipeholmsCola,2025-04-27 13:12:48,https://www.reddit.com/r/dataengineering/comments/1k93nf9/general_guidance_dockerdagsterpostgres_etl_build/,0,False,False,False,False
+1k8ye1g,"Building Self-Optimizing ETL Pipelines, Has anyone tried real-time feedback loops?","Hey folks,  
+I recently wrote about an idea I've been experimenting with at work,  
+**Self-Optimizing Pipelines**: ETL workflows that adjust their behavior dynamically based on real-time performance metrics (like latency, error rates, or throughput).
+
+Instead of manually fixing pipeline failures, the system:\\n- Reduces batch sizes\\n- Adjusts retry policies\\n- Changes resource allocation\\n- Chooses better transformation paths
+
+All happening *mid-flight*, without human babysitting.
+
+Here's the Medium article where I detail the architecture (Kafka + Airflow + Snowflake + decision engine): [https://medium.com/@indrasenamanga/pipelines-that-learn-building-self-optimizing-etl-systems-with-real-time-feedback-2ee6a6b59079](https://medium.com/@indrasenamanga/pipelines-that-learn-building-self-optimizing-etl-systems-with-real-time-feedback-2ee6a6b59079)
+
+Has anyone here tried something similar? Would love to hear how you're pushing the limits of automated, intelligent data engineering.",11,6,Sad_Towel2374,2025-04-27 07:32:31,https://www.reddit.com/r/dataengineering/comments/1k8ye1g/building_selfoptimizing_etl_pipelines_has_anyone/,0,False,False,False,False
+1k8xcjp,"How is data collected, processed, and stored to serve AI Agents and LLM-based applications? What does the typical data engineering stack look like?","I'm trying to deeply understand the data stack that supports AI Agents or LLM-based products. Specifically, I'm interested in what tools, databases, pipelines, and architectures are typically used — from data collection, cleaning, storing, to serving data for these systems.
+
+I'd love to know how the data engineering side connects with model operations (like retrieval, embeddings, vector databases, etc.).
+
+Any explanation of a typical modern stack would be super helpful!",11,7,EducationalFan8366,2025-04-27 06:19:53,https://www.reddit.com/r/dataengineering/comments/1k8xcjp/how_is_data_collected_processed_and_stored_to/,0,False,False,False,False
+1k9793r,Backend table design of Dashboard,"So generally when we design a data warehouse we try to follow schema designs like star schema or snowflake schema, etc.
+
+But suppose you have multiple tables which needs to be brought together and then calculate KPIs aggregated at different levels and connect it to Tableau for reporting.
+
+In this case how to design the backend? like should I create a denormalised table with views on top of it to feed in the KPIs? What is the industry best practices or solutions for this kind of use cases?
+
+",9,2,Happy-Zebra-519,2025-04-27 15:57:09,https://www.reddit.com/r/dataengineering/comments/1k9793r/backend_table_design_of_dashboard/,0,False,False,False,False
+1k9c8ul,"Looking for resources to learn real-world Data Engineering (SQL, PySpark, ETL, Glue, Redshift, etc.) - IK practice is the key","I'm diving deeper into Data Engineering and I’d love some help finding quality resources. I’m familiar with the basics of tools like SQL, PySpark, Redshift, Glue, ETL, Data Lakes, and Data Marts etc.
+
+I'm specifically looking for:
+
+* Platforms or websites that provide *real-world case studies*, *architecture breakdowns*, or *project-based learning*
+* Blogs, YouTube channels, or newsletters that cover *practical DE problems* and how they’re solved in production
+* Anything that can help me understand *how these tools are used together* in real scenarios
+
+Would appreciate any suggestions! Paid or free resources — all are welcome. Thanks in advance!",9,3,Neither-Skill-5249,2025-04-27 19:28:38,https://www.reddit.com/r/dataengineering/comments/1k9c8ul/looking_for_resources_to_learn_realworld_data/,0,False,False,False,False
+1k9bg5q,Cloudflare's Range of Products for Data Engineering,"**NOTE: I do not work for Cloudflare and I have no monetary interest in Cloudflare.**
+
+Hey guys, I just came across R2 Data Catalog and it is amazing. Basically, it allows developers to use R2 object storage (which is S3 compatible) as a data lakehouse using Apache Iceberg. It already supports Spark (scala and pyspark), Snowflake and PyIceberg. For now, we have to run the query processing engines outside Cloudflare. [https://developers.cloudflare.com/r2/data-catalog/](https://developers.cloudflare.com/r2/data-catalog/)
+
+I find this exciting because it makes easy for beginners like me to get started with data engineering. I remember how much time I have spent while configuring EMR clusters while keeping an eye on my wallet. I found myself more concerned about my wallet rather than actually getting my hands dirty with data engineering. The whole product line focuses on actually building something and not spending endless hours in configuring the services.
+
+Currently, Cloudflare has the following products which I think are useful for any data engineering project.
+
+1. Cloudflare Workers: Serverless functions.[Docs](https://developers.cloudflare.com/workers/)
+2. Cloudflare Workflows: Multistep applications - workflows using Cloudflare Workers.[Docs](https://developers.cloudflare.com/workflows/)
+3. D1: Serverless SQL database SQLite's semantics.[Docs](https://developers.cloudflare.com/d1/)
+4. R2 Object Storage: S3 compatible object storage.[Docs](https://developers.cloudflare.com/r2/)
+5. R2 Data Catalog: Managed Apache Iceberg data catalog which works with Spark (Scala, PySpark), Snowflake, PyIceberg [Docs](https://developers.cloudflare.com/r2/data-catalog/)
+
+  
+I'd like your thoughts on this.",7,1,No-Story-7786,2025-04-27 18:54:48,https://www.reddit.com/r/dataengineering/comments/1k9bg5q/cloudflares_range_of_products_for_data_engineering/,0,False,False,False,False
+1k95pqd,Unit testing a function that creates a Delta table,"I have posted this in r/databricks too but thought I would post here as well to get more insight. 
+
+I’ve got a function that:
+
+*     Creates a Delta table if one doesn’t exist
+*     Upserts into it if the table is already there
+
+Now I’m trying to wrap this in PyTest unit-tests and I’m hitting a wall: where should the test write the Delta table?
+
+* Using tempfile / tmp_path fixtures doesn’t work, because when I run the tests from VS Code the Spark session is remote and looks for the “local” temp directory on the cluster and fails. 
+*  It also doesn't have permission to write to a temp dirctory on the cluster due to unity catalog permissions
+*     I worked around it by pointing the test at an ABFSS path in ADLS, then deleting it afterwards. It works, but it doesn't feel ""proper"" I guess.
+
+The problem seems to be databricks-connect using the defined spark session to run on the cluster instead of locally .
+
+Does anyone have any insights or tips with unit testing in a Databricks environment?",8,4,KingofBoo,2025-04-27 14:50:45,https://www.reddit.com/r/dataengineering/comments/1k95pqd/unit_testing_a_function_that_creates_a_delta_table/,1,False,False,False,False
+1k9ahhp,Does S3tables Catalog Support LF-Tags?,"Hey all,  
+  
+Quick question — I'm experimenting with S3 tables, and I'm running into an issue when trying to apply LF-tags to resources in the `s3tablescatalog` (databases, tables, or views).  
+Lake Formation keeps showing a message that there are no LF-tags associated with these resources.  
+Meanwhile, the same tags are available and working fine for resources in the default catalog.
+
+I haven’t found any documentation explaining this behavior — has anyone run into this before or know why this happens?  
+  
+Thanks!",3,1,jduran9987,2025-04-27 18:13:14,https://www.reddit.com/r/dataengineering/comments/1k9ahhp/does_s3tables_catalog_support_lftags/,0,False,False,False,False
+1k9fcmb,[Feedback Request] A reactive computation library for Python that might be helpful for data science workflows - thoughts from experts?,"Hey!
+
+I recently built a Python library called [reaktiv](https://github.com/buiapp/reaktiv) that implements reactive computation graphs with automatic dependency tracking. I come from IoT and web dev (worked with Angular), so I'm definitely not an expert in data science workflows.
+
+This is my first attempt at creating something that might be useful outside my specific domain, and I'm genuinely not sure if it solves real problems for folks in your field. I'd love some honest feedback - even if that's ""this doesn't solve any problem I actually have.""
+
+The library creates a computation graph that:
+
+* Only recalculates values when dependencies actually change
+* Automatically detects dependencies at runtime
+* Caches computed values until invalidated
+* Handles asynchronous operations (built for asyncio)
+
+While it seems useful to me, I might be missing the mark completely for actual data science work. If you have a moment, I'd appreciate your perspective.
+
+Here's a simple example with pandas and numpy that might resonate better with data science folks:
+
+    import pandas as pd
+    import numpy as np
+    from reaktiv import signal, computed, effect
+    
+    # Base data as signals
+    df = signal(pd.DataFrame({
+        'temp': [20.1, 21.3, 19.8, 22.5, 23.1],
+        'humidity': [45, 47, 44, 50, 52],
+        'pressure': [1012, 1010, 1013, 1015, 1014]
+    }))
+    features = signal(['temp', 'humidity'])  # which features to use
+    scaler_type = signal('standard')  # could be 'standard', 'minmax', etc.
+    
+    # Computed values automatically track dependencies
+    selected_features = computed(lambda: df()[features()])
+    
+    # Data preprocessing that updates when data OR preprocessing params change
+    def preprocess_data():
+        data = selected_features()
+        scaling = scaler_type()
+        
+        if scaling == 'standard':
+            # Using numpy for calculations
+            return (data - np.mean(data, axis=0)) / np.std(data, axis=0)
+        elif scaling == 'minmax':
+            return (data - np.min(data, axis=0)) / (np.max(data, axis=0) - np.min(data, axis=0))
+        else:
+            return data
+    
+    normalized_data = computed(preprocess_data)
+    
+    # Summary statistics recalculated only when data changes
+    stats = computed(lambda: {
+        'mean': pd.Series(np.mean(normalized_data(), axis=0), index=normalized_data().columns).to_dict(),
+        'median': pd.Series(np.median(normalized_data(), axis=0), index=normalized_data().columns).to_dict(),
+        'std': pd.Series(np.std(normalized_data(), axis=0), index=normalized_data().columns).to_dict(),
+        'shape': normalized_data().shape
+    })
+    
+    # Effect to update visualization or logging when data changes
+    def update_viz_or_log():
+        current_stats = stats()
+        print(f""Data shape: {current_stats['shape']}"")
+        print(f""Normalized using: {scaler_type()}"")
+        print(f""Features: {features()}"")
+        print(f""Mean values: {current_stats['mean']}"")
+    
+    viz_updater = effect(update_viz_or_log)  # Runs initially
+    
+    # When we add new data, only affected computations run
+    print(""\nAdding new data row:"")
+    df.update(lambda d: pd.concat([d, pd.DataFrame({
+        'temp': [24.5], 
+        'humidity': [55], 
+        'pressure': [1011]
+    })]))
+    # Stats and visualization automatically update
+    
+    # Change preprocessing method - again, only affected parts update
+    print(""\nChanging normalization method:"")
+    scaler_type.set('minmax')
+    # Only preprocessing and downstream operations run
+    
+    # Change which features we're interested in
+    print(""\nChanging selected features:"")
+    features.set(['temp', 'pressure'])
+    # Selected features, normalization, stats and viz all update
+
+I think this approach might be particularly valuable for data science workflows - especially for:
+
+* Building exploratory data pipelines that efficiently update on changes
+* Creating reactive dashboards or monitoring systems that respond to new data
+* Managing complex transformation chains with changing parameters
+* Feature selection and hyperparameter experimentation
+* Handling streaming data processing with automatic propagation
+
+As data scientists, would this solve any pain points you experience? Do you see applications I'm missing? What features would make this more useful for your specific workflows?
+
+I'd really appreciate your thoughts on whether this approach fits data science needs and how I might better position this for data-oriented Python developers.
+
+Thanks in advance!",2,0,loyoan,2025-04-27 21:43:13,https://www.reddit.com/r/dataengineering/comments/1k9fcmb/feedback_request_a_reactive_computation_library/,1,False,False,False,False
+1k9enbu,Devsecops,"Fellow data engineers...esp those working in banking sector...how many of you have been told to take on ops team role under the guise of 'devsecops'?...is it now the new norm?
+I feel it impacts productivity of a developer",2,1,harnishan,2025-04-27 21:12:21,https://www.reddit.com/r/dataengineering/comments/1k9enbu/devsecops/,0,False,False,False,False
+1k9fn7t,"File system, block storage, file storage, object storage, etc","Wondering if anybody can explain the differences of filter system, block storage, file storage, object storage, other types of storage?, in easy words and in analogy any please in an order that makes sense to you the most. Please can you also add hardware and open source and close source software technologies as examples for each type of these storage and systems. The simplest example would be my SSD or HDD in laptops. ",1,1,michl1920,2025-04-27 21:56:15,https://www.reddit.com/r/dataengineering/comments/1k9fn7t/file_system_block_storage_file_storage_object/,0,False,False,False,False
+1k9a9lb,Next Switch Guidance in DE role!,"Hi All,
+
+i have 3 years of exp in service based Org. I have been in Azure project were im Azure platform engineer and little bit data engineering work i do. im well versed with Databricks, ADF, ADLS Gen2, SQL Server, Git but begineer in python. I want to switch to DE Role. I know Azure cloud inside out, ETL process. What you guys suggest how should i move forward or what all difficulties i will be facing.",0,0,Used-Range9050,2025-04-27 18:03:55,https://www.reddit.com/r/dataengineering/comments/1k9a9lb/next_switch_guidance_in_de_role/,0,False,False,False,False
+1k96efw,What is SQL? How to Write Clean and Correct SQL Commands for Beginners - JV Codes 2025,,0,0,shokatjaved,2025-04-27 15:20:35,https://jvcodes.com/what-is-sql/,0,False,False,False,False
+1k95cug,A New Reference Architecture for Change Data Capture (CDC),,1,2,dani_estuary,2025-04-27 14:34:39,https://estuary.dev/blog/new-reference-architecture-for-cdc/,0,False,False,False,False
+1k90562,I am developing AI Agent to replace ETL engineers and data model experts,"To be exact, this requirement was raised by one of my financial clients. He felt that there were too many data engineers (100 people) and he hoped to reduce the number to about 20-30. I think this is feasible. We have not yet tapped into the capabilities of Gen AI. I think it will be easier to replace data engineers with AI than to replace programmers. We are currently developing Agents. I will update you if there is any progress.",0,9,fuwei_reddit,2025-04-27 09:37:28,https://www.reddit.com/r/dataengineering/comments/1k90562/i_am_developing_ai_agent_to_replace_etl_engineers/,0,False,False,False,False

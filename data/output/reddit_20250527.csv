@@ -1,0 +1,436 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1kvtz7d,scrum is total joke in DE & BI development,"My current responsibility is databricks + power bi. Now don't get me wrong, our scrum process is not correct scrum and we have our super benevolent rules for POs and we are planning everything for 2 upcoming quarters (?!!!), but even without this stupid future planning I found out we are doing anything but agile. Scrum turned to: give me estimation for everything, Dev or PO can change task during sprint because BI development is pretty much unpredictable. And mostly how the F\*\*\* I can give estimate in hours for something I have no clue! Every time developer needs to be in defend position AKA why we are always underestimate, lol. BI development takes lots of exploration and prototyping and specially with tool like Power BI. In the end we are not delivering according to plan but our team is always overcommitted. I don't know any person who is actually enjoying scrum including devs, manegers and POs. What's your attitude towards scrum? cheers",224,91,betonaren,2025-05-26 13:10:30,https://www.reddit.com/r/dataengineering/comments/1kvtz7d/scrum_is_total_joke_in_de_bi_development/,0,False,False,False,False
+1kw25lj,"The skills no one teaches engineers: mindset, people smarts, and the books that rewired me","I got laid off from Amazon after COVID when they outsourced our BI team to India and replaced half our workflow with automation. The ones who stayed weren’t better at SQL or Python - they just had better people skills. 
+
+For two months, I applied to every job on LinkedIn and heard nothing. Then I stopped. I laid in bed, doomscrolled 5+ hours a day, and watched my motivation rot. I thought I was just tired. Then my girlfriend left me - and that cracked something open.
+
+In that heartbreak haze, I realized something brutal: I hadn’t grown in years. Since college, I hadn’t finished a single book - five whole years of mental autopilot. 
+
+Meanwhile, some of my friends - people who foresaw the layoffs, the AI boom, the chaos - were now running startups, freelancing like pros, or negotiating raises with confidence. What did they all have in common? They never stop self growth and they read. Daily.
+
+So I ran a stupid little experiment: finish one book. Just one. I picked a memoir that mirrored my burnout. Then another. Then I tried a business book. Then a psychology one. I kept going. It’s been 7 months now, and I’m not the same person.
+
+Reading daily didn’t just help me “get smarter.” It reprogrammed how I think. My mindset, work ethic, even how I speak in interviews - it all changed. I want to share this in case someone else out there feels as stuck and brain-fogged as I did. You’re not lazy. You just need better inputs. Start feeding your mind again.
+
+As someone with ADHD, reading daily wasn’t easy at first. My brain wanted dopamine, not paragraphs. I’d reread the same page five times. That’s why these tools helped - they made learning actually stick, even on days I couldn’t sit still. Here’s what worked for me:
+- The Almanack of Naval Ravikant: This book completely rewired how I think about wealth, happiness, and leverage. Naval’s mindset is pure clarity.
+
+- Principles by Ray Dalio: The founder of Bridgewater lays out the rules he used to build one of the biggest hedge funds in the world. It’s not just about work - it’s about how to think. Easily one of the most eye-opening books I’ve ever read.
+
+- Can’t Hurt Me by David Goggins: NYT Bestseller. His brutal honesty about trauma and self-discipline lit a fire in me. This book will slap your excuses in the face.
+
+- Deep Work by Cal Newport: Productivity bible. Made me rethink how shallow my work had become. Best book on regaining focus in a distracted world.
+
+- The Psychology of Money by Morgan Housel:  Super digestible. Helped me stop making emotional money decisions. Best finance book I’ve ever read, period.
+
+
+Other tools & podcasts that helped 
+- Lenny’s Newsletter: the best newsletter if you're in tech or product. Lenny (ex-Airbnb PM) shares real frameworks, growth tactics, and hiring advice. It's like free mentorship from a top-tier operator.
+
+- BeFreed: A friend who worked at Google put me on this. It’s a smart reading & book summary app that lets you customize how you read/listen: 10 min skims, 40 min deep dives, 20 min podcast-style explainers, or flashcards to help stuff actually stick. 
+
+it also remembers your favs, highlights, goals and recommend books that best fit your goal.
+
+ I tested it on books I’d already read and the deep dives covered ~80% of the key ideas. Now I finished 10+ books per month and I recommend it to all my friends who never had time or energy to read daily.
+
+- Ash: A friend told me about this when I was totally burnt out. It’s like therapy-lite for work stress - quick check-ins, calming tools, and mindset prompts that actually helped me feel human again.
+
+- The Tim Ferriss Show - podcast – Endless value bombs. He interviews top performers and always digs deep into their habits and books.
+
+Tbh, I used to think reading was just a checkbox for “smart” people. Now I see it as survival. It’s how you claw your way back when your mind is broken.
+
+If you’re burnt out, heartbroken, or just numb - don’t wait for motivation. Pick up any book that speaks to what you’re feeling. Let it rewire you. Let it remind you that people before you have already written the answers.
+
+You don’t need to figure everything out alone. You just need to start reading again.",71,38,Eastern_Ticket2157,2025-05-26 18:46:11,https://www.reddit.com/r/dataengineering/comments/1kw25lj/the_skills_no_one_teaches_engineers_mindset/,0,False,False,False,False
+1kvjqqh,"'Close to impossible' for Europe to escape clutches of US hyperscalers -- ""Barriers stack up: Datacenter capacity, egress fees, platform skills, variety of cloud services. It won't happen, say analysts""",,44,20,throwaway16830261,2025-05-26 02:45:10,https://www.theregister.com/2025/05/22/ditching_us_clouds_for_local/,0,False,False,False,False
+1kvthrx,"How important is it to be ""full-stack"" in data?","Hey everyone,
+
+I wanted to start a conversation about the growing expectation for data professionals to become more ""full-stack."" Especially in the Brazilian market, I've noticed a trend, or even a pressure, for people to take on more responsibilities across the entire data workflow, sometimes beyond their original role.
+
+I’ve been working as a Data Engineer for a little over a year now, focusing mainly on EL processes, building data pipelines and delivering datasets to the primary layer. From there, Analytics Engineers usually take over and apply transformations. I hold certifications in Airflow (Astronomer) and Databricks Data Engineer Fundamentals, and I’m currently thinking about diving into DBT, mainly through personal projects.
+
+Recently, I received the suggestion that being full-stack in data is the ideal, or even necessary, path to follow. That got me thinking:
+
+How far should we go in expanding our technical scope?  
+Are we sacrificing depth for breadth?  
+Is this expectation more common for Data Engineers than for AEs or Data Scientists?  
+Is being full-stack really an advantage in the long run, or just a sign of immaturity or lack of process in some organizations?
+
+I’d love to hear your thoughts, especially from those who have faced this kind of situation or work in more structured data teams.",44,21,Impossible-Gear-4365,2025-05-26 12:47:37,https://www.reddit.com/r/dataengineering/comments/1kvthrx/how_important_is_it_to_be_fullstack_in_data/,0,False,False,False,False
+1kvrs7l,Why would experienced data engineers still choose an on-premise zero-cloud setup over private or hybrid cloud environments—especially when dealing with complex data flows using Apache NiFi?,"Using NiFi for years and after trying both hybrid and private cloud setups, I still find myself relying on a full on-premise environment. With cloud, I faced challenges like unpredictable performance, latency in site-to-site flows, compliance concerns, and hidden costs with high-throughput workloads. Even private cloud didn’t give me the level of control I need for debugging, tuning, and data governance. On-prem may not scale like the cloud, but for real-time, sensitive data flows—it’s just more reliable.
+
+ Curious if others have had similar experiences and stuck with on-prem for the same reasons.",23,50,mikehussay13,2025-05-26 11:14:00,https://www.reddit.com/r/dataengineering/comments/1kvrs7l/why_would_experienced_data_engineers_still_choose/,0,False,False,False,False
+1kvo54d,"Databricks Orchestration: Databricks Workflows, Azure Data Factory, and Airflow",,4,1,4DataMK,2025-05-26 07:08:34,https://medium.com/@mariusz_kujawski/databricks-orchestration-databricks-workflows-azure-data-factory-and-airflow-fb44560fac08,0,False,False,False,False
+1kvqmww,Is Udacity's Azure Data Engineering nanodegree worth it?,"Some reviewers say Udacity's AWS Data Engineering nanodegree was a waste of money, but what about the Azure nanodegree?",3,2,Fun_Network6608,2025-05-26 10:00:12,https://www.reddit.com/r/dataengineering/comments/1kvqmww/is_udacitys_azure_data_engineering_nanodegree/,0,False,False,False,False
+1kvxm6c,automate Alteryx runs without scheduler,Is anyone using Alteryx and able to make scheduled runs without the scheduler they are discontinuing?  They have moved to a server option but at $80k that is cost prohibitive for our company in order to just schedule automated runs.,3,5,Legacicycling,2025-05-26 15:44:51,https://www.reddit.com/r/dataengineering/comments/1kvxm6c/automate_alteryx_runs_without_scheduler/,0,False,False,False,False
+1kvqajs,How to know which files have already been loaded into my data warehouse?,"_Context: I'm a professional software engineer, but mostly self-taught in the world of data engineering. So there are probably things I don't know that I don't know! I've been doing this for about 8 years but only recently learned about DBT and SQLMesh, for example._
+
+I'm working on an ELT pipeline that converts input files of various formats into Parquet files on Google Cloud Storage, which subsequently need to be loaded into BigQuery tables (append-only).
+
+- The Extract processes drop files into GCS at unspecified times.
+
+- The Transform processes convert _newly created_ files to Parquet and drops the result back into GCS.
+
+- The Load process needs to load the _newly created_ files into BigQuery, making sure to load every file exactly once.
+
+To process only new (or failed) files, I guess there are two main approaches:
+
+1. Query the output, see what's missing, then process that. Seems simple, but has scalability limitations because you need to list the entire history. Would need to query both GCS and BQ to compare what files are still missing.
+
+2. Have some external system or work queue that keeps track of incomplete work. Scales better, but has the potential to go out of sync with reality (e.g. if Extract fails to write to the work queue, the file is never transformed or loaded).
+
+I suppose this is a common problem that everyone has solved already. What are the best practices around this? Is there any (ideally FOSS) tooling that could help me?",2,27,thomastc,2025-05-26 09:36:25,https://www.reddit.com/r/dataengineering/comments/1kvqajs/how_to_know_which_files_have_already_been_loaded/,0,False,False,False,False
+1kvjl4s,Getting into MLE/AIE,"I’m a data engineer (yoe 10+)with a strong background and experience in SQL, ETL development, data warehousing , analytics. Also have strong cloud experience and credentials. 
+Not  strong on the programming side, but can get the work done. Done some certifications and courses in ML. Have theoretical knowledge and done some poc projects but have no production experience in it yet. 
+
+How can I transition to ML Engineering and AI Engineering? What do I need to be up skilled in? Any bootcamps, certifications, courses etc. that I can pursue. ",2,4,Tiny_Adhesiveness_88,2025-05-26 02:35:48,https://www.reddit.com/r/dataengineering/comments/1kvjl4s/getting_into_mleaie/,0,False,False,False,False
+1kvybjn,Anyone using Snowflake + Grafana to track Airflow job/task status?,"Curious if any data teams are using **Snowflake as a tracking layer for Airflow DAG/task statuses**, and then visualizing that in **Grafana**?
+
+We’re exploring a setup where:
+
+* Airflow task-level or DAG-level statuses (success/failure/timing) are written to a **Snowflake table** using custom callbacks or logging tasks
+* Grafana dashboards are built directly over Snowflake to monitor job health, trends, and SLAs
+
+Has anyone done something similar?
+
+* How’s the performance and cost of Snowflake for frequent inserts?
+* Any tips for schema design or batching strategies?
+* Would love to hear what worked, what didn’t, and whether you moved away from this approach.
+
+Thanks in advance!",3,2,NefariousnessSea5101,2025-05-26 16:13:08,https://www.reddit.com/r/dataengineering/comments/1kvybjn/anyone_using_snowflake_grafana_to_track_airflow/,0,False,False,False,False
+1kvvzdh,How did you create your cloud inventory?,"anyone that needed to create a cloud inventory (for cloud resources such as EC2, RDS, etc), using some kind of an ETL (hand written or by using a paid product or opensource) - how did you build it?
+
+I have been using CloudQuery and very happy about it - concurrent requests, schemas and a lot more is taken care for you - but its price is too unpredictable especially looking forward.  
+SteamPipe s mode ad-hoc and feels less suited for production workloads, at least not without substantial effort.",2,1,kekekepepepe,2025-05-26 14:37:56,https://www.reddit.com/r/dataengineering/comments/1kvvzdh/how_did_you_create_your_cloud_inventory/,0,False,False,False,False
+1kvsdt5,How does create or replace table work exactly in BigQuery (table got deleted in STG using DBT),"So first of all, it's not ""urgent"", this happened in a non prod environment, while running tests.
+
+I don't know if DBT did this or if it was me hitting the task on airflow to run a model two times in a row.
+
+We have an airflow connected to DBT using astronomer. One of our models is a simple materialized = table model.
+
+I was testing some changes in it and hit the clear task in airflow, maybe I did it twice, I don't know. But checking the BigQuery job logs, I can see that the query was tried two times, within 20 seconds of each other, this particular query takes around 1 minute to run, but this change I made had a partitioning error, so it failed very quickly with error **\[PARTITION BY expression must be DATE(<timestamp\_column>) etc...\]**. timestamps for creation and end time for both queries were:
+
+|| || |2025-05-25 13:00:35.436000 UTC|2025-05-25 13:00:36.598000 UTC |
+
+|| || |2025-05-25 13:00:55.847000 UTC|2025-05-25 13:00:56.810000 UTC |
+
+The table definitely existed previous to 2025-05-25 13:00:35.436000 UTC, we test on it all the time. I went to check the table in stg today and it doesn't exist anymore.
+
+I don't know if it matters but the SA that uses DBT was also running other jobs/queries in bigquery, non related to dbt, but those other jobs started 1 minute after my DBT queries were tried, probably doesn't affect this whole thing.
+
+My questions are:
+
+1. **how on earth did this happen? Is it possible that during CREATE OR REPLACE TABLE the table was dropped and not recreated, because of the invalidQuery? How does CREATE OR REPLACE TABLE work under the hood?**
+2. **Can I recover a deleted table like this in the future? I worry about this happening in PRD environment - I don't need to recover this one, I can just re run the DBT model with the correct partition and it's fine, after all it's a materialized = table model and I have the data to repopulate it. I worry about this happening on incremental models in the future, though.**
+
+Thanks in advance!
+
+EDIT: I found out that, a few milliseconds before the CREATE OR REPLACE TABLE took place, there was a delete request (saw it in the log explorer), by the same service account that DBT uses, I'm assuming DBT did this? I don't know.",2,0,Daniearp,2025-05-26 11:49:24,https://www.reddit.com/r/dataengineering/comments/1kvsdt5/how_does_create_or_replace_table_work_exactly_in/,0,False,2025-05-26 20:04:44,False,False
+1kvw9hm,Why YAML is actually a great fit for collaborative data testing,"The real blocker in achieving good data quality is not only code, but ineffective teamwork (or no teamwork at all).
+
+For example:
+
+* Data producers (engineers) often don’t know the full downstream data needs.
+* Data consumers (analysts, stakeholders) often *do*, but they can’t enforce it.
+* Slack back-and-forths, manual QA, broken dashboards.
+
+
+
+We can imagine a healthy alternative for data collaboration, where data issues can be **understood, defined,** and **detected** across a team, and then the actual collaboration friction can be significantly reduced.
+
+
+
+So, what does this have to do with YAML? 
+
+Well, by adapting YAML into a data quality checks framework, we will get a simple, accurate, and effective **data collaboration model** which allows us to have:
+
+* A clean, declarative way to define data expectations.
+* Non-engineers to contribute checks and proposals.
+* Business logic flows more naturally in the data pipeline based on quantifiable data expectations.
+* Actual data accountability that is visible and traceable.
+
+
+
+That's what a properly structured and designed YAML-based framework can achieve. 
+
+As a result, we will have more people involved in testing → issues being caught earlier, which leads to less friction, fewer surprises. What do you think?
+
+FWIW, I work at Soda and we’ve leaned pretty hard into YAML for this reason. Happy to share more examples if folks are interested.",0,6,LucaMakeTime,2025-05-26 14:49:41,https://i.redd.it/xtzlr8yn053f1.png,0,False,False,False,False
+1kvtmt1,Techniques to reduce pipeline count?,"I'm working in a mid-sized FMCG company, I utilize Azure Data Factory (ADF).  The current ADF environment includes 1,310 pipelines and 243 datasets.  Maintaining this volume will become increasingly challenging.  How can we reduce the number of pipelines without impacting functionality?Any advice on this ?",1,20,Cyborg078,2025-05-26 12:54:31,https://www.reddit.com/r/dataengineering/comments/1kvtmt1/techniques_to_reduce_pipeline_count/,0,False,False,False,False
+1kvtm72,Any recommendation for a training database?,"My company is in the market for a training database package. Any recommendations on what to go for/avoid? We use Civica HR, so something compatible with that would be ideal.",1,0,brontesaurus999,2025-05-26 12:53:40,https://www.reddit.com/r/dataengineering/comments/1kvtm72/any_recommendation_for_a_training_database/,0,False,False,False,False
+1kw442g,"🚀 Thrilled to continue my series, ""Getting Started with Real-Time Streaming in Kotlin""!","The second installment, ""Kafka Clients with Avro - Schema Registry and Order Events,"" is now live and takes our event-driven journey a step further.
+
+In this post, we level up by:
+
+* Migrating from JSON to Apache Avro for robust, schema-driven data serialization.
+* Integrating with Confluent Schema Registry for managing Avro schemas effectively.
+* Building Kotlin producer and consumer applications for Order events, now with Avro.
+* Demonstrating the practical setup using Factor House Local and Kpow for a seamless Kafka development experience.
+
+This is post 2 of 5 in the series. Next up, we'll dive into Kafka Streams for real-time processing, before exploring the power of Apache Flink!
+
+Check out the full article: https://jaehyeon.me/blog/2025-05-27-kotlin-getting-started-kafka-avro-clients/",0,0,jaehyeon-kim,2025-05-26 20:06:47,https://i.redd.it/v0h0ty2pn63f1.png,0,False,False,False,False
+1kvz9h6,Need help!,"Guys, 
+
+I am working in an MNC, Total 3.5 exp. 
+
+Joined in as an tech enthusiast in organisation,  deployed in a support project, due to money (rotational client visits) I was in the project, now I want to focus on career and make a switch.
+
+Technologies worked on Data platforms Bigdata, Kafka, ETL. I am not able to perform well in coding due to lack of practice and also I am biting more than I can chew. Cloud platforms, data warehousing, etl, development etc... 
+
+Need some guidance to lead the correct path, i couldn't decide which one to prefer as I have constraints. ",0,2,RealisticInfluence42,2025-05-26 16:51:19,https://www.reddit.com/r/dataengineering/comments/1kvz9h6/need_help/,0,False,False,False,False
+1kvw1mv,Ideas for Scientific Initiation in Data Engineering,"I am an undergraduate student in applied mathematics with some experience in data science projects, but I would like to move toward the engineering field. For this, I need ideas for a scientific initiation project in data engineering.
+
+To avoid being too generalist, I would prefer to apply it in the field of biomedicine or biology, if possible.
+
+I have an idea of creating a data warehouse for genome studies, but I am not sure if this would be too complex for an undergraduate research project.",0,1,bolo_de_picles,2025-05-26 14:40:37,https://www.reddit.com/r/dataengineering/comments/1kvw1mv/ideas_for_scientific_initiation_in_data/,0,False,False,False,False
+1kw2ljk,What is the best Python UI Tool for Data Visualization + CRUD?,"Hi All, 
+
+I am working on a personal project to combine the transactions from my brokerage accounts and create a dashboard that will allow me to:
+
+1. View portfolio performance over time
+
+2. Drill down the holdings by brokerage account, asset type, geography, etc. 
+
+3. Performe performance attribution
+
+On the backend, I am using sqlalchemy in python to create database models. As part of the database, I will be creating my own transaction types so that I can map differently name transactions from various brokerage to same type. I want to build a dashboard that will allow me to upload my monthly brokerage statements on the UI and also let me edit some fields in the database such as transaction types. 
+
+I am mainly using python and sql. What is the industry standard tool/language used for creating dashboards and allow CRUD operations? 
+
+  
+Thank you in advance! ",0,7,Neel-reddit,2025-05-26 19:04:03,https://www.reddit.com/r/dataengineering/comments/1kw2ljk/what_is_the_best_python_ui_tool_for_data/,0,False,False,False,False
+1kw5v7d,No need for data engineers?,"Ok ok ok I know, we need data engineers. I’ve been hearing some buzz on data engineers getting laid off because someone in management got told that a new SaaS product can speed up and improve the data process by reducing the need for DEs (we’re seeing the same thing in ai and software dev). Many data consumers may view DE teams as a bottleneck who slow down the data delivery process, instead the people managing the natural bottlenecks in enterprise data management. It almost sounds like companies go back and forth between long procedures and good data (hello DEs) or really fast access to sh*t data (goodbye DE) why is it that companies can’t have both? I have faith that some SaaS products can complement a DE the way a calculator compliments an accountant, but it doesn’t seem like anyone has found that silver bullet. This is not my area of expertise please don’t flame me in the comments.
+
+So, to get the point:
+1. What are the natural bottlenecks that DEs have to address? Data quality (large scale), governance procedures? Lineage? Why can’t that get automated effectively?
+
+2. Are there any interesting articles you have read and would like to share regarding the importance of the data engineer? Maybe anything that supports why the SaaS solutions fail to replace them effectively?",0,11,frogframework,2025-05-26 21:19:14,https://www.reddit.com/r/dataengineering/comments/1kw5v7d/no_need_for_data_engineers/,0,False,False,False,False
+1kw2nhm,Why am I not getting interviews?,"Am I missing some key skills?
+
+# Summary
+
+Scientist and engineer with a Ph.D. in physics and extensive experience in data engineering and biomedical data science, including bioinformatics and biostatistics. Specializes in complex data curation, analysis pipeline development on high-performance computing clusters, and cloud-based computational infrastructure. Dedicated to leveraging data to address real-world challenges.
+
+# Work Experience
+
+# Founder / Director
+
+# Autism All Grown Up (https://aagu.org) 10/2023 - Present
+
+* Founded and directs a nonprofit focused on the unmet needs of Autistic adults in Oregon, Securing over $60k of funding in less than six months.
+* Coordinates writing and submitting grants, 20 in five months.
+* Builds partnerships with community organizations by collaborating on shared interests and goals.
+* Coordinates employees and volunteers.
+* Designs and manages programs.
+
+# Biomedical Data Scientist
+
+# Freelancer 08/2022 -12/2023
+
+* Worked with collaborators to launch a corporate-academic collaborative research project integrating multiple large-scale public genomic data sets into a graph database suitable for machine learning, oncology, and oncological drug repurposing.
+* Performed analysis to assess overexpressed proteins related to toxic response from exercise in a human study.
+
+# Senior Research Engineer
+
+# OHSU | Center for Health Systems Effectiveness 11/2022 -10/2023
+
+* Reduced compute time of a data analysis pipeline for calculating quality measures by 90% by parallelizing and porting to a high-performance computing (HPC) SLURM cluster, increasing researchers' access to data.
+* Increased the performance of an ETL pipeline for staging Medicare claims data by 50% by removing bottlenecks and removing unnecessary steps.
+* Championed better package management by transitioning the research group to the Conda package manager, resulting in 80% fewer package-related programming bottlenecks and reduced sysadmin time.
+* Wrote comprehensive user documentation and training for pipeline usage published on enterprise GitHub.
+* Supported researchers and data engineers through training and mentorship in R programming, package management, and high-performance computing best practices.
+
+# Bioinformatics Scientist
+
+# Providence | Earl A. Chiles Research Institute 08/2020 -06/2022
+
+* Created a reproducible ETL pipeline for generating a drug-repurposing graph database that cleans, harmonizes, and processes over four billion rows of data from 10 different cancer databases, including clinical variants, clinical tumor sequencing data, tumor cell-line drug response data, variant allele frequencies, and gene essentiality.
+* Located errors in combined WES tumor variant calls and suggested methods to resolve them.
+* Scaled up ETL and analysis pipelines for WES and WGS variant analysis using BigQuery and Google Cloud Platform.
+* Helped automate dockerized workflows for RNA-Seq analysis on the Google Cloud Platform.
+
+# Computational Biologist
+
+# OHSU | Casey Eye Institute 07/2018 -04/2020
+
+* Extracted obscured information from messy human microbiome data by fine-tuning statistical models.
+* Created a reproducible notebook-based pipeline for automated statistical analysis with custom parameters on a high-performance computing cluster and produced automated reports.
+* Analyzed 16-S rRNA microbiome sequencing data by performing phylogenetic associations, diversity analysis, and multiple statistical tests to identify significant associations with age-related macular degeneration, contributing to two publications.
+
+# Computational Biologist
+
+# Oregon Health & Science University, Bioinformatics Core 11/2015 -06/2017
+
+* Automated image region selection for an IHC image analysis pipeline, increasing throughput 100x and allowing high-throughput analysis for cancer research.
+* Created a templated and automated pipeline to perform parameterized ChIP-Seq analysis on a high-performance computing cluster and generate automated reports.
+* Programmed custom LIMS dashboard elements using R and Javascript (Plotly) for real-time visualization of cancer SMMART trials.
+* Installed and managed research-oriented Linux servers and performed systems administration.
+* Conducted RNA-Seq analysis.
+* Mentored and trained coworkers in programming and high-performance computing.
+
+# IT Support Technician
+
+# Volpentest HAMMER Federal Training Center 08/2014 -11/2015
+
+* Helped develop a ColdFusion website to publish and schedule safety courses to be used on the Hanford site.
+* Vetted, selected, and managed a SAAS library management system.
+* Built and managed two MS Access databases with entry forms, comprehensive reports, and a macro to email library users about their accounts.
+
+# Education
+
+# Ph.D. in Physics 05/2005
+
+Indiana University Bloomington
+
+# Bachelor of Science in Physics 06/1998
+
+The Evergreen State College
+
+# Certifications
+
+# Human Subjects Research (HSR) 11/2022 -11/2025
+
+# Responsible Conduct of Research (RCR) 11/2022 -11/2025
+
+# Award
+
+# Outstanding Graduate Student in Research 05/2005
+
+Indiana University
+
+# Skills
+
+**Data Science & Engineering:** ETL, Data harmonization, SQL, Cloud (GCP), Docker, HPC (SLURM), Jupyter Notebooks, Graphics and visualization, Documentation. Containerized workflows (Docker, Singularity), statistical analysis and modeling, and mathematical modeling.
+
+**Bioinformatics, Computational Biology, & Genomics:** DNA/RNA sequencing (WES, WGS, DNA-Seq, RNA-Seq, ChIP-Seq, 16s rRNA), Variant calling, Microbiome analysis, Transcriptomics, DepMap, ClinVar, KEGG.
+
+**Programming & Development:** *Expert***:** R, Bash; *Strong***:** Python, SQL, HTML/CSS/JS; *Familiar***:** Matlab, C++, Java.
+
+**Healthcare Analytics:** ICD-10, CPT, HCPCS, CMS, SNOMED, Medicaid claims, Quality Metrics (HEDIS).
+
+**Linux & Systems Administration:** Server configuration, Web servers, Package management, SLURM, HTCondor.",0,29,arielbalter,2025-05-26 19:06:07,https://www.reddit.com/r/dataengineering/comments/1kw2nhm/why_am_i_not_getting_interviews/,0,False,False,False,False
+1kvw9nn,🚀 What Are Containers in Tech? (Explained Simply + Why They're Changing Everything),"# ✅ Introduction: What If Software Just Worked… Everywhere?
+
+Have you ever built something that ran perfectly on your computer—only to watch it crash on someone else’s machine?  
+That age-old problem has a modern solution: **containers**.
+
+In this post, you'll discover **what containers are**, **how they work**, and **why they're revolutionizing software development, cloud computing, and DevOps workflows**. Whether you're a curious beginner, a developer, or a tech leader, this is your ultimate beginner-to-pro guide.
+
+# 🧠 What Are Containers? (In One Clear Sentence)
+
+**A container** is a lightweight, portable unit that packages your application **along with everything it needs to run**—so it behaves exactly the same across different computers, servers, and environments.
+
+# 🔁 Think of it as:
+
+>
+
+# 🔍 Why Do Containers Matter in 2025?
+
+Containers are at the **heart of modern app development**. They power everything from **microservices** to **cloud-native architectures** and **CI/CD pipelines**. Giants like Netflix, Google, Spotify, and Airbnb use containers to deploy faster, scale instantly, and recover from failures in seconds.
+
+# 📈 Real-world impact:
+
+* **Faster deployments**
+* **Lower costs**
+* **Zero configuration issues**
+* **Massive scalability**
+
+# 📦 How Containers Actually Work (Simplified)
+
+Let’s break it down:
+
+1. You write an app.
+2. You create a **container image** using tools like **Docker**.
+3. This image includes your app **+ libraries, code, settings, runtime, dependencies**.
+4. You launch the image → it becomes a **container** running independently on any system.
+
+✅ The secret sauce?
+
+>
+
+# ⚖️ Containers vs. Virtual Machines (VMs)
+
+|Feature|Containers 🐳|Virtual Machines 🖥️|
+|:-|:-|:-|
+|OS Overhead|Minimal|Full OS per VM|
+|Startup Time|Seconds|Minutes|
+|Portability|Extremely portable|Less portable|
+|Isolation|Process-level|Full hardware-level|
+|Performance|High|Moderate|
+
+>
+
+# 🛠️ Popular Tools You Should Know
+
+* **Docker** – The most popular container platform
+* **Kubernetes** – Manages containers at scale
+* **Podman** – A secure alternative to Docker
+* **Containerd** – A high-performance container runtime
+
+# 🧙 Real-Life Analogy: Cooking with Containers
+
+Imagine you're a chef. You have a recipe that works perfectly in *your* kitchen.
+
+But when you travel to a new city, you're in someone else's kitchen:
+
+* No garlic?
+* Oven too hot?
+* Tools missing?
+
+🤯 The result: your food is inconsistent.
+
+Now imagine carrying **your entire kitchen inside a suitcase**—with your spices, knives, and perfect oven. You unpack it anywhere, cook your signature dish, and it **tastes exactly the same.**
+
+That’s what containers do for software.  
+**Portable, repeatable, reliable**.
+
+# 🎯 Benefits of Using Containers
+
+✔ **Run anywhere** – Cloud, local, Windows, Linux—it just works.  
+✔ **Speed up development** – Spin up dev environments in seconds.  
+✔ **Improve collaboration** – “Works on my machine” becomes “Works everywhere.”  
+✔ **Simplify deployment** – One artifact to deploy across all environments.  
+✔ **Scale effortlessly** – Run hundreds of containers in parallel with tools like Kubernetes.
+
+# ⚠️ Common Myths & Mistakes
+
+|❌ Myth|✅ Truth|
+|:-|:-|
+|""Containers are like VMs""|They share the OS kernel, not the entire OS|
+|""Containers are secure by default""|You must harden container environments|
+|""Containers can store app data""|**statelessvolumes**Containers are   unless you use  |
+
+# 💡 Real-World Use Cases
+
+* **Microservices architecture** – Break large apps into small, independently deployable services.
+* **CI/CD pipelines** – Use containers to test and deploy code faster.
+* **Hybrid cloud** – Move workloads across clouds seamlessly.
+* **Dev environments** – Onboard new developers in minutes.
+
+# 🚀 Final Takeaway
+
+**Containers have become the building blocks of modern software.**  
+They’re not just a trend—they’re a necessity for teams that want to move fast, stay agile, and build reliable systems in today’s cloud-first world.
+
+If you're not using containers yet, you're leaving speed, consistency, and innovation on the table.
+
+# 🔗 Want to Go Deeper?
+
+📘 Learn Docker: [https://docker.com/get-started]()  
+📘 Kubernetes basics: [https://kubernetes.io/docs/home/]()  
+📘 Free labs & practice: [https://play-with-docker.com](https://play-with-docker.com)
+
+# ✨ Bonus: Quick SEO FAQ
+
+**Q: What is a container in simple terms?**  
+A: It's a portable unit that packages your app and its dependencies to run consistently on any system.
+
+**Q: How are containers different from virtual machines?**  
+A: Containers share the host OS kernel and are faster and more lightweight than VMs.
+
+**Q: What are the benefits of containerization?**  
+A: Portability, speed, scalability, environment consistency, and cost efficiency.
+
+**Q: Is Docker the same as a container?**  
+A: Docker is a **tool** used to create and manage containers.",0,0,Any-Bed3846,2025-05-26 14:49:54,https://i.redd.it/bknupr13353f1.jpeg,0,False,False,False,False

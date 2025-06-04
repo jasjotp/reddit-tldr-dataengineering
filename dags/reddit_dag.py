@@ -51,7 +51,7 @@ upload_to_s3 = PythonOperator(
     dag = dag
 )
 
-# grab the updated data from the s3 bucket daily and conduct cleaning and feature engineering through rubbing the get_combined_data.py file 
+# grab the updated data from the s3 bucket daily and conduct cleaning and feature engineering through grabbing the get_combined_data.py file 
 combine_and_clean_data = PythonOperator(
     task_id = 'combine_and_clean_data',
     python_callable = get_combined_data,

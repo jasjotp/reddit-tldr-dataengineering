@@ -1,0 +1,202 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1k7gyr5,Woken up by a mystery incident caused by an untracked SQL fix? 🌝 Hope you haven't been there ...,,198,8,Adela_freedom,2025-04-25 09:45:12,https://i.redd.it/zt5n3lcjcywe1.png,0,False,False,False,False
+1k7lp9q,Best approach for reading partitioned Parquet data: Python (Pandas/Polars) vs AWS Athena?,"I’m working with ~500GB of partitioned Parquet files stored in S3. The data is primarily used for ML model training and evaluation — I rarely read the full dataset, mostly filtered subsets based on partitions.
+
+I’m evaluating two options:
+	1.	Python (Pandas/Polars) — reading directly from S3 using tools like s3fs, pyarrow.dataset, etc., running on either local machine or SageMaker.
+	2.	AWS Athena — creating external tables over the same partitioned Parquet files and querying using SQL.
+
+What I care about:
+	•	Cost-effectiveness — Athena charges per TB scanned; Python reads would run on local/SageMaker.
+	•	Performance — especially for slicing subsets and preparing data for ML pipelines.
+	•	Flexibility — need to do transformations (feature engineering, filtering, joins) before passing to ML models.
+
+Which approach would you recommend for this kind of workflow?",20,18,ExcitingAd7292,2025-04-25 14:02:06,https://www.reddit.com/r/dataengineering/comments/1k7lp9q/best_approach_for_reading_partitioned_parquet/,0,False,False,False,False
+1k7f8a6,"🌭 This Not Hot Dog App runs entirely in Snowflake ❄️ and takes fewer than 30 lines of code, thanks to the new Cortex Complete Multimodal and Streamlit-in-Snowflake (SiS) support for camera input.","Hi, once the new Cortex Multimodal possibility came out, I realized that I can finally create the Not-A-Hot-Dog -app using purely Snowflake tools.
+
+The code is only 30 lines and needs only SQL statements to create the STAGE to store images taken my Streamlit camera -app: ->
+
+[https://www.recordlydata.com/blog/not-a-hot-dog-in-snowflake](https://www.recordlydata.com/blog/not-a-hot-dog-in-snowflake)",13,0,Recordly_MHeino,2025-04-25 07:39:15,https://v.redd.it/2fsywnf4qxwe1,0,False,False,False,False
+1k7cj7i,How Do You Track Column-Level Lineage Between dbt/SQLMesh and Power BI (with Snowflake)?,"Hey all,
+
+I’m using Snowflake for our data warehouse and just recently got our team set up with Git/source control. Now we’re looking to roll out either dbt or SQLMesh for transformations (I've been able to sell the team on its value as it's something I've seen work very well in another company I worked at).
+
+One of the biggest unknowns (and requirements the team has) is tracking column-level lineage across dbt/SQLMesh and Power BI.
+
+Essentially, I want to find a way to use a DAG (and/or testing on a pipeline) to track dependencies so that we can assess how upstream database changes might impact reports in Power BI.
+
+For example: if an employee opens a pull/merge request in GIT to modify TABLE X (change/delete a column), running a command like 'dbt run' (crude example, I know) would build everything downstream and trigger a warning that the column they removed/changed is used in a Power BI report.
+
+Important: it has to be at a column level. Model level is good to start but we'll need both.
+
+Has anyone found good ways to manage this?
+
+I'd love to hear about any tools, workflows, or best practices that are relevant.
+
+Thanks!",14,9,analytical_dream,2025-04-25 04:39:42,https://www.reddit.com/r/dataengineering/comments/1k7cj7i/how_do_you_track_columnlevel_lineage_between/,0,False,False,False,False
+1k7803a,How to prepare for first day as DE?,"Little background about myself; I have been working as full stack developer hybrid, decided to move to UK for MSc in Data Science. I’ve worked in a startup so I know my way around learning new things quick. Pretty good at Django, SQL, Python(Please don’t say Django is Python, it’s not). The company I have joined is focused on travel, and are onboarding a data team.
+
+They have told me they aren’t expecting me to create wonders but grow myself into it. The head of data is an awesome person, and was impressed the amount of knowledge I knew.
+
+Now you are wondering why am I asking this question? Basically, I want to make sure I can secure a visa sponsorship and want to work hard, learn as much as possible. I have moved country to get this job and want to settle over here. 
+
+
+",12,14,FuzzyCraft68,2025-04-25 00:37:39,https://www.reddit.com/r/dataengineering/comments/1k7803a/how_to_prepare_for_first_day_as_de/,0,False,False,False,False
+1k7f6gx,Data Architect podcast episode for systems integration and data solutions in payments and fintech,"
+
+The previous days we recorded a podcast episode with an ex-colleague of mine. 
+
+We dived into the details of Data Architect role and I think this is an interesting one with value for anyone who is interested in data engineering and data architecture. We discuss about data solutions, systems integration in the payments and fintech industry and other interesting stuff! Enjoy! 
+
+[https://open.spotify.com/episode/18NE120gcqOhaf5BdeRrfP?si=4V6o16dnSeKaUaL57sdVng](https://open.spotify.com/episode/18NE120gcqOhaf5BdeRrfP?si=4V6o16dnSeKaUaL57sdVng)",12,3,thisisallfolks,2025-04-25 07:35:33,https://www.reddit.com/r/dataengineering/comments/1k7f6gx/data_architect_podcast_episode_for_systems/,0,False,False,False,False
+1k7elgr,GitHub - patricktrainer/duckdb-doom: A Doom-like game using DuckDB,,12,0,cromulent_express,2025-04-25 06:53:44,https://github.com/patricktrainer/duckdb-doom,1,False,False,False,False
+1k7n4uc,How do you guys deal with unexpected datatypes in ETL processes?,"I tend to code my own ETL processes in Python, but it's a pretty frustrating process because, when you make an API call, literally anything can come through.
+
+What do you guys do to make foolproof ETL scripts?
+
+My edge case:
+
+Today, an ETL process that has successfully imported thousands or rows of data without issue got tripped up on this line:
+
+    new_entry['utm_medium'] = tracking_code.get('c_src', '').lower() or ''
+
+I guess, this time, ""c\_src"" was present in the data, but it was explicitly set to ""None"" so, instead of returning '', it just crashed the whole function.
+
+Which is fine, and I can update my logic to deal with that, so I'm not looking for help with this specific issue. I'm just curious what approaches other people take to avoid this when literally anything imaginable could come in with an ETL process and, if it's not what you're expecting, it could just stop the whole process.",12,20,takenorinvalid,2025-04-25 15:02:20,https://www.reddit.com/r/dataengineering/comments/1k7n4uc/how_do_you_guys_deal_with_unexpected_datatypes_in/,0,False,False,False,False
+1k7ml97,How does real world Acceptance criteria look like,I am a aspiring Data Engineer currently doing personal projects. I just wanna know how Acceptance criteria of a User story in Data Engineering look like.,5,5,Mountain-Disk-1093,2025-04-25 14:39:35,https://www.reddit.com/r/dataengineering/comments/1k7ml97/how_does_real_world_acceptance_criteria_look_like/,0,False,False,False,False
+1k7elh2,Built a tool to collapse the CSV → analysis → shareable app pipeline into a single step,"My usual flow looked like:
+
+1. Load CSV in a notebook
+2. Write boilerplate to clean/inspect
+3. Switch to another tool (or hack together Plotly) to visualize
+4. Manually handle app hosting or sharing
+5. Repeat for every new dataset
+
+This reduces that to a chat interface + a real-time execution engine. Everything is transparent. no black box stuff. You see the code, own it, modify it 
+
+  
+btw if youre interested in trying some of the experimental features we're building, shoot me a DM. Always looking for feedback from folks who actually work with data day-to-day [https://app.preswald.com/](https://app.preswald.com/)
+
+https://reddit.com/link/1k7elh2/video/y3mb2s4bhxwe1/player
+
+  
+",5,1,Signal-Indication859,2025-04-25 06:53:46,https://www.reddit.com/r/dataengineering/comments/1k7elh2/built_a_tool_to_collapse_the_csv_analysis/,0,False,False,False,False
+1k7tufo,"Superset with DuckDb, in place of Redis?",Have anybody try to use DuckDB as Superset cache in place of Redis? It's persistent mode looks like it can be small analytics database. But know sure if it's possible at all.,5,5,schi854,2025-04-25 19:38:53,https://www.reddit.com/r/dataengineering/comments/1k7tufo/superset_with_duckdb_in_place_of_redis/,0,False,2025-04-25 21:32:37,False,False
+1k7iktu,Eliminating Redundant Computations in Query Plans with Automatic CTE Detection,"One of the silent killers of query performance in complex analytical workloads is redundant computation, especially when the same subquery or expression gets evaluated multiple times in a single query plan.
+
+We recently tackled this at e6data by introducing Automatic CTE Detection inside our query planner. Our core idea? Detect repeated expressions or subplans in the logical plan, factor them into common table expressions (CTEs), and reuse the computed result.
+
+Click the link to read our full blog. ",5,0,e6data,2025-04-25 11:27:53,https://www.e6data.com/blog/eliminating-redundant-computations-query-plans-automatic-cte-detection,0,False,False,False,False
+1k7uyl1,Looking at Soda/Soda Core for data quality - not much discussion?,"I'm looking for a good quality suite and stumbled on Soda recently, but I don't see much discussion here, which I find weird. Anyone here using it, or abandoned it?",2,0,Melodic_One4333,2025-04-25 20:26:28,https://www.reddit.com/r/dataengineering/comments/1k7uyl1/looking_at_sodasoda_core_for_data_quality_not/,0,False,False,False,False
+1k7yi4k,Career path into DE,"Hello everyone,
+
+I’m currently a 3rd-year university student at a relatively large, middle-of-the-road American university. I am switching into Data Science from engineering, and would like to become a data engineer or data scientist once I graduate. Right now I’ve had a part-time student data scientist position sponsored by my university for about a year working ~15 hours a week during the school year and ~25-30 hours a week during breaks. I haven’t had any internships, since I just switched into the Data Science major. I’m also considering taking a minor in statistics, and I want to set myself up for success in Data Engineering once I graduate. Given my situation, what advice would you offer? I’m not sure if a Master’s is useful in the field, or if a PhD is important. Are there majors which would make me better equipped for the field, and how can I set myself up best to get an internship for Summer 2026? My current workplace has told me frequently that I would likely have a full-time offer waiting when I graduate if I’m interested. 
+
+
+
+Thank you for any advice you have.",2,1,farquaadscumsock,2025-04-25 23:03:27,https://www.reddit.com/r/dataengineering/comments/1k7yi4k/career_path_into_de/,1,False,False,False,False
+1k7tvq0,DWH - Migration to Cloud - Steps,"If your current setup involves an DWH on-prem (ETL Tool and Database) and you are planning to migrate it in cloud, is it 'mandatory' to migrate the ETL Tool and the Database at the same time or is it - regarding expenses - even.
+From what factory does it depend on? 
+
+Thx!",2,4,Long-Tell-3304,2025-04-25 19:40:18,https://www.reddit.com/r/dataengineering/comments/1k7tvq0/dwh_migration_to_cloud_steps/,0,False,False,False,False
+1k7k8ig,Fabric Schema Level Security Roles,"I'm currently trying to set up Schema level security inside fabric tied to a users Entra ID.
+
+I'm using the following SQL code to create a role. Grant this role view and select permissions to a schema in the warehouse. I then add a user to this role by adding their company email to the role. 
+
+  
+CREATE ROLE schema\_limited\_reader;
+
+GO
+
+  
+GRANT CONNECT TO schema\_limited\_reader
+
+GO
+
+  
+GRANT SELECT
+
+ON SCHEMA::Schema01
+
+TO schema\_limited\_reader
+
+GRANT VIEW
+
+ON SCHEMA::Schema01
+
+TO schema\_limited\_reader
+
+  
+ALTER ROLE schema\_limited\_reader ADD MEMBER \[test\_user@company.com\]
+
+
+
+However, when the test user connects to the workspace through powerBI, they can still view and select from all the schemas in the warehouse. I know im missing something. First time working with Fabric. The test user has admin privilages at the top Fabric level, could this be overriding the security role function?
+
+  
+Would appreciate any advice. Thank you.",2,0,MephistosOffer,2025-04-25 12:55:19,https://www.reddit.com/r/dataengineering/comments/1k7k8ig/fabric_schema_level_security_roles/,0,False,False,False,False
+1k7jrjr,HIPAA compliance and Data Engineering,"Hello, I am looking for some feedback on how other organizations handle PII and PHI access for software devs and data engineers. I feel like my company's practices are very sloppy and I am the only one that cares. We dont have good environment separation as many DE's do dev in a single snowflake account that is pointed at production AWS where there is PII and PHI. The level of access is concerning to me not only for leakage, but this goes against the best practices for development that I've always known. I've started an initiative to build separate dev,stage, prod accounts with masked data in the lower environments, but this always gets put on the back burner for urgent client asks. Looking for a sanity check as I wonder, at times, if I am overthinking it. I would love to know how others have dealt with access to production data. Do your DE's work in a separate cloud account or separate set of servers? Is PII/PHI allowed in the environments where dev work is being done?",2,3,nsq116,2025-04-25 12:32:04,https://www.reddit.com/r/dataengineering/comments/1k7jrjr/hipaa_compliance_and_data_engineering/,0,False,2025-04-25 13:09:52,False,False
+1k7wknk,Thoughts on keeping source ids in unified dimensions,"I have a provider and customer dimensions, the ids for these dimensions were created through a mapping table, however each provider or customer can have multiple ids per source or across sources so including these “source ids” into my final dimensions would kinda deflect the purpose of the deduplication and mapping done previously. Do you guys think it’s necessary to include these ids for a basic sales analysis?",1,4,Macandcheeseilf,2025-04-25 21:35:02,https://www.reddit.com/r/dataengineering/comments/1k7wknk/thoughts_on_keeping_source_ids_in_unified/,1,False,False,False,False
+1k7t4tt,Vector Database and how they can help you?,,1,0,Dilocan,2025-04-25 19:08:43,https://dilovan.substack.com/p/vector-database-and-how-they-can,0,False,False,False,False
+1k7nb1b,Optimizing a Debezium Mongo source connector,"Hey all!I hope everyone here is doing great.I'm running some performance benchmarks for the Mongo connector and comparing it against another tool that I'm already using. Given my limited experience with Debezium's Mongo connector, I thought I'd ask for some ideas around tuning it.:)
+
+The test is set up so that Kafka Connect, Mongo and Kafka are run as containers. Once a connector (or generally a pipeline) is created, the Kafka destination topic is monitored for throughput. This particular test focuses on CDC (there's another one for snapshots) and is using Kafka Connect 7.8 and Mongo connector 3.1.
+
+I went through all the properties in the Mongo connector and tuned those that I thought made sense tuning. Those are:
+
+  
+`""key.converter.schemas.enable"": false,`  
+`""value.converter.schemas.enable"": false,`  
+  
+`""key.converter"": ""org.apache.kafka.connect.json.JsonConverter"",`  
+`""value.converter"": ""org.apache.kafka.connect.json.JsonConverter"",`  
+  
+`""max.batch.size"": 64000,`  
+`""max.queue.size"": 128000,`
+
+`""producer.override.batch.size"": 1000000`
+
+The full configuration can be found [here](https://github.com/ConduitIO/streaming-benchmarks/blob/df8dc6f5dc05a48eb15ee3e9518d2080cf90210e/benchmarks/mongo-kafka-cdc/kafka-connect-dbz/data/connector.json).
+
+Additionally I've set the Kafka Connect worker's heap to 10 GB. The whole test is run on EC2 (on an instance with 8 vCPUs and 32 GiB of memory).
+
+Any comments on whether this makes sense or how to tune it even more are greatly appreciated.:)  
+  
+Thanks!",1,0,hosmanagic,2025-04-25 15:09:27,https://www.reddit.com/r/dataengineering/comments/1k7nb1b/optimizing_a_debezium_mongo_source_connector/,0,False,False,False,False
+1k7hxii,Delta Load Into an Enrichment Layer,"Hello!   
+  
+I have a bit challenging question about how to design a datapipeline. 
+
+I use databricks to handle the movement and transformation from schema to schema (layer). I use a raw schema where table resides with standard columns such as business\_valid\_from, business\_valid\_to, and for bi-temporality these tables also have applied\_valid\_from and applied\_valid\_to.
+
+I am about to extract data from these raw tables into my enrichment layer where I wish to join and transform 2 or more tables into 1 table.
+
+I only wish to extract the last changed data from the raw vault (delta load) since last extract (timestamp determined either by the max date in encrichment table or the last runtime in a metadata table). 
+
+What I find difficult is fx if I have 2 tables (table\_a and table\_b) that I need to extract new data from. Then I need to ensure that if table\_a has a changed row from 1 week ago and table\_b does does not have changed row from 1 week ago - then I will get rows from table\_a but none from table\_b and when I join these two tables then table\_a will not get any data from table\_b (either null or no rows if I use inner join).
+
+How can I ensure that if table\_a has updated/changed rows  from some time back then I will also could find these 'joinable' rows in table\_b even if these rows has not been updated?
+
+(extra note on this)  
+Before anyone says that I need to delta load each table separately and deterimine what business dates that will be needed for all tables - then please know I have already done that. That solution is not great because there is always some row that has been updated, and that row has a business\_valid\_from long ago fx 2012. This would result in a long list of business days that will be needed for all table - and then it defeats the purpose of the delta load.
+
+Thanks!",1,1,Additional_Pea412,2025-04-25 10:49:09,https://www.reddit.com/r/dataengineering/comments/1k7hxii/delta_load_into_an_enrichment_layer/,0,False,False,False,False
+1k7yq0d,Coalesce.io vs dbt,"My company is considering Coalesce.io and dbt. I used dbt at my last job and loved it, so I'm already biased. I haven't tried Coalesce yet. Anybody tried both? 
+
+I'd like to know how well coalesce does version control - can I see at a glance how transformations changed between one version and the next? Or all the changes I'm committing?
+",0,3,poopybaaara,2025-04-25 23:14:13,https://www.reddit.com/r/dataengineering/comments/1k7yq0d/coalesceio_vs_dbt/,0,False,False,False,False
+1k7mvvt,IICS Parent and Sub Orgs Resource Contetion,"In IICS, will I see cloud resource contention if I have all of my development env's (Dev,QA,SIT,PRE) in the same Prod Org as Sub Orgs? Is it best practice to have development envirioments outside of the Prod Org as a seperate Org?",0,1,Electrical_Cup_3000,2025-04-25 14:52:02,https://www.reddit.com/r/dataengineering/comments/1k7mvvt/iics_parent_and_sub_orgs_resource_contetion/,0,False,False,False,False
+1k7n9a6,Help Improve IT Automation Tools (10 Min Survey),"**Calling IT pros who manage workflows and scheduling**
+
+I’m a UX researcher working on better solutions for IT teams.
+
+If you manage complex workflows at a mid-sized company — or are part of a smaller IT team inside a big company — we’d love your input!
+
+It’s just a **10-minute survey** that will be sent out
+
+➡️ DM me your email if you’re in  
+  
+**Thank you!**
+
+*(We will use your email to send you the survey link and to send our privacy notice. Your email will not be used in marketing efforts in any way and you may wish to remove your email and information from our database at any time.)*",0,0,AsleepMarionberry665,2025-04-25 15:07:25,https://www.reddit.com/r/dataengineering/comments/1k7n9a6/help_improve_it_automation_tools_10_min_survey/,0,False,False,False,False
+1k7rhjo,Can AI replace data professionals yet?,I recently came across a NeurIPS paper that created benchmark for AI models trying to mimic data engineering/analytics work. The results show that the AI models are not there yet (14% success rate) and maybe will need some more time. Let me know what you guys think.,0,10,GuitaristHappy1703,2025-04-25 18:00:56,https://medium.com/@prashant.tandan528/how-far-till-an-ai-replaces-data-scientists-and-engineers-c4efe8c508f7,0,False,False,False,False

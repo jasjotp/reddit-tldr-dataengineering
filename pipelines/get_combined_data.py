@@ -12,6 +12,12 @@ from datetime import datetime
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.constants import aws_access_key, aws_secret_access_key, aws_bucket_name, aws_region
+from utils.s3_helpers import upload_to_s3
+
+# define current and output directory 
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_DIR = os.path.join(CURRENT_DIR, "../data/output")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def get_combined_data():
     '''
@@ -72,5 +78,11 @@ def get_combined_data():
     code_pattern = r'(?i)(```|^ {4,}|\t|def |class |import |SELECT |<div>|function|console\.log|var |let |const )'
     combined_df['has_code'] = combined_df['body'].str.contains(code_pattern, regex=True, flags=re.MULTILINE).astype(int)
 
-    # load the combined df with all recent day's data into s3 for use in different files 
-    s3.put_object(Bucket=aws_bucket_name, Key='processed/reddit_combined_data.csv', Body=combined_df.to_csv(index=False))
+    # save locally 
+    local_path = os.path.join(OUTPUT_DIR, 'reddit_combined_data.csv')
+    combined_df.to_csv(local_path, index = False)
+
+    # upload the combined df csv to S3
+    upload_to_s3(local_path, 'processed')
+    
+    print(f"Uploaded cleaned combined data to S3 and saved to: {local_path}")

@@ -1,0 +1,132 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1ku1s5h,DevOps knowledge as a DE,All senior DEs with 10-15 YOE can guide how much devOps should the DEs should know and if we learn Devops what are the benefits plus career path we can have down the line . ,46,23,Gohan_24,2025-05-24 03:06:16,https://www.reddit.com/r/dataengineering/comments/1ku1s5h/devops_knowledge_as_a_de/,0,False,False,False,False
+1kuajtp,"Reflecting on your journey, what is something you wish you had when you started as a Data Engineer?","I’m trying to better understand the key learnings that only come with experience.
+
+Whether it’s a technical skill, a mindset shift, a lesson or any relatable piece of knowledge, I’d love to hear what you wish you had known early on.",36,32,georchry_,2025-05-24 12:33:34,https://www.reddit.com/r/dataengineering/comments/1kuajtp/reflecting_on_your_journey_what_is_something_you/,0,False,False,False,False
+1kuajtf,Data Engineer or AI/ML Engineer - which role has the brighter future?,"Hi All!  
+
+I was looking for some advice.  I want to make a career switch and move into a new role.  I am torn between **AI/ML Engineer** and **Data Engineer.**
+
+I read recently that out of those two roles, DE might be the more 'future-proofed' role as it is less likely to be automated.  Whereas with the AI/ML Engineer role, with AutoML and foundation models reducing the need for building models from scratch, and many companies opting to use pretrained models rather than build custom ones, the AI/ML Engineer role might start to be at risk.
+
+What do people think about the future of these two roles, in terms of demand and being ""future-proofed""?  Would you say one is ""safer"" than the other?",10,29,Different-Earth4080,2025-05-24 12:33:33,https://www.reddit.com/r/dataengineering/comments/1kuajtf/data_engineer_or_aiml_engineer_which_role_has_the/,0,False,False,False,False
+1ku636f,How We Solved the Only 10 Jobs at a Time Problem in Databricks – My First Medium Blog!,"really appreciate your support and feedback!
+
+In my current project as a Data Engineer, I faced a very real and tricky challenge — we had to schedule and run 50–100 Databricks jobs, but our cluster could only handle 10 jobs in parallel.
+
+Many people (even experienced ones) confuse the max_concurrent_runs setting in Databricks. So I shared:
+
+What it really means
+
+Our first approach using Task dependencies (and what didn’t work well)
+
+And finally…
+
+A smarter solution using Python and concurrency to run 100 jobs, 10 at a time
+
+
+The blog includes real use-case, mistakes we made, and even Python code to implement the solution!
+
+If you're working with Databricks, or just curious about parallelism, Python concurrency, or running jar files efficiently, this one is for you.
+Would love your feedback, reshares, or even a simple like to reach more learners!
+
+Let’s grow together, one real-world solution at a time",10,2,javabug78,2025-05-24 07:39:48,https://medium.com/@adarshyadav482/how-to-achieve-parallelism-in-databricks-jobs-tasks-hi-all-d847b4d5e84b,0,False,False,False,False
+1kuc0iu,Personal project: handle SFTP uploads and get clean API-ready data,"https://preview.redd.it/d3i71nv0kq2f1.jpg?width=3584&format=pjpg&auto=webp&s=25f84c3295ddb2b3ae06de97a0f28697c31073bd
+
+I built a tool called SftpSync that lets you spin up an SFTP server with a dedicated user in one click.  
+You can set how uploaded files should be processed, transformed, and validated — and then get the final result via API or webhook.
+
+Main features:
+
+* SFTP server with user access
+* File transformation and mapping
+* Schema validation
+* Webhook when processing is done
+* Clean output available via API
+
+Would love to hear what you think — do you see value in this? Would you try it?
+
+[sftpsync.io](http://sftpsync.io)",8,3,Neutronpr0,2025-05-24 13:47:01,https://www.reddit.com/r/dataengineering/comments/1kuc0iu/personal_project_handle_sftp_uploads_and_get/,0,False,2025-05-24 21:55:45,False,False
+1kuabfw,Which MSc would you recommend?,"Hi All.  I am looking to make the shift towards a career as a Data Engineer.
+
+To help me with this, I am looking to do a Masters Degree.  
+
+Out of the following, which MSc do you think would give me the best shot at finding a Data Engineering role?
+
+Option 1 - [https://www.napier.ac.uk/courses/msc-data-engineering-postgraduate-online-learning](https://www.napier.ac.uk/courses/msc-data-engineering-postgraduate-online-learning)  
+Option 2 - [https://www.stir.ac.uk/courses/pg-taught/big-data-online/?utm\_source=chatgpt.com#panel\_1\_2](https://www.stir.ac.uk/courses/pg-taught/big-data-online/?utm_source=chatgpt.com#panel_1_2)
+
+Thanks,  
+Matt",7,4,Different-Earth4080,2025-05-24 12:20:29,https://www.reddit.com/r/dataengineering/comments/1kuabfw/which_msc_would_you_recommend/,0,False,False,False,False
+1kulfzw,One big project that you interate on as you learn more or many smaller projects that will quickly go out of date as you learn more?,"Hey all, 
+
+I am working on a project right now, it was supossed to be culmination of everything I learnt so far. Applying stuff I learnt in courses 
+
+But as I've gone through the project I've gone through writing the code but I keep on bumping into things that'll improve my project e.g. Threading, Spark, Great Expectations, maybe FastAPI for a front end? 
+
+Not to mention that in order to use a tool you intend to you have to learn something else, which means learning another thing, which means watching a video and down the rabbit hole you go. An example for me was having to learn Docker in order get Airflow working properly. 
+
+I plan on finishing the project but adding on bits and pieces as I go on. However this will mean I won't be applying my skills on a diverse range of use cases. 
+
+My goal is to kick-start a DE career in the distant future. 
+
+So I was wondering what is the best approach? Iteration or finalisation?",5,1,godz_ares,2025-05-24 20:47:44,https://www.reddit.com/r/dataengineering/comments/1kulfzw/one_big_project_that_you_interate_on_as_you_learn/,0,False,False,False,False
+1ktxryz,Starting from scratch with automation,"Hello, 
+
+I am not really a dataengineer but after looking at what I'm going to be working on I may be one soon. 
+
+  
+Ok to start with the project, I work for a clinical research company and we currently are pulling reports manually and working with them in excel (occasionally making visualizaitons).  We pull from two sources, one we own but can't access (we could probably ask but we want a proof of concept first) but the other source we can use their API to access our data on their system.  
+
+I am looking for open-source (free) programs I can use to take the information given in the API break it into a full database (dataset tables) and keep in constantly updated in a gateway.  In this phase of the project I am more invested in being able to do an API call and automatically pulling the data to set it into the appropriate schema. 
+
+I have a really good understanding of dataset creation put I am new to the scripting an API side.  
+
+I don't really know what else to add but if you have any follow up questions please comment. 
+
+  
+I appreciate any help or advice you can give me. (I will be using our lord and savior youtube to learn as much as I can about whatever you suggest). ",5,6,bmiller201,2025-05-23 23:32:35,https://www.reddit.com/r/dataengineering/comments/1ktxryz/starting_from_scratch_with_automation/,1,False,False,False,False
+1ktzcgu,Airflow +dbt w/docker container,"Company has the setup in the title. Why would our data engineering team use amundsen for documentation  and another program that’s tied to a Google sheet (the name which escapes me) and not just use dbt documentation and tests? Especially with the dbt power user VS Code extension? Am I missing something? I asked around and folks can only say “it is what it is.” It’s frustrating too at times when I can’t even run dbt commands because docker doesn’t like to play nice with my mandated vpn. 
+What’s the purpose of not using dbt to its fullest extent? 
+
+Edit: I meant dbt Power User for VS Code. Not dbt hero. ",4,2,pstrysloth,2025-05-24 00:53:03,https://www.reddit.com/r/dataengineering/comments/1ktzcgu/airflow_dbt_wdocker_container/,0,False,2025-05-24 13:10:36,False,False
+1kukx4f,MongoDB vs Cassandra vs ScyllaDB for highly concurrent chat application,"We are working on a chat application for enterprise (imagine Google Workspace chat or Slack kinda application - for desktop and mobile). Of course we are just getting started, so one might suggest choosing a barebone DB and some basic tools to launch the app, but anticipating traffic, we want to distill the best knowledge available out there and choose the best stack to build our product from the beginning.
+
+For our chat application, where all typical user behaviors are there - messages, spaces, ""last seen"" or ""active"" statuses, message notifications, read receipts, etc. we need to choose a database to store all our chats. We also want to enable chat searches, and since search will inevitably lead to random chats, we want that perf to be consistently excellent.
+
+We are planning to use Django (with channels) as our backend. What database is recommended to use with Django to persist the messages? I read that Discord used to use Cassandra, but then it started acting up due to garbage collection, so they switched rto Scylla, and they are very happy with trillions of messages on it. Is ScyllDB a good candidate for our purpose to use with Django? Do these two work together well? Can MongoDB do it (my preferred choice, but I read that it starts acting up with high number of reads or writes at the same time - which would be a basic use case for enterprise chat scenario)?",4,6,Attitudemonger,2025-05-24 20:23:28,https://www.reddit.com/r/dataengineering/comments/1kukx4f/mongodb_vs_cassandra_vs_scylladb_for_highly/,0,False,False,False,False
+1ku7p9e,How to handle polygons?,"Hi everyone, 
+
+I’m trying to build a Streamlit app that, among other things, uses polygons to highlight areas on a map. My plan was to store them in BigQuery and pull them from there. However, the whole table is 1GB, with one entry per polygon, and there’s no way to cluster it.
+
+This means that every time I pull a single entry, BigQuery scans the entire table. I thought about loading them into memory and selecting from there, but it feels like a duct-taped solution.
+
+Anyway, this is my first time dealing with this format, and I’m not a data engineer by trade, so I might be missing something really obvious. I thought I’d ask.
+
+Cheers :)",1,7,Emergency-Agreeable,2025-05-24 09:34:40,https://www.reddit.com/r/dataengineering/comments/1ku7p9e/how_to_handle_polygons/,0,False,False,False,False
+1ku5cp6,Help! Ideas! Suggestion!,"Hi, I am about to finish my masters in data science from a tier 2 university in UK.
+
+Ideas for Projects (Final Sem):
+
+⦁	Forecasting Hospital Bed Demand Using Public Health and Seasonal Illness Data
+
+⦁	NHS Chatbot: AI-Powered Symptom Triage and Health Information System
+
+⦁	Early Detection of Respiratory Illness Patterns Using Urban Air Quality and Emergency Hospital Visit Data
+
+⦁	Predictive Maintenance for Wind Turbines Using IoT Sensor Data  
+
+⦁	Predicting Road Surface Deterioration Using Weather and Traffic Data
+
+⦁	Traffic Sign Recognition: Real-Time Detection and Classification for Autonomous Vehicles 
+
+⦁	Optimizing Urban Heat Island (UHI) Mitigation Using Remote Sensing, Land Use, and Energy Consumption Data 
+
+⦁	British Sign Language (BSL) Recognition: Real-Time Gesture-to-Text Translation
+
+⦁	Predictive Structural Health Monitoring of Bridges Using IoT Sensor Data
+
+These are the ideas I came up with to do my final project on, can anyone suggest if they are actually doable or not, and will they hold relevance when it comes to making your CV good for the job?? Yeah, which one should I choose??",1,0,kilo4_sierra,2025-05-24 06:48:41,https://www.reddit.com/r/dataengineering/comments/1ku5cp6/help_ideas_suggestion/,0,False,False,False,False
+1kuchh5,Handling double reported values.,"I'm currently learning data analyzing and I'm playing around with a covid-19 vaccination dataset that has been purposefully modified to have errors I'm to find and take care of.
+
+The dataset has these type of coulmns: Country, FirstDose, SecondDose, DoseAdditional1-5(Seperate for each), TargetGroup and the type of vaccine. Each row is a report from a country for a specific week.  there are multiple entries from the same country on the same week since Targetgroup and vaccine change. My biggest problem when trying to clean the data is the TargetGroup column as it has quite a lot of different values such as ALL(18+), Age<18, HCW, LTCF, Age0\_4, Age5\_9, Age10\_14, Age15\_17 and some others. The thing is different countries use different groups when reporting their values so one country might use the ""ALL"" value for their adults, others use the seperate age groups AND the  ALL, others don't use all at all and when trying to get the total doses administired from a country I get double reported ones for some and when try to take care of it by making logic for what targetgroups to add I instead get underreported values.",0,1,Some-Yam4056,2025-05-24 14:08:35,https://www.reddit.com/r/dataengineering/comments/1kuchh5/handling_double_reported_values/,0,False,False,False,False

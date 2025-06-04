@@ -3,9 +3,23 @@ import numpy as np
 import sklearn 
 import io 
 import os 
+import sys 
 
-# read in the csv to get each cluster's features 
-cluster_insights_df = pd.read_csv(r'C:\Users\Jasjot Parmar\Airflow-Docker\reddit_pipeline_project\data\output\cluster_engagement_insights.csv')
+# add root directory of project to Python's import path so we can import modules from older folders
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-print(cluster_insights_df.head())
+from utils.constants import aws_access_key, aws_secret_access_key, aws_bucket_name, aws_region
+from utils.s3_helpers import load_latest_data_from_s3
+
+# read the updated combined data using the load_combined_data heper function from utils to get the updated (daily) data
+combined_df = load_latest_data_from_s3(
+    aws_access_key, 
+    aws_secret_access_key, 
+    aws_region, 
+    aws_bucket_name, 
+    prefix = 'processed',
+    keyword = 'post_engagement_insights'
+)
+
+print(combined_df.head())
 

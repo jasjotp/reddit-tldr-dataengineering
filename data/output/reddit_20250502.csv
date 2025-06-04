@@ -1,0 +1,189 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1kc2mff,Guess skills are not transferable,"Found this on LinkedIn posted by a recruiter. It’s pretty bad if they filter out based on these criteria. It sounds to me like “I’m looking for someone to drive a Toyota but you’ve only driven Honda!”
+
+In a field like DE where the tech stack keeps evolving pretty fast I find this pretty surprising that recruiters are getting such instructions from the hiring manager! 
+
+Have you seen your company differentiate based just on stack? ",613,124,vitocomido,2025-05-01 07:04:03,https://i.redd.it/p8t4uyicd4ye1.jpeg,0,False,False,False,False
+1kc7n6p,"Data governance, is it still worth learning it in 2025?","What are the current trends now? I hadn't heard a lot of data governance lately, is this business still growing and in demand? Someone please share news :)",45,38,Astherol,2025-05-01 12:35:49,https://www.reddit.com/r/dataengineering/comments/1kc7n6p/data_governance_is_it_still_worth_learning_it_in/,0,False,False,False,False
+1kc5giw,Goodbye PyDeequ: A new take on data quality in Spark,"Hey folks,  
+I’ve worked with Spark for years and tried using PyDeequ for data quality — but ran into too many blockers:
+
+* No row-level visibility
+* No custom checks
+* Clunky config
+* Little community activity
+
+So I built **🚀 SparkDQ** — a lightweight, plugin-ready DQ framework for PySpark with Python-native and declarative config (YAML, JSON, etc.).
+
+Still early stage, but already offers:
+
+* Row + aggregate checks
+* Fail-fast or quarantine logic
+* Custom check support
+* Zero bloat (just PySpark + Pydantic)
+
+If you're working with Spark and care about data quality, I’d love your thoughts:
+
+⭐ [GitHub – SparkDQ](https://github.com/sparkdq-community/sparkdq)  
+✍️ [Medium: Why I moved beyond PyDeequ](https://medium.com/@marcel.kennert/goodbye-pydeequ-time-to-upgrade-your-data-quality-stack-d86fe9cdc5be)
+
+Any feedback, ideas, or stars are much appreciated. Cheers!",23,9,GeneBackground4270,2025-05-01 10:30:06,https://www.reddit.com/r/dataengineering/comments/1kc5giw/goodbye_pydeequ_a_new_take_on_data_quality_in/,0,False,False,False,False
+1kc9yjd,2 questions,"I am currently pursuing my master's in computer science and I have no idea how do I get in DE... I am already following a 'roadmap' (I am done with python basics, sql basics, etl/elt concepts) from one of those how to become a de videos you find in YouTube as well as taking a pyspark course in udemy.... 
+I am like a new born in de and I still have no confidence if what am doing is the right thing.
+Well I came across this post on reddit and now I am curious... How do you stand out? Like what do you put in your cv to stand out as an entry level data engineer. What kind of projects are people expecting?
+There was this other post on reddit that said ""there's no such thing as entry level in data engineering"" if that's the case how do I navigate and be successful between people who have years and years of experience? This is so overwhelming 😭",24,32,sabziwala1,2025-05-01 14:22:20,https://i.redd.it/vogasdqjj6ye1.png,0,False,False,False,False
+1kcdfg2,Does it make sense to use DuckDB just as a pandas replacement?,"I was planning to move my pipeline's processing code from pandas to polars, but then I found out about duckdb and that some people are using it just as a faster data processing library. But my question is, does this make sense? Or would I be better off just switching to polars? What are the tradeoffs here?
+
+Edit: important info I forgot to include. This is in a small org setting, where the current data pipeline is: data ingested from a pg database amd csv/parquet files, orchestration with dagster and most processing with pandas, processed data loaded to database",20,19,diogene01,2025-05-01 16:45:52,https://www.reddit.com/r/dataengineering/comments/1kcdfg2/does_it_make_sense_to_use_duckdb_just_as_a_pandas/,0,False,2025-05-01 16:51:14,False,False
+1kc4y0x,Am I missing something?,"I work as Data Engineer in manufacturing company. I deal with databricks on Azure + SAP Datasphere. Big data? I don't thinks so, 10 GB most of the times loaded once per day, mostly focusing on easy maintenance/reliability of pipeline. Data mostly ends up as OLAP / reporting data in BI for finance / sales / C level suite.
+Could you let me know what dangers you see for my position? I feel like not working with streaming / extremely hard real time pipelines makes me less competitive on job market in the long run. 
+Any words of wisdom guys?",16,14,Astherol,2025-05-01 09:55:46,https://www.reddit.com/r/dataengineering/comments/1kc4y0x/am_i_missing_something/,0,False,False,False,False
+1kc432v,Large practice dataset,"Hi everyone, I was wondering if you know about a publicly available dataset large enough so that it can be used to practice spark and be able to appreciate the impact of optimised queries. I believe it is harder to tell in smaller datasets",10,8,dialar77,2025-05-01 08:53:22,https://www.reddit.com/r/dataengineering/comments/1kc432v/large_practice_dataset/,0,False,False,False,False
+1kcd6ul,"StatQL – live, approximate SQL for huge datasets and many tenants","I built StatQL after spending too many hours waiting for scripts to crawl hundreds of tenant databases in my last job (we had a db-per-tenant setup).
+
+With StatQL you write one SQL query, hit Enter, and see a first estimate in seconds—even if the data lives in dozens of Postgres DBs, a giant Redis keyspace, or a filesystem full of logs.
+
+What makes it tick:
+
+* A sampling loop keeps a fixed-size reservoir (say 1 M rows/keys/files) that’s refreshed continuously and evenly.
+* An aggregation loop reruns your SQL on that reservoir, streaming back value ± 95 % error bars.
+* As more data gets scanned by the first loop, the reservoir becomes more representative of entire population.
+* Wildcards like pg.?.?.?.orders or fs.?.entries let you fan a single query across clusters, schemas, or directory trees.
+
+Everything runs locally: `pip install statql` and `python -m statql` turns your laptop into the engine. Current connectors: PostgreSQL, Redis, filesystem—more coming soon.
+
+Solo side project, feedback welcome.
+
+[https://gitlab.com/liellahat/statql](https://gitlab.com/liellahat/statql)",8,1,greensss,2025-05-01 16:36:13,https://v.redd.it/9mknlmvd77ye1,0,False,False,False,False
+1kc2nwb,Using Vortex to accelerate Apache Iceberg queries up to 4x,,9,0,stuff_in_the_cloud,2025-05-01 07:06:59,https://spiraldb.com/post/vortex-on-ice,1,False,False,False,False
+1kcbp7q,Are there any good data platforms that have good built in project documentation?,"With all of the bells and whistles that these modern data platforms have I'd expect them all to have basic IDE style pop-up documentation tooltips when querying from a table or joining on another. I'm only really familiar with a handful of these platforms but even just selecting a column I normally have to go and dig up it's data type from some other interface, let alone getting any of the engineers' documentation on it.
+
+Snowflake for instance allows us to create `comments` pinned to tables, views, schemas , columns. The lot basically. Why are these comments so hidden to our users whilst they're actually writing the queries that make use of these tables, columns, etc?
+
+Our team goes to a decent amount of effort to build useful and readable documentation around each table but is it any use if the end users have to pull up the docs in a separate tab before they understand that they're using the wrong column for their joins?
+
+This feels like something that's not too hard to implement, I know having objects tagged with a comment or description is already a nice to have in the data world but surely we can do better? Please tell me that I've just been unlucky and most solutions do this cleanly out of the box. Is there a platform or at least some DBM software out there that's doing this that I'm just unaware of?",6,0,Shunder10,2025-05-01 15:34:58,https://www.reddit.com/r/dataengineering/comments/1kcbp7q/are_there_any_good_data_platforms_that_have_good/,0,False,2025-05-01 15:54:48,False,False
+1kcfjo6,Trying to build a full data pipeline - does this architecture make sense?,"Hello !
+
+I'm trying to practice building a full data pipeline from A to Z using the following architecture. I'm a beginner and tried to put together something that seems optimal using different technologies.
+
+Here's the flow I came up with:
+
+📍 Events → Kafka →  Spark Streaming →  AWS S3 → ❄️ Snowpipe →  Airflow → dbt → 📊 BI (Power BI)
+
+I have a few questions before diving in:
+
+* Does this architecture make sense overall?
+* Is using AWS S3 as a data lake feeding into Snowflake a common and solid approach? (From what I read, Snowflake seems more scalable and easier to work with than Redshift.)
+* Do you see anything that looks off or could be improved?
+
+Thanks a lot in advance for your feedback !",5,10,Zuzukxd,2025-05-01 18:12:45,https://www.reddit.com/r/dataengineering/comments/1kcfjo6/trying_to_build_a_full_data_pipeline_does_this/,0,False,False,False,False
+1kccbtp,Monthly General Discussion - May 2025,"This thread is a place where you can share things that might not warrant their own thread. It is automatically posted each month and you can find previous threads in the collection.
+
+Examples:
+
+* What are you working on this month?
+* What was something you accomplished?
+* What was something you learned recently?
+* What is something frustrating you currently?
+
+As always, sub rules apply. Please be respectful and stay curious.
+
+**Community Links:**
+
+* [Monthly newsletter](https://dataengineeringcommunity.substack.com/)
+* [Data Engineering Events](https://dataengineering.wiki/Community/Events)
+* [Data Engineering Meetups](https://dataengineering.wiki/Community/Meetups)
+* [Get involved in the community](https://dataengineering.wiki/Community/Get+Involved)",7,0,AutoModerator,2025-05-01 16:00:53,https://www.reddit.com/r/dataengineering/comments/1kccbtp/monthly_general_discussion_may_2025/,1,False,False,False,True
+1kc4i28,Need Help in finding resources for Apache Flink,"My manager told me that I might get a new project of building a data pipeline on real time data ingestion and processing using Apache Kafka, flink and snowflake. I am new to Flink, and I wanted to learn it, but I haven't found any good resource to learn flink",4,1,Practical-Emu-832,2025-05-01 09:23:45,https://www.reddit.com/r/dataengineering/comments/1kc4i28/need_help_in_finding_resources_for_apache_flink/,0,False,False,False,False
+1kcc50e,best ai model for polars?,"qwen and gpt 4 are pretty bad at polars. (i assume due to a paucity of training data?)
+
+what’s the best ai model for polars?
+
+two particular use cases in mind:
+- generating boilerplate code, which i then edit myself
+- suggesting ways to optimize/improve existing code
+
+thanks all!
+",4,6,BigCountry1227,2025-05-01 15:53:05,https://www.reddit.com/r/dataengineering/comments/1kcc50e/best_ai_model_for_polars/,0,False,False,False,False
+1kcbp2m,Convert bitemporal data to iceberg table preserving time travel?,"I have data that is stored bitemporally, with system start/end fields. Is there a way to migrate this to an iceberg table where the iceberg time travel functionality can be populated with the actual system times backdated? This way the time travel functionality will be useful, instead of all of the data being reflected at the migration date. ",3,1,Doug1of5,2025-05-01 15:34:47,https://www.reddit.com/r/dataengineering/comments/1kcbp2m/convert_bitemporal_data_to_iceberg_table/,0,False,False,False,False
+1kc9jd4,Just launched a course on building a simple AI agent with Llama + Flask – free at the moment,"Hey guys,
+
+I’ve just published my new Udemy course:  
+**“Building a Simple Data Analyst AI Agent with Llama and Flask”**
+
+It’s a hands-on beginner-friendly course where you learn:
+
+* Prompt engineering (ICL, CoT, ToT)
+* Running an open-source LLM locally (Llama)
+* Building a basic Flask app that uses AI to answer questions from a Postgres database (like a mini RAG system)
+
+It might be for you if you’re curious about LLMs, RAG and want to build something simple and real.
+
+Here’s a free coupon (limited seats):  
+👉 [https://www.udemy.com/course/building-a-simple-data-analyst-ai-agent-with-llama-and-flask/?couponCode=LAUNCH](https://www.udemy.com/course/building-a-simple-data-analyst-ai-agent-with-llama-and-flask/?couponCode=LAUNCH)
+
+Would love to hear your feedback. If you enjoy it, a 5-star review would help a lot 🙏  
+Thanks and happy building!",2,4,Kairo1004,2025-05-01 14:04:16,https://www.reddit.com/r/dataengineering/comments/1kc9jd4/just_launched_a_course_on_building_a_simple_ai/,0,False,False,False,False
+1kc6nud,Zero Temperature Randomness in LLMs,,3,0,Martynoas,2025-05-01 11:43:40,https://martynassubonis.substack.com/p/zero-temperature-randomness-in-llms,0,False,False,False,False
+1kc1fgx,dbt and Power BI's Semantic Layer,"I know that dbt announced a Power Bi Semantic Layer connector recently but I'm finding it hard to understand how this operates or how beneficial it might be in practice. I don't currently have a dbt project set up so I can't test it myself right now, but I'm curious to learn more as I might be suggesting either dbt or SQLMesh for a POC in my place of work.
+
+Are any of you actively using this connector?
+
+If so, can you let me know what it looks like in action? For example:
+
+- how did you configure your metrics?
+- are they shared across reports?
+- is this a feasible solution?
+- what works and what doesn't?
+
+Thanks.",3,0,analytical_dream,2025-05-01 05:41:52,https://www.reddit.com/r/dataengineering/comments/1kc1fgx/dbt_and_power_bis_semantic_layer/,0,False,False,False,False
+1kch15n,Advice on swapping companies in current market,"I’m currently a BI Engineer at a Fortune 50 subsidiary, where I’ve been for 1.5 years (previously a Data Analyst for 1.5 years). I just got an offer for a fully remote Data Engineering role at a 4,000-person healthcare intelligence company, paying $120K vs my current $92K. The new role aligns with the career path I’ve been aiming for since graduating, and everyone I interviewed with had been there for 5–10+ years with clear promotion paths. My current job is stable, low stress, and the team is great, but I feel like I’ve learned all I can. No one on my team has been promoted in years, even those with more tenure, so growth isn’t guaranteed. I’m just nervous about making a jump in today’s market, from what I’ve research the company has good reviews on Glassdoor as well as good financials from what I was able to gather but still would appreciate any advice from people who’ve made a similar move.",2,1,Ok_Substance_3605,2025-05-01 19:15:02,https://www.reddit.com/r/dataengineering/comments/1kch15n/advice_on_swapping_companies_in_current_market/,0,False,False,False,False
+1kch1l8,SQL Server with DBT snapshots,"I'm trying to set up snapshots on some tables with DBT and I'm having difficulty with the dbt\_valid\_to in my snapshots. It's always null. I assumed this is something to do with the syntax of the YML but no combination seems to produce the desired results of a set date like 9999-12-31.
+
+This is the YML in the snapshots folder. The project YML has no settings for the valid to. It's aways null.
+
+    version: 2
+    
+    snapshots:
+      - name: users_snapshot
+        config:
+          unique_key: user_id
+          strategy: check
+          check_cols: all
+          # dbt_valid_to_current: ""CAST('9999-12-31 23:59:59' AS datetime)""
+          # dbt_valid_to_current: ""CAST('9999-12-31' AS DATE)""
+          # dbt_valid_to_current: ""CAST('9999-12-31 23:59:59' AS datetime)""
+          dbt_valid_to_current: '2025-06-01'",2,0,Mike8219,2025-05-01 19:15:31,https://www.reddit.com/r/dataengineering/comments/1kch1l8/sql_server_with_dbt_snapshots/,0,False,False,False,False
+1kcg2mo,Partitioning JSON Is this a mistake?,"Guys, 
+
+My pipeline on airflow was blowing memory and failing. I decide to read files in batches (50k collections per batch - mongodb - using cursor) and the memory problem was solved. The problem is now one file has around 100 partitioned JSON. Is this a problem?  Is this not recommended? It’s working but I feel it’s wrong. lol 
+",2,14,ImportanceRelative82,2025-05-01 18:34:51,https://www.reddit.com/r/dataengineering/comments/1kcg2mo/partitioning_json_is_this_a_mistake/,0,False,False,False,False
+1kc9ohq,The Open Source Analytics Conference (OSACon) CFP is now officially open!,"Got something exciting to share?  
+The [Open Source Analytics Conference - OSACon 2025](https://osacon.io/) CFP is now officially open!  
+We're going online Nov 4–5, and we want YOU to be a part of it!  
+Submit your proposal and be a speaker at the leading event for open-source analytics:  
+[https://sessionize.com/osacon-2025/](https://sessionize.com/osacon-2025/)",1,0,Altinity_CristinaM,2025-05-01 14:10:16,https://www.reddit.com/r/dataengineering/comments/1kc9ohq/the_open_source_analytics_conference_osacon_cfp/,0,False,False,False,False
+1kc6nen,Shopify GraphQL Data Ingestion,"Hi everyone 
+
+Full disclosure. I’m a data engineer for 3 years and now I’m facing a challenge.
+Most of my prior needs were develop my pipeline using DBT and Fivetran as the data ingestion tool. But the company I’m working no longer approves the use of both tools and now I need to implement these two layers (ingestion and transformation) using GCP environment 
+The basic architecture of the application I have approved, it will be :
+- cloud Run generating csv. One per table/day
+- cloud composer calling sql files to run the transformations
+
+The difficult part (for me) is the Python development.
+This is my first actual python development, so I’m pretty new to this part, even having some theoretical knowledge of python concepts
+
+So far I was able to create a python app that
+- connect with Shopify session
+- runs a graphQL query 
+- generate a csv file
+- upload to a gcs bucket
+
+My current challenge is to implement a date filter into the graphQL query and creates one file for each day.
+
+Has anyone implemented something like this ?
+",0,1,SuccessRecent8762,2025-05-01 11:42:59,https://www.reddit.com/r/dataengineering/comments/1kc6nen/shopify_graphql_data_ingestion/,0,False,False,False,False
+1kc4h9h,I'm a beginner on a scale of 1 to 10 how much would you rate this project,,0,4,thetemporaryman,2025-05-01 09:22:13,https://github.com/sksj007/creditcard_fraud_detector.git,0,False,False,False,False
+1kc0t2e,"Do AI solutions help with understanding data engineering, or just automate tasks?","AI can automate tasks like pipeline creation and data transformation in data engineering, but it doesn’t always explain the reasoning behind design choices or best practices.",0,2,PuzzleheadedYou4992,2025-05-01 05:01:40,https://www.reddit.com/r/dataengineering/comments/1kc0t2e/do_ai_solutions_help_with_understanding_data/,0,False,False,False,False

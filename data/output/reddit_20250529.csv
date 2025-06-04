@@ -1,0 +1,412 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1kxdsgq,Duckberg - The rise of medium sized data.,"I've been playing around with duckdb + iceberg recently and I think it's got a huge amount of promise. Thought I'd do a short blog about it. 
+
+Happy to awnser any questions on the topic! ",76,23,sockdrawwisdom,2025-05-28 10:37:15,https://medium.com/@trew.josh/duckberg-e310d9541bf2,0,False,False,False,False
+1kxk70r,dbt Labs' new VSCode extension has a 15 account cap for companies don't don't pay up,,63,19,PandaUnicornAlbatros,2025-05-28 15:35:19,https://www.getdbt.com/dbt-assets/vscode-plugin-aup,0,False,False,False,False
+1kx2hhr,Streamlit Is a Mess: The Framework That Forgot Architecture,,57,29,tildehackerdotcom,2025-05-27 23:42:16,https://tildehacker.com/streamlit-is-a-mess,0,False,False,False,False
+1kxb3ip,DBT slower than original ETL,"This might be an open-ended question, but I recently spoke with someone who had migrated an old ETL process—originally built with stored procedures—over to DBT. It was running on Oracle, by the way. He mentioned that using DBT led to the creation of many more steps or models, since best practices in DBT often encourage breaking large SQL scripts into smaller, modular ones. However, he also said this made the process slower overall, because the Oracle query optimizer tends to perform better with larger, consolidated SQL queries than with many smaller ones.
+
+Is there some truth to what he said, or is it just a case of him not knowing how to use the tools properly",59,31,Wise-Ad-7492,2025-05-28 07:33:44,https://www.reddit.com/r/dataengineering/comments/1kxb3ip/dbt_slower_than_original_etl/,0,False,False,False,False
+1kxlqfl,"Meet the dbt Fusion Engine: the new Rust-based, industrial-grade engine for dbt",,28,18,andersdellosnubes,2025-05-28 16:35:56,https://docs.getdbt.com/blog/dbt-fusion-engine,0,False,False,False,False
+1kxmcb2,Decentralized compute for AI is starting to feel less like a dream and more like a necessity,"Been thinking a lot about how broken access to computing has become in AI.
+
+We’ve reached a point where training and inference demand insane GPU power, but almost everything is gated behind AWS, GCP, and Azure. If you’re a startup, indie dev, or research lab, good luck affording it. Even if you can, there’s the compliance overhead, opaque usage policies, and the quiet reality that all your data and models sit in someone else’s walled garden.
+
+This centralization creates 3 big issues:
+
+* Cost barriers lock out innovation
+* Surveillance and compliance risks go up
+* Local/grassroots AI development gets stifled
+
+I came across a project recently, Ocean Nodes, that proposes a decentralized alternative. The idea is to create a permissionless compute layer where anyone can contribute idle GPUs or CPUs. Developers can run containerized workloads (training, inference, validation), and everything is cryptographically verified. It’s essentially DePIN combined with AI workloads.
+
+Not saying it solves everything overnight, but it flips the model: instead of a few hyperscalers owning all the compute, we can build a network where anyone contributes and anyone can access. Trust is built in by design, not by paperwork.
+
+Has anyone here tried running AI jobs on decentralized infrastructure or looked into Ocean Nodes? Does this kind of model actually have legs for serious ML workloads?  Would love to hear thoughts.",22,3,Future-Goose7,2025-05-28 17:00:11,https://www.reddit.com/r/dataengineering/comments/1kxmcb2/decentralized_compute_for_ai_is_starting_to_feel/,0,False,False,False,False
+1kxs2fu,"Does anyone here use Linux as their main operating system, and do you recommend it?","Just curious — if you're a data engineer using Linux as your main OS, how’s the experience been? Pros, cons, would you recommend it?",20,39,maz_dex,2025-05-28 20:46:18,https://www.reddit.com/r/dataengineering/comments/1kxs2fu/does_anyone_here_use_linux_as_their_main/,0,False,False,False,False
+1kxnzb8,dbt-like features but including Python?,"I have had eyes on dbt for years. I think it helps with well-organized processes and clean code. I have never used it further than a PoC though because my company uses a lot of Python for data processing. Some of it could be replaced with SQL but some of it is text processing with Python NLP libraries which I wouldn’t know how to do in SQL. And dbt Python models are only available for some cloud database services while we use Postgres on-prem, so no go here.
+
+Now finally for the question: can you point me to software/frameworks that
+- allow Python code execution
+- build a DAG like dbt and only execute what is required
+- offer versioning where you could „go back in time“ to obtain the state of data like it was half a year before
+- offer a graphical view of the DAG
+- offer data lineage 
+- help with project structure and are not overly complicated 
+
+It should be open source software, no GUI required. If we would use dbt, we would be dbt-core users.
+
+Thanks for hints!",16,23,Khituras,2025-05-28 18:04:28,https://www.reddit.com/r/dataengineering/comments/1kxnzb8/dbtlike_features_but_including_python/,0,False,False,False,False
+1kxg3xs,Ducklake with dbt or sqlmesh,"Hiya. The duckdb's Ducklake is just fresh out of the oven. The ducklake uses a special type of 'attach' that does not use the standard 'path' (instead ' data_path'), thus making dbt and sqlmesh incompatible with this new extension. At least that is how I currently perceive this.
+
+However, I am not an expert in dbt or sqlmesh so I was hoping there is a smart trick i dbt/sqlmesh that may make it possible to use ducklake untill an update comes along.
+
+Are there any dbt / sqlmesh experts with some brilliant approach to solve this?
+
+EDIT:
+Is it possible to handle the attach ducklake with macros before each model?",14,8,Additional_Pea412,2025-05-28 12:43:17,https://www.reddit.com/r/dataengineering/comments/1kxg3xs/ducklake_with_dbt_or_sqlmesh/,0,False,2025-05-28 14:35:11,False,False
+1kxijri,etl4s: Turn Spark spaghetti code into whiteboard-style pipelines,"Hello all! etl4s is a tiny, zero-dep Scala lib: [https://github.com/mattlianje/etl4s](https://github.com/mattlianje/etl4s) (that plays great with Spark)
+
+We are now using it heavily @ Instacart to turn Spark spaghetti into clean, config-driven pipelines
+
+Your veteran feedback helps a lot!",12,0,mattlianje,2025-05-28 14:29:31,https://www.reddit.com/r/dataengineering/comments/1kxijri/etl4s_turn_spark_spaghetti_code_into/,1,False,False,False,False
+1kx5ewy,Where is the value? Why do it? Business value and DE,"Title simple as that. What techniques and tools do you use to tie value to specific engineering tasks and projects? I'm talking beginning development and evolves to support all the way through the whole process from API to a platinum mart.  If you're using Jira, is there a simpler way? How would you present a DEs teams value to those upstairs? Our team's efforts support several specific mature data products for analytics and more for other segments. The green manager is struggling on quantifying our value add (development  and ongoing support ) to be able to request more people. There's now a renewed push towards overusing Jira. I have a good sense on how it would be calculated but the several layer abstraction seems to muddy the waters?",9,5,J0hnDutt00n,2025-05-28 02:05:33,https://www.reddit.com/r/dataengineering/comments/1kx5ewy/where_is_the_value_why_do_it_business_value_and_de/,0,False,False,False,False
+1kxfi6c,Data Engineering Design Patterns by Bartosz Konieczny,I saw this book was recently published. Anyone look into this book and have any opinions? Already reading through DDIA and always looking for books and resources to help improve at work.,8,1,JTags8,2025-05-28 12:13:26,https://www.reddit.com/r/dataengineering/comments/1kxfi6c/data_engineering_design_patterns_by_bartosz/,0,False,False,False,False
+1kxe0l5,Data Migration in Modernization Projects Still Feels Broken — How Are You Solving Governance & Validation?,"Hey folks,
+
+We’re seeing a pattern across modernization efforts: **Data migration** — especially when moving from legacy monoliths to microservices or SaaS architectures — is still **painfully ad hoc**.
+
+Sure, the core ELT pipeline can be wired up with AWS tools like **DMS**, **Glue**, and **Airflow**. But we keep running into these *repetitive, unsolved pain points*:
+
+* Pre-migration risk profiling (null ratios, low-entropy fields, unexpected schema drift)
+* Field-level data lineage from source → target
+* Dry run simulations for pre-launch sign-off
+* Post-migration validation (hash diffs, rules, anomaly checks)
+* Data owner/steward approvals (governance checkpoints)
+* Observability and traceability when things go wrong
+
+We’ve had to script or manually patch this stuff over and over — across different clients and environments. Which made us wonder:
+
+# Are These Just Gaps in the Ecosystem?
+
+We're trying to validate:
+
+* Are others running into these same repeatable challenges?
+* How are you handling governance, validation, and observability in migrations?
+* If you’ve extended the AWS-native stack, how did you approach things like steward approvals or validation logic?
+* Has anyone tried solving this at the **platform level** — e.g., a reusable layer over AWS services, or even a standalone open-source toolset?
+* If AWS-native isn't enough, what **open-source options** could form the foundation of a more robust migration framework?
+
+We’re not trying to pitch anything — just seriously considering whether these pain points are universal enough to justify a more structured solution (possibly even SaaS/platform-level). Would love to learn how others are approaching it.
+
+Thanks in advance.",6,4,Deep_Hotel_8039,2025-05-28 10:51:27,https://www.reddit.com/r/dataengineering/comments/1kxe0l5/data_migration_in_modernization_projects_still/,0,False,False,False,False
+1kxkzvs,Transitioning from Data Engineering to DataOps — Worth It?,"**Hello everyone,**
+
+I’m currently a Data Engineer with 2 years of experience, mostly working in the Azure stack — Databricks, ADF, etc. I’m proficient in Python and SQL, and I also have some experience with Terraform.
+
+I recently got an offer for a DataOps role that looks really interesting, but I’m wondering if this is a good path for growth compared to staying on the traditional data engineering track.
+
+Would love to hear any advice or experiences you might have!
+
+Thanks in advance.",5,5,Individual_Suit5896,2025-05-28 16:06:55,https://www.reddit.com/r/dataengineering/comments/1kxkzvs/transitioning_from_data_engineering_to_dataops/,0,False,False,False,False
+1kxeg0i,How many of you succeed to bring RAG to your company for internal Analysis?,"I'm wondering how many people have tried to integrate an RAG agent to their business data and get on-demand analysis from it?
+
+  
+What was the biggest challenge? What tech stack did you use? 
+
+I'm asking because i'm in the same journey",6,6,Substantial_Lab_5160,2025-05-28 11:16:33,https://www.reddit.com/r/dataengineering/comments/1kxeg0i/how_many_of_you_succeed_to_bring_rag_to_your/,0,False,2025-05-28 13:15:09,False,False
+1kxqzcx,Introducing DEtermined: The Open Resource for Data Engineering Mastery,"Hey Data Engineers 👋
+
+I recently launched [**DEtermined**](https://determinedeng.com/) – an open platform focused on *real-world Data Engineering prep* and hands-on learning.
+
+It’s built for the community, by the community – designed to cover the **6 core categories** that every DE should master:
+
+* SQL
+* ETL/ELT
+* Big Data
+* Data Modeling
+* Data Warehousing
+* Distributed Systems
+
+Every day, I break down a DE question or a real-world challenge on my **Substack newsletter** – [DE Prep](https://deprep.substack.com/) – and walk through the entire solution like a mini masterclass.
+
+🔍 **Latest post:**  
+**“Decoding Spark Query Plans: From Black Box to Bottlenecks”**  
+→ I dove into how Spark's query execution works, why your joins are slow, and how to interpret the physical plan like a pro.  
+[Read it here](https://deprep.substack.com/p/prep-20-understanding-spark-query)
+
+This week’s focus? **Spark Performance Tuning.**
+
+If you're prepping for DE interviews, or just want to sharpen your fundamentals with real-world examples, I think you’ll enjoy this.
+
+Would love for you to check it out, subscribe, and let me know what you'd love to see next!  
+And if you're working on something similar, I’d love to collaborate or feature your insights in an upcoming post!
+
+You can also follow me on [LinkedIn](https://www.linkedin.com/in/nvkanirudh/), where I share **daily updates** along with **visually-rich infographics** for every new Substack post.  
+  
+Would love to have you join the journey! 🚀
+
+Cheers 🙌  
+*Data Engineer | Founder of DEtermined*",4,5,Heartsbaneee,2025-05-28 20:03:34,https://www.reddit.com/r/dataengineering/comments/1kxqzcx/introducing_determined_the_open_resource_for_data/,0,False,False,False,False
+1kxo58r,"Sequor: An open source SQL-centric framework for API integrations (like ""dbt for app integration"")","**TL;DR:** Open source ""dbt for API integration"" - SQL-centric, git-friendly, no vendor lock-in. Code-first approach to API workflows.
+
+Hey r/dataengineering,
+
+We built Sequor to solve a recurring problem: choosing between two bad options for API/app integration:
+
+1. Proprietary black-box SaaS connectors with vendor lock-in
+2. Custom scripts that are brittle, opaque, and hard to maintain
+
+As data engineers, we wanted a solution that followed the principles that made dbt so powerful (code-first, git-based version control, SQL-centric), but designed specifically for API integration workflows.
+
+**What Sequor does:**
+
+* Connects APIs to your databases with an iterator model
+* Uses SQL for all data transformations and preparation
+* Defines workflows in YAML with proper version control
+* Adds procedural flow control (if-then-else, for-each loops)
+* Uses Python and Jinja for dynamic parameters and response mapping
+
+**Quick example:** 
+
+* Data acquisition: Pull Salesforce leads → transform with SQL → push to HubSpot → all in one declarative pipeline.
+* Data activation (Reverse ETL): Pull customer behavior from warehouse → segment with SQL → sync personalized offers to Klaviyo/Mailchimp
+* App integration: Pull new orders from Amazon → join with SQL to identify new customers → create the customers and sales orders in NetSuite
+* App integration: Pull inventory levels from NetSuite → filter with SQL for eBay-active SKUs → update quantities on eBay
+
+**How it's different from other tools:**
+
+Instead of choosing between rigid and incomplete prebuilt integration systems, you can easily build your own custom connectors in minutes using just two basic operations (**transform** for SQL and **http\_request** for APIs) and starting from prebuilt examples we provide.
+
+The project is open source and we welcome any feedback and contributions.
+
+**Links:**
+
+* Website: [https://sequor.dev/](https://sequor.dev/) (includes code examples)
+* Quickstart: [https://docs.sequor.dev/getting-started/quickstart](https://docs.sequor.dev/getting-started/quickstart)
+* GitHub: [https://github.com/paloaltodatabases/sequor](https://github.com/paloaltodatabases/sequor)
+* Examples of prebuilt integrations: [https://github.com/paloaltodatabases/sequor-integrations](https://github.com/paloaltodatabases/sequor-integrations)
+
+**Questions for the community:**
+
+* What's your current approach to API integrations?
+* What business apps and integration scenarios do you struggle with most?
+* Are there specific workflows that have been particularly challenging to implement?",2,0,maxgrinev,2025-05-28 18:11:03,https://www.reddit.com/r/dataengineering/comments/1kxo58r/sequor_an_open_source_sqlcentric_framework_for/,0,False,False,False,False
+1kxo89k,Sql notebooks?,"Does anyone know if this exists in the open source space?
+
+- Jupyter or Jupyter like notebooks
+- Can run sql directly
+- Supports autocomplete of database schema
+- Language server for Postgres sql / syntax highlighting / linting etc.
+
+In other words: is there an alternative to jetbrains dataspell?
+
+
+",3,5,orru75,2025-05-28 18:14:20,https://www.reddit.com/r/dataengineering/comments/1kxo89k/sql_notebooks/,0,False,False,False,False
+1kxcalr,Best On-Site Setup for Data Engineering – Desktop vs Laptop? GPU/Monitor Suggestions?,"Hi all,
+
+I’m a Data Engineer working **on-site** (not remote), and I’m about to request a new workstation. I’d appreciate your input on:
+
+* **Desktop vs laptop** for heavy data and ML workloads in an office setting
+* Recommended **GPU** for data processing and occasional ML
+* Your preferred **monitor setup** for productivity (size, resolution, dual screens, etc.)
+
+Would love to hear what’s worked best for you. Thanks!",3,9,adnaninos,2025-05-28 08:57:22,https://www.reddit.com/r/dataengineering/comments/1kxcalr/best_onsite_setup_for_data_engineering_desktop_vs/,0,False,False,False,False
+1kxajwe,Iceberg and Hudi,I am trying to see which one is better iceberg or hudi in AWS environment. Any suggestions for handling peta byte scale data ?,3,2,TheYesVee,2025-05-28 06:57:30,https://www.reddit.com/r/dataengineering/comments/1kxajwe/iceberg_and_hudi/,0,False,False,False,False
+1kx4u8f,BigQuery’s New Job-Level Reservation Assignment: Smarter Cost Optimization,"Hey r/dataengineering ,  
+Google BigQuery recently released job-level reservation assignments—a feature that lets you choose on-demand or reserved capacity for each query, not just at the project level. This is a huge deal for anyone trying to optimize cloud costs or manage complex workloads. I wrote a blog post breaking down:
+
+* What this new feature actually means (with practical SQL examples)
+
+* How to decide which pricing model to use for each job
+
+* How we use the Rabbit BQ Job Optimizer to automate these decisions 
+
+If you’re interested in smarter BigQuery cost management, check it out:
+
+👉 [https://followrabbit.ai/blog/unlock-bigquery-savings-with-dynamic-job-level-optimization](https://followrabbit.ai/blog/unlock-bigquery-savings-with-dynamic-job-level-optimization?utm_source=reddit&utm_medium=dataengineering&utm_campaign=thoughtleadershipcsabi)  
+Curious to hear how others are approaching this—anyone already using job-level assignments? Any tips or gotchas to share?  
+\#bigquery #dataengineering #cloud #finops",3,0,Constant-Collar9129,2025-05-28 01:36:54,https://www.reddit.com/r/dataengineering/comments/1kx4u8f/bigquerys_new_joblevel_reservation_assignment/,0,False,False,False,False
+1kxsxqv,Integrating GA4 + BigQuery into AWS-based Data Stack for Marketplace Analytics – Facing ETL Challenges,"
+Hey everyone,
+
+I’m working as a data engineer at a large marketplace company. We process over 3 million transactions per month and receive more than 20 million visits to our website monthly.
+
+We’re currently trying to integrate data from Google Analytics 4 (GA4) and BigQuery into our AWS-based architecture, where we use S3, Redshift, dbt, and Tableau for analytics and reporting.
+
+However, we’re running into some issues with the ETL process — especially when dealing with the semi-structured NoSQL-like GA4 data in BigQuery. We’ve successfully flattened the arrays into a tabular model, but the resulting tables are huge — both in terms of columns and rows — and we can’t run dbt models efficiently on top of them.
+
+We attempted to create intermediate, smaller tables in BigQuery to reduce complexity before loading into AWS, but this introduced an extra transformation layer that we’d rather avoid, as it complicates the pipeline and maintainability.
+
+I’d like to implement an incremental model in dbt, but I’m not sure if that’s going to be effective given the way the GA4 data is structured and the performance bottlenecks we’ve hit so far.
+
+Has anyone here faced similar challenges with integrating GA4 data into an AWS ecosystem?
+
+How did you handle the schema explosion and performance issues with dbt/Redshift?
+
+Any thoughts on best practices or architecture patterns would be really appreciated.
+
+Thanks in advance!",2,7,cadlx,2025-05-28 21:20:48,https://www.reddit.com/r/dataengineering/comments/1kxsxqv/integrating_ga4_bigquery_into_awsbased_data_stack/,1,False,False,False,False
+1kxrzh5,Why are so many companies hiring for ML Model Infrastructure Teams?,"I've done so many technical interviews, and there's one recurring pattern that I'm noticing.
+
+The need for developers who can write code or design systems to power infrastructure for machine learning model teams?
+
+But why is this so up-and-coming? We've tackled major infrastructure-related challenges in the past ( think Big Data, Hadoop, Spark, Flink, Map Reduce ), where we needed to deploy large clusters of distributed machines to do efficient computation?
+
+Can't the same set of techniques or paradigms - sourced from distributed systems or performance research into Operating Systems - also be applied to the ML model space? What gives? ",2,1,Appropriate_Collar52,2025-05-28 20:43:15,https://www.reddit.com/r/dataengineering/comments/1kxrzh5/why_are_so_many_companies_hiring_for_ml_model/,0,False,False,False,False
+1kxqewe,"Research Topic: The impact on data team when they are building a RAG Model or supporting a vertical Agent (for Customer Success, HR or sales) that was just bought in the organization.","Research Topic: I am researching a topic on the impact on data team when they are building a RAG Model or supporting a vertical Agent (for Customer Success, HR or sales) that was just bought in the organization. I am not sure sure if this is the right community. As a data engineer, I was always dealing with cleaning data and getting data ready for dashboard. Are we seeing the same issue supporting these agents and ensuring they have access to right data, specially around data in Sharepoint and in unstructured format?",2,0,UnderstandingTop1424,2025-05-28 19:41:05,https://www.reddit.com/r/dataengineering/comments/1kxqewe/research_topic_the_impact_on_data_team_when_they/,0,False,False,False,False
+1kxp4f6,Apache Beam windowing question,"Hi everyone,
+
+  
+I'm working on a small project where I'm taking some stock ticker data, and streaming it into GCP BigQuery using DataFlow. I'm completely new to Apache Beam so I've been wrapping my head around the programming model and windowing system and have some queries about how best to implement what I'm going for. At source I'm recieving typical OHLC (open, high, low, close) data every minute and I want to compute various rolling metrics on the close attribute for things like rolling averages etc. Currently the only way I see forward is to use sliding windows to calculate these aggregated metrics. The problem is that a rolling average of a few days being updated every minute for each new incoming row would result in shedloads of sliding windows being held at any given moment which feels like a horribly inefficient load of duplication of the same basic data. 
+
+I'm also curious about attributes which you don't neccessarily want to aggregate and how you reconcile that with your rolling metrics. It feels like everything leans so heavily into using windowing that the only way to get the unaggregated attributes such as open/high/low is by sorting the whole window by timestamp and then finding the latest entry, which again feels like a rather ugly and inefficient way of doing things. Is there not some way to leave some attributes out of the sliding window entirely since they're all going to be written at the same frequency anyways? I understand the need for windowing when data can often be unordered but it feels like things get exceedingly complicated if you don't want to use the same aggregation window for all your attributes.
+
+  
+Should I stick with my current direction, is there a better way to do this sort of thing in Beam or should I really be using Spark for this sort of job? Would love to hear the thoughts of people with more of a clue than myself.",2,1,JG3_Luftwaffle,2025-05-28 18:49:49,https://www.reddit.com/r/dataengineering/comments/1kxp4f6/apache_beam_windowing_question/,0,False,False,False,False
+1kxgvge,"Data Security, Lineage, Bias and Quality Scanning at Bronze, Silver and Gold Layers. Is any solution capable of doing this ?","Hi All, 
+
+So for our ML models we are designing secure data engineering. For our ML use cases we would require data with and without customer PII. 
+
+For now we are maintaining isolated environments for each alongside tokenisation for data that involved PII. 
+
+Now I want to make sure that we scan the data store at each phase of ingestion and transformation. Bronze - Dumb of all data in a blob, Silver - Level 1 transformation, Gold - Level 2 transformation. 
+
+I am trying to introduce data sanitization right when the data is pulled from the database so when it lands in bronze I dont see much PII and keeps reducing down the road. 
+
+I also want to be reviewing the data quality at each stage alongside a lineage map while also identifying any potential bias in the dataset. 
+
+Is there any solution that can help with this ? I know purview can do security scan, quality and lineage but its just too complicated. Any other solutions ? ",2,0,SignalPractical4526,2025-05-28 13:18:24,https://www.reddit.com/r/dataengineering/comments/1kxgvge/data_security_lineage_bias_and_quality_scanning/,0,False,False,False,False
+1kxgb8j,"How do you balance the demands of ""Nested & Repeating"" schema while keeping query execution costs low? I am facing a dilemma where I want to use ""Nested & Repeating"" schema, but I should also consider using partitioning and clustering to make my query executions more cost-effective.","**Context:**
+
+I am currently learning data engineering and Google Cloud Platform (GCP).
+
+I am currently constructing an OLAP data warehouse within BigQuery so data analysts can create Power BI reports.
+
+The example OLAP table is:  
+\* Member ID (Not repeating. Primary Key)
+
+\* Member Status (Can repeat. Is an array)
+
+\* Date Modified (Can repeat. Is an array)
+
+\* Sold Date (Can repeat. Is an array)
+
+I am facing a rookie dilemma - I highly prefer to use ""nested & repeating"" schema because I like how everything is organized with this schema. However, I should also consider partitioning and clustering the data because it will reduce query execution costs. It seems like I can only partition and cluster the data if I use a ""denormalized"" schema. I am not a fan of ""denormalized"" schema because I think it can duplicate some records, which will confuse analysts and inflate data. (Ex. The last thing I want is for a BigQuery table to inflate revenue per Member ID.).
+
+**Question:**
+
+My questions are this:
+
+1) In your data engineering job, when constructing OLAP data warehouse tables for data analysis, do you ever use partitioning and clustering?
+
+2) Do you always use ""nested & repeating"" schema, or do you sometimes use ""denormalized schema"" if you need to partition and cluster columns? I want my data warehouse tables to have proper schema for analysis while being cost-effective.",1,13,Original_Chipmunk941,2025-05-28 12:53:05,https://www.reddit.com/r/dataengineering/comments/1kxgb8j/how_do_you_balance_the_demands_of_nested/,0,False,2025-05-28 13:01:30,False,False
+1kxcc2t,Competition from SWE  induced by A. I.,"How conceivable is it—that ex software engineers,  maligned by A. I. will flood the DE job markets making it hard to secure employment due to high competition? 
+
+In a way where an aspiring DE looking to break it will now find it near impossible? ",1,4,pouvoir87,2025-05-28 09:00:12,https://www.reddit.com/r/dataengineering/comments/1kxcc2t/competition_from_swe_induced_by_a_i/,0,False,False,False,False
+1kxsg90,Am I on the right path in data engineering ?,"Hi, I've been trying for a long time to figure out which area of  IT I'm interested in, and I settled on data engineering. I would like to know how promising and in demand this field is relative to frontend/backend development?
+
+Also I have chosen the following technology stack to start developing one by one:
+
+SQL -> Python -> Airflow -> PostgreSQL -> Docker.
+
+Is this stack sufficient for a beginner? Also what level of maths do you need to have for data engineering? Is it worth to go deep into maths analysis ?",0,3,Ancient-Leather-1220,2025-05-28 21:01:30,https://www.reddit.com/r/dataengineering/comments/1kxsg90/am_i_on_the_right_path_in_data_engineering/,0,False,2025-05-28 21:12:42,False,False
+1kxgy94,Beyond the Buzzword: What Lakehouse Actually Means for Your Business,"Lately I've been digging into Lakehouse stuff and thinking of putting together a few blog posts to share what I've learned.
+
+ If you're into this too or have any thoughts, feel free to jump in—would love to chat and swap ideas!",0,3,AssistPrestigious708,2025-05-28 13:21:51,https://www.databend.com/blog/category-product/databend-lakehouse,0,False,False,False,False
+1kx9qos,"Looking for a good Data Engineering / Data Science Bootcamp (on-site preferred, job support, open to Europe/UAE/Canada/Turkey/SEA)","Hi everyone,
+
+
+
+I'm exploring a career path in \*\*data engineering or data science\*\*, and I’m currently looking for a solid bootcamp that fits well with my background and goals.
+
+
+
+A bit about me:
+
+
+
+\- I've been working in the \*\*crypto and blockchain\*\* space for over 4 years
+
+\- I’ve been writing \*\*Solidity smart contracts\*\* for 2 years
+
+\- I completed several blockchain-focused bootcamps including:
+
+  \- Chainlink Bootcamps (VRF, Cross-Chain, Functions, Automation)
+
+  \- Encode Club
+
+  \- Cyfrin Updraft
+
+\- For the past year, I’ve been diving into the \*\*security and auditing\*\* side of smart contracts
+
+\- I’ve completed a \*\*non-basic SQL course\*\* and a \*\*basic Python course\*\*
+
+
+
+Now, I’d like to expand my skill set into \*\*data engineering\*\* or \*\*data science\*\* and am looking for a program that offers:
+
+
+
+\- \*\*Strong curriculum\*\* in data engineering/data science (not just data analytics)
+
+\- \*\*On-site or on-campus\*\* options (though I’m open to online if it’s truly strong)
+
+\- \*\*Job support\*\*, career coaching, or hiring partner network
+
+\- Regions I’m open to: \*\*Europe, UAE, Canada, Turkey, Southeast Asia\*\*
+
+\- Instruction in \*\*English\*\*
+
+
+
+If you’ve attended a bootcamp or know someone who did, I’d really appreciate any insight on:
+
+
+
+\- Bootcamp name
+
+\- What you liked (or didn’t like)
+
+\- If it helped with getting a job
+
+\- Whether you’d recommend it now
+
+
+
+Thanks in advance 🙏 I’d love any tips or personal experiences, even short ones!
+
+
+
+Feel free to comment or DM me if you prefer chatting privately.
+
+",0,1,elyas6126,2025-05-28 06:03:35,https://www.reddit.com/r/dataengineering/comments/1kx9qos/looking_for_a_good_data_engineering_data_science/,0,False,False,False,False
+1kxf2ip,Everyone’s talking about LLMs — but the real power comes when you pair them with structured and semantic search.,"https://reddit.com/link/1kxf2ip/video/b77h5x55fi3f1/player
+
+We’re seeing more and more scenarios where structured/semi-structured search (SQL, Mongo, etc.) must be combined with semantic search (vector, sentiment) to unlock real value.  
+  
+Take one of our recent projects:
+
+The client wanted to analyze marketing campaign performance by asking flexible, natural questions — from: ""What’s the sentiment around campaign X?"" to ""Pull all clicks by ID and visualize engagement over time on the fly.  
+  
+""Can't we just plug in an LLM and call it a day?  
+  
+Well — simple integration with OpenAI (or any LLM) won't suffice.  
+ChatGPT out of the box might seem to offer both fuzzy and structured queries.   
+  
+But without seamless integration with:
+
+\- Vector search (to find contextually appropriate semantic data)
+
+\- SQL/NoSQL databases (to access exact, structured/semi-structured data)…you'll soon find yourself limited.
+
+Here’s why:  
+  
+1. Size limits – LLMs cannot natively consume or reason on enormous datasets. You need to get the proper slice of data ahead of time.  
+2. Determinism – There is a chance that ""calculate total value since June"" will give you different answers, even if temperature = 0. SQL will not.  
+3. Speed limits – LLMs are not built for rapid high-scale data queries or real-time dashboards.  
+  
+In this demo, I’m showing you exactly how we solve this with a dedicated AI analytics agent for B2B review intelligence:  
+  
+Agent Setup  
+Role: You are a B2B review analytics assistant — your mission is to answer any user query using one of two expert tools:  
+  
+Vector Search Tool — Powered by Azure AI Search  
+\- Handles semantic/sentiment understanding- Ideal for open-ended questions like ""what do users think of XYZ tool?""  
+\- Interprets the user’s intent and generates relevant vector search queries  
+\- Used when the input is subjective, descriptive, or fuzzy  
+  
+Semi-Structured Search Tool — Powered by MongoDB  
+\- Handles precise lookups, aggregations, and stats  
+\- Ideal for prompts like ""show reviews where RAG tools are mentioned"" or ""average rating by technology""  
+\- Dynamically builds Mongo queries based on schema and request context  
+\- Falls back to vector search if the structure doesn’t match but context is still relevant (e.g., tool names or technologies mentioned)  
+  
+As a result with have hybrid AI agent that reasons like an analyst but behaves like an engineer — fast, reliable, and context-aware.",0,6,Awkward-Bug-5686,2025-05-28 11:50:58,https://www.reddit.com/r/dataengineering/comments/1kxf2ip/everyones_talking_about_llms_but_the_real_power/,0,False,False,False,False
+1kxs9r6,"With so many data engineers in the world, why hasn't someone written up a solid ""Ace the Data Engineering Assessment"" book yet?","*Assessment/Iter... is a different term, in this context :-)*
+
+I mean seriously. There's a vast number of data engineers out there in the world, and not that many have even given so much as an inkling to the idea of being the original author ( or a co-author ) of an ""Ace the Data Engineering Assessment"" book yet?
+
+What gives? Alex Xu wrote his book on System Design - Volume 1 and Volume 2 - and so many folks in the world still leverage that. Martin Fowler managed to author Designing Data-Intensive Applications. Gayle authored ""*Cracking the Code Inter...*"".
+
+What's the challenge? Is it the open-ended nature of data engineering that makes writing the books challenging? I've given some thoughts into writing one up myself :-P - it's a gap in the world that someone hasn't addressed yet, and I think someone should.  ",0,3,Appropriate_Collar52,2025-05-28 20:54:20,https://www.reddit.com/r/dataengineering/comments/1kxs9r6/with_so_many_data_engineers_in_the_world_why/,0,False,False,False,False

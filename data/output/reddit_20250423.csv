@@ -1,0 +1,283 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1k5b6kr,Apache Airflow 3.0 is here – and it’s a big one!,"After months of work from the community, Apache Airflow 3.0 has officially landed and it marks a major shift in how we think about orchestration! 
+
+This release lays the foundation for a more modern, scalable Airflow. Some of the most exciting updates:
+
+* **Service-Oriented Architecture** – break apart the monolith and deploy only what you need
+* **Asset-Based Scheduling** – define and track data objects natively
+* **Event-Driven Workflows** – trigger DAGs from events, not just time
+* **DAG Versioning** – maintain execution history across code changes
+* **Modern React UI** – a completely reimagined web interface
+
+I've been working on this one closely as a product manager at Astronomer and Apache contributor. It's been incredible to see what the community has built!
+
+👉 Learn more: [https://airflow.apache.org/blog/airflow-three-point-oh-is-here/](https://airflow.apache.org/blog/airflow-three-point-oh-is-here/)
+
+👇 Quick visual overview:
+
+[A snapshot of what's new in Airflow 3.0. It's a big one!](https://preview.redd.it/3vwrpl0d1fwe1.png?width=425&format=png&auto=webp&s=337f49a51fa473ef8d872c9bde604526f5b70243)
+
+",278,27,cmarteepants,2025-04-22 16:50:13,https://www.reddit.com/r/dataengineering/comments/1k5b6kr/apache_airflow_30_is_here_and_its_a_big_one/,0,False,False,False,False
+1k5bc5m,Apache Airflow® 3 is Generally Available!,"**📣 Apache Airflow 3.0.0 has just been released!**
+
+After months of work and contributions from 300+ developers around the world, we’re thrilled to announce the **official release of Apache Airflow 3.0.0** — the most significant update to Airflow since 2.0.
+
+
+
+This release brings:
+
+* ⚙️ A new Task Execution API (run tasks anywhere, in any language)
+* ⚡ Event-driven DAGs and native data asset triggers
+* 🖥️ A completely rebuilt UI (React + FastAPI, with dark mode!)
+* 🧩 Improved backfills, better performance, and more secure architecture
+* 🚀 The foundation for the future of AI- and data-driven orchestration
+
+
+
+You can read more about what 3.0 brings in [https://airflow.apache.org/blog/airflow-three-point-oh-is-here/](https://airflow.apache.org/blog/airflow-three-point-oh-is-here/).
+
+https://preview.redd.it/orp1w81r2fwe1.jpg?width=3840&format=pjpg&auto=webp&s=f9fcb81ff8c99f1eb889e44a17d94845c95932e1
+
+📦 PyPI: [https://pypi.org/project/apache-airflow/3.0.0/](https://pypi.org/project/apache-airflow/3.0.0/)
+
+📚 Docs: [https://airflow.apache.org/docs/apache-airflow/3.0.0](https://airflow.apache.org/docs/apache-airflow/3.0.0)
+
+🛠️ Release Notes: [https://airflow.apache.org/docs/apache-airflow/3.0.0/release\_notes.html](https://airflow.apache.org/docs/apache-airflow/3.0.0/release_notes.html)
+
+🪶 Sources: [https://airflow.apache.org/docs/apache-airflow/3.0.0/installation/installing-from-sources.html](https://airflow.apache.org/docs/apache-airflow/3.0.0/installation/installing-from-sources.html)
+
+This is the result of 300+ developers within the Airflow community working together tirelessly for many months! A huge thank you to all of them for their contributions.",71,6,kaxil_naik,2025-04-22 16:56:29,https://www.reddit.com/r/dataengineering/comments/1k5bc5m/apache_airflow_3_is_generally_available/,0,False,2025-04-22 17:23:36,False,False
+1k528k5,Introducing Lakehouse 2.0: What Changes?,,33,23,growth_man,2025-04-22 09:37:52,https://moderndata101.substack.com/p/introducing-lakehouse-20-what-changes,0,False,False,False,False
+1k52jic,Forgetting basic parts of the stack over time,"I realized today that I've barely touched SQL in the last 2 years. I've done some basic queries in BigQuery on a few occasions. I recently wanted to do some JOINs on a personal project and realised I kinda suck at them and I actually had to refresh my knowledge on some basics related to HAVING, GROUP BY etc. It just wasn't a significant part of my work over the last 2 years. In fact I use some python scripts I made a long time ago for executing a series of statements so I almost completely erradicated using SQL from my day-to-day.
+
+
+Sometimes I feel like I'd join a call with my colleagues or people more junior than me and they could pull up anything and start blasting away any type of code or chain of terminal commands from memory  - sometimes I feel like I'm a retired software engineer and a lot of these things are a distant memory to me that I have to refresh every time I need something.
+
+
+Part of the ""problem"" is that I got abstracted from a lot of things with UI tools. I barely use the terminal for managing or navigating our cloud platform because the UI fits most of my needs, so I couldn't really help you check something in the cluster using the terminal without reading the docs. I also made some scripts for interacting with our cloud so I don't have to execute long commands in the terminal. I also use a GUI tool for  git so I couldn't help you rebase in the terminal without revising how the process goes in the terminal.
+
+
+TL;DR I'm approaching 7 years in this career and I use various abstractions like GUI tools and custom scripts to make my life easier and I dont keep my knowledge fresh on basics. Considering the expectations from someone with my seniorty - am I sabotaging myself in some way or am I just overthinking this?",21,17,SansBouillie,2025-04-22 09:59:39,https://www.reddit.com/r/dataengineering/comments/1k52jic/forgetting_basic_parts_of_the_stack_over_time/,0,False,False,False,False
+1k5bnnv,Airflow 3.0 is OUT! Here is everything you need to know 🥳🥳,Enjoy ❤️,21,0,marclamberti,2025-04-22 17:09:13,https://youtu.be/PMO5LPc112E?si=y-l2psvae2iRan5N,0,False,False,False,False
+1k5jnat,What type of Portoflio projects do employers want to see?,Looking to build a portfolio of DE projects. Where should I start? Or what must I include?,15,5,Fondant_Decent,2025-04-22 22:34:41,https://www.reddit.com/r/dataengineering/comments/1k5jnat/what_type_of_portoflio_projects_do_employers_want/,0,False,False,False,False
+1k5jnke,How transferable are the skills learnt on Azure to AWS?,Only because I’ve seen lots of big companies on AWS platform and I’m seriously considering learning it. Should i? ,12,13,Gloomy-Profession-19,2025-04-22 22:35:02,https://www.reddit.com/r/dataengineering/comments/1k5jnke/how_transferable_are_the_skills_learnt_on_azure/,0,False,False,False,False
+1k5flbh,Whats the best data store for period sensor data?,"I am working on an application that primarily pulls data from some local sensors (Temperature, Pressure, Humidity, etc). The application will get this data once every 15 minutes for now,  then we will aim to increase the frequency later in development.  I need to be able to store this data. I have only worked with Relational databases (Transact SQL, or Azure SQL) in the past, and this is the current choice, however, it feels overkill and rather heavy for the application. There would only really be one table of data, which would grow in size really fast.
+
+I was wondering if there was a better way to store this sort of data that means that I can better manage this sort of data. In the future, there is a plan to build a front end to this data or introduce an API for Power BI or other reporting front ends.  ",8,10,AINed,2025-04-22 19:45:25,https://www.reddit.com/r/dataengineering/comments/1k5flbh/whats_the_best_data_store_for_period_sensor_data/,0,False,False,False,False
+1k5ecm5,The only DE,"I got an offer from a company that does data consulting/contracting. It’s a medium sized company (~many dozens to hundreds of employees), but I’d be sitting in a team of 10 working on a specific contract. I’d be the only data engineer. The rest of the team has data science or software engineering titles.
+
+I’ve never been on a team with that kind of set up. I’m wondering if others have sit in an org like that. How was it? What was the line — typically — between you and software engineers?",6,8,ursamajorm82,2025-04-22 18:55:45,https://www.reddit.com/r/dataengineering/comments/1k5ecm5/the_only_de/,0,False,False,False,False
+1k5midw,"Expecting an offer in Dallas, what salary should I expect?",I'm a data analyst with 3 years of experience expecting an offer for a Data Engineer role from a non-tech company in the Dallas area. I'm currently in a LCOL area and am worried the pay won't even out with my current salary after COL. I have a Master's in a technical area but not data analytics or CS. Is 95-100K reasonable?,8,22,sluggles,2025-04-23 00:51:48,https://www.reddit.com/r/dataengineering/comments/1k5midw/expecting_an_offer_in_dallas_what_salary_should_i/,0,False,False,False,False
+1k501if,Hands-on testing Snowflake Agent Gateway / Agent Orchestration,"Hi, I've been testing out [https://github.com/Snowflake-Labs/orchestration-framework](https://github.com/Snowflake-Labs/orchestration-framework) which enables you to create an actual AI Agent (not just a workflow). I added my notes about the testing and created an blog about it:   
+[https://www.recordlydata.com/blog/snowflake-ai-agent-orchestration](https://www.recordlydata.com/blog/snowflake-ai-agent-orchestration)   
+  
+or 
+
+at Medium [https://medium.com/@mika.h.heino/ai-agents-snowflake-hands-on-native-agent-orchestration-agent-gateway-recordly-53cd42b6338f](https://medium.com/@mika.h.heino/ai-agents-snowflake-hands-on-native-agent-orchestration-agent-gateway-recordly-53cd42b6338f)
+
+Hope you enjoy it as much it testing it out
+
+Currently the tools supports and with those tools I created an AI agent that can provide me answers regarding Volkswagen T2.5/T3. Basically I have scraped web for old maintenance/instruction pdfs for RAG, create an Text2SQL tool that can decode a VINs and finally a Python tool that can scrape part prices.
+
+Basically now I can ask “XXX is broken. My VW VIN is following XXXXXX. Which part do I need for it, and what are the expected costs?”
+
+1. Cortex Search Tool: For unstructured data analysis, which requires a standard RAG access pattern.
+2. Cortex Analyst Tool: For structured data analysis, which requires a Text2SQL access pattern.
+3. Python Tool: For custom operations (i.e. sending API requests to 3rd party services), which requires calling arbitrary Python.
+4. SQL Tool: For supporting custom SQL pipelines built by users.",7,0,Recordly_MHeino,2025-04-22 06:56:06,https://i.redd.it/dlwbtzum3cwe1.png,1,False,False,False,False
+1k4znxw,support of iceberg partitioning in an open source project,"We at OLake (Fast database to Apache Iceberg replication, [**open-source**](https://github.com/datazip-inc/olake)) will soon support  Iceberg’s Hidden Partitioning and wider catalog support hence we are organising our 6th community call.
+
+**What to expect in the call:**
+
+1. Sync Data from a Database into Apache Iceberg using one of the following catalogs (REST, Hive, Glue, JDBC)
+2. Explore how Iceberg Partitioning will play out here \[new feature\]
+3. Query the data using a popular lakehouse query tool.
+
+**When**:
+
+* **Date**: 28th April (Monday) 2025 at 16:30 IST (04:30 PM).
+* **RSVP here** \- [https://lu.ma/s2tr10oz](https://lu.ma/s2tr10oz) \[make sure to add to your calendars\]",6,0,zriyansh,2025-04-22 06:30:30,https://www.reddit.com/r/dataengineering/comments/1k4znxw/support_of_iceberg_partitioning_in_an_open_source/,0,False,False,False,False
+1k55dgc,Is Studying Advanced Python Topics Necessary for a Data Engineer? (OOP and More),"Is studying all these Python topics important and essential for a data engineer, especially Object-Oriented Programming (OOP)? Or is it a waste of time, and should I only focus on the basics that will help me as a data engineer? I’m in my final year of college and want to make sure I’m prioritizing the right skills.
+
+Here are the topics I’ve been considering:
+- Intro for Python
+- Printing and Syntax Errors
+- Data Types and Variables
+- Operators
+- Selection
+- Loops
+- Debugging
+- Functions
+- Recursive Functions
+- Classes & Objects
+- Memory and Mutability
+- Lists, Tuples, Strings
+- Set and Dictionary
+- Modules and Packages
+- Builtin Modules
+- Files
+- Exceptions
+- More on Functions
+- Recursive functions
+- Object Oriented Programming
+- OOP: UML Class Diagram
+- OOP: Inheritance
+- OOP: Polymorphism
+- OOP: Operator Overloading",6,19,MazenMohamed1393,2025-04-22 12:44:33,https://www.reddit.com/r/dataengineering/comments/1k55dgc/is_studying_advanced_python_topics_necessary_for/,0,False,False,False,False
+1k5nha2,DE interviews for Gen AI focused companies,"Have any of you recently had an interviews for a data engineering role at a company highly focused on GenAI, or with leadership who strongly push for it? Are the interviews much different from regular DE interviews for supporting analysts and traditional data science?
+
+I assume I would need to talk about data quality, prepping data products/datasets for training, things like that as well as how I’m using or have plans to use Gen AI currently. 
+
+What about agentic AI?",7,1,jinbe-san,2025-04-23 01:41:14,https://www.reddit.com/r/dataengineering/comments/1k5nha2/de_interviews_for_gen_ai_focused_companies/,1,False,False,False,False
+1k57a40,Switching from a data science to data engineering: Good idea?,"Hello, a few months ago I graduated for a ""Data Science in Business"" MSc degree in France (Paris) and I started looking for a job as a Junior Data Scientist, I kept my options open by applying in different sectors, job types and regions in France, even in Europe in general as I am fluent in both French and English. Today, it's been almost 8 months since I started applying (even before I graduated), but without success. During my internship as a data scientist in the retail sector, I found myself doing some ""data engineering"" tasks like working a lot on the cloud (GCP) and doing a lot of SQL in Bigquery, I know it's not much compared to what a real data engineer does on his daily tasks, but it was a new thing for me and I enjoyed doing it. At the end of my internship, I learned that unlike internships in the US, where it's considered a trial period to get hired, here in France it's considered more like a way to get some work done for cheap... well, especially in big companies. I understand that it's not always like that, but that's what I've noticed from many students.
+
+Anyway, during those few months after the internship, I started learning tools like Spark, AWS, and some of Airflow. I'm thinking that maybe I have a better chance to get a job in data engineering, because a lot of people say that it's getting harder and harder to find a job as a data scientist, especially for juniors. So is this a good idea for me? Because it's been like 3-4 months applying for Data Engineering jobs, still nothing. If so, is there more I need to learn? Or should I stick to Data Science profil, and look in other places, like Germany for example?
+
+Sorry for making this post long, but I wanted to give the big picture first.",5,6,Lanky-Swimming-2695,2025-04-22 14:10:56,https://www.reddit.com/r/dataengineering/comments/1k57a40/switching_from_a_data_science_to_data_engineering/,0,False,2025-04-22 14:42:13,False,False
+1k52vpa,Data structuring headache,"I have the data in id(SN), date, open, high.... format. Got this data by scraping a stock website. But for my machine learning model, i need the data in the format of 30 day frame. 30 columns with closing price of each day. how do i do that?  
+chatGPT and claude just gave me codes that repeated the first column by left shifting it. if anyone knows a way to do it, please help🥲",4,18,cartridge_ducker,2025-04-22 10:22:39,https://www.reddit.com/gallery/1k52vpa,0,False,False,False,False
+1k5lvu9,How to learn prefect?,"Hey everyone,  
+I'm trying to use Prefect for one of my projects. I really believe it's a great tool, but I've found the official docs a bit hard to follow at times. I also tried using AI to help me learn, but it seems like a lot of the advice is based on outdated methods.  
+Does anyone know of any good tutorials, courses, or other resources for learning Prefect (ideally up-to-date with the latest version)? Would really appreciate any recommendations",3,2,too_much_lag,2025-04-23 00:20:30,https://www.reddit.com/r/dataengineering/comments/1k5lvu9/how_to_learn_prefect/,0,False,False,False,False
+1k5ghoy,Iceberg in practice,"Noob questions incoming!
+
+**Context:**   
+I'm designing my project's storage and data pipelines, but am new to data engineering. I'm trying to understand the ins and outs of various solutions for the task of reading/writing diverse types of very large data.   
+  
+From a theoretical standpoint, I understand that Iceberg is a standard for organizing metadata about files. Metadata organized to the Iceberg standard allows for the creation of ""Iceberg tables"" that can be queried with a familiar SQL-like syntax.
+
+I'm trying to understand how this would fit into a real world scenario... For example, lets say I use object storage, and there are a bunch of pre-existing parquet files and maybe some images in there. Could be anything...
+
+**Question 1:**  
+How is the metadata/tables initially generated for all this existing data? I know AWS has the Glue Crawler. Is something like that used? 
+
+Or do you have to manually create the tables, and then somehow point the tables to the correct parquet files that contain the data associated with that table?
+
+**Question 2:**  
+Okay, now assume I have object storage and metadata/tables all generated for files in storage. Someone comes along and drops a new parquet file into some bucket. I'm assuming that I would need some orchestration utility that is monitoring my storage and kicking off some script to add the new data to the appropriate tables? Or is it done some other way?
+
+**Question 3:**   
+I assume that there are query engines out there that are implemented to the Iceberg standard for creating and reading Iceberg metadata/tables, and fetching data based on those tables. For example, I've read that SparkQL and Trino have Iceberg ""connectors"". So essentially the power of Iceberg can't be leveraged if your tech stack doesn't implement compliant readers/writers? How prolific are Iceberg compatible query engines?
+
+",5,4,wcneill,2025-04-22 20:21:49,https://www.reddit.com/r/dataengineering/comments/1k5ghoy/iceberg_in_practice/,0,False,False,False,False
+1k523fc,Cheapest and non technical way of integrating Redshift and Hubspot,"Hi, my company is using Hightouch for reverse ETL of tables from Redshift to Hubspot. Hightouch is great in its simplicity and non technical approach to integration so even business users can do the job. You  just have to provide them the table in Redshift and they can setup the sync logic and field mapping by a point and click interface. I as a data engineer can instead focus my time and effort on ingestion and data prep.
+
+But we are using the Hightouch to such an extent that we are being force over to a more expensive price plan, 24 000$ annually.
+
+What tools are there that have similar simplicity but have cheaper costs?",3,4,trex_6622,2025-04-22 09:27:35,https://www.reddit.com/r/dataengineering/comments/1k523fc/cheapest_and_non_technical_way_of_integrating/,0,False,2025-04-22 11:21:05,False,False
+1k50wit,"DP-203 Exam English Language is Retired, DP-700 is Recommended to Take","Microsoft DP-203 exam English language is retired on March 31, 2025, other languages are also available to take.
+
+[DP-203 available langauges](https://preview.redd.it/74o3tjzuecwe1.png?width=1091&format=png&auto=webp&s=cc82f598d41cbadb933ab4da8ec447476c80b9b4)
+
+**Note: There is no direct replacement for the DP-203 exam. But DP-700 is indeed the recommendation to take from this retirement.**
+
+Hope the above information can help people who are preparing for this test.
+
+[https://www.reddit.com/r/dataengineer/comments/1k50lhv/dp203\_exam\_english\_language\_is\_retired\_dp700\_is/](https://www.reddit.com/r/dataengineer/comments/1k50lhv/dp203_exam_english_language_is_retired_dp700_is/)",3,2,everythingwell,2025-04-22 07:59:11,https://www.reddit.com/r/dataengineering/comments/1k50wit/dp203_exam_english_language_is_retired_dp700_is/,0,False,False,False,False
+1k4xmzt,Switching into SWE or MLE questions.,"Basically the title. I'm trying to get out of data engineering since it's just really boring and trivial to me for almost any task, and the ones that are hard are just really tedious. A lot of repetitive query writing and just overall not something I'm enjoying.
+
+I've always enjoyed ML and distributed systems, so I think MLE would be a perfect fit for me. I have 2 YOE if you're only counting post graduation and 3 if you count internship. I know MLE may not be the ""perfect"" fit for researching models, but if I want to get into actual research for modern LLM models, I'd need to get a PhD, and I just don't have the drive for that.
+
+Background: did UG at a top 200 public school. Doing MS at Georgia Tech with ML specialization. Should finish that in 2026 end of summer or end of fall depending if I want to take a 1 course semester for a break.
+
+  
+I guess my main question is whether it's easier to swap into MLE from DE directly or go SWE then MLE with the master's completion. I haven't been seriously applying since I recently (Jan 2025) started a new DE role (thinking it would be more interesting since it's FinTech instead of Healthcare, but it's still boring). I would like to hear others' experience swapping into MLE, and potential ways I could make myself more hirable. I would specifically like a remote role also if possible (not original) but I would definitely take the right role in person or hybrid if it was a good company and good comp with interesting stuff. To put in perspective I'm making about 95k + bonus right now, so I don't think my comp requirements are too high. 
+
+I've also started applying to SWE roles just to see if something interesting comes up, but again just looking for advice / experience from others. Sorry if the post was unstructured lol I'm tired.",4,14,Little-Project-7380,2025-04-22 04:19:55,https://www.reddit.com/r/dataengineering/comments/1k4xmzt/switching_into_swe_or_mle_questions/,0,False,2025-04-22 04:23:05,False,False
+1k5mazo,"Resources for learning how SQL, Pandas, Spark work under the hood?","My background is more on the data science/stats side (with some exposure to foundational SWE concepts like data structures & algorithms) but my day-to-day in my current role involves a lot of writing data pipelines to handle large datasets. 
+
+I mostly use SQL/Pandas/PySpark. I’m at the point where I can write correct code that gets to the right result with a passable runtime, but I want to “level up” and gain a better understanding of what’s happening under the hood so I know how to optimize. 
+
+Are there any good resources for practicing handling cases where your dataset is extremely large, or reducing inefficiencies in your code (e.g. inefficient joins, suboptimal queries, suboptimal Spark execution plans, etc)?
+
+Or books and online resources for learning how these tools work under the hood (in terms of how they access/cache data, why certain things take longer, etc)?",2,4,hornypenitentiary,2025-04-23 00:41:21,https://www.reddit.com/r/dataengineering/comments/1k5mazo/resources_for_learning_how_sql_pandas_spark_work/,0,False,2025-04-23 00:50:21,False,False
+1k5l465,Cloudflare R2 Data Catalog Tutorial,,3,0,Clohne,2025-04-22 23:43:26,https://youtube.com/watch?v=fWOESc1KC60&si=QzXytZD-ZOIUgUBk,0,False,False,False,False
+1k5d84o,How to perform upserts in hive tables?,"I am trying to capture change in data in a table, and trying to perform scd type 1  via upserts.
+
+But it seems that vanilla parquet does not supports upserts, hence need help in how we can achieve to capture only when there’s a change in the data
+
+Currently the source table runs daily with full load and has only one date column which has one distinct value of the last run date of the job.
+
+Any idea what is a way around?",3,3,Happy-Zebra-519,2025-04-22 18:11:23,https://www.reddit.com/r/dataengineering/comments/1k5d84o/how_to_perform_upserts_in_hive_tables/,0,False,False,False,False
+1k5c7sh,Are snowflake tasks the right choice for frequent dynamically changing SQL?,"I recently joined a new team that maintains an existing AWS Glue to Snowflake pipeline, and building another one.
+
+The pattern that's been chosen is to use tasks that kick off stored procedures. There are some tasks that update Snowflake tables by running a SQL statement, and there are other tasks that updates those tasks whenever the SQL statement need to change. These changes are usually adding a new column/table and reading data in from a stream.
+
+After a few months of working with this and testing, it seems clunky to use tasks like this. More I read, tasks should be used for more static infrequent changes. The clunky part is having to suspend the root task, update the child task and make sure the updated version is used when it runs, otherwise it wouldn't insert the new schema changes, and so on etc.
+
+Is this the normal established pattern, or are there better ones?
+
+I thought about maybe, instead of using tasks for the SQL, use a Snowflake table to store the SQL string? That would reduce the number of tasks, and avoid having to suspend/restart.",2,7,bvdevvv,2025-04-22 17:31:31,https://www.reddit.com/r/dataengineering/comments/1k5c7sh/are_snowflake_tasks_the_right_choice_for_frequent/,0,False,False,False,False
+1k5biux,Apache Flink duplicated messages,"Id there is someone familiar with Apache Flink, how to set up exactly once message processing to handle gailure? When the flink job fails between two checkpoints, some messages are processed but not included in the checkpoint, so when the job starts again it starts from the checkpoint and repeat some messages? I want to disable that and make sure each message is processed exactly once. I am worling with Kafka source.",2,2,This-Cricket-5542,2025-04-22 17:03:52,https://www.reddit.com/r/dataengineering/comments/1k5biux/apache_flink_duplicated_messages/,1,False,False,False,False
+1k5gken,Is there any point making a data flow diagram if you already made an ERD?,Looking for opinions from professionals. ,1,2,tiggat,2025-04-22 20:24:51,https://www.reddit.com/r/dataengineering/comments/1k5gken/is_there_any_point_making_a_data_flow_diagram_if/,0,False,False,False,False
+1k5fwvx,Idempotency and data historicization,"In a database, how di you manage to keep memory of changes in the rows. I am thinking about user info that changes, contracts type, payments type and so on but that it is important that one has the ability to track hitorical beahviour in case of backtests or kpis history.
+
+How do you get it?  ",1,4,ubiond,2025-04-22 19:58:37,https://www.reddit.com/r/dataengineering/comments/1k5fwvx/idempotency_and_data_historicization/,0,False,False,False,False
+1k5e14a,Excel-based listings file into an ETL pipeline,"Hey r/dataengineering,
+
+I’m 6 months into learning Python, SQL and DE. 
+
+For my current work (non-related to DE) I need to process an Excel file with 10k+ rows of product listings (boats, ATVs, snowmobiles) for a classifieds platform (like Craigslist/OLX). 
+
+I already have about 10-15 scripts in Python I often use on that Excel file which made my work tremendously easier. And I thought it would be logical to make the whole process automated in a full pipeline with Airflow, normalization, validation, reporting etc.
+
+Here’s my plan:
+
+1. Extract:  
+- load Excel (local or cloud) using pandas
+
+2. Transform:  
+- create a 3NF SQL DB
+- validate data, check unique IDs, validate years columns, check for empty/broken data, check constency, data types fix invalid addresses etc)
+- run obligatory business-logic scripts (validate addresses, duplicate rows if needed, check for dealerships and many more)
+- query final rows via joins, export to data/transformed.xlsx
+
+3. Load
+   - upload final Excel via platform’s API
+   - archive versioned files on my VPS
+
+4. Report
+   - send Telegram message with row counts, category/address summaries, Matplotlib graphs, and attached Excel.  
+   - error logs for validation failures
+
+5. Testing
+   - pytest unit tests for each stage (e.g., Excel parsing, normalization, API uploads).  
+
+Planning to use Airflow to manage the pipeline as a DAG, with tasks for each ETL stage and retries for API failures but didn’t think that through yet.
+
+As experienced data engineers what strikes you first as bad design or bad idea here? How can I improve it as a project for my portfolio?
+
+Thanks in advance!",1,3,onebraincellperson,2025-04-22 18:43:19,https://www.reddit.com/r/dataengineering/comments/1k5e14a/excelbased_listings_file_into_an_etl_pipeline/,0,False,False,False,False
+1k5bx42,Orca - Timeseries Processing with Superpowers,Building a timeseries processing tool. Think Beam on steroids. Looking for input on what people **really** need from timeseries processing. All opinions welcome!,1,0,Solvicode,2025-04-22 17:19:42,https://www.predixus.com/orca,0,False,False,False,False
+1k57eyb,Local Stack Deployment for AWS Native Data Stack,"Hi folks. I'm wondering how can I create a local deployment of our AWS native data stack using s3, athena, glue catalog, and dagster as orchestrator?
+
+It's getting harder and not economical to test new pipelines and data assets in our aws staging environment so hoping there's a good way to have a local deployment wherein you can perform intial testing",1,5,chanchan_delier,2025-04-22 14:16:45,https://www.reddit.com/r/dataengineering/comments/1k57eyb/local_stack_deployment_for_aws_native_data_stack/,0,False,False,False,False
+1k54rd3,What's the best way to sync Dropbox and S3 without using a paid app?,"I need to create a replica of a Dropbox folder on S3, including its folder structure and files, and ensure that when a file is uploaded or deleted in Dropbox, S3 is updated automatically to reflect the change. 
+
+
+
+Is this possible? Can someone please tell me how to do this?",0,4,PerfectRough5119,2025-04-22 12:12:36,https://www.reddit.com/r/dataengineering/comments/1k54rd3/whats_the_best_way_to_sync_dropbox_and_s3_without/,0,False,False,False,False
+1k53yd4,10 Must-Have Features in a Data Scraper Tool (If You Actually Want to Scale),"If you’re working in market research, product intelligence, or anything that involves scraping data at [scale](https://www.promptcloud.com/blog/simple-web-scraping-project-solutions/?utm_source=reddit&utm_medium=social&utm_campaign=socialpost_22april2025), you know one thing: not all scraper tools are built the same.
+
+Some break under load. Others get blocked on every other site. And a few… well, let’s say they need a dev team babysitting them 24/7.
+
+We put together a practical guide that breaks down the **10 must-have features** every serious online data scraper tool should have. Think:  
+✅ Scalability for millions of pages  
+✅ Scheduling & Automation  
+✅ Anti-blocking tech  
+✅ Multiple export formats  
+✅ Built-in data cleaning  
+✅ And yes, legal compliance too
+
+It’s not just theory; we included real-world use cases, from lead generation to price tracking, sentiment analysis, and training AI models.
+
+If your team relies on web data for growth, this post is worth the scroll.  
+👉 [Read the full breakdown here](https://www.promptcloud.com/blog/top-10-features-of-a-data-scraper-tool/?utm_source=reddit&utm_medium=social&utm_campaign=socialpost_22april2025)  
+👉 [Schedule a demo](https://www.promptcloud.com/schedule-a-demo/?utm_source=reddit&utm_medium=social&utm_campaign=socialpost_22april2025promptcloud.com) if you're done wasting time on brittle scrapers.
+
+I would love to hear from others who are [scraping at scale](https://www.promptcloud.com/blog/managed-web-scraping-for-data-collection/). What’s the one feature you *need* in your tool?",0,0,promptcloud,2025-04-22 11:29:31,https://www.reddit.com/r/dataengineering/comments/1k53yd4/10_musthave_features_in_a_data_scraper_tool_if/,0,False,False,False,False
+1k5c4mb,"We cloned over 15,000 repos to find the best developers","Hey everyone! Wanted to share a little adventure into data engineering and AI.
+
+We wanted to find the best developers on Github based on their code, so we cloned over 15,000 GitHub repos and analyzed their commits using LLMs to evaluate actual commit quality and technical ability.
+
+In two days we were able to curate a dataset of 250k contributors, and hosted it on [https://www.sashimi4talent.com/](https://www.sashimi4talent.com/) . Lots of learnings into unstructured data engineering and batch inference that I'd love to share!",0,1,Frequent_Pea_2551,2025-04-22 17:27:57,https://blog.getdaft.io/p/we-cloned-over-15000-repos-to-find,0,False,False,False,False

@@ -30,7 +30,7 @@ os.makedirs(GRAPHS_DIR, exist_ok=True)
 # add root directory of project to Python's import path so we can import modules from older folders
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from utils.s3_helpers import upload_graph_to_s3
+from utils.s3_helpers import upload_to_s3
 
 '''
 This program uses Word2Vec to get similar clusters of words, and measures each cluster's average score.
@@ -80,12 +80,19 @@ def kmeans_elbow_method(max_k, data, output_file_path):
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.constants import aws_access_key, aws_secret_access_key, aws_bucket_name, aws_region
-from utils.s3_helpers import load_combined_data_from_s3
+from utils.s3_helpers import load_latest_data_from_s3
 
 def run_nlp_clustering_pipeline():
 
     # read the updated combined data using the load_combined_data heper function from utils to get the updated (daily) data
-    combined_df = load_combined_data_from_s3(aws_access_key, aws_secret_access_key, aws_region, aws_bucket_name)
+    combined_df = load_latest_data_from_s3(
+        aws_access_key, 
+        aws_secret_access_key, 
+        aws_region, 
+        aws_bucket_name, 
+        prefix = 'processed',
+        keyword = 'reddit_combined_data'
+    )
 
     # initialize the huggingface sentiment pipeline to get a 
     sentiment_pipeline = pipeline('sentiment-analysis', model='distilbert-base-uncased-finetuned-sst-2-english')
@@ -141,10 +148,10 @@ def run_nlp_clustering_pipeline():
     pca = PCA(n_components=2)
     reduced = pca.fit_transform(vectors)
 
-   # use the elbow method to check how many clusters to  pick 
+   # use the elbow method to check how many clusters to pick 
     kmeans_elbow_path = os.path.join(GRAPHS_DIR, "k_means_interia.png")
     optimal_k = kmeans_elbow_method(20, reduced, kmeans_elbow_path)
-    upload_graph_to_s3(kmeans_elbow_path)
+    upload_to_s3(kmeans_elbow_path, 'graphs')
 
     # use k-means clustering to get clusters of word groups 
     kmeans = KMeans(n_clusters=optimal_k, random_state=42)
@@ -174,7 +181,7 @@ def run_nlp_clustering_pipeline():
 
     top10words_clusters_path = os.path.join(GRAPHS_DIR, 'top_10_words_by_cluster.png')
     plt.savefig(top10words_clusters_path)
-    upload_graph_to_s3(top10words_clusters_path)
+    upload_to_s3(top10words_clusters_path, 'graphs')
 
     texts = []
 
@@ -199,7 +206,7 @@ def run_nlp_clustering_pipeline():
     
     word2vec_clusters_path = os.path.join(GRAPHS_DIR, 'word2vec_clusters.png')
     plt.savefig(word2vec_clusters_path)
-    upload_graph_to_s3(word2vec_clusters_path)
+    upload_to_s3(word2vec_clusters_path, 'graphs')
 
     ### - Based on the above clusters, compute the avg score and num of comments for each cluster based on if the cluster's words match a posts
     # store the cluster's scores in a list 
@@ -280,7 +287,9 @@ def run_nlp_clustering_pipeline():
     # sort the df by score_rank and comment_rank so highest engagement word clusters are at the top 
     cluster_insights_df = cluster_insights_df.sort_values(by=['score_rank', 'comment_rank'])
 
-    cluster_insights_df.to_csv(os.path.join(OUTPUT_DIR, 'cluster_engagement_insights.csv'), index=False)
+    cluster_insights_path = os.path.join(OUTPUT_DIR, 'cluster_engagement_insights.csv')
+    cluster_insights_df.to_csv(cluster_insights_path, index = False)
+    upload_to_s3(cluster_insights_path, 'processed')
 
     # draw a heatmap to get a comparison of each cluster's avg statistics 
     # filter the columns that we want to compare (cluster id, avg score, avg comments, numer of posts in each quantile)
@@ -299,7 +308,7 @@ def run_nlp_clustering_pipeline():
     
     cluster_engagement_metrics_path = os.path.join(GRAPHS_DIR, 'cluster_engagement_metrics.png')
     plt.savefig(cluster_engagement_metrics_path)
-    upload_graph_to_s3(cluster_engagement_metrics_path)
+    upload_to_s3(cluster_engagement_metrics_path, 'graphs')
 
     # get each post's avg statistics like the cluster-wise avg statistics above 
     keyword_to_cluster = {} # initialize an empty hashmap that lists all keywords and their cluster they belong to - stores keyword_to_cluster[word] = cluster_id 
@@ -370,7 +379,9 @@ def run_nlp_clustering_pipeline():
     # drop all of the columns that are not needed to train the model, like id, url, author, cleaned_body (only used for transformer based NLP), example posts
     combined_df = combined_df.drop(columns = ['id', 'url', 'author', 'cleaned_body'])
 
-    combined_df.to_csv(os.path.join(OUTPUT_DIR, 'post_engagement_insights.csv'), index = False)
+    post_engagement_insights_path = os.path.join(OUTPUT_DIR, 'post_engagement_insights.csv')
+    combined_df.to_csv(post_engagement_insights_path, index = False)
+    upload_to_s3(post_engagement_insights_path, 'processed')
 
     return {
     "rows_processed": combined_df.shape[0],

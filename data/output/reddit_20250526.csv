@@ -1,0 +1,260 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1kuwzs9,My databricks exam got suspended,"Feeling really down as my data engineer professional exam got suspended one hour into the exam.
+
+Before that, I got a warning that I am not allowed to close my eyes. I didn't. Those questions are long and reading them from top to bottom might look like I'm closing my eyes. I can't help it. 
+
+They then had me show the entire room and suspended the exam without any explanantion.
+
+I prefer Microsoft exams to this. At least, the virtual tour happens before the exam begins and there's an actual person constantly proctoring. Not like Kryterion where I think they are using some kind of software to detect eye movement.
+
+",131,42,_lady_forlorn,2025-05-25 07:40:31,https://www.reddit.com/r/dataengineering/comments/1kuwzs9/my_databricks_exam_got_suspended/,0,False,False,False,False
+1kuq56n,Career Move: Switching from Databricks/Spark to Snowflake/Dbt,"Hey everyone,
+
+I wanted to get your thoughts on a potential career move. I've been working primarily with Databricks and Spark, and I really enjoy the flexibility and power of working with distributed compute and Python pipelines.
+
+Now I’ve got a job offer from a company that’s heavily invested in the Snowflake + Dbt stack. It’s a solid offer, but I’m hesitant about moving into something that’s much more SQL-centric. I worry that going ""all in"" on SQL might limit my growth or pigeonhole me into a narrower role over time.
+
+I feel like this would push me away from core software engineering practices, given that SQL lacks features like OOP, unit testing, etc...
+
+Is Snowflake/Dbt still seen as a strong direction for data engineering, or would it be a step sideways/backwards compared to staying in the Spark ecosystem?
+
+Appreciate any insights!",96,34,OrganizationTop1668,2025-05-25 00:40:42,https://www.reddit.com/r/dataengineering/comments/1kuq56n/career_move_switching_from_databricksspark_to/,0,False,False,False,False
+1kux14t,DE in Financial Industry career path,"I’m 26, based in London, have 3 years experience in data engineering, just started a new role in a fintech - base salary £70k.
+
+Trying to map out a bit of a career path that I can look to as a guide, goal is frankly just to make as much money as possible over the next 5-10 years. 
+
+Should I be looking to move into a bank in a couple years time, and then maybe a trading firm? I’d like to stay in finance ideally. 
+
+Wondering at what level does the London market max out, and whether should I be looking to move to the US sooner than later? 
+
+Any thoughts you guys have would be much appreciated! ",17,3,His-Holiness,2025-05-25 07:43:12,https://www.reddit.com/r/dataengineering/comments/1kux14t/de_in_financial_industry_career_path/,0,False,False,False,False
+1kut02f,How many data model daily,"I'm curious as to how many data models you build in a day or week and why
+
+Do you think the number of data models per month can be counted as your KPI?",18,27,ketopraktanjungduren,2025-05-25 03:23:18,https://www.reddit.com/r/dataengineering/comments/1kut02f/how_many_data_model_daily/,0,False,False,False,False
+1kut4ba,Building a Full-Fledged Data Engineering Learning Repo from Scratch Feedback Wanted!,"Hey everyone,
+
+I'm currently a **Data Engineering intern + final-year CS student** with a strong passion for building real-world DE systems.
+
+Over the past few weeks, I’ve been diving deep into ETL, orchestration, cloud platforms (Azure, Databricks, Snowflake), and data architecture. Inspired by some great Substacks and events like **OpenXData**, I’m thinking of starting a **public learning repository** focused on :
+
+I’ve structured it into **three project levels** each one more advanced and realistic than the last:
+
+Basic -> 2 projects -> Python, SQL, Airflow, PostgreSQL, basic ETL| 
+
+Intermediate -> 2 projects -> Azure Data Factory, Databricks (batch), Snowflake, dbt
+
+Advanced -> 2 projects -> Streaming pipelines, Kafka + PySpark, Delta Lake, CI/CD, monitoring
+
+* Not just dashboards or small-scale analysis
+* Projects designed to **scale from 100 rows → 1 billion rows**
+* Focus on **workflow orchestration**, **data modeling**, and **system design**
+* Learning-focused but aligned with **production-grade design principles**
+* Built to **learn, practice, and showcase** for real interviews & job prep
+
+Feedback on project ideas, structure, or tech stack, Suggestions for **realistic use cases** to build, Tips from experienced engineers who’ve built at scale, Anyone who wants to follow or contribute you're welcome!
+
+Would love any thoughts you all have thanks for reading 🙏",14,10,Alex_0004,2025-05-25 03:30:07,https://www.reddit.com/r/dataengineering/comments/1kut4ba/building_a_fullfledged_data_engineering_learning/,0,False,2025-05-25 06:40:32,False,False
+1kv5bvz,Dealing with the idea that ERP will solve all business problem,"The company I am working at is implementing their first ERP system. They easily took the ""promise"" that ERP will solve all of their analytics problem and that dashboards are just ""half ERP"".
+
+Later on the implementation process they realized that the ERP cannot process the data by itself and needs third party tools like Power BI and Looker.
+
+  
+Do you have similar experience to me? 
+
+How do you convince business users that ERP is just another source system to every data engineer?",10,4,ketopraktanjungduren,2025-05-25 15:32:18,https://www.reddit.com/r/dataengineering/comments/1kv5bvz/dealing_with_the_idea_that_erp_will_solve_all/,0,False,False,False,False
+1kv5cph,Reducing Peak Memory Usage in Trino: A SQL-First Approach,"Hi all, full disclosure I’m looking for feedback on my first Medium post: https://medium.com/@shuu1203/reducing-peak-memory-usage-in-trino-a-sql-first-approach-fc687f07d617
+
+I’m fairly new to Data Engineering (or actually, Analytics Engineering) (began in January with moving to a new project) and was wondering if I could write something up I found interesting to work on. I’m unsure if the nature of the post is even something of worthy substance to anyone else.
+
+I appreciate any honest feedback.",11,1,sanji-vs,2025-05-25 15:33:19,https://www.reddit.com/r/dataengineering/comments/1kv5cph/reducing_peak_memory_usage_in_trino_a_sqlfirst/,0,False,False,False,False
+1kvegva,Could someone explain how data engineering job openings are down so much during this AI hype,"https://preview.redd.it/pefijjqa403f1.png?width=1138&format=png&auto=webp&s=d26e72f944bde942a6246067471b46554d27ad74
+
+Granted this was data from 2023-2024, but its still strange. Why did data engineers get hit the hardest?
+
+Source: [https://bloomberry.com/how-ai-is-disrupting-the-tech-job-market-data-from-20m-job-postings/](https://bloomberry.com/how-ai-is-disrupting-the-tech-job-market-data-from-20m-job-postings/)",24,21,Jazzlike_Middle2757,2025-05-25 22:08:53,https://www.reddit.com/r/dataengineering/comments/1kvegva/could_someone_explain_how_data_engineering_job/,0,False,False,False,False
+1kut9e6,Ideas on how to handle deeply nested json files,"My application is distributed across several AWS accounts, and it writes logs to Amazon CloudWatch Logs in the `.json.gz` format. These logs are streamed using a subscription filter to a centralized Kinesis Data Stream, which is then connected to a Kinesis Data Firehose. The Firehose buffers, compresses, and delivers the logs to Amazon S3 following the flow:  
+**CloudWatch Logs → Kinesis Data Stream → Kinesis Data Firehose → S3**
+
+I’m currently testing some scenarios and encountering challenges when trying to write this data directly to the AWS Glue Data Catalog. The difficulty arises because the JSON files are deeply nested (up to four levels deep) as shown in the example below.
+
+  
+I would like to hear suggestions on how to handle this. I have tested Lambda Transformations but I am getting errors since my json is 12x longer than that. I wonder if Kinesis Firehose can handle that without any coding. I researched but it appears not to handle that nested level.
+
+    {
+      ""order_id"": ""ORD-2024-001234"",
+      ""order_status"": ""completed"",
+      ""customer"": {
+        ""customer_id"": ""CUST-789456"",
+        ""personal_info"": {
+          ""first_name"": ""John"",
+          ""last_name"": ""Doe"",
+          ""phone"": {
+            ""country_code"": ""+1"",
+            ""number"": ""555-0123""
+          }
+        }
+      }
+    }
+    ",8,31,BlueAcronis,2025-05-25 03:38:23,https://www.reddit.com/r/dataengineering/comments/1kut9e6/ideas_on_how_to_handle_deeply_nested_json_files/,0,False,False,False,False
+1kupvm8,Next steps for portfolio project?,"Hello everyone! I am an early career SWE (2.5 YoE) trying to land an early or mid-level data engineering role in a tech hub. I have a Python project that pulls dog listings from one of my local animal shelters daily, cleans the data, and then writes to an Azure PostgreSQL database. I also wrote some APIs for the db to pull schema data, active/recently retired listings, etc. I'm at an impasse with what to do next. I am considering three paths:
+
+1. Build a frontend and containerize. Frontend would consist of a Django/Flask interface that shows active dog listings and/or links to a Tableau dashboard that displays data on old listings of dogs who have since left the shelter.
+
+2. Refactor my code with PySpark. Right now I'm storing data in basic Pandas dataframes so that I can clean them and push them to a single Azure PostgreSQL node. It's a fairly small animal shelter, so I'm only handling up to 80-100 records a day, but refactoring would at least prove Spark skills.
+
+3. Scale up and include more shelters (would probably follow #2). Right now, I'm only pulling from a single shelter that only has up to ~100 dogs at a time. I could try to scale up and include listings from all animal shelters within a certain distance from me. Only potential downside is increase in cloud budget if I have to set up multiple servers for cloud computing/db storage.
+
+Which of these paths should I prioritize for? Open to suggestions, critiques of existing infrastructure, etc.",7,1,notgrassnotgas,2025-05-25 00:25:44,https://www.reddit.com/r/dataengineering/comments/1kupvm8/next_steps_for_portfolio_project/,0,False,False,False,False
+1kv54t6,Career Transition Advice: From SAP Developer (13 YOE) to Amazon Data Engineer – Need Guidance,"I’m currently working as an SAP developer with 13 years of experience, mostly focused on ABAP, SAP EWM, and backend logic. I’m now planning a career transition into data engineering, and my target is a Data Engineer role at Amazon.
+
+I already have strong experience in SQL and database design, and I’ve worked with complex data flows in enterprise environments. I’m planning to take a Data Engineering Bootcamp on Coursera to build a solid foundation in modern tools and frameworks.
+
+Before I go all in, I’d love some advice:
+	•	Which specific skills or tools should I focus on to break into a DE role at Amazon?
+	•	Are there any must-have certifications or project ideas that can help me stand out?
+	•	How much weight does my SAP experience carry when applying to cloud data roles?
+	•	Any recommendations for open-source projects or hands-on practice platforms?
+
+Would appreciate any input from folks who made similar transitions or are working in the DE space at big tech.
+
+Thanks in advance!
+",4,3,BlacksmithDowntown73,2025-05-25 15:23:48,https://www.reddit.com/r/dataengineering/comments/1kv54t6/career_transition_advice_from_sap_developer_13/,0,False,False,False,False
+1kv6s6m,Databricks Academy Labs - Is it worth it?,"Hello Data Engineers,   
+  
+I am interested in getting your review of the Databricks Academy Labs?   
+  
+Please if you work for or affiliated to Databricks you aren't invited to provide feedback/review.",3,0,AcanthisittaBroad765,2025-05-25 16:34:39,https://www.reddit.com/r/dataengineering/comments/1kv6s6m/databricks_academy_labs_is_it_worth_it/,0,False,False,False,False
+1kv5znf,Development using the company tech stack vs CV-driven development,"Hi guys.
+
+I just came out from an int. with a software development company for a Data Engineering position.
+
+I received feedback (which surprised me tbh) that said that ""I must have experience with Airflow, Spark, Kafka"" and so on ""because it's what the market is expecting you to know"".
+
+My question is, how do you handle getting experience with these tool when Business doesn't need to? More often than not, companies don't need to deploy an Airflow server for Orchestration or a Kafka one for Streaming because they don't need to do Streaming, or even the Orchestration could be done by using Glue or ADF (for example). I see many post regarding poorly architectured solutions that rely on pyspark when the processing could've been done using pandas, and so on.
+
+So, how do maintain relevant in a Business that apparently needs those tools, when in reality, a large part of companies doesn't need them at all, or even the tech stack is not in favor of using those tools?
+
+Thanks.",3,5,oscarmch,2025-05-25 16:00:52,https://www.reddit.com/r/dataengineering/comments/1kv5znf/development_using_the_company_tech_stack_vs/,0,False,2025-05-25 16:06:13,False,False
+1kv520y,Decentralised vs distributed architecture for ETL batches,"Hi,
+
+We are a traditional software engineering team having sole experience in developing web services so far using Java with Spring Boot. We now have a new requirement in our team to engineer data pipelines that comply with standard ETL batch protocol. 
+
+Since our team is well equipped in working with Java and Spring Boot, we want to continue using this tech stack to establish our ETL batches. We do not want to pivot away from our regular tech stack for ETL requirements. We found Spring Batch  helps us to establish ETL compliant batches without introducing new learning friction or $ costs.
+
+Now comes the main pain point that is dividing our team politically. 
+
+Some team members are advocating towards decentralised scripts that are knowledgeable enough to execute independently as a standard web service in tandem with a local cron template to perform their concerned function and operated manually by hand on each of our horizontally scaled infrastructure. Their only argument is that it prevents a single point of failure without caring for the overheads of a batch manager. 
+
+While the other part of the team wants to use the remote partitioning job feature from a mature batch processing framework (Spring Batch for example) to achieve the same functionality as of the decentralized cron driven script but in a distributed fashion over our already horizontally scaled infrastructure to have more control on the operational concerns of the execution. Their argument is deep observability, easier run and restarts, efficient cron synchronisation over different timezones and servers while risking a single point of failure.
+
+We have a single source of truth that contains the infrastructure metadata of all servers where the batch jobs would execute so leveraging it within a batch framework makes more sense IMO to dynamically create remote partitions to execute our ETL process.
+
+I would like to get your views on what would be the best approach to handle the implementation and architectural nature of our ETL use case?
+
+We have a downstream data warehouse already in place for our ETL use case to write data but its managed by a different department so we can't directly integrate into it but have to do it with a non industry standard company wide red tape bureaucratic process but this is a story for another day.",3,7,Historical_Ad4384,2025-05-25 15:20:26,https://www.reddit.com/r/dataengineering/comments/1kv520y/decentralised_vs_distributed_architecture_for_etl/,0,False,False,False,False
+1kvdo7a,What are your biggest hair on fire issues with DE,"Hey guys!
+
+Quite new to the DE space, (am from a ML background). I would love to know what are the biggest issues you face when using existing solutions in your data engineering pipeline.
+
+I find the best way to learn about a new field is learning about the problems with existing solutions and diving straight into solving those problems",2,10,Sriyakee,2025-05-25 21:32:14,https://www.reddit.com/r/dataengineering/comments/1kvdo7a/what_are_your_biggest_hair_on_fire_issues_with_de/,0,False,False,False,False
+1kvbr5b,"Learning About GCP BigQuery Table Schema - Please help me understand the real world use cases of when and how often you use ""Nested & Repeating Schema"" and ""normalized relational schema"" when constructing your GCP BigQuery tables.","**Question:**
+
+I am currently learning Google Cloud Platform for data engineering. I learned that there are three types of schemas that I can use when constructing tables in BigQuery: 1) Normalized relational schema, 2) Nested & Repeating Schema, 3) Denormalized schema. I am trying to understand when I will realistically use ""Nested & Repeating Schema"" instead of ""normalized relational schema"" for the tables that I construct in BigQuery.
+
+
+
+Please answer both of these questions below:
+
+1. When do you use ""Nested & Repeating Schema"" over ""normalized relational schema"" when you construct tables in BigQuery?
+
+2. When constructing tables within BigQuery data warehouses, how often do you use ""Nested & Repeating Schema""? How often do you use ""normalized relational schema""? If possible, please provide me a ballpark percentage (Ex. 40% Nested & Repeating Schema vs. 60% normalized relational schema).
+
+  
+
+
+**My Current Rationale:**
+
+I understand that BigQuery is a columnar oriented database. I learned that ""Nested & Repeating Schema"" is a more cost-effective for querying and more efficient than ""normalized relational schema"". However, even after researching it, I do not fully understand the real life advantages of ""Nested & Repeating Schema"" over a ""normalized relational schema"".
+
+Although ""Nested & Repeating Schema"" is more efficient and cost-effective for querying, I think a ""normalized relational schema"" makes more sense because it allows you to update records more easily like a traditional SQL RDBMS.
+
+I understand that columnar oriented databases are great when your historical data within the BigQuery table does not change. However, from my experience on working as a data analyst, historical data frequently needs to change. For example, lets say you have an external OLTP RDBMS that feeds into BigQuery daily. This external OLTP RDBMS contains a table named sales data. This table contains a column named ""Member Status"" and returns either one of two outputs: ""Active"" or ""Inactive"". ""Member ID"" 123456 has a ""Member Status"" of ""Active"". The data for that daily load is sent from the external OLTP RDBMS to the BigQuery table containing the data of ""Member ID"" 123456 with a ""Member Status"" of ""Active"". Three months later, the ""Member Status"" of ""Member ID"" 123456 changes to ""Inactive"" within the external OLTP RDBMS.
+
+From my understanding, now I cannot change that data easily within the BigQuery table if it has ""Nested & Repeating Schema"" . If my BigQuery table had ""normalized relational schema"", it should be able to update the ""Member Status"" of ""Member ID"" 123456 very easily.
+
+This is my rationale on why I think a ""normalized relational schema"" is better than ""Nested & Repeating Schema"" for the majority of real world use cases. 
+
+Please let me know if you agree, disagree, etc. I would love to hear your thoughts. I am still learning GCP and data engineering.
+
+  
+Thank you for reading.    :)",2,6,Original_Chipmunk941,2025-05-25 20:07:28,https://www.reddit.com/r/dataengineering/comments/1kvbr5b/learning_about_gcp_bigquery_table_schema_please/,0,False,False,False,False
+1kvafkw,I built a digital asset manager with no traditional database — using Lance + Cloudflare R2,"I’ve been experimenting with data formats like Parquet and Iceberg, and recently came across [Lance](). I wanted to try building something around it.
+
+So I put together a simple Digital Asset Manager (DAM) where:
+
+* Images are uploaded and vectorized using CLIP
+* Vectors are stored in Lance format directly on Cloudflare R2
+* Search is done via Lance, comparing natural language queries to image vectors
+* The whole thing runs on [Fly.io](http://Fly.io) across three small FastAPI apps (upload, search, frontend)
+
+No Postgres or Mongo. No AI, Just object storage and files.
+
+You can try it here: [https://metabare.com/](https://metabare.com/)  
+Code: [https://github.com/gordonmurray/metabare.com](https://github.com/gordonmurray/metabare.com)
+
+Would love feedback or ideas on where to take it next — I’m planning to add image tracking and store that usage data in Parquet or Iceberg on R2 as well.",1,5,gram3000,2025-05-25 19:10:01,https://www.reddit.com/r/dataengineering/comments/1kvafkw/i_built_a_digital_asset_manager_with_no/,0,False,False,False,False
+1kv3qym,Inside Data Engineering with Daniel Beach,"Sharing my latest ‘Inside Data Engineering’ article featuring veteran Daniel Beach, who’s been working in Data Engineering since before it was cool.
+
+This would help if you are looking to break into Data Engineering.
+
+**What to Expect:**
+
+* Inside the Day-to-Day – See what life as a data engineer really looks like on the ground.
+* Breaking In – Explore the skills, tools, and career paths that can get you started.
+* Tech Pulse – Keep up with the latest trends, tools, and industry shifts shaping the field.
+* Real Challenges – Uncover the obstacles engineers tackle beyond the textbook.
+* Myth-Busting – Set the record straight on common data engineering misunderstandings.
+* Voices from the Field – Get inspired by stories and insights from experienced pros.
+
+**Reach out if you like:**
+
+* To be the guest and share your experiences & journey.
+* To provide feedback and suggestions on how we can improve the quality of questions.
+* To suggest guests for the future articles.",2,1,mjfnd,2025-05-25 14:22:47,https://www.junaideffendi.com/p/inside-data-engineering-with-daniel,0,False,False,False,False
+1kvc127,Experience using DBT with aws Glue,"Would like to learn more about experiences while using dbt with glue as it was primarily used in data warehouses and then with popularity growing , more connectors were built such as for glue. 
+
+",1,0,Asleep-Photograph-10,2025-05-25 20:19:28,https://www.reddit.com/r/dataengineering/comments/1kvc127/experience_using_dbt_with_aws_glue/,0,False,False,False,False
+1kv6upq,Databricks Blended Learning - Is it worth paying $1500?,"Hello Data Engineers,   
+  
+For those of you who have enrolled, I am interested in getting your review of the Databricks Blended Learning?   
+  
+Please if you work for or affiliated to Databricks you aren't invited to provide feedback/review.",1,2,AcanthisittaBroad765,2025-05-25 16:37:46,https://www.reddit.com/r/dataengineering/comments/1kv6upq/databricks_blended_learning_is_it_worth_paying/,0,False,False,False,False
+1kuzaxw,Graduating Soon – Should I Focus on DE Certification or Start an ETL GitHub Project with Friends?,"Hi everyone,
+
+I’m currently finishing my Master's in Data Science and will officially graduate in June next year. I’ll have about a month of free time coming up, and I want to use it wisely to break into data engineering.
+
+I’ve narrowed it down to two options:
+
+Study for and pass a Microsoft-certified data engineering exam (probably the DP-203 – Azure Data Engineer Associate).
+
+Start a small ETL/data pipeline project with a few friends, maybe deploy it on the cloud (Azure or AWS) and publish everything on GitHub.
+
+My long-term goal is to land a data engineering or cloud engineering role. I'm already familiar with Python, SQL, and some Spark basics. Not much industry experience yet, but I want to show I'm serious about this path.
+
+What would be more valuable at this stage – having a certification on my cv, or showcasing a real project with code and design decisions?
+
+Would love to hear from anyone who’s already in the field or has gone through the same decision process. Any advice is appreciated!
+
+Thanks in advance ",1,7,cola1917,2025-05-25 10:21:29,https://www.reddit.com/r/dataengineering/comments/1kuzaxw/graduating_soon_should_i_focus_on_de/,0,False,False,False,False
+1kuz9qn,How to Build a Data Governance Program?,"I was recently appointed as Head of Data Governance and have started drafting policies. Would like to ask for advise on how I can build a data governance program. Where do I start? Is adopting the DAMA Framework a good strategy? Note that we are a small, fairly startup organization.
+
+Would appreciate your inputs.",1,1,Ready-Mulberry5536,2025-05-25 10:19:15,https://www.reddit.com/r/dataengineering/comments/1kuz9qn/how_to_build_a_data_governance_program/,0,False,False,False,False
+1kuvrue,How to create a Dropbox like personal and enterprise storage system?,"All of us have been using Dropbox or Google Drive for storing our stuff online, right? They allow us to share files with others via URLs or email address based permissions, and in case of Google Drive, the entire workspace can be dedicated to an organization.
+
+How to create one such system from scratch? The simplest way I can think of - is implement a raw object storage first (like S3 or Backblaze) that takes care of file replication (either directly or via Reed Solon Erasure Codes) - and once done, use that everywhere along with file metadata (like folder structure, permissions, etc.) stored in a DB to give the user an illusion of their own personal har disk for storing files.
+
+Is this a good way? Is that how, for example, Google Drive works? What other ways are there to make a distributed file storage system like Dropbox or Google Drive?",0,1,Attitudemonger,2025-05-25 06:16:40,https://www.reddit.com/r/dataengineering/comments/1kuvrue/how_to_create_a_dropbox_like_personal_and/,0,False,False,False,False
+1kuyxmq,DORA metrics in data engineering,"What do you, fellow DEs think of applying DORA metrics to our work? does it make sense, and if so, whould it need rewording or adjustments?",2,5,Dry-Aioli-6138,2025-05-25 09:56:56,https://www.reddit.com/r/dataengineering/comments/1kuyxmq/dora_metrics_in_data_engineering/,0,False,False,False,False
+1kvdcvw,Have $200 tix to World Summit AI USA.,"Anyone that's interested in going to World Summit AI USA, please DM me or message me on Instagram @sznxar. I have tickets for $200. The ticket value is $700. 
+
+",0,0,Ferrocius,2025-05-25 21:18:18,https://www.reddit.com/r/dataengineering/comments/1kvdcvw/have_200_tix_to_world_summit_ai_usa/,0,False,False,False,False

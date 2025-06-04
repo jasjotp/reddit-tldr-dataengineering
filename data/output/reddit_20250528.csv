@@ -1,0 +1,239 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1kwiihm,I just nuked all our dashboards,"EDIT:  
+This sub is way bigger than I expected, I have received enough comments for now and may re-add this story once the shame has subsided. Thank you for all you're help ",325,143,SocioGrab743,2025-05-27 08:58:31,https://www.reddit.com/r/dataengineering/comments/1kwiihm/i_just_nuked_all_our_dashboards/,0,False,2025-05-27 19:08:03,False,False
+1kwojc4,Salesforce agrees to buy Informatica for 8 billion,,261,118,putt_stuff98,2025-05-27 14:22:50,https://www.cnbc.com/amp/2025/05/27/salesforce-informatica-deal.html,0,False,False,False,False
+1kwnx2o,DuckLake - a new datalake format from DuckDb,"Hot off the press:
+
+* [https://ducklake.select/](https://ducklake.select/) 
+* [https://duckdb.org/2025/05/27/ducklake](https://duckdb.org/2025/05/27/ducklake) 
+* Associated podcasts: [https://www.youtube.com/watch?v=zeonmOO9jm4](https://www.youtube.com/watch?v=zeonmOO9jm4) 
+
+Any thoughts from fellow DEs?",90,44,lozinge,2025-05-27 13:56:42,https://www.reddit.com/r/dataengineering/comments/1kwnx2o/ducklake_a_new_datalake_format_from_duckdb/,0,False,False,False,False
+1kwrmmp,Spark 4 soon ?,"PySpark 4 is out on PyPi and I also found this link: [https://dlcdn.apache.org/spark/spark-4.0.0/spark-4.0.0-bin-hadoop3.tgz](https://dlcdn.apache.org/spark/spark-4.0.0/spark-4.0.0-bin-hadoop3.tgz), which means we can expect Spark 4 soon ?
+
+What are you mostly excited bout in Spark 4 ?",40,3,qlhoest,2025-05-27 16:24:50,https://i.redd.it/x501hzfcoc3f1.png,0,False,False,False,False
+1kwlvmf,How steep is the learning curve to becoming a DE?,"Hi all. As the title suggests… I was wondering for someone looking to move into a Data Engineering role (no previous experience outside of data analysis with SQL and Excel), how steep is the learning curve with regards to the tooling and techniques?
+
+Thanks in advance. ",34,44,Perfect83,2025-05-27 12:22:55,https://www.reddit.com/r/dataengineering/comments/1kwlvmf/how_steep_is_the_learning_curve_to_becoming_a_de/,0,False,False,False,False
+1kwy13s,"$10,000 annually for 500MB daily pipeline?","Just found out our IT department contracted a pipeline build that moves 500MB daily. They're pretending to manage data (insert long story about why they shouldn't). It's costing our business $10,000 per year. 
+
+Granted that comes with theoretical support and maintenance. I'd estimate the vendor spends maybe 1-6 hours per year doing support. 
+
+They don't know what value the company derives from it so they ask me every year about it. It does generate more value than it costs.
+
+I'm just wondering if this is even reasonable? We have over a hundred various systems that we need to incorporate as topics into the ""warehouse"" this IT team purchased from another vendor (it's highly immutable so really any ETL is just filling other databases in the same server). They did this stuff in like 2021-2022 and have yet to extend further, including building pipelines for the other sources. At this rate, we'll be paying millions of dollars to manage the full suite (plus whatever custom build charges hit upfront) of ETL, no even compute or storage. The $10k isn't for cloud, it's all on prem on our computer and storage.
+
+There's probably implementation details I'm leaving out. Just wondering if this is reasonable. 
+",25,46,quasirun,2025-05-27 20:33:38,https://www.reddit.com/r/dataengineering/comments/1kwy13s/10000_annually_for_500mb_daily_pipeline/,0,False,False,False,False
+1kw9ku2,Group by on large dataset [Over 1 TB],"Hi everyone, I'm currently using an NVIDIA Tesla V100  32GB with CUDF to do som transformation on a dataset. The response  time for the operations I'm doing is good, however, I'm wondering what is the best approach to do some grouping operations in some SQL database.  Assuming I'm allowed to create a DB architecture from scratch, what is my best option? Is Indexing a good idea or is there something else (better) for my use case?
+
+Thanks in advance.
+
+  
+EDIT: Thank you very much for the response to all of you,  I tried Clickhouse as many of you suggested and holy cow, it is insane what it does. I didn't bulk all the data into the DB yet, but I tried with a subset of 145 GB, and got the following metrics: 
+
+465 rows in set. Elapsed: 4.333 sec. **Processed 1.23 billion rows**, 47.36 GB (284.16 million rows/s., 10.93 GB/s.). Peak memory usage: 302.26 KiB.
+
+  
+I'm not sure if there is any way to even improve the response time, but I think I'm good with what I got. By the way, the database is pretty simple:
+
+  
+| DATE | COMPANY\_ID | FIELD 1 | ..... | .... | ......| .... | ..... | FIELD 7 | 
+
+  
+The query I was: 
+
+  
+SELECT FIELD 1, FIELD 2, COUNT(\*) FROM test\_table GROUP BY FIELD 1, FIELD 2;",15,12,fmoralesh,2025-05-27 00:08:27,https://www.reddit.com/r/dataengineering/comments/1kw9ku2/group_by_on_large_dataset_over_1_tb/,0,False,2025-05-27 22:32:08,False,False
+1kweo8p,Airflow observability,What do people use here for airflow observability needs besides the UI?,13,6,omscsdatathrow,2025-05-27 04:41:08,https://www.reddit.com/r/dataengineering/comments/1kweo8p/airflow_observability/,0,False,False,False,False
+1kwyqyi,DuckDB’s new data lake extension,,14,1,Phenergan_boy,2025-05-27 21:02:06,https://ducklake.select/,0,False,False,False,False
+1kwsazd,"pg_pipeline : Write and store pipelines inside Postgres 🪄🐘 - no Airflow, no cluster","You can now define, run and monitor data pipelines inside Postgres 🪄🐘 Why setup Airflow, compute, and a bunch of scripts just to move data around your DB?
+
+[https://github.com/mattlianje/pg\_pipeline](https://github.com/mattlianje/pg_pipeline)
+
+\- Define pipelines using JSON config  
+\- Reference outputs of other stages using \~>  
+\- Use parameters with $(param) in queries  
+\- Get built-in stats and tracking  
+  
+Meant for the 80–90% case: internal ETL and analytical tasks where the data already lives in Postgres.  
+  
+It’s minimal, scriptable, and plays nice with pg\_cron. 
+
+Feedback welcome! 🙇‍♂️",9,7,mattlianje,2025-05-27 16:51:26,https://www.reddit.com/r/dataengineering/comments/1kwsazd/pg_pipeline_write_and_store_pipelines_inside/,0,False,False,False,False
+1kwqb87,The Role of the Data Architect in AI Enablement,,6,1,growth_man,2025-05-27 15:33:51,https://moderndata101.substack.com/p/the-role-of-the-data-architect,0,False,False,False,False
+1kwg4jx,self serve analytics for our business users w/ text to sql. Build vs buy?,"Hey
+
+We want to give our business users a way to query data on their own. Business users = our operations team + exec team for now
+
+We have already documentation in place for some business definitions and for tables. And most of the business users already have a very bit of sql knowledge. 
+
+From your experience: how hard is it to achieve this? Should we go for a tool like Wobby or Wren AI or build something ourselves?
+
+Would love to hear your insights on this. Thx!",5,8,Narrow-Algae1455,2025-05-27 06:11:49,https://www.reddit.com/r/dataengineering/comments/1kwg4jx/self_serve_analytics_for_our_business_users_w/,0,False,False,False,False
+1kwh6rv,Suggest me some resources on system design related to data engineering,I am aws data engineer. I am struggling with system design rounds. Can you suggest me how to improve myself on this,4,2,Routine-Force6263,2025-05-27 07:23:55,https://www.reddit.com/r/dataengineering/comments/1kwh6rv/suggest_me_some_resources_on_system_design/,0,False,False,False,False
+1kwkqrm,Issue in the Mixpanel connector in Airbyte,"I’ve been getting a 404 Client Error on Airbyte saying “404 Client Error: Not Found for url: https://mixpanel.com/api/2.0/engage/revenue?project_id={}&from_date={}&to_date={}”
+
+I’ve been getting this error for the last 4-5 days  even though there’s been no issue while retrieving the information previously.
+
+The only thing I noted was the data size quadrupled ie Airbyte started sending multiple duplicate values for the prior 4-5 days before the sync job started failing.
+
+Has anybody else been facing a similar issue and were you able to resolve it?",4,3,Agreeable_Floor_1615,2025-05-27 11:21:35,https://www.reddit.com/r/dataengineering/comments/1kwkqrm/issue_in_the_mixpanel_connector_in_airbyte/,0,False,False,False,False
+1kwfkff,Facing issues to find optiminal way to data sync between two big tables across database,"Hey guyz , I want to sync data across dbs , I have code that can transfer about 300k rows in 18secs , so speed is not a issue . Issue is how to find out what to transfer in other terms what got changed 
+
+For specific we are using azure sql server 19 
+
+There are two tables 
+Table A
+Table B
+
+Table B is replicate of Table A . We process data in Table A and need to send the data back to Table B 
+
+The tables will have 1 million rows each 
+
+And about 1000 rows will get changed per etl .
+
+One of the approach was to generate hashes but even if u generate hashes 
+
+You will still compare 1 million hashes to 1 million hashes making it O(N)
+
+This there better way to do this ",2,5,xxxxxReaperxxxxx,2025-05-27 05:36:10,https://www.reddit.com/r/dataengineering/comments/1kwfkff/facing_issues_to_find_optiminal_way_to_data_sync/,0,False,False,False,False
+1kwy2ef,Tips to create schemas for data?,"Hi, I am not sure if I can ask this so please let me know if it is not right to do so.
+
+I am currently working on setting up Trino to query data stored in Hadoop (+Hive Metastore) to eventually query data to BI tools. Lets say my current data is currently stored in as /meters name/sub-meters name/multiple time-series.parquet:
+
+\`\`\`
+
+/meters/
+
+meter1/
+
+meter1a/
+
+part-\*.parquet
+
+meter1b/
+
+part-\*.parquet
+
+meter2/
+
+meter2a/
+
+part-\*.parquet
+
+...
+
+\`\`\`
+
+Each sub-meter has different columns (mixed data types) to each one another.  and there are around 20 sub-meters
+
+I can think of 2 ways to set up schemas in hive metastore:
+
+\- create multiple tables for each meter + add partitions by year-month-day (optional). Create views to combine tables to query data from and manually add meter names as a new column.
+
+\- Use long format and create general partitions such as meter/sub-meters:
+
+|timestamp|meter|sub\_meter|metric\_name|metric\_value (DOUBLE)|metric\_text (STRING)|
+|:-|:-|:-|:-|:-|:-|
+|2024-01-01 00:00:00|meter1|meter1a|voltage|220.5|NULL|
+|2024-01-01 00:00:00|meter1|meter1a|status|NULL|""OK""|
+
+The second one seems more practical but I am not sure if it is a proper way to store data. Any advice? Thank you!",1,0,Objective-Ad4718,2025-05-27 20:35:06,https://www.reddit.com/r/dataengineering/comments/1kwy2ef/tips_to_create_schemas_for_data/,0,False,False,False,False
+1kwvf6i,Feedback Wanted: What Topics Around Apache NiFi Flow Deployment(Management) Would Interest You Most?,"I’m part of a small team that’s built an on-premise tool for Apache NiFi — aimed at making flow deployment and environment promotion way faster and error-free, especially for teams that deal with strict data control requirements (think banking, healthcare, gov, etc.).
+We’re prepping some educational content (blogs, webinars, posts), and I’d love to ask:
+
+What kinds of NiFi-related topics would actually interest you?
+
+More technical (e.g., automating version control, CI/CD for NiFi, handling large-scale deployments)?
+
+Or more strategic (e.g., cost-saving strategies, managing flows across regulated environments)?
+Also:
+
+- Which industries do you think care most about on-prem NiFi?
+- Who usually owns these problems in your world — data engineers, platform teams, DevOps?
+- Where do you usually go for info like this — Reddit, Slack communities, LinkedIn groups, or something else?
+
+Not selling anything — just trying to build content that’s actually useful, not fluff.
+
+Would seriously appreciate any insights or even pet peeves you’re willing to share. 
+
+Thanks in advance!",0,0,suviapps,2025-05-27 18:51:52,https://www.reddit.com/r/dataengineering/comments/1kwvf6i/feedback_wanted_what_topics_around_apache_nifi/,0,False,False,False,False
+1kwtw97,"Unified MCP Server to analyze your data for PostgreSQL, Snowflake and BigQuery",,1,0,jekapats,2025-05-27 17:52:38,https://github.com/yevgenypats/cipher42-mcp,0,False,False,False,False
+1kwqxv0,"Advices on tooling (Airflow, Nifi)","Hi everyone!
+
+I am working in a small company (we're 3/4 in the tech department), with a lot of integrations to make with external providers/consumers (we're in the field of telemetry).
+
+I have set up an Airflow that works like a charm in order to orchestrate existing scripts (as a replacement of old crontabs basically).
+
+However, we have a lot of data processing to setup, pulling data from servers, splitting xml entries, formatting, conversion into JSON, read/Write into cache, updates with DBs, API calls, etc...
+
+I have tried running Nifi on a single container, and it took some time before I understood the approach but I'm starting to see how powerful it is.
+
+  
+However, I feel like it's a real struggle to maintain:  
+   - I couldn't manage to have it run behind an nginx so far (SNI issues) in the docker-compose context
+   - I find documentation to be really thin
+   - Interface can be confusing, naming of processors also
+   - Not that many tutorials/walkthrough, and many stackoverflow answers aren't 
+
+I wanted to try it in order to replace old scripts and avoid technical debt, but I am feeling like NiFi might not be super easy to maintain.
+
+I am wondering if keeping digging into Nifi is worth the pain, if managing the flows can be easy to integrate on the long run or if Nifi is definitely made for bigger teams with strong processes?
+Maybe we should stick to Airflow as it has more support and is more widespread?
+Also, any feedback on NifiKop in order to run it in kubernetes?
+
+I am also up for any suggestion!
+
+Thank you very much!
+
+",1,5,CoolExcuse8296,2025-05-27 15:58:27,https://www.reddit.com/r/dataengineering/comments/1kwqxv0/advices_on_tooling_airflow_nifi/,0,False,False,False,False
+1kwq1cx,Backfilling Postgres TOAST Columns in Debezium Data Change Events,,1,0,gunnarmorling,2025-05-27 15:22:54,https://www.morling.dev/blog/backfilling-postgres-toast-columns-debezium-change-events/,0,False,False,False,False
+1kwo8gu,Learning Materials Request for Google Cloud Professional Data Engineer Exam,"I am working as a data analyst and I would like to switch into data engineering field. So I would like to study and prepare for the Google Cloud Professional Data Engineer Exam  . As I am new to this , please kindly let me know the effective learning materials. 
+Would appreciate a lot! 
+Thanks in advance . ",1,1,sunaing1119,2025-05-27 14:09:49,https://www.reddit.com/r/dataengineering/comments/1kwo8gu/learning_materials_request_for_google_cloud/,0,False,False,False,False
+1kwk2eo,I created a tool to generate data pipelines hopefully in minutes,"Hey r/dataengineering !  
+I have been working on this for the last month and i am making some progress, I would to know if it is in the right direction!  
+I want to make it as easy as possible to create deploy and manage data pipelines
+
+I would love any feedback, feel free to message me directly comment or email me at [james@octopipe.com](mailto:james@octopipe.com)
+
+Huge thanks in advance!",1,0,spoor2709,2025-05-27 10:41:42,https://v.redd.it/apzhb41eza3f1,0,False,False,False,False
+1kwczpf,Data Engineering and Analytics huddle,"Lakehouse Data Processing with AWS Lambda, DuckDB, and Iceberg
+
+In this exploration, we aim to demonstrate the feasibility of creating a lightweight data processing pipeline for a Lake House using AWS Lambda, DuckDB, and Cloudflare’s R2 Iceberg. Here’s a step-by-step guide read more
+
+
+Columnar storage is a data organization method that stores data by columns rather than rows, optimizing for analytical queries. This approach allows for more efficient compression and faster processing of large datasets. Two popular columnar storage formats are Apache Parquet and Apache Avro.
+
+https://www.huddleandgo.work/de#what-is-columnar-storage
+
+",1,0,icandothisalldae,2025-05-27 03:04:50,https://www.huddleandgo.work/de#lightweight-lake-house-data-processing-with-aws-lambda-duckdb-and-cloudflare-r2-iceberg,0,False,False,False,False
+1kwteju,DE MSc Opinions?,"For someone wanting to move into a Data Engineer role (no previous experience), would the following MSc be worth it? Would it set me up in the right direction?
+
+https://www.stir.ac.uk/courses/pg-taught/big-data-online/?utm_source=chatgpt.com#accordion-panel-16",0,1,Perfect83,2025-05-27 17:33:21,https://www.reddit.com/r/dataengineering/comments/1kwteju/de_msc_opinions/,0,False,False,False,False
+1kwsh55,Why (and How) We Built Our Own Full Text Search Engine with ClickHouse,,0,0,JoeKarlssonCQ,2025-05-27 16:58:15,https://www.cloudquery.io/blog/why-and-how-we-built-our-own-full-text-search-engine-with-clickhouse,0,False,False,False,False
+1kwkhxf,Learn the basics in depth,,0,0,ImportantA,2025-05-27 11:07:27,https://note.datengineer.dev/posts/learn-the-basics-in-depth/,0,False,False,False,False
+1kwgs5w,Apache Iceberg for Promoting Data through Environments,"What are best practices to promote data pipelines over dev/test/prod environments? How to get data from prod to be able to either debug or create a new feature?
+
+Any recommendations or best practices?
+
+  
+thank you",0,0,the_travelo_,2025-05-27 06:55:59,https://www.reddit.com/r/dataengineering/comments/1kwgs5w/apache_iceberg_for_promoting_data_through/,0,False,False,False,False
+1kwe4ze,Agentic Coding with data engineering workflows,"I’ve stuck to the chat interfaces so far, but the OAI codex demo and now Claude Code release has peaked my interests in utilizing agentic frameworks for tasks in a dbt project.
+
+Do you have experience using Cursor, Windsurf, or Claude Code with a data engineering repository? I haven’t seen any examples/feedback on this use case. ",1,1,SuperSizedFri,2025-05-27 04:09:01,https://www.reddit.com/r/dataengineering/comments/1kwe4ze/agentic_coding_with_data_engineering_workflows/,0,False,False,False,False
+1kwvplp,Need resources for Data Modeling case studies please,"I’m a recent MSCS graduate trying to navigate this tough U.S. job market. I have around 2.5 years of prior experience in data engineering, and I’m currently preparing for data engineering interviews. One of the biggest challenges I’m facing is the lack of structured, comprehensive resources—everything I find feels scattered and incomplete.
+
+If anyone could share resources or materials, especially around **data modeling case studies**, I’d be incredibly grateful. 🙏🏼😭",0,1,Suspicious-Ear-1,2025-05-27 19:03:07,https://www.reddit.com/r/dataengineering/comments/1kwvplp/need_resources_for_data_modeling_case_studies/,0,False,False,False,False
+1kwsyrr,"As promised, another free link course","As promised here: [https://www.reddit.com/r/dataengineering/comments/1kc9jd4/just\_launched\_a\_course\_on\_building\_a\_simple\_ai/](https://www.reddit.com/r/dataengineering/comments/1kc9jd4/just_launched_a_course_on_building_a_simple_ai/)
+
+  
+I have created another free link:  
+[https://www.udemy.com/course/building-a-simple-data-analyst-ai-agent-with-llama-and-flask/?couponCode=REDDIT](https://www.udemy.com/course/building-a-simple-data-analyst-ai-agent-with-llama-and-flask/?couponCode=REDDIT)
+
+ Thank you so much for the support!! I really appreciate the feedback!  
+",0,1,Kairo1004,2025-05-27 17:16:42,https://www.reddit.com/r/dataengineering/comments/1kwsyrr/as_promised_another_free_link_course/,0,False,False,False,False
+1kwspnx,Change employer and career to DE. Need advice,"Hi folks,
+
+I'm working as a cloud engineer and just received an offer as a DE. The new company is much smaller, with fewer benefits and pay, but it's growing fast because it focuses on ML/AI. Should I take this opportunity or stay in my current position?  A little about my situation: I'm currently on the bench at a large international company; there are no projects, and it makes me anxious.  However, I'm also afraid the gloomy economy will affect the new company, which is much smaller and less international. Has anyone faced a similar situation? How did you decide? I hope to hear your advice. Thanks in advance!",0,2,Vw-Bee5498,2025-05-27 17:07:04,https://www.reddit.com/r/dataengineering/comments/1kwspnx/change_employer_and_career_to_de_need_advice/,0,False,False,False,False
