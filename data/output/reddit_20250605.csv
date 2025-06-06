@@ -1,0 +1,276 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1l2qnw1,"Airbyte, Snowflake, dbt and Airflow still a decent stack for newbies?","Basically it, as a DA, I’m trying to make my move to the DE path and I have been practicing this modern stack for couple months already, think I might have a interim level hitting to a Jr. but i was wondering if someone here can tell me if this still being a decent stack and I can start applying for jobs with it.
+
+Also a the same time what’s the minimum I should know to do to defend myself as a competitive DE.
+
+Thanks",78,59,LongCalligrapher2544,2025-06-03 23:23:51,https://www.reddit.com/r/dataengineering/comments/1l2qnw1/airbyte_snowflake_dbt_and_airflow_still_a_decent/,0,False,False,False,False
+1l2y1dw,"Business Insider: Jobs most exposed to AI include DE, DBA, (InfoSec, etc.)","[https://www.businessinsider.com/ai-hiring-white-collar-recession-jobs-tech-new-data-2025-6](https://www.businessinsider.com/ai-hiring-white-collar-recession-jobs-tech-new-data-2025-6)
+
+Maybe I've been out of the loop to be surprised by AI making inroads on DE jobs.  
+  
+I can see more DBA / DE jobs being offshored over time.",77,60,issai,2025-06-04 05:56:32,https://www.reddit.com/r/dataengineering/comments/1l2y1dw/business_insider_jobs_most_exposed_to_ai_include/,0,False,False,False,False
+1l3fzlr,"AWS forms EU-based cloud unit as customers fret about Trump 2.0 -- ""Locally run, Euro-controlled, ‘legally independent,' and ready by the end of 2025""",,62,6,throwaway16830261,2025-06-04 20:21:11,https://www.theregister.com/2025/06/03/aws_european_sovereign_cloud/,0,False,False,False,False
+1l327w2,"When using orchestrator, do you write your ETL code inside the orchestrator or outside of it?","By outside, I mean the orchestrator runs an external script or docker image. Something like BashOperator or KubernetesPodsOperator in Airflow.
+
+Any experiences on both approach? Pros and Cons?
+
+Some that I can think of for writing inside the orchestrator.
+
+Pros:
+
+\- Easier to manage since everything is in one place.
+
+\- Able to use the full features of the orchestrator.
+
+\-  Variables, Connections and Credentials are easier to manage.
+
+Cons:
+
+\- Tightly coupled with the orchestrator. Migrating your code might be annoying if you want to use different orchestrator.
+
+\- Testing your code is not really easy.
+
+\- Can only use python.
+
+For writing code outside the orchestrator, it is pretty much the opposite of the above.
+
+Thoughts?
+
+  
+",30,19,linkinfear,2025-06-04 10:35:43,https://www.reddit.com/r/dataengineering/comments/1l327w2/when_using_orchestrator_do_you_write_your_etl/,0,False,False,False,False
+1l363c3,"The analytics stack I recommend for teams who need speed, clarity, and control",,27,41,ivanovyordan,2025-06-04 13:51:02,https://links.ivanovyordan.com/ds4S,0,False,False,False,False
+1l35z5i,Replacing Talend ETL with an Open Source Stack – Feedback Wanted,"We’re in the process of replacing our current ETL tool, Talend. Right now, our setup reads files from blob storage, uses a SQL database to manage metadata, and outputs transformed/structured data into another SQL database.
+
+The proposed new stack includes that we use python with the following components:
+
+* **Blob storage**
+* **Lakehouse** (Iceberg)
+* **Polars** for working with dataframes
+* **DuckDB** for SQL querying
+* **Pydantic** for data validation
+* **Dagster** for orchestration and data lineage
+
+This open-source approach is new to me, so I’m looking for insights from those who might have experience with any of these tools or with similar migrations. What are the pros and cons I should be aware of? Any lessons learned or potential pitfalls?
+
+Appreciate your thoughts!",17,20,arconic23,2025-06-04 13:46:07,https://www.reddit.com/r/dataengineering/comments/1l35z5i/replacing_talend_etl_with_an_open_source_stack/,0,False,False,False,False
+1l2sbm1,How Do You Organize A PySpark/Databricks Project,"Hey all,
+
+I've been learning Spark/PySpark recently and I'm curious about how production projects are typically structured and organized.
+
+My background is in DBT, where each model (table/view) is defined in a SQL file, and DBT builds a DAG automatically using `ref()` calls. For example:
+
+    -- modelB.sql
+    SELECT colA FROM {{ ref('modelA') }}
+    
+
+This ensures `modelA` runs before `modelB`. DBT handles the dependency graph for you, parallelizes independent models for faster builds, and allows for targeted runs using tags. It also supports automated tests defined in YAML files, which run before the associated models.
+
+I'm wondering how similar functionality is achieved in Databricks. Is lineage managed manually, or is there a framework to define dependencies and parallelism? How are tests defined and automatically executed? I'd also like to understand how this works in vanilla Spark without Databricks.
+
+  
+TLDR - How are Databricks or vanilla Spark projects organized in production. How are things like 100s of tables, lineage/DAGs, orchestration, and tests managed?
+
+Thanks!",14,3,jduran9987,2025-06-04 00:44:28,https://www.reddit.com/r/dataengineering/comments/1l2sbm1/how_do_you_organize_a_pysparkdatabricks_project/,0,False,False,False,False
+1l36xq7,How do you learn new technologies ?,"Hey guys 👋🏽 
+Just wondering what’s the best way you have to learn new technologies and get them to a level that is competent enough to work in a project.
+
+On my side, to learn the theory I’ve been asking ChatGPT to ask me questions about that technology and correct my answers if they’re wrong - this way I consolidate some knowledge. For the practical part I struggle a little bit more (I lose motivation pretty fast tbh) but I usually do the basics following the QuickStarts from the documentation.
+
+Do you have any learning hack? Tip or trick?",13,14,AdmirablePapaya6349,2025-06-04 14:26:39,https://www.reddit.com/r/dataengineering/comments/1l36xq7/how_do_you_learn_new_technologies/,0,False,False,False,False
+1l2ur6u,Data governance - scope and future,"I am working in an IT services company with Analytics projects delivered for clients. Is there scope in data governance certifications or programs I can take up to stay relevant? Is the area of data governance going to get much more prominent?
+
+Thanks in advance",9,6,vintaxidrv,2025-06-04 02:47:10,https://www.reddit.com/r/dataengineering/comments/1l2ur6u/data_governance_scope_and_future/,1,False,False,False,False
+1l2u7vj,Need help understanding whats needed to pull data from API’s to Postgresql staging tables,"Hello,
+
+I’m not a DE but i work for a small company as a BI analyst and I’m tasked to pull together the right resources to make this happen.
+
+In a nutshell - Looking to pull ad data from the company’s FB / insta ads and load into postgresql staging so i can make views / pull into tableau.
+
+Want to extract and load this data by writing a python script using the fast api framework. Want to orchestrate using dagster.
+
+Regarding how and where to set all this up, im lost. Is it best to spin up a vm and write these scripts in there? What other tools and considerations do i need to make? We have AWS S3. Do i need docker?
+
+I need to conceptually understand whats needed so i can convince my manager to invest in the right resources.
+
+Thank you in advance.
+
+",7,18,maxmansouri,2025-06-04 02:19:30,https://www.reddit.com/r/dataengineering/comments/1l2u7vj/need_help_understanding_whats_needed_to_pull_data/,0,False,False,False,False
+1l3a0yc,[Architecture Feedback Request] Taking external API → Azure Blob → Power BI Service,"Hei! I’m designing a solution to pull daily survey data from an external API and load it into Power BI Service in a secure and automated way. Here’s the main idea:
+
+	•	Use an Azure Function to fetch paginated API data and store it in Azure Blob Storage (daily-partitioned .json files).
+
+	•	Power BI connects to the Blob container, dynamically loads the latest file/folder, and refreshes on schedule.
+
+	•	No API calls happen inside Power BI Service (to avoid dynamic data source limitations). I was trying to do normal built-in GET API from Power BI Service but it doesn't accept dynamic data sources (Power BI Desktop works well, no issues) as API usually does.
+
+	•	Everything is designed with data protection and scalability in mind — future-compatible with Fabric Lakehouse.
+P/S: The reason we are forced to go with this solution without using Fabric architecture because it requires cost-effective solution and Fabric integration is planning to be deployed in our organization (potentially project starts from November)
+
+Looking for feedback on:
+
+	•	Anything I might be missing?
+
+	•	Any more robust or elegant approaches?
+
+	•	Would love to hear if anyone’s done something similar.",7,12,Project_Support7606,2025-06-04 16:28:16,https://www.reddit.com/r/dataengineering/comments/1l3a0yc/architecture_feedback_request_taking_external_api/,1,False,2025-06-04 16:39:15,False,False
+1l342li,"refactoring my DE code, looking for advice","I'm contracting for a small company as a data analyst, I've written python scripts that run inside docker container on an AZ VM daily to get and transform the data for PBI reporting, current setup:
+
+* API 1:
+   * Call 8 different endpoints.
+   * some are incremental, some are overwritten daily
+   * Have 40 different API keys (think of it like a different logic unit), all calling the same things.
+   * they're storing the keys in their MySQL table (I think this is bad, but I have no power over this).
+* API 2 and 3:
+   * four different endpoints.
+   * some are incremental, some are overwritten daily
+* DuckDB to transform and throw files to blob storage for reporting.
+
+the problem lies with API 1, it takes long since I'm calling one after another.
+
+I could rewrite the scripts to be async, but might as well make it more scalable and clean, things I'm thinking about, all of them have their own learning curve:
+
+* using docker swarm.
+* setting up Airbyte on the VM, since the annoying api is there.
+* Setting up Airflow on the VM.
+* moving it to Azure container App jobs and removing the VM all together.
+   * this saves a bit of money, but not a big deal at this scale.
+   * this is way more scalable and cleanest.
+   * googling around about container apps, I can't figure out if I can orchestrate it using Azure Data Factory.
+   * can't figure out how to dynamically create the replicas for the 40 Keys
+      * I can either just export template and have one job for each one and add new ones as needed (not often).
+      * write orchestration myself.
+* write them as AZ Flex functions (in case it goes over 10 minutes), still would need to figure out orchestration.
+* Move it to fabric and run them inside notebooks.
+
+Looking for your input, thanks.",6,1,BigMickDo,2025-06-04 12:18:25,https://www.reddit.com/r/dataengineering/comments/1l342li/refactoring_my_de_code_looking_for_advice/,0,False,False,False,False
+1l30m1l,Suggestions for on-premise dwh PoC,"We currently have 20-25 MSQL databases, 1 Oracle and some random files. The quantity of data is about 100-200GB per year. Data will be used for Python data science tasks, reporting in Power BI and .NET applications.
+
+Currently there's a data-pipeline to Snowflake or RDS AWS. This has been a rough road of Indian developers with near zero experience, horrible communication with IT due to lack of capacity,... Currently there has been an outage for 3 months for one of our systems. This cost solution costs upwards of 100k for the past 1,5 year with numerous days of time waste.
+
+We have a VMWare environment with plenty of capacity left and are looking to do a PoC with an on-premise datawarehouse. Our needs aren't that elaborate. I'm located in operations as data person but out of touch with the latest solutions.
+
+* Cost is irrelevant if it's not >15k a year.
+* About 2-3 developers working on seperate topics
+
+",6,9,Top_Manufacturer1205,2025-06-04 08:50:06,https://www.reddit.com/r/dataengineering/comments/1l30m1l/suggestions_for_onpremise_dwh_poc/,1,False,False,False,False
+1l2y5t7,Does anyone uses Apache Paimon ?,Looking to hear from user stories that actually use Apache Paimon at scale in production,6,0,Shpitz0,2025-06-04 06:04:10,https://www.reddit.com/r/dataengineering/comments/1l2y5t7/does_anyone_uses_apache_paimon/,1,False,False,False,False
+1l2sgxa,Geotab API,"Has anyone in here had cause to interact with the Geotab API? I've had solid success ingesting most of what it offers, but I'm running into a bear of a time dealing with the Rule and Zone objects. They're reasonably large (126K), but the API limits are 50K and 10K respectively. The obvious responses swing up, using last id or offsets, but somehow neither work and my pagination just stalls after the first iteration. If anyone has dealt with this, please let me know how you worked through it. If not, happy trails and thanks for reading!",3,0,_tr9800a_,2025-06-04 00:52:02,https://www.reddit.com/r/dataengineering/comments/1l2sgxa/geotab_api/,0,False,False,False,False
+1l3ctr5,How To CD Reliably Without Locking?,"So I've been trying to set up a CI/CD pipeline for MSSQL for a bit now. I've never set one up from scratch before and I don't really have anyone in my company/department knowledgeable enough to lean on. We use GitHub for source controlling, so Github Actions is my CI/CD method  
+  
+Currently, I've explored the following avenues: 
+
+* Redgate Flyway  
+   * It sounds nice for migration, but the concept of having to restructure our repo layout and having to have multiple versions of the same file just with the intended changes (assuming I'm understanding how its supposed to work) seems kind of cumbersome and we're kind of trying to get away from Redgate.
+* DACPAC Deployment
+   * I like the idea, I like the auto diffing and how it automatically knows to alter or create or drop or whatever but this seems to have a whole partial deployment thing in the event of it failing part way through that's hard to get around for me. Not only that, but it seems to diff what's in the DB compared to source control (which, ideally is what we want) but prod has a history of hotfixes (not a deal breaker) and also, the DB settings are default ANSI NULLS Enabled: False + Quoted Identifiers Enabled: False. Modifying this setting on the DB is apparently not an option which means Devs will have to enable it at the file level in the sqlproj.
+* Bash
+   * Writing a custom bash script that takes only the changes meant to be applied per PR and deploys them. This however, will require plenty of testing and maintenance and I'm terrified of allowing table renames and alterations because of dataloss. Procs and Views can probably be just dropped and re-created as a means of deployment, but not really a great option for Functions and UDTs because of possible dependencies and certainly not for tables. This also has partial deployment issues that I can't skirt with transaction wrapping the entire deploy...
+
+For reference, I work for a company where NOLOCK is commonplace in queries so locking tables for pretty much any amount of time is a non-negotiable no. I'd want the ability to rollback deployments in the event of failure, but if I'm not able to use transactions, I'm not sure what options I have since I'm inexperienced in this avenue. I'd really like some help. :(",2,11,abenito206,2025-06-04 18:16:42,https://www.reddit.com/r/dataengineering/comments/1l3ctr5/how_to_cd_reliably_without_locking/,0,False,False,False,False
+1l2uaos,Help With Automatically Updating Database and Notification System,"Hello. I'm slowly learning to code. I need help understanding the best way to structure and develop this project.
+
+I would like to use exclusively python because its the only language I'm confident in. Is that okay?
+
+My goal:
+
+* I want to maintain a cloud-hosted database that updates automatically on a set schedule (hourly or semi hourly). I’m able to pull the data manually, but I’m struggling with setting up the automation and notification system.
+* I want to run scripts when the database updates that monitor the database for certain conditions and send Telegram notifications when those conditions are met. So I can see it on my phone.
+* This project is not data heavy and not resource intensive. It's not a bunch of data and its not complex triggers.
+
+I've been using chatgpt as a resource to learn. Not code for me but I don't have enough knowledge to properly guide it on this and It's been guiding me in circles.
+
+It has recommended me Railway as a cheap way to build this, but I'm having trouble implementing it. Is Railway even the best thing to use for my project or should I start over with something else?
+
+In Railway I have my database setup and I don't have any problem writing the scripts. But I'm having trouble implementing an existing script to run every hour, I don't understand what service I need to create.
+
+Any guidance is appreciated.",3,2,Oranjizzzz,2025-06-04 02:23:27,https://www.reddit.com/r/dataengineering/comments/1l2uaos/help_with_automatically_updating_database_and/,1,False,False,False,False
+1l3jrpm,Am I a date engineer?,"My current tech stack at my work is SSMS for modifying sql queries , debug existing code, ADF, synapse data warehouse, MS DevOps, visual studio for version control. No pyspark, airflow etc all those data engineering tools that talk mention on this subreddit. 
+
+What should I do to make myself to be more competitive and more like a data engineer ",0,13,Available_Fig_1157,2025-06-04 22:59:01,https://www.reddit.com/r/dataengineering/comments/1l3jrpm/am_i_a_date_engineer/,0,False,False,False,False
+1l3ffhv,Kafka Streams vs RTI DDS Processor,"I'm doing a bit of a trade study. 
+
+I built a prototype pipeline that takes data from DDS topics, writes that data to Kafka, which does some processing and then inserts the data into MariaDB. 
+
+I'm now exploring RTI Connext DDS native tools for processing and storing data. I have found that RTI has a library roughly equivalent to Kafka Streams, and also has an adapter API roughly equivalent to Kafka Connect. 
+
+Does anyone have any experience with both Kafka Streams and RTI Connext Processor? How about both Kafka Connect and RTI Routing Service Adapters? What are your thoughts?",2,0,wcneill,2025-06-04 19:59:15,https://www.reddit.com/r/dataengineering/comments/1l3ffhv/kafka_streams_vs_rti_dds_processor/,1,False,False,False,False
+1l3ea21,Mongo Analyser: A TUI Application for MongoDB with Integrated AI Assistant,"Hi everyone,
+
+I’ve made an open-source TUI application in Python called Mongo Analyser that runs right in your terminal and helps you get a clear picture of what’s inside your MongoDB databases. It connects to MongoDB instances (Atlas or local), scans collections to infer field types and nested document structures, shows collection stats (document counts, indexes, and storage size), and lets you view sample documents. Instead of running `db.collection.find()` commands, you can use a simple text UI and even chat with an AI model (currently provided by Ollama, OpenAI, or Google) for schema explanations, query suggestions, etc.
+
+Project's GitHub repository: [https://github.com/habedi/mongo-analyser](https://github.com/habedi/mongo-analyser)
+
+The project is in the beta stage, and suggestions and feedback are welcome.",2,2,No_Pomegranate7508,2025-06-04 19:13:36,https://www.reddit.com/r/dataengineering/comments/1l3ea21/mongo_analyser_a_tui_application_for_mongodb_with/,0,False,False,False,False
+1l3c481,Feeling stuck as a Data Engineer at Infosys — Seeking guidance to switch to a startup or product-based company,"Hi everyone,
+
+I’m currently working as a Data Engineer at Infosys. I joined in September 2024 and graduated the same year. It's been about 9 months, but I feel like I’m not learning enough or growing in my current role.
+
+I’m seriously considering a switch to a startup or product-based company where I can gain better experience and skills.
+
+I’d appreciate your guidance on:
+
+* How to approach the job search effectively
+* Ways to stand out while applying
+* What are the chances of getting shortlisted with my background
+* Any tips or resources that helped you in a similar situation
+
+Thanks a lot in advance for your support and advice!",2,9,Top_Anteater_8378,2025-06-04 17:49:07,https://www.reddit.com/r/dataengineering/comments/1l3c481/feeling_stuck_as_a_data_engineer_at_infosys/,0,False,False,False,False
+1l37a1g,Why Your Data Architecture Needs More Than Basic Storage-Compute Separation,"I wrote a new article about Storage-Compute Separation: a deep dive into the concept of storage-compute separation and what it means for your business.
+
+  
+If you're into this too or have any thoughts, feel free to jump in — I'd love to chat and exchange ideas!",3,2,AssistPrestigious708,2025-06-04 14:40:49,https://medium.com/@databend/why-your-data-architecture-needs-more-than-basic-storage-compute-separation-5f845605671e,0,False,False,False,False
+1l36h5b,Requirements Gathering: training for the CUSTOMER,"I have been working in the IT space for almost a decade now. Before that, I was part of the ""business"" - or what IT would call the customer. The first time I was on a project to implement a new global system, it was a fight. I was given spreadsheets to fill out. I wasn't told what the columns really meant or represented. It was a mess. And then of course came the issues after the deployment, the root causes and the realization that ""what? You needed to know *that*??""
+
+Somehow, that first project led me to a career where I am the one facilitating requirements gathering. I've been in their shoes. I didn't get it. But after the mistakes, brushing up on my technical skills and understanding how systems work, I've gotten REALLY skilled at asking the right questions to tease out the information. 
+
+But my question is this - is there ANY training out there for the customer? Our biggest bottleneck with each new deployment is that the customer has no clue what to do or even understand the work they own. They need to provide the process. The scenarios. But what I've witnessed is we start the project. The customer sits back and says ""ask away"". How do you teach a customer the engagement needed on their side? The level of detail we will ultimately need? The importance of identifying ALL likely scenarios? How do we train them so they don't have to go through the mistakes or hypercare issues to fully grasp it? 
+
+We waste so much time going in circles. And I even sometimes get attitude and questions like - why do you need to know that? We are always tasked with going faster, and we do not have the time for this churn.",2,3,Salt_Cobbler_9524,2025-06-04 14:07:11,https://www.reddit.com/r/dataengineering/comments/1l36h5b/requirements_gathering_training_for_the_customer/,0,False,False,False,False
+1l2z10j,Handling XML from Kafka to HDFS,"Hi everyone!
+
+Looking for someone with a good experience in Informatica DEI/BDM. Currently I am trying to read binary data from Kafka topic that represents XML files.
+
+I have created a mapping that is reading this topic, and enabled column projection on the data column while specifying the XSD schema for the file.
+
+I then create the corresponding target on HDFS with same schema and mapped the columns.
+
+The issue is that when running the mapping I am having a NullPointerException linked to a function called populateBooleans.
+
+Have no idea what may be wrong.
+Anyone has a potential idea or suggestions? How can I debug it further?",2,4,Available-Coach3218,2025-06-04 07:00:51,https://www.reddit.com/r/dataengineering/comments/1l2z10j/handling_xml_from_kafka_to_hdfs/,0,False,False,False,False
+1l2uqhf,Airbyte for DynamoDB to Snowflake.,"Hi I was wondering if anyone here has used Airbyte to push CDC changes from DynamoDb to Snowflake.  If so what was your experience, what was the size of your tables and did you have any latency issues.",2,2,SimilarLight697,2025-06-04 02:46:08,https://www.reddit.com/r/dataengineering/comments/1l2uqhf/airbyte_for_dynamodb_to_snowflake/,0,False,False,False,False
+1l352t3,Should I invest learning between power bi or tableau in 2k25?,I have seen most data analyst going for power bi and tableau what should data engineers should learn to upskill themselves in  between these two? ,1,24,thatcrazydolphin,2025-06-04 13:05:56,https://www.reddit.com/r/dataengineering/comments/1l352t3/should_i_invest_learning_between_power_bi_or/,0,False,False,False,False
+1l32jfs,Data Engineer in Budapest | 25 LPA | Should I Switch to SDE or Stick with DE?,"Hey folks,
+
+I’m a Data Engineer (DE) currently working onsite in Budapest with around 4 years of experience. My current CTC is equivalent to ~9.3 M HUF(Hungarian Forint) per annum. I’m skilled in: C++, Python, SQL
+
+Cloud Computing (primarily Microsoft Azure, ADF, etc.)
+
+I’m at a point where I’m wondering — should I consider switching domains from DE to SDE, or should I look for better opportunities within the Data Engineering space?
+
+While I enjoy data work, sometimes I feel SDE roles might offer more growth, flexibility, or compensation down the line — especially in product-based companies. But I’m also aware DE is growing fast with big data, ML pipelines, and real-time processing.
+
+Has anyone here made a similar switch or faced the same dilemma? Would love to hear your thoughts, experiences, or any guidance!
+
+Thanks in advance ",0,17,Impossible-Comb-9727,2025-06-04 10:55:21,https://www.reddit.com/r/dataengineering/comments/1l32jfs/data_engineer_in_budapest_25_lpa_should_i_switch/,0,False,2025-06-04 12:33:23,False,False
+1l3du62,Cursor and VSCode suck with Jupyter Notebooks -- I built a solution,"As a Cursor and VSCode user, I am always disappointed with their performance on Notebooks. They loose context, don't understand the notebook structure etc. 
+
+I built an open source AI copilot specifically for Jupyter Notebooks. Docs [here](https://docs.trymito.io/mito-ai/data-copilot). You can directly pip install it to your Jupyter IDE. 
+
+Some example of things you can do with it that other AIs struggle with:
+
+1. Ask the agent to add markdown cells to document your notebook 
+
+2. Iterate cell outputs, our AI can read the outputs of your cells
+
+3. Turn your notebook into a streamlit app -- try the ""build app"" button, and the AI will turn your notebook into a streamlit app. 
+
+Here is a [demo environment](https://launch.trymito.io/) to try it as well.",0,6,Jake_Stack808,2025-06-04 18:56:13,https://www.reddit.com/r/dataengineering/comments/1l3du62/cursor_and_vscode_suck_with_jupyter_notebooks_i/,0,False,False,False,False
+1l3bhxn,Help with ups killing in data engineering,"Hi all! I am in field of sales of Microsoft analytics products. I am a strategic sales executive and was able to do well so far by showing my expertise on the business case of embracing cloud based analytical solutions. However, my role is now being changed to be more technical and before I can learn about Microsoft products I need to learn the basis of data engineering databases and everythjng that comes along with it. Let's just say I know how do to analytics on excel.. Need to learn everything in 30 days and willing to put in as many as 6 hours everyday.. Where do I start? How do I become an intelligent analytics professional who has a working knowledge of the fundamentals and then become someone who can understand Microsoft / AWS/ GCP specific products. For context, my undergrad and post grad is in business (MBA)",0,3,Big-Alternative-1242,2025-06-04 17:24:58,https://www.reddit.com/r/dataengineering/comments/1l3bhxn/help_with_ups_killing_in_data_engineering/,0,False,False,False,False
+1l35uby,Amazon or Others,"I have a offer with 19.3 LPA gross CTC + stocks with amazon, should I go for amazon or other service based companies they are offering 24LPA . I have over all 4.6+ years of experience as a Data Engineer ",0,3,mysticMajor_2,2025-06-04 13:40:30,https://www.reddit.com/r/dataengineering/comments/1l35uby/amazon_or_others/,0,False,False,False,False
+1l3ao9a,My experience with Data Engineer Academy,"I'm starting a new career in data, and what I've been noticing is that a lot of these courses and platforms only teach surface-level skills in SQL, Python, etc. Maybe because they think learners will learn the in-depth skills on the job? I just wanted to point out that this program has already helped me understand the why behind the tools and skills, and I've only just started. I'm learning that I have gaps and the program has helped me understand advanced concepts, clean code, and optimization. It's been helpful in giving me a strategic, focused, and structured plan to know how to be a better data professional. Just wanted to point this out!",0,5,wnl8,2025-06-04 16:53:24,https://www.reddit.com/r/dataengineering/comments/1l3ao9a/my_experience_with_data_engineer_academy/,0,False,False,False,False
+1l371v3,"In this modern age of LLMs, do I really need to learn SQL anymore?","With tools like ChatGPT generating queries instantly and so many no-code/low-code solutions out there, is it still worth spending serious time learning SQL?
+
+I get that companies still ask SQL questions during technical assessments, but from what I’ve learned so far, it feels pretty straightforward. I understand the basics, and honestly, asking someone to write SQL from scratch as part of a screening or evaluation seems kinda pointless. It doesn’t really prove anything valuable in my opinion—especially when most of us just look up the syntax or use tools anyway.
+
+Would love to hear how others feel about this—especially people working in data, engineering, or hiring roles. Am I wrong ?",0,26,CreamRoll9,2025-06-04 14:31:27,https://www.reddit.com/r/dataengineering/comments/1l371v3/in_this_modern_age_of_llms_do_i_really_need_to/,0,False,False,False,False

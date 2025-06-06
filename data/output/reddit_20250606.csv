@@ -1,0 +1,340 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1l3x7vk,A disaster waiting to happen,"TLDR; My company wants to replace our pipelines with some all-in-one “AI agent” platform
+
+I’m a lone data engineer in a mid-size retail/logistics company that runs SAP ERP (moving to HANA soon). Historically, every department pulled SAP data into Excel, calculated things manually, and got conflicting numbers. I was hired into a small analytics unit to centralize this. I’ve automated data pulls from SAP exports, APIs, scrapers, and built pipelines into SQL Server. It’s traceable, consistent, and used regularly.
+
+Now, our new CEO wants to “centralize everything” and “go AI-driven” by bringing in a no-name platform that offers:
+
+\- Limited source connectors for a basic data lake/warehouse setup
+
+\- A simple SQL interface + visualization tools
+
+\- And the worst of it all: an AI agent PER DEPARTMENT
+
+Each department will have its own AI “instance” with manually provided business context. Example: “This is how finance defines tenure,” or “Sales counts revenue like this.” Then managers are supposed to just ask the AI for a metric, and it will generate SQL and return the result. Supposedly, this will replace 95–97% of reporting, instantly (and the CTO/CEO believe it).
+
+Obviously, I’m extremely skeptical:
+
+\- Even with perfect prompts and context, if the underlying data is inconsistent (e.g. rehire dates in free text, missing fields, label mismatches), the AI will silently get it wrong.
+
+\- There’s no way to audit mistakes, so if a number looks off, it’s unclear who’s accountable. If a manager believes it, it may go unchallenged.
+
+\- The answer to every flaw from them is: “the context was insufficient” or “you didn’t prompt it right.” That’s not sustainable or realistic
+
+\- Also some people (probs including me) will have to manage and maintain all the departmental context logic, deal with messy results, and take the blame when AI gets it wrong.
+
+\- Meanwhile, we already have a working, auditable, centralized system that could scale better with a real warehouse and a few more hires. They just don't want to hire a team or I have to convince them somehow (bc they think that this is a cheaper, more efficient alternative).
+
+I’m still relatively new in this company and I feel like I’m not taken seriously, but I want to push back before we go too far, I'll switch jobs probably soon anyway but I'm actually concerned about my team.
+
+How do I convince the management that this is a bad idea?",126,76,kerokero134340,2025-06-05 11:52:01,https://www.reddit.com/r/dataengineering/comments/1l3x7vk/a_disaster_waiting_to_happen/,0,False,False,False,False
+1l3usad,Are Data Engineers Being Treated Like Developers in Your Org Too?,"Hey fellow data engineers 👋
+
+Hope you're all doing well!
+
+I recently transitioned into data engineering from a different field, and I’m enjoying the work overall — we use tools like Airflow, SQL, BigQuery, and Python, and spend a lot of time building pipelines, writing scripts, managing DAGs, etc.
+
+But one thing I’ve noticed is that in cross-functional meetings or planning discussions, management or leads often refer to us as ""developers"" — like when estimating the time for a feature or pipeline delivery, they’ll say “it depends on the developers” (referring to our data team). Even other teams commonly call us ""devs.""
+
+This has me wondering:
+
+Is this just common industry language?
+
+Or is it a sign that the data engineering role is being blended into general development work?
+
+Do you also feel that your work is viewed more like backend/dev work than a specialized data role?
+
+
+Just curious how others experience this. Would love to hear what your role looks like in practice and how your org views data engineering as a discipline.
+
+Thanks!
+",49,63,Consistent_Law3620,2025-06-05 09:24:39,https://www.reddit.com/r/dataengineering/comments/1l3usad/are_data_engineers_being_treated_like_developers/,0,False,False,False,False
+1l3kx85,New company uses Foundry - will my skills stagnate?,"Hey all,
+
+DE with 5.5 years of experience across a few big tech companies. I recently switched jobs and started a role at a company whose primary platform is Palantir Foundry - in all my years in data, I have yet to meet folks who are super well versed in Foundry or see companies hiring specifically for Foundry experience. Foundry seems powerful, but more of a niche walled garden that prioritizes low code/no code and where infrastructure is obfuscated. 
+
+Admittedly, I didn’t know much about Foundry when I jumped into this opportunity, but it seemed like a good upwards move for me. The company is in hyper growth mode, and the benefits are great. 
+
+I’m wondering from others who may have experience whether or not my general skills will stagnate and if I’ll be less marketable in the future.? I plan to keep working on side projects that use more “common” orchestration + compute + storage stacks, but want thoughts from others. 
+
+",40,39,DataAnalCyst,2025-06-04 23:52:13,https://www.reddit.com/r/dataengineering/comments/1l3kx85/new_company_uses_foundry_will_my_skills_stagnate/,0,False,False,False,False
+1l3n7i5,"As a data engineer, do you have a technical portfolio?","Hello everyone!
+
+So I started a techinical blog recently to document my learning insights. I asked some of my senior colleagues if they had same, but all of them do not have an online accessible portfolio aside from Github to showcase their work.  
+  
+Still, I believe that github is a bit difficult to navigate for non-tech people (as HR) an dthe only insight they can easily get is how active you are on it, which I personally do not believe is equal to your expertise. For instance when I was still a newbie, I would just Update [README.md](http://google.com) to reflect I was active for the day, daily.
+
+I want to ask how fellow data engineers showcase their expertise visually. I believe that we work on sesitive company data which we cannot share openly, so I wanna know how you were able to navigate on that, too, without legal implications...
+
+My blog is still in development (so I can't share it) and I wanna showcase my certificates there as well. I am planning to showcase my data models also, altering column names, usie publicly available datasets which'll match what I worked in my job, define requirements and use case for the general audience, then elaborate what made me choose this modelling approach over the other, stating references iwhen they come handly. Maybe I'll use PowerBI too for some basic visualization.
+
+Please feel free to share your websites/blogs/github/vercel/portfolio you're okay with it. Thanks a lot!",31,32,noSugar-lessSalt,2025-06-05 01:44:28,https://www.reddit.com/r/dataengineering/comments/1l3n7i5/as_a_data_engineer_do_you_have_a_technical/,0,False,False,False,False
+1l47het,DuckDB enters the Lake House race.,,32,26,averageflatlanders,2025-06-05 18:59:13,https://dataengineeringcentral.substack.com/p/duckdb-enters-the-lake-house-race,0,False,False,False,False
+1l465k9,Article: Snowflake launches Openflow to tackle AI-era data ingestion challenges,"Openflow integrates Apache NiFi and Arctic LLMs to simplify data ingestion, transformation, and observability.",18,16,moinhoDeVento,2025-06-05 18:06:34,https://www.infoworld.com/article/4000742/snowflake-launches-openflow-to-tackle-ai-era-data-ingestion-challenges.html,0,False,False,False,False
+1l41et1,PyData Virginia 2025 talk recordings just went live!,,14,1,TechTalksWeekly,2025-06-05 15:01:29,https://www.techtalksweekly.io/i/165210668/pydata-virginia,1,False,False,False,False
+1l3z78l,Build full-featured web apps using nothing but SQL with SQLPage,"Hey fellow data folks 👋  
+I just published a short video demo of [SQLPage](https://sql-page.com/) — an open-source framework that lets you build full web apps and dashboards using only SQL.
+
+Think: internal tools, dashboards, user forms or lightweight data apps — all created directly from your SQL queries.
+
+📽️ Here's the video if you're curious ▶️ [Video link](https://www.youtube.com/watch?v=88Jir5KVnHM)  
+(We built it for our YC demo but figured it might be useful for others too.)
+
+If you're a data engineer or analyst who's had to hack internal tools before, I’d love your feedback. Happy to answer any questions or show real use cases we’ve built with it!",11,1,Weight_Admirable,2025-06-05 13:28:25,https://www.reddit.com/r/dataengineering/comments/1l3z78l/build_fullfeatured_web_apps_using_nothing_but_sql/,0,False,False,False,False
+1l47n19,Is there little programming in data engineering?,"Good morning,
+I bring questions about data engineering. I started the role a few months ago and I have programmed, but less than web development.
+I am a person interested in classes, abstractions and design patterns.
+I see that Python is used a lot and I have never used it for large or robust projects.
+Is data engineering programming complex systems? Or is it mainly scripting?
+",7,7,Rare-Bet-6845,2025-06-05 19:05:02,https://www.reddit.com/r/dataengineering/comments/1l47n19/is_there_little_programming_in_data_engineering/,0,False,False,False,False
+1l3uz03,Trouble Keeping up with airflow,"Hey guys , i justed started learning airflow . The thing that concerns me is that i often tend to use chatgpt or for giving me code for like writing etl  .  I understand the process and how things work . But is it fine to use LLms for helo or should i become expert at writing this scripts. I have had made few porject but each of them seems to use differnt logic for fetching and all . ",5,11,One_Squash5096,2025-06-05 09:37:41,https://www.reddit.com/r/dataengineering/comments/1l3uz03/trouble_keeping_up_with_airflow/,0,False,False,False,False
+1l4336d,"Database, Data Warehouse Migrations & DuckDB Warehouse with sqlglot and ibis","Hi guys, I've released the next version for the Arkalos data framework. It now has a simple and DX-friendly Python migrations, DDL and DML query builder, powered by sqlglot and ibis:
+
+    class Migration(DatabaseMigration):
+    
+        def up(self):
+    
+            with DB().createTable('users') as table:
+                table.col('id').id()
+                table.col('name').string(64).notNull()
+                table.col('email').string().notNull()
+                table.col('is_admin').boolean().notNull().default('FALSE')
+                table.col('created_at').datetime().notNull().defaultNow()
+                table.col('updated_at').datetime().notNull().defaultNow()
+                table.indexUnique('email')
+    
+    
+            # you can run actual Python here in between and then alter a table
+    
+    
+    
+        def down(self):
+            DB().dropTable('users')
+
+
+
+There is also a new and partial support for the DuckDB warehouse, and 3 data warehouse layers are now available built-in:
+
+    from arkalos import DWH()
+    
+    DWH().raw()... # Raw (bronze) layer
+    DWH().clean()... # Clean (silver) layer
+    DWH().BI()... # BI (gold) layer
+
+
+
+Low-level query builder, if you just need that SQL:
+
+    from arkalos.schema.ddl.table_builder import TableBuilder
+    
+    with TableBuilder('my_table', alter=True) as table:
+        ...
+    
+    sql = table.sql(dialect='sqlite')
+
+
+
+**GitHub and Docs:**
+
+Docs: [https://arkalos.com/docs/migrations/](https://arkalos.com/docs/migrations/)
+
+GitHub: [https://github.com/arkaloscom/arkalos/](https://github.com/arkaloscom/arkalos/)",5,0,Mevrael,2025-06-05 16:07:13,https://www.reddit.com/r/dataengineering/comments/1l4336d/database_data_warehouse_migrations_duckdb/,0,False,False,False,False
+1l3lh0y,Using Transactional DB for Modeling BEFORE DWH?,"Hey everyone,
+
+Recently, a friend of mine mentioned an architecture that's been stuck in my head:
+
+`Sources → Streaming → PostgreSQL (raw + incremental dbt modeling every few minutes) → Streaming → DW (BigQuery/Snowflake, read-only)`
+
+The idea is that PostgreSQL handles all intermediate modeling incrementally (with dbt) before pushing analytics-ready data into a purely analytical DW.
+
+Has anyone else seen or tried this approach?
+
+It sounds appealing for cost reasons and clean separation of concerns, but I'm curious about practical trade-offs and real-world experiences.
+
+Thoughts?
+
+",7,23,Mafixo,2025-06-05 00:18:41,https://www.reddit.com/r/dataengineering/comments/1l3lh0y/using_transactional_db_for_modeling_before_dwh/,0,False,False,False,False
+1l3k2zf,Iceberg CDC,"Super basic flow description - We have Kafka writing parquet files to S3 which is our Apache Iceberg data layer supporting various tables containing the corresponding event data. We then have periodically run ETL jobs that create other Iceberg tables (based off of the ""upstream"" tables) that support analytics, visualization, etc.
+
+These jobs run a `CREATE OR REPLACE <table_name>` sql statement, so full table refresh each time. We'd like to be able to also support some type of change data capture technique to avoid always dropping/creating tables and the cost and time associated with that.  Simply capturing new/modified records would be an acceptable start. Can anyone suggest how we can approach this. This is kinda new territory for our team. Thanks.",7,8,komm0ner,2025-06-04 23:12:38,https://www.reddit.com/r/dataengineering/comments/1l3k2zf/iceberg_cdc/,0,False,False,False,False
+1l4as6j,How to handle source table replication with duplicate records and no business keys in Medallion Architecture,"
+Hi everyone,
+I’m working as a data engineer on a project that follows a Medallion Architecture in Synapse, with bronze and silver layers on Spark, and the gold layer built using Serverless SQL.
+
+For a specific task, the requirement is to replicate multiple source views exactly as they are — without applying transformations or modeling — directly from the source system into the gold layer. In this case, the silver layer is being skipped entirely, and the gold layer will serve as a 1:1 technical copy of the source views.
+
+While working on the development, I noticed that some of these source views contain duplicate records. I recommended introducing logical business keys to ensure uniqueness and preserve data quality, even though we’re not implementing dimensional modeling. However, the team responsible for the source system insists that the views should be replicated as-is and that it’s unnecessary to define any keys at all.
+
+I’m not convinced this is a good approach, especially for a layer that will be used for downstream reporting and analytics.
+
+What would you do in this case?
+Would you still enforce some form of business key validation in the gold layer, even when doing a simple pass-through replication?
+
+Thanks in advance.",3,3,UnusualIntern362,2025-06-05 21:12:17,https://www.reddit.com/r/dataengineering/comments/1l4as6j/how_to_handle_source_table_replication_with/,0,False,False,False,False
+1l47vjb,Best Dashboard For My Small Nonprofit,"Hi everyone! I'm looking for opinions on the best dashboard for a non-profit that rescues food waste and redistributes it. Here are some insights:
+
+\- I am the only person on the team capable of filtering an Excel table and reading/creating a pivot table,  and I only work very part-time on data management --> the platform must not bug often and must have a veryyyyy user-friendly interface (this takes PowerBI out of the equation)
+
+\- We have about 6 different Excel files on the cloud to integrate, all together under a GB of data for now. Within a couple of years, it may pass this point.
+
+\- Non-profit pricing or a free basic version is best!
+
+\- The ability to display 'live' (from true live up to weekly refreshes) major data points on a public website is a huge plus.
+
+\- I had an absolute nightmare of a time getting a Tableau Trial set up and the customer service was unable to fix a bug on the back end that prevented my email from setting up a demo, so they're out.",4,3,Tough_Vegetable_7737,2025-06-05 19:14:18,https://www.reddit.com/r/dataengineering/comments/1l47vjb/best_dashboard_for_my_small_nonprofit/,1,False,False,False,False
+1l3vbca,My first data engineer project is it good ? I can take negative comments too so you can review it completely,https://github.com/sksj007/lstm-traffic-flow-prediction.git,4,11,thetemporaryman,2025-06-05 10:00:14,https://www.reddit.com/r/dataengineering/comments/1l3vbca/my_first_data_engineer_project_is_it_good_i_can/,0,False,False,False,False
+1l3vb0a,Bytebase 3.7.0 released -- Database DevSecOps for MySQL/PG/MSSQL/Oracle/Snowflake/Clickhouse,,4,0,Adela_freedom,2025-06-05 09:59:41,https://www.bytebase.com/changelog/bytebase-3-7-0/,1,False,False,False,False
+1l3t91u,Using AI (CPU models) to help optimize poorly performance plsql queries from tkprof txt,"Hi, I’m working on a task as described in the title. I planned to use an AI model (model that can run using CPU) to help fix performance issues in the queries. Tkprof is similar to performance report.
+
+And I’m thinking to connect sqldeveloper which contain informations for the tables data so that the model gets more information.
+
+Open to any suggestions related to this task🥹
+
+Ps: currently working in a small company and this is my first task, no one guilds me so I’m not sure if my ideas are wrong.
+
+Thanks",3,3,sharpiehean,2025-06-05 07:36:02,https://www.reddit.com/r/dataengineering/comments/1l3t91u/using_ai_cpu_models_to_help_optimize_poorly/,0,False,False,False,False
+1l3kqhs,First Data Engineering Project,"Hello everyone, I don't have experience in data engineering, only data analysis, but currently I'm creating an ELT data pipeline to extract data from MySQL (18 tables) and load it to Google BigQuery using Airflow and then transform it using DBT.
+
+There are too many ways to do this, and I don't know which one is better. Should I use MySQLOperator, MySQLHook or pandas and SQLAlchemy
++
+How to only extract the newly data not the whole table (daily scheduled)
++
+How to loop over the 18 table
++
+For the DBT part, should I run the SQL file inside the airflow DAG?
+
+I don't want the way that's will do the job; I want the most efficient way. ",5,0,Abdelrahman_Jimmy,2025-06-04 23:43:19,https://www.reddit.com/r/dataengineering/comments/1l3kqhs/first_data_engineering_project/,1,False,2025-06-04 23:55:49,False,False
+1l41ofj,Ecomm/Online Retailer Reviews Tool,"Not sure if this is the right place to ask, but this is my favorite and most helpful data sub... so here we go
+
+What's your go to tool for product review and customer sentiment data? Primarily looking for Amazon and [Chewy.com](http://Chewy.com) reviews, customer sentiment from blogs, forums, and social media, but would love a tool that could also gather reviews from additional online retailers as requested.
+
+Ideally I'd love a tool that's plug and play and will work seamlessly with Snowflake, Azure BLOB storage, or Google Analytics",3,0,Apprehensive-Ad-80,2025-06-05 15:11:51,https://www.reddit.com/r/dataengineering/comments/1l41ofj/ecommonline_retailer_reviews_tool/,1,False,False,False,False
+1l40zmg,Taxonomies for most visited Web Sites?,"I am looking for existing website taxonomy / categorization data sources or at least some kind of closest approximation raw data for at least top 1000 most visited sites.
+
+I suppose some of this data can be extracted from content filtering rules (e.g. office network ""allowlists"" / ""whitelists""), but I'm not sure what else can serve as a data source. Wikipedia? Querying LLMs? Parsing search engine results? SEO site rankings (e.g. so called ""top authority"")?
+
+There is [`https://en.wikipedia.org/wiki/Lists_of_websites`](https://en.wikipedia.org/wiki/Lists_of_websites), but it's very small.
+
+The goal is to assemble a simple static website taxonomy for many different uses, e.g. automatic bookmark categorisation, category-based network traffic filtering, network statistics analysis per category, etc.
+
+Examples for a desired category tree branches:
+
+    Categories
+    ├── Engineering
+    │   └── Software
+    │       └── Source control
+    │           ├── Remotes
+    │           │   ├── Codeberg
+    │           │   ├── GitHub
+    │           │   └── GitLab
+    │           └── Tools
+    │               └── Git
+    ├── Entertainment
+    │   └── Media
+    │       ├── Audio
+    │       │   ├── Books
+    │       │   │   └── Audible
+    │       │   └── Music
+    │       │       └── Spotify
+    │       └── Video
+    │           └── Streaming
+    │               ├── Disney Plus
+    │               ├── Hulu
+    │               └── Netflix
+    ├── Personal Info
+    │   ├── Gmail
+    │   └── Proton
+    └── Socials
+        ├── Facebook
+        ├── Forums
+        │   └── Reddit
+        ├── Instagram
+        ├── Twitter
+        └── YouTube
+    
+    // probably should be categorized as a graph by multiple hierarchies,
+    // e.g. GitHub could be
+    // ""Topic: Engineering/Software/Source control/Remotes""
+    // and
+    // ""Function: Social network, Repository"",
+    // or something like this.
+
+Surely I am not the only one trying to find a website categorisation solution? Am I missing some sort of an obvious data source?
+
+---
+
+Will accumulate mentioned sources here:
+
++ [`schema.org`][schema.org] - content mapping and tagging system produced by collaboration of Google, Yandex, Yahoo and Bing.
++ [Semantic Web][wp/Semantic_Web.en]
++ [Upper Ontology][wp/Upper_ontology.en]
++ [Olog][wp/Olog.en]
++ [Semagrams][algebraicjulia/Semagrams]
+
+[schema.org]: https://schema.org
+[wp/Semantic_Web.en]: https://en.wikipedia.org/wiki/Semantic_Web
+[wp/Upper_ontology.en]: https://en.wikipedia.org/wiki/Upper_ontology
+[wp/Olog.en]: https://en.wikipedia.org/wiki/Olog
+[algebraicjulia/Semagrams]: https://algebraicjulia.github.io/Semagrams.jl
+
+---
+
+Special thanks to u/Operadic for an introduction to these topics.",3,4,tsilvs0,2025-06-05 14:44:27,https://www.reddit.com/r/dataengineering/comments/1l40zmg/taxonomies_for_most_visited_web_sites/,1,False,2025-06-05 21:38:00,False,False
+1l49dv0,"How to handle repos with ETL pipelines for multiple clients that require use of PHI, PPI, or other sensitive data?","My company has a few clients and I am tasked with organizing our schemas so that each client has their own schema. I am mostly the only one working on ETL pipelines, but there are 1-2 devs who can split time between data and software, and our CTO who is mainly working on admin stuff but does help out with engineering from time to time. We deal with highly sensitive healthcare data. Our apps right now use mongo for our backend db, but a separate database for analytics. In the past we only required ETL pipelines for 2 clients, but as we are expanding analytics to our other clients we need to create ETL pipelines at scale. That also means making changes to our current dev process.
+
+  
+Right now both our production and preproduction data is stored in one single instance. Also, we only have one EC2 instance that houses our ETL pipeline for both clients AND our preproduction environment. My vision is to have two database instances (one for production data, one for preproduction data that can be used for testing both changes in the products and also our data pipelines) which are both HIPAA compliant. Also, to have two separate EC2 instances (and in the far future K8s); one for production ready code and one for preproduction code to test features, new data requests, etc.
+
+  
+My question is what is best practice: keep ALL ETL code for each client in one single repo and separate out in folders based on clients, or have separate repos, one for core ETL that loads parent tables and shared tables and then separate repos for each client? The latter seems like the safer bet, but just so much overhead if I'm the only one working on it. But I also want to build at scale seeing that we may be experiencing more growth than we imagine.
+
+  
+If it helps, right now our ETL pipelines are built in Python/SQL and scheduled via cron jobs. Currently exploring the use of dagster and dbt, but I do have some other client-facing analytics projects I gotta get done first.",2,4,JTags8,2025-06-05 20:15:27,https://www.reddit.com/r/dataengineering/comments/1l49dv0/how_to_handle_repos_with_etl_pipelines_for/,0,False,False,False,False
+1l45x8j,Microsoft Purview Data Governance,"Hi. I am hoping I am in the right place. I am a cyber security analyst but have been charged with the set up of MS Purview data governance solution. This is because I already had the Purview permissions and knowledge due to the DLP work we were doing.
+
+My question is has anyone been able to register and scan an Oracle ADW in Purview data maps. The Oracle ADW uses a wallet for authentication. Purview only has an option for basic authentication. I am wondering how to make it work. TIA.",1,0,Opposite-Climate-783,2025-06-05 17:58:13,https://www.reddit.com/r/dataengineering/comments/1l45x8j/microsoft_purview_data_governance/,0,False,False,False,False
+1l3rxil,Visual Code extension for dbt,"Hi. 
+
+Just trying to use the new VSCode extension from dbt. Requires dbt Fusion which I’ve setup but when trying to view lineage I keep getting the extension complaining about “dbt language server is not running in this workspace”.
+
+Anyone else getting this?
+
+",2,6,Zealousideal-Goat310,2025-06-05 06:09:44,https://www.reddit.com/r/dataengineering/comments/1l3rxil/visual_code_extension_for_dbt/,0,False,False,False,False
+1l44f0r,Kafka: Trigger analysis after batch processing - halt consumer or keep consuming?," **Setup:** Kafka compacted topic, multiple partitions, need to trigger analysis after processing each batch per partition.
+
+Note - This kafka recieves updates continuously at a product level... 
+ 
+ **Key Questions:**
+ 1. **When to trigger?** Wait for consumer lag = 0? Use message count coordination? Poison pill?
+ 2. **During analysis:** Halt consumer or keep consuming new messages?
+ 
+ **Options I'm considering:**
+ - **Producer coordination:** Send expected message count, trigger when processed count matches for a product
+ - **Lag-based:** Trigger when lag = 0 + timeout fallback  
+ - **Continue consuming:** Analysis works on snapshot while new messages process
+ 
+ **Main concerns:** Data correctness, handling failures, performance impact
+ 
+ **What works best in production?** Any gotchas with these approaches...",1,0,Initial-Wishbone8884,2025-06-05 17:00:15,https://www.reddit.com/r/dataengineering/comments/1l44f0r/kafka_trigger_analysis_after_batch_processing/,0,False,False,False,False
+1l453cz,AMA: Architecting AI apps for scale in Snowflake,"I’m hosting a panel discussion with 3 AI experts at the Snowflake Summit. They are from Siemens, TS Imagine and ZeroError.
+
+They’ve all built scalable AI apps on Snowflake Cortex for different use cases.
+
+What questions do you have for them?!",0,0,vino_and_data,2025-06-05 17:26:07,https://www.linkedin.com/posts/vinodhini-sd_from-%F0%9D%98%83%F0%9D%97%B6%F0%9D%97%AF%F0%9D%97%B2-%F0%9D%97%B0%F0%9D%97%BC%F0%9D%97%B1%F0%9D%97%B6%F0%9D%97%BB%F0%9D%97%B4-to-%F0%9D%97%AE%F0%9D%97%BF%F0%9D%97%B0%F0%9D%97%B5%F0%9D%97%B6%F0%9D%98%81%F0%9D%97%B2%F0%9D%97%B0%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BB%F0%9D%97%B4-activity-7336439573469700096-MLfi?utm_medium=ios_app&rcm=ACoAAA0GchIByacef739Pcy4dPRdVlkMidQUVjU&utm_source=social_share_send&utm_campaign=copy_link,0,False,False,False,False
+1l3lm9s,Building a Dataset of Pre-Race Horse Jog Videos with Vet Diagnoses — Where Else Could This Be Valuable?,"I’m a Thoroughbred trainer with 20+ years of experience, and I’m working on a project to capture a rare kind of dataset: video footage of horses jogging for the state vet before races, **paired with the official veterinary soundness diagnosis**.
+
+Every horse jogs before racing — but that movement and judgment is never recorded or preserved. My plan is to:
+
+* 📹 Record pre-race jogs using consistent camera angles
+* 🩺 Pair each video with the licensed vet’s official diagnosis
+* 📁 Store everything in a clean, machine-readable format
+
+This would result in one of the **first real-world labeled datasets** of equine gait under live, regulatory conditions — not lab setups.
+
+I’m planning to submit this as a proposal to the HBPA (horsemen’s association) and eventually get recording approval at the track. I’m not building AI myself — just aiming to structure, collect, and store the data for future use.
+
+💬 **Question for the community:**  
+Aside from AI lameness detection and veterinary research, where else do you see a market or need for this kind of dataset?  
+Education? Insurance? Athletic modeling? Open-source biomechanical libraries?
+
+Appreciate any feedback, market ideas, or contacts you think might find this useful.",0,3,Jackratatty,2025-06-05 00:25:48,https://www.reddit.com/r/dataengineering/comments/1l3lm9s/building_a_dataset_of_prerace_horse_jog_videos/,0,False,False,False,False
