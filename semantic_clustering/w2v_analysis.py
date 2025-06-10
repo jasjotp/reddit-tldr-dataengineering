@@ -17,6 +17,9 @@ from adjustText import adjust_text
 from scipy.spatial import ConvexHull
 import plotly.express as px
 from kneed import KneeLocator
+from datetime import datetime, timedelta, timezone
+from bertopic import BERTopic
+import plotly.io as pio 
 
 nltk.download('stopwords')
 
@@ -375,6 +378,103 @@ def run_nlp_clustering_pipeline():
     print(combined_df.head())
     print(combined_df.columns)
     print(combined_df.info())
+
+    # now after combined df is loaded, use BERTopic to cluster together topics
+    # first, ensure that the 'Created_utc' column is in a datetime format
+    combined_df['created_utc'] = pd.to_datetime(combined_df['created_utc'])
+
+    # filter today's and this week's posts 
+    today = (datetime.now(timezone.utc) - timedelta(days=1)).date()
+    start_of_week = today - timedelta(days = today.weekday())
+
+    # since the DAG runs daily at 12:00 AM UTC, we subtract one day to analyze posts created on the previous day (i.e., "yesterday" in UTC time). Since the reddit has a posfix of today's date it means that the file storing a date's posts actually contains that previous day's posts
+    today_posts = combined_df[combined_df['created_utc'].dt.date == today]
+    week_posts = combined_df[combined_df['created_utc'].dt.date >= start_of_week]
+
+    # extract the text from all the reddit posts (all historical text up until today, today's posts, and the week's post (since the start of the week on Monday))
+    docs_all = combined_df['body'].fillna("").tolist()
+    docs_today = today_posts['body'].fillna("").tolist()
+    docs_week = week_posts['body'].fillna("").tolist()
+
+    # Clustering all historical topics: fit BERTopic model on all the posts to date to get all topics/themes to date 
+    topic_model = BERTopic(embedding_model = "all-MiniLM-L6-v2")
+    topics_all, probs_all = topic_model.fit_transform(docs_all)
+
+    # create the dataframe for all topics with the body, topic, and created_utc timestamp 
+    all_topics_df = pd.DataFrame({
+        'post': docs_all,
+        'topic': topics_all,
+        'created_utc': combined_df['created_utc']
+    })
+    all_topics_df = all_topics_df.sort_values(by='topic')
+
+    topic_info_df = topic_model.get_topic_info()
+    topic_info_path = os.path.join(OUTPUT_DIR, 'bertopic_overall_topic_info.csv')
+    topic_info_df.to_csv(topic_info_path, index = False)
+    upload_to_s3(topic_info_path, 'processed')
+
+    # visualize the topics with a chart of clusters
+    overall_topic_vis_path = os.path.join(GRAPHS_DIR, 'bertopic_overall_topics.html')
+    topic_model.visualize_topics().write_html(overall_topic_vis_path)
+    upload_to_s3(overall_topic_vis_path, 'graphs')
+
+    # visualize the top 10 topics in a barchart format 
+    bar_chart_path = os.path.join(GRAPHS_DIR, "bertopic_overall_barchart.html")
+    topic_model.visualize_barchart(top_n_topics = 10).write_html(bar_chart_path)
+    upload_to_s3(bar_chart_path, 'graphs')
+
+    # Clustering the week's topics (starting from Monday UTC Time)
+    topics_week, probs_week = topic_model.transform(docs_week)
+
+    # create the dataframe for all topics with the body, topic, and created_utc timestamp 
+    week_topics_df = pd.DataFrame({
+        'post': docs_week,
+        'topic': topics_week,
+        'created_utc': week_posts['created_utc']
+    })
+    week_topics_df = week_topics_df.sort_values(by='topic')
+
+    # visualize the weeks topics with a chart of clusters
+    weekly_topic_vis_path = os.path.join(GRAPHS_DIR, 'bertopic_weekly_topics.html')
+    topic_model.visualize_topics().write_html(weekly_topic_vis_path)
+    upload_to_s3(weekly_topic_vis_path, 'graphs')
+
+    weekly_barchart_path = os.path.join(GRAPHS_DIR, "bertopic_weekly_barchart.html")
+    topic_model.visualize_barchart(top_n_topics = 10, topics = list(set(topics_week))).write_html(weekly_barchart_path)
+    upload_to_s3(weekly_barchart_path, 'graphs')
+
+    # Clustering the day's topics (UTC Time)
+    topics_today, probs_today = topic_model.transform(docs_today)
+
+    # create the dataframe for all topics with the body, topic, and created_utc timestamp 
+    today_topics_df = pd.DataFrame({
+        'post': docs_today,
+        'topic': topics_today,
+        'created_utc': today_posts['created_utc']
+    })
+    today_topics_df = today_topics_df.sort_values(by = 'topic')
+
+    # visualize the weeks topics with a chart of clusters
+    today_topic_vis_path = os.path.join(GRAPHS_DIR, 'bertopic_today_topics.html')
+    topic_model.visualize_topics().write_html(today_topic_vis_path)
+    upload_to_s3(today_topic_vis_path, 'graphs')
+
+    today_barchart_path = os.path.join(GRAPHS_DIR, "bertopic_today_barchart.html")
+    topic_model.visualize_barchart(top_n_topics = 10, topics = list(set(topics_today))).write_html(today_barchart_path)
+    upload_to_s3(today_barchart_path, 'graphs')
+    
+    # save all, today's and weekly topic breakdown
+    today_path = os.path.join(OUTPUT_DIR, 'bertopic_today_topics.csv')
+    week_path = os.path.join(OUTPUT_DIR, 'bertopic_weekly_topics.csv')
+    all_to_date_path = os.path.join(OUTPUT_DIR, 'bertopic_all_topics.csv')
+
+    today_topics_df.to_csv(today_path, index = False)
+    week_topics_df.to_csv(week_path, index = False)
+    all_topics_df.to_csv(all_to_date_path, index = False)
+
+    upload_to_s3(today_path, 'processed')
+    upload_to_s3(week_path, 'processed')
+    upload_to_s3(all_to_date_path, 'processed')
 
     # drop all of the columns that are not needed to train the model, like id, url, author, cleaned_body (only used for transformer based NLP), example posts
     combined_df = combined_df.drop(columns = ['id', 'url', 'author', 'cleaned_body'])
