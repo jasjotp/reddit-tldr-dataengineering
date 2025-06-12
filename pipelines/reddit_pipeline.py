@@ -11,7 +11,7 @@ from etls.reddit_etl import connect_to_reddit, extract_posts, transform_data, lo
 def reddit_pipeline(file_name: str, subreddit:str, time_filter='day', limit=None):
     # connect to reddit instance 
     instance = connect_to_reddit(client_id, secret, 'Jasjot Paarmars Agent')
-
+    
     # extract the data 
     posts = extract_posts(instance, subreddit, time_filter, limit)
     

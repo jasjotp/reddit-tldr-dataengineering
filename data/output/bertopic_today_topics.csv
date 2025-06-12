@@ -1,0 +1,60 @@
+post,topic,created_utc
+"I run an analytics team at a mid sized company. We currently use redshift as our primary data warehouse. I see all the time arguments about how redshift is slower, not as feature rich, has bad concurrency scaling etc. etc. I've discussed these points with leadership but they, i think understandably push back on the idea of a large migration which will take our team out of commission. 
+
+  
+I was curious to hear from other folks what they've seen in terms of business cases for a major migration like this? Has anyone here ever successfully convinced leadership that a migration off of redshift or something similar was necessary?",-1,2025-06-11 21:39:53
+"I've created a small tool to normalize(split) columns of a DataFrame with low cardinality, to be more focused on data engineering than LabelEncoder. The idea is to implement more grunt work tools, like a quick report of the tables looking for cardinality. I am a Novice in this area so every tip will be kindly received.  
+The github link is [https://github.com/tekoryu/pychisel](https://github.com/tekoryu/pychisel) and you can just pip install it.",-1,2025-06-11 20:52:38
+"
+Same as above.
+
+Any list of company’s that give equal pay to Data engineers same as SDE??",0,2025-06-11 18:14:48
+"I’m 27 and have been working in customer service ever since I graduated with a degree in business administration. While the experience has taught me a lot, the job has become really stressful over time.
+
+Recently, I’ve developed a strong interest in data and started exploring different career paths in the field, specially data engineering. The problem is, my technical background is quite basic, and I sometimes worry that it might be too late to make a switch now, compared to others who got into tech earlier. 
+
+For those who’ve made a similar switch or are in the field, do you think 27 is too late to start from scratch and build a career in data engineering? Any advice?
+",0,2025-06-11 17:48:49
+"
+I tried making edits to the config file but that doesn’t get picked up. Using airflow 2. Surely there must be a way to reload without restarting the pod? ",4,2025-06-11 20:02:06
+"Ready to explore the world of Kafka, Flink, data pipelines, and real-time analytics without the headache of complex cloud setups or resource contention?
+
+🚀 Introducing the **NEW Factor House Local Labs** – your personal sandbox for building and experimenting with sophisticated data streaming architectures, all on your local machine!
+
+We've designed these hands-on labs to take you from foundational concepts to building complete, reactive applications:
+
+🔗 **Explore the Full Suite of Labs Now:**
+[https://github.com/factorhouse/examples/tree/main/fh-local-labs](https://github.com/factorhouse/examples/tree/main/fh-local-labs)
+
+**Here's what you can get hands-on with:**
+
+*   💧 **Lab 1 - Streaming with Confidence:**
+    *   Learn to produce and consume Avro data using Schema Registry. This lab helps you ensure data integrity and build robust, schema-aware Kafka streams.
+
+*   🔗 **Lab 2 - Building Data Pipelines with Kafka Connect:**
+    *   Discover the power of Kafka Connect! This lab shows you how to stream data from sources to sinks (e.g., databases, files) efficiently, often without writing a single line of code.
+
+*   🧠 **Labs 3, 4, 5 - From Events to Insights:**
+    *   Unlock the potential of your event streams! Dive into building real-time analytics applications using powerful stream processing techniques. You'll work on transforming raw data into actionable intelligence.
+
+*   🏞️ **Labs 6, 7, 8, 9, 10 - Streaming to the Data Lake:**
+    *   Build modern data lake foundations. These labs guide you through ingesting Kafka data into highly efficient and queryable formats like Parquet and Apache Iceberg, setting the stage for powerful batch and ad-hoc analytics.
+
+*   💡 **Labs 11, 12 - Bringing Real-Time Analytics to Life:**
+    *   See your data in motion! You'll construct reactive client applications and dashboards that respond to live data streams, providing immediate insights and visualizations.
+
+**Why dive into these labs?**
+*   **Demystify Complexity:** Break down intricate data streaming concepts into manageable, hands-on steps.
+*   **Skill Up:** Gain practical experience with essential tools like Kafka, Flink, Spark, Kafka Connect, Iceberg, and Pinot.
+*   **Experiment Freely:** Test, iterate, and innovate on data architectures locally before deploying to production.
+*   **Accelerate Learning:** Fast-track your journey to becoming proficient in real-time data engineering.
+
+Stop just dreaming about real-time data – start *building* it! Clone the repo, pick your adventure, and transform your understanding of modern data systems.
+",9,2025-06-11 21:33:39
+"We’re wrapping up the Metabase Data Stack Survey soon. If you haven’t shared your experience yet, now’s the time.
+
+Join hundreds of data experts who are helping build an open, honest guide to what’s really working in data engineering (and you'll get exclusive access to the results 😉)
+
+* [Survey link](https://jjcp5mdurex.typeform.com/to/KBnYX8Xe)
+
+*Thanks to everyone who’s already shared their experience!*",16,2025-06-11 20:21:11

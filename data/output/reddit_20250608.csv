@@ -1,0 +1,261 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1l5qmu9,What your most favorite SQL problem? ( Mine : Gaps & Islands ),"Your must have solved / practiced many SQL problems over the years, what's your most fav of them all?
+
+",50,43,NefariousnessSea5101,2025-06-07 17:44:06,https://www.reddit.com/r/dataengineering/comments/1l5qmu9/what_your_most_favorite_sql_problem_mine_gaps/,0,False,False,False,False
+1l5jbp8,Homemade Change Data Capture into DuckLake,"Hi 👋🏻 I've been reading some responses over the last week regarding the DuckLake release, but felt like most of the pieces were missing a core advantage. Thus, I've tried my luck in writing and coding something myself, although not being in the writer business myself. 
+
+Would be happy about your opinions. I'm still worried to miss a point here. I think, there's something lurking in the lake 🐡",36,6,doenertello,2025-06-07 12:09:21,https://medium.com/@wergstatt/homemade-change-data-capture-into-your-private-lake-e4978ebc23a7,0,False,False,False,False
+1l5aper,Alternatives to running Python Scripts with Windows Task Scheduler.,"Hi, 
+
+I'm a data analyst with 2 years of experience slowly making progress towards using SSIS and Python to move data around.
+
+Recently, I've found myself sending requests to the Microsoft Partner Center APIs using Python scripts in order to get that information and send it to tables on a SQL Server, and for this purpose I need to run these data flows on a schedule, so I've been using the Windows Task Scheduler hosted on a VM with Windows Server to run them, are there any other better options to run the Python scripts on a schedule?
+
+Thank you.
+
+",29,35,HelmoParak,2025-06-07 02:56:38,https://www.reddit.com/r/dataengineering/comments/1l5aper/alternatives_to_running_python_scripts_with/,0,False,False,False,False
+1l5avhk,[OSS] Heimdall  --  a lightweight data orchestration,"🚀 Wanted to share that my team open-sourced Heimdall (Apache 2.0) — a lightweight data orchestration tool built to help manage the complexity of modern data infrastructure, for both humans and services.
+
+This is our way of giving back to the incredible data engineering community whose open-source tools power so much of what we do.
+
+🛠️ GitHub: [https://github.com/patterninc/heimdall](https://github.com/patterninc/heimdall)
+
+🐳 Docker Image: [https://hub.docker.com/r/patternoss/heimdall](https://hub.docker.com/r/patternoss/heimdall)
+
+If you're building data platforms / infra, want to build data experiences where engineers can build on their devices using production data w/o bringing shared secrets to the client, completely abstract data infrastructure from client, want to use Airflow mostly as a scheduler, I'd appreciate you checking it out and share any feedback -- we'll work on making it better! I'll be happy to answer any questions.",25,4,Pale-Fan2905,2025-06-07 03:05:47,https://www.reddit.com/r/dataengineering/comments/1l5avhk/oss_heimdall_a_lightweight_data_orchestration/,0,False,False,False,False
+1l5ty65,Bad data everywhere,"Just a brief rant. I'm importing a pipe-delimited data file where one of the fields is this company name:
+
+PC'S? NOE PROBLEM||| INCORPORATED
+
+And no, they didn't escape the pipes in any way. Maybe exclamation points were forbidden and they got creative? Plus, this is giving my English degree a headache.
+
+What's the worst flat file problem you've come across?",20,14,Melodic_One4333,2025-06-07 20:09:07,https://www.reddit.com/r/dataengineering/comments/1l5ty65/bad_data_everywhere/,0,False,False,False,False
+1l5pctb,Snapchat Data Tech Stack,"Hi!
+
+Sharing my latest article from the Data Tech Stack series, I’ve revamped the format a bit, including the image, to showcase more technologies, thanks to feedback from readers.
+
+  
+I am still keeping it very high level, just covering the 'what' tech are used, in separate series I will dive into 'why' and 'how'. Please visit the link, to fine more details and also references which will help you dive deeper.
+
+  
+Some metrics gathered from several place.
+
+* Ingesting \~2 trillions of events per day using Google Cloud Platform.
+* Ingesting 4+ TB of data into BQ per day.
+* Ingesting 1.8 trillion events per day at peak.
+* Datawarehouse contains more than 200 PB of data in 30k GCS bucket.
+* Snapchat receives 5 billions Snaps per day.
+* Snapchat has 3,000 Airflow DAGS with 330,000 tasks.
+
+
+
+Let me know in the comments, any feedback and suggests.
+
+  
+Thanks",20,2,mjfnd,2025-06-07 16:49:55,https://www.junaideffendi.com/p/snapchat-data-tech-stack?r=cqjft,0,False,False,False,False
+1l5tldx,Are there any books that teach data engineering concepts similar to how The Pragmatic Programmer teaches good programming principles?,"I'm a self-taught programmer turned data engineer, and a data scientist on my team (who is definitely the best programmer on the team) gave me this book. I found it incredibly insightful and it will definitely influence how I approach projects going forward.
+
+I've also read Fundamentals of Data Engineering and didn't find it very valuable. It felt like a word soup compared to The Pragmatic Programmer, and by the end, it didn’t really cover anything I hadn’t already picked up in my first 1-2 years of on-the-job DE experience. I tend to find that very in-depth books are better used as references. Sometimes I even think the internet is a more useful reference than those really dense, almost textbook-like books.
+
+Are there any data engineering books that give a good overview of the techniques, processes, and systems involved. Something at a level that helps me retain the content, maybe take a few notes, but doesn’t immediately dive deep into every topic? Ideally, I'd prefer to only dig deeper into specific areas when they become relevant in my work.",14,6,Reddit_Account_C-137,2025-06-07 19:53:22,https://www.reddit.com/r/dataengineering/comments/1l5tldx/are_there_any_books_that_teach_data_engineering/,0,False,False,False,False
+1l5q0qu,Geothermal powered Data Centers,Green Data centres powered by stable geothermal energy guaranteeing Tier IV ratings and improved ESG rankings. Perfect for AI farms and high power consumption DCs,11,4,Spare_Kangaroo1407,2025-06-07 17:18:05,https://i.redd.it/zrj4bf16gj5f1.jpeg,0,False,False,False,False
+1l59cde,Enriching data across databases,"We’re working with a system where core transactional data lives in MySQL, and related reference data is now stored in a normalized form in Postgres.
+
+A key limitation: the apps and services consuming data from MySQL cannot directly access Postgres tables. Any access to Postgres data needs to happen through an intermediate mechanism that doesn’t expose raw tables.
+
+We’re trying to figure out the best way to enrich MySQL-based records with data from Postgres — especially for dashboards and read-heavy workloads — without duplicating or syncing large amounts of data unnecessarily.
+
+We use AWS in many parts of our stack, but not exclusively. Cost-effectiveness matters, so open-source solutions are a plus if they can meet our needs.
+
+Curious how others have solved this in production — particularly where data lives across systems, but clean, efficient enrichment is still needed without direct table access.",6,8,Zestyclose_Rip_7862,2025-06-07 01:43:31,https://www.reddit.com/r/dataengineering/comments/1l59cde/enriching_data_across_databases/,0,False,False,False,False
+1l5grmt,[Architecture] Modern time-series stack for industrial IoT - InfluxDB + Telegraf + ADX case study,"Been working in industrial data for years and finally had enough of the traditional historian nonsense. You know the drill - proprietary formats, per-tag licensing, gigabyte updates that break on slow connections, and support that makes you want to pull your hair out. So, we tried something different. Replaced the whole stack with:
+
+* Telegraf for data collection (700+ OPC UA tags)
+* InfluxDB Core for edge storage
+* Azure Data Explorer for long-term analytics
+* Grafana for dashboards
+
+Results after implementation:  
+✅ Reduced latency & complexity  
+✅ Cut licensing costs  
+✅ Simplified troubleshooting  
+✅ Familiar tools (Grafana, PowerBI)
+
+The gotchas:
+
+* Manual config files (but honestly, not worse than historian setup)
+* More frequent updates to manage
+* Potential breaking changes in new versions
+
+Worth noting - this isn't just theory. We have a working implementation with real OT data flowing through it. Anyone else tired of paying through the nose for overcomplicated historian systems?
+
+Full technical breakdown and architecture diagrams: [https://h3xagn.com/designing-a-modern-industrial-data-stack-part-1/](https://h3xagn.com/designing-a-modern-industrial-data-stack-part-1/)",6,2,h3xagn,2025-06-07 09:24:10,https://www.reddit.com/r/dataengineering/comments/1l5grmt/architecture_modern_timeseries_stack_for/,0,False,False,False,False
+1l5o5e9,I’m building a customizable XML validator – feedback welcome!,"Hey folks — I’m working on a tool that lets you define your own XML validation rules through a UI. Things like:
+
+* Custom tags
+* Attribute requirements
+* Regex patterns
+* Nested tag rules
+
+It’s for devs or teams that deal with XML in banking, healthcare, enterprise apps, etc. I’m trying to solve some of the pain points of using rigid schema files or complex editors like Oxygen or XMLSpy.
+
+If this sounds interesting, I’d love your feedback through this quick 3–5 min survey:  
+👉 [https://docs.google.com/forms/d/e/1FAIpQLSeAgNlyezOMTyyBFmboWoG5Rnt75JD08tX8Jbz9-0weg4vjlQ/viewform?usp=dialog](https://docs.google.com/forms/d/e/1FAIpQLSeAgNlyezOMTyyBFmboWoG5Rnt75JD08tX8Jbz9-0weg4vjlQ/viewform?usp=dialog)
+
+No email required. Just trying to build something useful, and your input would help me a lot. Thanks!",5,1,Andrewraj10,2025-06-07 15:57:51,https://www.reddit.com/r/dataengineering/comments/1l5o5e9/im_building_a_customizable_xml_validator_feedback/,1,False,False,False,False
+1l5m7ea,Open Data Recipes & APIs Repo – Contributions Welcome! ⭐,"
+Hey everyone!
+
+I’ve started a GitHub repository aimed at collecting ready-to-use data recipes and API wrappers – so anyone can quickly access and use real-world data without the usual setup hassle. It’s designed to be super friendly for first-time contributors, students, and anyone looking to explore or share useful data sources.
+
+🔗 https://github.com/leftkats/DataPytheon
+
+The goal is to make data more accessible and practical for learning, projects, and prototyping. I’d love your thoughts on it!
+
+Know of any similar repositories? Please share!
+Found it interesting? A star would mean a lot !
+
+Want to contribute? PRs are very welcome!
+
+Thank you for reading !",3,2,psypous,2025-06-07 14:32:34,https://www.reddit.com/r/dataengineering/comments/1l5m7ea/open_data_recipes_apis_repo_contributions_welcome/,0,False,False,False,False
+1l5iv1q,Suggestions welcome: Data ingestion gzip vs uncompressed data in Spark?,"I'm working on some data pipelines for a new source of data for our data lake, and right now we really only have one path to get the data up to the cloud. Going to do some hand-waving here only because I can't control this part of the process (for now), but a process is extracting data from our mainframe system as text (csv), and then compressing the data, and then copying it out to a cloud storage account in S3.
+
+Why compress it? Well, it does compress well; we see around \~30% space saved and the data size is not small; we're going from roughly 15GB per extract to down to 4.5GB. These are averages; some days are smaller, some are larger, but it's in this ballpark. Part of the reason for the compression is to save us some bandwidth and time in the file copy.
+
+So now, I have a spark job to ingest the data into our raw layer, and it's taking longer than I \*feel\* it should take. I know that there's some overhead to reading compressed .gzip (I feel like I read somewhere once that it has to read the entire file on a single thread first). So the reads and then ultimately the writes to our tables are taking a while, longer than we'd like, for the data to be available for our consumers.
+
+The debate we're having now is where do we want to ""eat"" the time:
+
+* Upload uncompressed files (vs compressed) so longer times in the file transfer
+* Add a step to decompress the files before we read them
+* Or just continue to have slower ingestion in our pipelines
+
+My argument is that we can't beat physics; we are going to have to accept some length of time with any of these options. I just feel as an organization, we're over-indexing on a solution. So I'm curious which ones of these you'd prefer? And for the title: ",4,8,devanoff214,2025-06-07 11:42:44,https://www.reddit.com/r/dataengineering/comments/1l5iv1q/suggestions_welcome_data_ingestion_gzip_vs/,0,False,False,False,False
+1l5fdjj,DataDecoded mcr,"A new event has popped up in Manchester looks significant! Some of the ex team from the wonderful bigdataldn are involved too
+
+https://datadecoded.com/
+",4,5,codek1,2025-06-07 07:47:35,https://www.reddit.com/r/dataengineering/comments/1l5fdjj/datadecoded_mcr/,0,False,False,False,False
+1l5rx2f,Advice about DBs Architecture,"Hi everyone,
+
+
+
+I’m planning to build a directory-listing website with the following requirements:
+
+
+
+\- Content Backend (RAG pipeline):
+
+I have a large library of PDF files (user guides, datasheets, etc.).
+
+I’ll run them through an ML pipeline to extract structured data (tables, key facts, metadata).
+
+Users need to be able to search and filter that extracted data very quickly and accurately.
+
+
+
+\- User Management & Transactions:
+
+The site will have free and paid membership tiers.
+
+I need to store user profiles, subscription statuses, payment history, and access controls alongside the RAG content.
+
+I want an architecture that can scale as my content library and user base grow.
+
+
+
+My current thoughts
+
+Documents search engine: Elasticsearch vs. Azure AI Search 
+
+Database for user/transactional data: PostgreSQL, MySQL, or a managed cloud offering.
+
+Any advices? about the optimal combination? is it bad having two DBs? main and secondary? if i want to sync those two will i have issues?",2,1,ses13000,2025-06-07 18:38:40,https://www.reddit.com/r/dataengineering/comments/1l5rx2f/advice_about_dbs_architecture/,0,False,False,False,False
+1l5b2l7,Data Dysfunction Chronicles Part 1,"I didn’t ask to create a metastore. I just needed a Unity Catalog so I could register some tables properly.
+
+I sent the documentation. Explained the permissions. Waited.
+
+No one knew how to help.
+
+Eventually the domain admin asked if the Data Platforms manager could set it up. I said no. His team is still on Hive. He doesn’t even know what Unity Catalog is.
+
+Two minutes later I was a Databricks Account Admin.
+
+I didn’t apply for it. No approvals. No training. Just a message that said “I trust you.”
+
+Now I can take ownership of any object in any workspace. I can drop tables I’ve never seen. I can break production in regions I don’t work in.
+
+And the only way I know how to create a Unity Catalog is by seizing control of the metastore and assigning it to myself. Because I still don’t have the CLI or SQL permissions to do it properly.  And for some reason even as an account admin, I can't assign the CLI and SQL permissions I need to myself either. But taking over the entire metastore is not outside of the permissions scope for some reason. 
+
+So I do it quietly. Carefully. And then I give the role back to the AD group.
+
+No one notices. No one follows up.
+
+I didn’t ask for power. I asked for a checkbox.
+
+Sometimes all it takes to bypass governance is patience, a broken process, and someone who stops replying.",2,0,FunkybunchesOO,2025-06-07 03:16:32,https://www.reddit.com/r/dataengineering/comments/1l5b2l7/data_dysfunction_chronicles_part_1/,0,False,False,False,False
+1l5whwv,DP-900 or DP-203?,"Hey everyone,
+
+I’m a beginner and really want to start learning cloud, but I’m confused about which Azure certification to start with: DP-900 or DP-203. 
+
+I recently came across a post where people were talking that 900 is irrelevant now..I have no prior experience in cloud. Should I go for DP-900 first to build my basics, or is it better to jump straight into DP-203 if my goal is to become a data engineer? Would love to hear your advice and experiences, especially from those who started from scratch! Cheers!",2,4,___Nik_,2025-06-07 22:05:15,https://www.reddit.com/r/dataengineering/comments/1l5whwv/dp900_or_dp203/,0,False,False,False,False
+1l5rgfe,Building a lightweight alternative to bloated tools to fix cross-platform lineage?,"Hi Data folks,
+
+A few weeks ago, I got some validation:
+
+* This is a real need (thanks u/\[PrincipalEngineer\])
+* Add BigQuery or GTFO
+
+So, After nights of coffee-fueled coding, we’ve got an **imperfect** version of Tesser that now has some additional features:
+
+* Support for Bigquery as a source
+* Trace a column from Snowflake → BigQuery → Looker in 2 clicks
+* Find who broke revenue by tracking ad-hoc queries (Slack, notebooks, etc.)
+* Shows lineage for ALL SQL – not just your 'proper' dbt models
+
+Disclaimer: The UI’s still ugly & WIP, but the core works.
+
+**need to hear your perspective**:
+
+* “Would you use this daily if we added \[X\]?”
+* “What’s the dumbest lineage issue you’ve faced?” (I’ll fix it next.)
+
+If this isn’t useful, tell us why— we'll pivot fast.",0,0,Zestyclose-Lynx-1796,2025-06-07 18:18:56,https://www.reddit.com/r/dataengineering/comments/1l5rgfe/building_a_lightweight_alternative_to_bloated/,0,False,False,False,False
+1l5rcqz,Query 66 Million Places by using an AI Agent connected to AWS Athena,"Hello, hoping to display the art of the possible with this workflow.
+
+I think it's a cool way to connect data lakes in AWS to gen AI, enabling more business users to ask technical questions without needing technical know-how.
+
+
+
+# 🗺️ Atlas – Map Research Agent
+
+Atlas is an intelligent map data agent that translates natural-language prompts into SQL queries using LLMs, runs them against AWS Athena, and stores the results in Google Sheets — no manual querying or scraping required.
+
+With access to over 66 million schools, businesses, hospitals, religious organizations, landmarks, mountain peaks, and much more, you will be able to perform a number of analyses with ease. Whether it's for competitive analysis, outbound marketing, route optimization, and more.
+
+This is also cheaper than Google Maps API or webscraping at scale.
+
+The map dataset: [https://overturemaps.org/](https://overturemaps.org/)
+
+
+
+# 💡 Example Prompts
+
+\* “Get every McDonald's in Ohio”
+
+\* “Get every dentist office in the United States""
+
+\* “Get the number of golf courses in California”
+
+
+
+# 💡 Use-cases
+
+\* Real estate investing analysis - assess the region for businesses near a given location
+
+\* Competitor Analysis - pull all business types, then enrich with menu data / hours of operations / etc.
+
+\* Lead generation - find all dentist offices in the US, starting place for building your outbound strategy
+
+  
+You can see a step-by-step walkthrough here - [https://youtu.be/oTBOB4ABkoI?feature=shared](https://youtu.be/oTBOB4ABkoI?feature=shared)",0,0,Fearless-Pineapple36,2025-06-07 18:14:34,https://v.redd.it/vrj87urloj5f1,0,False,False,False,False
+1l5g5de,AI auto-coders will replace data engineers. Or will they?,,0,5,rotzak,2025-06-07 08:41:29,https://tower.dev/blog/ai-auto-coders-will-replace-data-engineers-or-will-they,0,False,False,False,False
