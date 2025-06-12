@@ -374,7 +374,6 @@ def run_nlp_clustering_pipeline():
 
     # check the new combined df and all of its columns to see if it was merged correctly 
     print(combined_df.head())
-    print(combined_df.columns)
     print(combined_df.info())
 
     # now after combined df is loaded, use BERTopic to cluster together topics
