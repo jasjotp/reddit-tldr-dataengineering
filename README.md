@@ -66,7 +66,7 @@ An automated end-to-end pipeline powered by Apache Airflow that:
 
 ### Topics That Drive Engagement
 
-![Top 10 Words by Cluster](graphs\word2vec_clusters.png)
+![Top 10 Words by Cluster](graphs/word2vec_clusters.png)
 - **Cluster 1** (🟧 orange in Word2Vec plot) consistently shows the **highest average score**, **highest word count**, and **highest character count**. This suggests that **longer, more detailed posts drive significantly better engagement**.
 
 - Posts in this cluster commonly contain words like **“working,” “experience,” “job,” anyone,” “company,” and looking**, showing that **career advice, job insights, and personal experiences** might relate most with readers.
@@ -97,9 +97,9 @@ These charts show the **top topic-word associations** from June 11, 2025:
 - **Today** → what’s trending today
     ![Today’s BERTopic Bar Chart](graphs/bertopic_today_barchart_example.png)
 - **This Week** → weekly topic strength
-    ![Weekly BERTopic Bar Chart](graphs\bertopic_weekly_barchart_example.png)
+    ![Weekly BERTopic Bar Chart](graphs/bertopic_weekly_barchart_example.png)
 - **Overall** → all-time frequent topics
-    ![Overall BERTopic Chart](graphs\bertopic_overall_barchart_example.png)
+    ![Overall BERTopic Chart](graphs/bertopic_overall_barchart_example.png)
 
 Key topics:  
 - Azure certifications (dp-203)
@@ -139,14 +139,6 @@ Key topics:
 
 ---
 
-## Outputs
-
-- `cluster_engagement_insights.csv`: Topic-level metrics.
-- `post_engagement_insights.csv`: Post-level metrics, tags, and engagement labels, along with that post's dominant cluster's metrics as well.
-- `.png` graphs for each visualization (saved locally and on S3).
-
----
-
 ## How to Run Locally
 
 1. Clone this repository:
@@ -167,6 +159,34 @@ docker-compose up -d
 ```
 
 5. Trigger the DAG via Airflow UI or CLI.
+
+---
+
+## Outputs
+
+- `cluster_engagement_insights.csv`: Topic-level metrics.
+- `post_engagement_insights.csv`: Post-level metrics, tags, and engagement labels, along with that post's dominant cluster's metrics as well.
+- `.png` graphs for each visualization (saved locally and on S3).
+
+---
+
+## Future Improvements
+
+- **Interactive Dashboard**: Build a Streamlit or Flask-based web app to display trending topics by day, visualized through:
+  - **Word2Vec cluster plots**
+  - **BERTopic bar charts**
+  - **Time-based topic patterns**
+
+- **Engagement Prediction App**:
+  - Train an ML model on `post_engagement_insights.csv` using features like word count, sentiment, cluster ID, etc.
+  - Integrate SHAP values to explain **why a post is likely to succeed**.
+  - Let users **upload a draft Reddit post** and:
+    - Predict its likely engagement score.
+    - Suggest improvements like:
+      - "Increase word count to 600–700 for better reach"
+      - "Consider including terms like `dbt`, `pipelines`, or `airflow`"
+
+- **API Wrapper**: Build an API that returns today's top clusters, dominant keywords, and TF-IDF comparisons programmatically.
 
 ---
 
