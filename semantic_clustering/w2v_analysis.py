@@ -106,8 +106,6 @@ def run_nlp_clustering_pipeline():
     # run the sentiment analysis in batches, with a batch size of 32 for each batch - returns a dictionary of 'label': and 'score':
     sentiment_results = sentiment_pipeline(combined_df['cleaned_body'].tolist(), truncation = True, batch_size = 32)
 
-    print(f'HF Sentiment Results: \n\n {sentiment_results}')
-
     # extract the sentiment label and sentiment score 
     combined_df['sentiment_label'] = [res['label'] for res in sentiment_results]
     combined_df['sentiment_score'] = [res['score'] if res['label'] == 'POSITIVE' else -res['score'] for res in sentiment_results]
