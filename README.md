@@ -1,6 +1,3 @@
-
-# Reddit Data Engineering Trends Analysis
-
 ## TL;DR: What's Trending on r/dataengineering?
 
 This project analyzes Reddit posts from the `r/dataengineering` subreddit to identify trending topics, key engagement drivers, and hidden patterns in community discussions. It leverages NLP, topic modeling, and statistical visualizations to turn daily posts into actionable insights.
